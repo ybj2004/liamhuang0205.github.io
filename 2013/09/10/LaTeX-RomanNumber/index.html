@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>【LaTeX Tips】输出罗马数字 | 始终</title>
+  <meta name="author" content="Liam Huang">
+  
+  <meta name="description" content="本文解决如何在 LaTeX 中输出罗马数字的问题。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:title" content="【LaTeX Tips】输出罗马数字"/>
+  <meta property="og:site_name" content="始终"/>
+
+  <link rel="alternate" href="/atom.xml" title="始终" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!-- 被墙 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->
+  <script src="//lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44836433-1', 'liam0205.me');
+  ga('send', 'pageview');
+
+</script>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <header id="header"><div class="title">
+  <h1><a href="/">始终</a></h1>
+  <a href="/">不忘初心</a>
+</div>
+<!--
+<div>
+<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+ <input style="width:60px;background-color:transparent;text-align:center; border-width:0px;border-top-style: none; border-right-style: none; border-left-style: none; border-bottom-style: none; "  type="search" name="q" id="search" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="20" placeholder="s" />
+ <input type="hidden" name="q" value="site:liam0205.me">
+</form>
+</div>
+-->
+<nav class="nav">
+  <ul>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">链接</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li><a href="http://collect.liam0205.me">文摘</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2013-09-09T16:00:00.000Z"><a href="/2013/09/10/LaTeX-RomanNumber/">2013 年 09 月 10 日</a></time>
+    
+    
+  
+    <h1 class="title">【LaTeX Tips】输出罗马数字</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="comment">% 罗马数字演示</span>
+<span class="command">\documentclass</span><span class="special">{</span>ctexart<span class="special">}</span>
+<span class="command">\newcommand*</span><span class="special">{</span><span class="command">\rmn</span><span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">{</span><span class="command">\romannumeral</span><span class="special">#</span>1<span class="special">}</span>
+<span class="command">\newcommand*</span><span class="special">{</span><span class="command">\RMN</span><span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">{</span><span class="command">\uppercase</span><span class="command">\expandafter</span><span class="special">{</span><span class="command">\romannumeral</span><span class="special">#</span>1<span class="special">}</span><span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\RMN</span><span class="special">{</span>2013<span class="special">}</span>年<span class="command">\RMN</span><span class="special">{</span>9<span class="special">}</span>月<span class="command">\rmn</span><span class="special">{</span>10<span class="special">}</span>日
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+<p>如此即可。</p>
+<p>效果见<a href="http://pan.baidu.com/share/link?shareid=4006105280&amp;uk=1728178661" target="_blank">http://pan.baidu.com/share/link?shareid=4006105280&amp;uk=1728178661</a>.</p>
+
+    
+  </div>
+  <footer>
+    
+      <div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1406015473860">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+      </div>
+      
+  
+  <div class="categories">
+    <a href="/categories/LaTeX/">LaTeX</a>
+  </div>
+
+      
+  
+  <div class="tags">
+    <a href="/tags/LaTeX/">LaTeX</a>, <a href="/tags/Roman/">Roman</a>, <a href="/tags/number/">number</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<!-- wumii Button BEGIN -->
+<div style="margin:0px auto; padding-left:23px; text-align:center;">
+	
+	
+
+	<script type="text/javascript" id="wumiiRelatedItems"></script>
+	<script type="text/javascript">
+		var wumiiPermaLink  = "http://liam0205.me/2013/09/10/LaTeX-RomanNumber/"; //请用代码生成文章永久的链接
+		var wumiiTitle      = "【LaTeX Tips】输出罗马数字"; //请用代码生成文章标题
+		var wumiiTags       = "LaTeX, Roman, number"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
+		var wumiiCategories = ["LaTeX"]; //请用代码生成文章分类，分类名放在 JSONArray 中，如: ["分类1", "分类2"]
+		var wumiiSitePrefix = "http://liam0205.me/";
+		var wumiiParams     = "&num=5&mode=3&pf=JAVASCRIPT";
+	</script>
+	<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+	<!--
+	<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+	    <img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
+	</a>
+	-->
+</div>
+<!-- wumii Button END -->
+
+<!-- UJian Button BEGIN -->
+<!-- 	<div class="ujian-hook" style="padding-left: 17px;"></div>
+	<script type="text/javascript">var ujian_config = {num:6,picSize:83,textHeight:45};</script>
+	<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1893018"></script>-->
+<!-- UJian Button END -->
+
+<!-- baidu tuijian BEGIN -->
+<!-- <div id="hm_t_22763"></div> -->
+<!-- baidu tuijian BEGIN -->
+<!--	<div style="padding-left: 17px;"> -->
+<!--		<script src="http://wm.lrswl.com/page/s.php?s=103186&w=640&h=60"></script> -->
+<!--	</div> -->
+
+
+
+
+<section id="comment">
+  <script>var duoshuoQuery = {short_name:"cnliam"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <script type="text/javascript">
+    function toggleDuoshuoComments(container, id, url){
+      if(jQuery(container).has("div").length>0){
+        jQuery(container).empty();
+        return;
+      }
+      var el = document.createElement('div');
+      el.setAttribute('data-thread-key', id);//必选参数
+      el.setAttribute('data-url', url);//必选参数
+      DUOSHUO.EmbedThread(el);
+      jQuery(container).append(el);
+    }
+  </script>
+  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '【LaTeX Tips】输出罗马数字', '2013/09/10/LaTeX-RomanNumber/');">查看评论</a></h1>
+  <!-- <div class="ds-thread" data-title="【LaTeX Tips】输出罗马数字"></div> -->
+  <div id="comment-box" ></div>
+</section>
+
+
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/CamStudio/">CamStudio</a><small>1</small></li>
+  
+    <li><a href="/categories/Duoshuo/">Duoshuo</a><small>1</small></li>
+  
+    <li><a href="/categories/English/">English</a><small>2</small></li>
+  
+    <li><a href="/categories/GRE/">GRE</a><small>1</small></li>
+  
+    <li><a href="/categories/Kindle/">Kindle</a><small>1</small></li>
+  
+    <li><a href="/categories/LaTeX/">LaTeX</a><small>33</small></li>
+  
+    <li><a href="/categories/Python/">Python</a><small>5</small></li>
+  
+    <li><a href="/categories/Sublime/">Sublime</a><small>2</small></li>
+  
+    <li><a href="/categories/articles/">articles</a><small>2</small></li>
+  
+    <li><a href="/categories/life/">life</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+  <!--
+  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chinese/" style="font-size: 10.00px;">Chinese</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/English/" style="font-size: 12.50px;">English</a><a href="/tags/GRE/" style="font-size: 15.00px;">GRE</a><a href="/tags/Game/" style="font-size: 10.00px;">Game</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/GitPro/" style="font-size: 10.00px;">GitPro</a><a href="/tags/Images/" style="font-size: 10.00px;">Images</a><a href="/tags/Issue/" style="font-size: 10.00px;">Issue</a><a href="/tags/Kindle/" style="font-size: 10.00px;">Kindle</a><a href="/tags/Koreader/" style="font-size: 10.00px;">Koreader</a><a href="/tags/LaTeX/" style="font-size: 20.00px;">LaTeX</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/LaTeXTools/" style="font-size: 10.00px;">LaTeXTools</a><a href="/tags/Multi-lingual/" style="font-size: 10.00px;">Multi-lingual</a><a href="/tags/PDF/" style="font-size: 10.00px;">PDF</a><a href="/tags/Parallelogram/" style="font-size: 10.00px;">Parallelogram</a><a href="/tags/PyHardWay/" style="font-size: 10.00px;">PyHardWay</a><a href="/tags/Python/" style="font-size: 17.50px;">Python</a><a href="/tags/Roman/" style="font-size: 10.00px;">Roman</a><a href="/tags/SDU/" style="font-size: 10.00px;">SDU</a><a href="/tags/Sublime/" style="font-size: 15.00px;">Sublime</a><a href="/tags/Sublime-Package/" style="font-size: 10.00px;">Sublime-Package</a><a href="/tags/Text Completion/" style="font-size: 10.00px;">Text Completion</a><a href="/tags/ThinkPad/" style="font-size: 10.00px;">ThinkPad</a><a href="/tags/TikZ/" style="font-size: 10.00px;">TikZ</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 10.00px;">Tutorial</a><a href="/tags/Virtual Audio Cable/" style="font-size: 10.00px;">Virtual Audio Cable</a><a href="/tags/WaveoutGetSelectControl/" style="font-size: 10.00px;">WaveoutGetSelectControl</a><a href="/tags/baseline/" style="font-size: 10.00px;">baseline</a><a href="/tags/baselineskip/" style="font-size: 10.00px;">baselineskip</a><a href="/tags/baselinestretch/" style="font-size: 10.00px;">baselinestretch</a>
+  -->
+  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/English/" style="font-size: 12.50px;">English</a><a href="/tags/GRE/" style="font-size: 15.00px;">GRE</a><a href="/tags/LaTeX/" style="font-size: 20.00px;">LaTeX</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Multi-lingual/" style="font-size: 10.00px;">Multi-lingual</a><a href="/tags/Parallelogram/" style="font-size: 10.00px;">Parallelogram</a><a href="/tags/Python/" style="font-size: 17.50px;">Python</a><a href="/tags/Sublime/" style="font-size: 15.00px;">Sublime</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/copy/" style="font-size: 12.50px;">copy</a><a href="/tags/definition/" style="font-size: 10.00px;">definition</a><a href="/tags/environ/" style="font-size: 10.00px;">environ</a><a href="/tags/grammar/" style="font-size: 12.50px;">grammar</a><a href="/tags/highlight/" style="font-size: 12.50px;">highlight</a><a href="/tags/include/" style="font-size: 10.00px;">include</a><a href="/tags/input/" style="font-size: 10.00px;">input</a><a href="/tags/line number/" style="font-size: 12.50px;">line number</a><a href="/tags/listings/" style="font-size: 15.00px;">listings</a><a href="/tags/newenvironment/" style="font-size: 10.00px;">newenvironment</a><a href="/tags/overbrace/" style="font-size: 10.00px;">overbrace</a><a href="/tags/path/" style="font-size: 10.00px;">path</a><a href="/tags/phantom/" style="font-size: 10.00px;">phantom</a><a href="/tags/rlap/" style="font-size: 10.00px;">rlap</a><a href="/tags/robust/" style="font-size: 10.00px;">robust</a><a href="/tags/subnumber/" style="font-size: 10.00px;">subnumber</a><a href="/tags/table/" style="font-size: 10.00px;">table</a><a href="/tags/template/" style="font-size: 15.00px;">template</a><a href="/tags/tool/" style="font-size: 10.00px;">tool</a><a href="/tags/ulem/" style="font-size: 10.00px;">ulem</a><a href="/tags/underbrace/" style="font-size: 10.00px;">underbrace</a><a href="/tags/watermark/" style="font-size: 10.00px;">watermark</a><a href="/tags/website/" style="font-size: 10.00px;">website</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget recent-posts">
+  <h3 class="title">最近文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/07/22/duoshuo-delay/">异步加载多说评论框以加快页面访问速度</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/22/noun-phrase-and-articles/">英语语法之二：名词短语</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/21/basic-sentence-and-the-complement/">英语语法之一：基本句型、动词分类、补语</a>
+      </li>
+    
+      <li>
+        <a href="/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/">使用 Virtual Audio Cable 解决 CamStudio 在部分 ThinkPad 机型上无法内录的问题</a>
+      </li>
+    
+      <li>
+        <a href="/2014/05/20/koreader-on-kindle-paperwhite/">使用 Koreader 阅读 PDF 让 Kindle Paperwhite 如虎添翼</a>
+      </li>
+    
+      <li>
+        <a href="/2014/05/10/hearing-impairment/">为什么一些种类的听力损失是不可逆转的？</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2013 - 2014 <a href="/">Liam Huang</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   |
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a> and <a href="http://liam0205.me/" target="_blank">Liam Huang</a>
+</div>
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'cnliam' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+</body>
+</html>
