@@ -44,10 +44,10 @@ function toggleDuoshuoComments(container, id, url){
 在需要插入按钮的地方，我们建立一个 click 事件。
 
 {% code demo lang:html %}
-<a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', <%= item.title %>, <%- item.path %>);">查看评论</a>
+<a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', <%= item.title %>, <%- config.url %><%- config.root %><%- item.path %>);">查看评论</a>
 {% endcode %}
 
-其中 `<%= item.title %>` 和 `<%- item.path %>` 是 hexo 的语法。
+其中 `<%= item.title %>` 和 `<%- config.url %><%- config.root %><%- item.path %>` 是 hexo 的语法。
 
 最后，在需要弹出评论框的地方，插入一个 `div` 标签。
 

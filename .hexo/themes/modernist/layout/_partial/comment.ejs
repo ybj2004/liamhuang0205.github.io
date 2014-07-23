@@ -22,7 +22,7 @@
       jQuery(container).append(el);
     }
   </script>
-  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '<%= item.title %>', '<%- item.path %>');">查看评论</a></h1>
+  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '<%= item.title %>', '<%- config.url %><%- config.root %><%- item.path %>');">查看评论</a></h1>
   <!-- <div class="ds-thread" data-title="<%= item.title %>"></div> -->
   <div id="comment-box" ></div>
 </section>
