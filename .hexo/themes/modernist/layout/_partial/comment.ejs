@@ -1,0 +1,29 @@
+<% if (config.disqus_shortname && page.comments){ %>
+<section id="comment">
+  <h1 class="title"><%= __('comment') %></h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+<% } else if (theme.duoshuo_shortname && page.comments){ %>
+<section id="comment">
+  <script>var duoshuoQuery = {short_name:"<%= theme.duoshuo_shortname %>"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <script type="text/javascript">
+    function toggleDuoshuoComments(container, id, url){
+      if(jQuery(container).has("div").length>0){
+        jQuery(container).empty();
+        return;
+      }
+      var el = document.createElement('div');
+      el.setAttribute('data-thread-key', id);//必选参数
+      el.setAttribute('data-url', url);//必选参数
+      DUOSHUO.EmbedThread(el);
+      jQuery(container).append(el);
+    }
+  </script>
+  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '<%= item.title %>', '<%- item.path %>');">查看评论</a></h1>
+  <!-- <div class="ds-thread" data-title="<%= item.title %>"></div> -->
+  <div id="comment-box" ></div>
+</section>
+<% } %>

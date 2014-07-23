@@ -1,0 +1,56 @@
+layout: photo
+title: 刺客信条
+date: 2014-05-25 17:49:37
+tags: [Assassin's Creed, 刺客信条]
+photos:
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss49.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss01.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss02.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss03.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss04.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss05.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss06.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss07.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss08.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss09.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss10.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss11.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss12.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss13.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss14.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss15.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss16.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss17.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss18.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss19.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss20.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss21.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss22.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss23.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss24.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss25.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss26.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss27.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss28.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss29.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss30.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss31.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss32.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss33.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss34.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss35.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss36.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss37.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss38.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss39.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss40.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss41.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss42.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss43.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss44.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss45.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss46.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss47.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss48.png
+  - http://liamsblog.qiniudn.com/2014-05-25-assassins-creed-newbg_medium_ss50.png
+---
