@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage{xcolor}
+\makeatletter
+\def\xrfill{\@ifnextchar[{\@xrfilli}{\@xrfilli[0pt]}}
+
+\def\@xrfilli[#1]#2{%
+     \@ifnextchar[{\@xrfillii[#1]{#2}}{\@xrfillii[#1]{#2}[black]}}
+\def\@xrfillii[#1]#2[#3]{%
+     \leaders
+     \hbox{\raisebox{#1}{\color{#3}\rule{.01pt}{#2}}}\hfill%
+     \color{black}}
+\makeatother
+\begin{document}
+Hello, \LaTeX{}.\xrfill[2pt]{4pt}[green]
+\end{document}
