@@ -1,0 +1,451 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>【LaTeX Tips】带圈数字与带圈数字列表 | 始终</title>
+  <meta name="author" content="Liam Huang">
+  
+  <meta name="description" content="Liam&#39;s Blog | Liam Huang&#39;s Blog | Liam | Huang | Python | LaTeX | C++ | Java | GRE | TOEFL">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:title" content="【LaTeX Tips】带圈数字与带圈数字列表"/>
+  <meta property="og:site_name" content="始终"/>
+
+  <link rel="alternate" href="/atom.xml" title="始终" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!-- 被墙 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->
+  <script src="//lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44836433-1', 'liam0205.me');
+  ga('send', 'pageview');
+
+</script>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <header id="header"><div class="title">
+  <h1><a href="/">始终</a></h1>
+  <a href="/">不忘初心</a>
+</div>
+<!--
+<div>
+<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+ <input style="width:60px;background-color:transparent;text-align:center; border-width:0px;border-top-style: none; border-right-style: none; border-left-style: none; border-bottom-style: none; "  type="search" name="q" id="search" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="20" placeholder="s" />
+ <input type="hidden" name="q" value="site:liam0205.me">
+</form>
+</div>
+-->
+<nav class="nav">
+  <ul>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">链接</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li><a href="http://collect.liam0205.me">文摘</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2014-05-07T16:00:00.000Z"><a href="/2014/05/08/latex-circled-numbers/">2014 年 05 月 8 日</a></time>
+    
+    
+  
+    <h1 class="title">【LaTeX Tips】带圈数字与带圈数字列表</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>在许多文章中，特别是中文文章中，我们会见到带有圆圈的数字。它们有点是单独出现的，有点作为列表的计数出现。</p>
+<p>LaTeX 提供了 <code>\textcircled</code> 命令，但<a href="http://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers" target="_blank">效果并不好</a>。<a href="http://www.latexstudio.net/latex-tips-768-defined-for-the-enclosed-list-of-environment/" target="_blank">LaTeX studio</a> 曾经提供了一个方法，但缺乏通用性。</p>
+<p>这里给出一个利用 Ti<em>k</em>Z 绘制的方法，能较好地解决这个问题，但仍需完善。</p>
+<a id="more"></a>
+
+<p>基本的思路是定义一个新命令，接受一个数字参数，用 Ti<em>k</em>Z 在它周围画圈。同时要考虑基线和对齐的问题。一个尝试如下：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="command">\usepackage</span><span class="special">{</span>tikz<span class="special">}</span>
+<span class="command">\newcommand*</span><span class="special">{</span><span class="command">\circled</span><span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">{</span><span class="command">\lower</span>.7ex<span class="command">\hbox</span><span class="special">{</span><span class="command">\tikz</span><span class="command">\draw</span> (0pt, 0pt)<span class="comment">%</span>
+    circle (.5em) node <span class="special">{</span><span class="command">\makebox</span><span class="special">[</span>1em<span class="special">]</span><span class="special">[</span>c<span class="special">]</span><span class="special">{</span><span class="command">\small</span> <span class="special">#</span>1<span class="special">}</span><span class="special">}</span>;<span class="special">}</span><span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+<p>这个新定义的命令可以按照 <code>\textcircled</code> 方法在正文中使用，如果需要用在列表中，则因为「脆弱命令」的问题，需要处理一下。这里我们选择使用 <code>etoolbox</code> 宏包提供的 <code>\robustify</code> 来处理一下，同时结合 <code>enumitem</code> 宏包，给出示例用法如下：</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>tikz<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>etoolbox<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>enumitem<span class="special">}</span>
+<span class="command">\newcommand*</span><span class="special">{</span><span class="command">\circled</span><span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">{</span><span class="command">\lower</span>.7ex<span class="command">\hbox</span><span class="special">{</span><span class="command">\tikz</span><span class="command">\draw</span> (0pt, 0pt)<span class="comment">%</span>
+    circle (.5em) node <span class="special">{</span><span class="command">\makebox</span><span class="special">[</span>1em<span class="special">]</span><span class="special">[</span>c<span class="special">]</span><span class="special">{</span><span class="command">\small</span> <span class="special">#</span>1<span class="special">}</span><span class="special">}</span>;<span class="special">}</span><span class="special">}</span>
+<span class="command">\robustify</span><span class="special">{</span><span class="command">\circled</span><span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\mbox</span><span class="special">{</span><span class="special">}</span><span class="command">\rlap</span><span class="special">{</span><span class="command">\rule</span><span class="special">{</span>.7<span class="command">\linewidth</span><span class="special">}</span><span class="special">{</span>.4pt<span class="special">}</span><span class="special">}</span><span class="comment">%</span>
+This is the circled number <span class="command">\circled</span><span class="special">{</span>20<span class="special">}</span>.
+
+<span class="command">\begin</span><span class="special">{</span>enumerate<span class="special">}</span><span class="special">[</span>label=<span class="command">\circled</span><span class="special">{</span><span class="command">\arabic*</span><span class="special">}</span><span class="special">]</span>
+<span class="command">\item</span> I
+<span class="command">\item</span> am
+<span class="command">\item</span> happy
+<span class="command">\item</span> to
+<span class="command">\item</span> join
+<span class="command">\item</span> with
+<span class="command">\item</span> you
+<span class="command">\item</span> today
+<span class="command">\item</span> in
+<span class="command">\item</span> what
+<span class="command">\item</span> will
+<span class="command">\item</span> go
+<span class="command">\item</span> down
+<span class="command">\item</span> in
+<span class="command">\item</span> history
+<span class="command">\item</span> as
+<span class="command">\item</span> the
+<span class="command">\item</span> greatest
+<span class="command">\item</span> demonstration
+<span class="command">\item</span> for
+<span class="command">\item</span> freedom
+<span class="command">\item</span> in
+<span class="command">\item</span> the
+<span class="command">\item</span> history
+<span class="command">\item</span> of
+<span class="command">\item</span> our
+<span class="command">\item</span> nation.
+<span class="command">\end</span><span class="special">{</span>enumerate<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+<hr>
+<p>转载请注明作者，并保留原文链接。</p>
+
+    
+  </div>
+  <footer>
+    
+      <div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1406015473860">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+      </div>
+      
+  
+  <div class="categories">
+    <a href="/categories/LaTeX/">LaTeX</a>
+  </div>
+
+      
+  
+  <div class="tags">
+    <a href="/tags/LaTeX/">LaTeX</a>, <a href="/tags/TikZ/">TikZ</a>, <a href="/tags/Circled/">Circled</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<!-- wumii Button BEGIN -->
+<div style="margin:0px auto; padding-left:23px; text-align:center;">
+	
+	
+
+	<script type="text/javascript" id="wumiiRelatedItems"></script>
+	<script type="text/javascript">
+		var wumiiPermaLink  = "http://liam0205.me/2014/05/08/latex-circled-numbers/"; //请用代码生成文章永久的链接
+		var wumiiTitle      = "【LaTeX Tips】带圈数字与带圈数字列表"; //请用代码生成文章标题
+		var wumiiTags       = "LaTeX, TikZ, Circled"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
+		var wumiiCategories = ["LaTeX"]; //请用代码生成文章分类，分类名放在 JSONArray 中，如: ["分类1", "分类2"]
+		var wumiiSitePrefix = "http://liam0205.me/";
+		var wumiiParams     = "&num=5&mode=3&pf=JAVASCRIPT";
+	</script>
+	<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+	<!--
+	<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+	    <img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
+	</a>
+	-->
+</div>
+<!-- wumii Button END -->
+
+<!-- UJian Button BEGIN -->
+<!-- 	<div class="ujian-hook" style="padding-left: 17px;"></div>
+	<script type="text/javascript">var ujian_config = {num:6,picSize:83,textHeight:45};</script>
+	<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1893018"></script>-->
+<!-- UJian Button END -->
+
+<!-- baidu tuijian BEGIN -->
+<!-- <div id="hm_t_22763"></div> -->
+<!-- baidu tuijian BEGIN -->
+<!--	<div style="padding-left: 17px;"> -->
+<!--		<script src="http://wm.lrswl.com/page/s.php?s=103186&w=640&h=60"></script> -->
+<!--	</div> -->
+
+
+
+
+<section id="comment">
+  <script>var duoshuoQuery = {short_name:"cnliam"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <script type="text/javascript">
+    function toggleDuoshuoComments(container, id, url){
+      if(jQuery(container).has("div").length>0){
+        jQuery(container).empty();
+        return;
+      }
+      var el = document.createElement('div');
+      el.setAttribute('data-thread-key', id);//必选参数
+      el.setAttribute('data-url', url);//必选参数
+      DUOSHUO.EmbedThread(el);
+      jQuery(container).append(el);
+    }
+  </script>
+  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '【LaTeX Tips】带圈数字与带圈数字列表', 'http://liam0205.me/2014/05/08/latex-circled-numbers/');">查看评论</a></h1>
+  <!-- <div class="ds-thread" data-title="【LaTeX Tips】带圈数字与带圈数字列表"></div> -->
+  <div id="comment-box" ></div>
+</section>
+
+
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/CamStudio/">CamStudio</a><small>1</small></li>
+  
+    <li><a href="/categories/Duoshuo/">Duoshuo</a><small>1</small></li>
+  
+    <li><a href="/categories/English/">English</a><small>2</small></li>
+  
+    <li><a href="/categories/GRE/">GRE</a><small>3</small></li>
+  
+    <li><a href="/categories/Kindle/">Kindle</a><small>2</small></li>
+  
+    <li><a href="/categories/LaTeX/">LaTeX</a><small>33</small></li>
+  
+    <li><a href="/categories/Life/">Life</a><small>1</small></li>
+  
+    <li><a href="/categories/Python/">Python</a><small>5</small></li>
+  
+    <li><a href="/categories/Sublime/">Sublime</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+  <!--
+  <a href="/tags/AW/" style="font-size: 15.00px;">AW</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 10.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 10.00px;">Chinese</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Equation number/" style="font-size: 10.00px;">Equation number</a><a href="/tags/Exam/" style="font-size: 10.00px;">Exam</a><a href="/tags/Float/" style="font-size: 10.00px;">Float</a><a href="/tags/Footnote/" style="font-size: 10.00px;">Footnote</a><a href="/tags/Format/" style="font-size: 10.00px;">Format</a><a href="/tags/GRE/" style="font-size: 20.00px;">GRE</a><a href="/tags/Game/" style="font-size: 10.00px;">Game</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Grammar/" style="font-size: 15.00px;">Grammar</a><a href="/tags/Graphicx/" style="font-size: 10.00px;">Graphicx</a><a href="/tags/Hearing/" style="font-size: 10.00px;">Hearing</a><a href="/tags/Highlight/" style="font-size: 15.00px;">Highlight</a><a href="/tags/Images/" style="font-size: 15.00px;">Images</a><a href="/tags/Include/" style="font-size: 10.00px;">Include</a><a href="/tags/Input/" style="font-size: 10.00px;">Input</a><a href="/tags/Issue/" style="font-size: 10.00px;">Issue</a><a href="/tags/KUAL/" style="font-size: 10.00px;">KUAL</a><a href="/tags/Kindle/" style="font-size: 15.00px;">Kindle</a>
+  -->
+  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/English/" style="font-size: 12.50px;">English</a><a href="/tags/GRE/" style="font-size: 15.00px;">GRE</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Grammar/" style="font-size: 12.50px;">Grammar</a><a href="/tags/Highlight/" style="font-size: 12.50px;">Highlight</a><a href="/tags/Images/" style="font-size: 12.50px;">Images</a><a href="/tags/Kindle/" style="font-size: 12.50px;">Kindle</a><a href="/tags/LaTeX/" style="font-size: 20.00px;">LaTeX</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/LaTeXTools/" style="font-size: 10.00px;">LaTeXTools</a><a href="/tags/Listings/" style="font-size: 12.50px;">Listings</a><a href="/tags/Number/" style="font-size: 10.00px;">Number</a><a href="/tags/Parallelogram/" style="font-size: 10.00px;">Parallelogram</a><a href="/tags/Pro Git/" style="font-size: 10.00px;">Pro Git</a><a href="/tags/Python/" style="font-size: 17.50px;">Python</a><a href="/tags/Roman/" style="font-size: 10.00px;">Roman</a><a href="/tags/Rule/" style="font-size: 10.00px;">Rule</a><a href="/tags/SYSENGI/" style="font-size: 10.00px;">SYSENGI</a><a href="/tags/Sublime/" style="font-size: 15.00px;">Sublime</a><a href="/tags/Sublime-Package/" style="font-size: 10.00px;">Sublime-Package</a><a href="/tags/THM-RESTATE/" style="font-size: 10.00px;">THM-RESTATE</a><a href="/tags/Table/" style="font-size: 10.00px;">Table</a><a href="/tags/Tecall/" style="font-size: 10.00px;">Tecall</a><a href="/tags/Template/" style="font-size: 15.00px;">Template</a><a href="/tags/Text Completion/" style="font-size: 10.00px;">Text Completion</a><a href="/tags/Theorem/" style="font-size: 10.00px;">Theorem</a><a href="/tags/Tool/" style="font-size: 10.00px;">Tool</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Watermark/" style="font-size: 10.00px;">Watermark</a><a href="/tags/Website/" style="font-size: 10.00px;">Website</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget recent-posts">
+  <h3 class="title">最近文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/08/17/kindle-paperwhite2-stop-slient-updating/">禁止 Kindle Paperwhite2 在连接 WiFi 的情况下静默升级</a>
+      </li>
+    
+      <li>
+        <a href="/2014/07/22/duoshuo-delay/">异步加载多说评论框以加快页面访问速度</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/22/noun-phrase-and-articles/">英语语法之二：名词短语</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/21/basic-sentence-and-the-complement/">英语语法之一：基本句型、动词分类、补语</a>
+      </li>
+    
+      <li>
+        <a href="/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/">使用 Virtual Audio Cable 解决 CamStudio 在部分 ThinkPad 机型上无法内录的问题</a>
+      </li>
+    
+      <li>
+        <a href="/2014/05/20/koreader-on-kindle-paperwhite/">使用 Koreader 阅读 PDF 让 Kindle Paperwhite 如虎添翼</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2013 - 2014 <a href="/">Liam Huang</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   |
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a> and <a href="http://liam0205.me/" target="_blank">Liam Huang</a>
+</div>
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'cnliam' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+</body>
+</html>

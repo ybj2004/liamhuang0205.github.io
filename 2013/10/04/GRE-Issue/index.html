@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>【透过例子谈 Issue 思路】Issue 21：法律的弹性 | 始终</title>
+  <meta name="author" content="Liam Huang">
+  
+  <meta name="description" content="这篇 Issue 的思路归纳是和 Layla 一起讨论的结果，我希望这篇帖子的意义，不仅在于解决了一道 Issue 题目，而且在于提出了一种思考 Issue 的方式（并且它应当会被验证是正确的）。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:title" content="【透过例子谈 Issue 思路】Issue 21：法律的弹性"/>
+  <meta property="og:site_name" content="始终"/>
+
+  <link rel="alternate" href="/atom.xml" title="始终" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!-- 被墙 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->
+  <script src="//lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44836433-1', 'liam0205.me');
+  ga('send', 'pageview');
+
+</script>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <header id="header"><div class="title">
+  <h1><a href="/">始终</a></h1>
+  <a href="/">不忘初心</a>
+</div>
+<!--
+<div>
+<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+ <input style="width:60px;background-color:transparent;text-align:center; border-width:0px;border-top-style: none; border-right-style: none; border-left-style: none; border-bottom-style: none; "  type="search" name="q" id="search" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="20" placeholder="s" />
+ <input type="hidden" name="q" value="site:liam0205.me">
+</form>
+</div>
+-->
+<nav class="nav">
+  <ul>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">链接</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li><a href="http://collect.liam0205.me">文摘</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2013-10-03T16:00:00.000Z"><a href="/2013/10/04/GRE-Issue/">2013 年 10 月 4 日</a></time>
+    
+    
+  
+    <h1 class="title">【透过例子谈 Issue 思路】Issue 21：法律的弹性</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>这篇 Issue 的思路归纳是和 Layla 一起讨论的结果，我希望这篇帖子的意义，不仅在于解决了一道 Issue 题目，而且在于提出了一种思考 Issue 的方式（并且它应当会被验证是正确的）。[^1]</p>
+<a id="more"></a>
+
+<p>题目：</p>
+<blockquote>
+<p>Laws should be flexible enough to take account of various circumstances, times, and places.</p>
+<p>Instruction:<br>Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.</p>
+</blockquote>
+<h2 id=" 第一步，审题（搞清楚题目要讨论什么，搞清楚文章应当从什么方面考虑）。">第一步，审题（搞清楚题目要讨论什么，搞清楚文章应当从什么方面考虑）。</h2>
+<p>首先 claim 讨论的主体是 Laws 是否 flexible 的问题, 然后有情态动词 should （区别于 must），以及未定义的抽象词有 circumstances, times, places.<br>然后 instruction 要求考虑同意或者不同意的 extent, 然后要求讨论在一些情况下，statement 会 true 或者 not true, 并且要讨论这些 ways/situations 如何 shape 你的立场的。</p>
+<p>这里专门提出情态动词的意义在于，情态动词通常反映着说话人的意愿。比如这里的 should 如果替换成 must, 显而易见考生在行文的过程中会有很大的不同。</p>
+<p>专门提出未定义的抽象词的意义在于，这些抽象词可以在我们行文的过程中加以限定，将话题导向我们熟悉的范畴。这是 ETS 允许的。</p>
+<p>因此，行文应当围绕 laws’ flexibility 展开，通过限定 circumstances, times and places 来控制行文的方向。在行文的过程中应当选定一个立场（关于在多大程度上同意原文的观点），并且讨论 statement 在哪些情况下成真或者不成真，以及为何得出自己的立场。</p>
+<h2 id=" 第二步，凭感觉选择一个立场（特别要考虑到原文的态度）。">第二步，凭感觉选择一个立场（特别要考虑到原文的态度）。</h2>
+<p>你可以凭自己的感觉（实际上是你的生活经验和阅历的综合），来选择一个观点（他们之间无有优劣之分）：</p>
+<ol>
+<li>完全同意原文（即，法律在环境、时间、地点这些方面是应该有弹性）；</li>
+<li>完全不同意原文（上面取反）；</li>
+<li>部分同意 / 不同意原文（即，在某些情况下有弹性是好的，另一些情况下有弹性是不好的）。</li>
+</ol>
+<p>应当指出的是，选择立场之后，就需要有一个清晰的逻辑感官，明白自己要在那些方面进行叙述，才能 shape 自己的立场。例如说：</p>
+<ol>
+<li>法律有弹性是好的（列论点）；法律有弹性也有不好的地方（列论点，必须写这一点的原因在于 instruction 的要求，下同）；法律有弹性的好处大于坏处，所以法律应该有弹性。</li>
+<li>法律有弹性是不好的（列论点）；法律有弹性也有好的地方（列论点）；法律有弹性的坏处大于好处，所以法律不应该有弹性。</li>
+<li>法律有弹性是好的（列论点）；法律有弹性也有不好的地方（列论点）；法律弹性的好处和坏处无法简单地评价，在某些情况下有弹性好，某些情况下有弹性不好，所以我部分同意原文的观点。</li>
+</ol>
+<p>不论选择哪一个观点立场，都必须在行文的过程中，体现类似上述的逻辑链。</p>
+<h2 id=" 第三步，挖掘前提假设（考虑说话的人做了何种假设，这些假设的成立是不是 _conditional_ 的）。">第三步，挖掘前提假设（考虑说话的人做了何种假设，这些假设的成立是不是 conditional 的）。</h2>
+<p>原文至少做了两个假设：</p>
+<ol>
+<li>能够对法律进行「弹性」这个意义上的考虑（即，法律本身有弹性一说）；</li>
+<li>有弹性的法律是好的。</li>
+</ol>
+<p>关于第一个假设，事实上法律本身是没有弹性的（法律就是写在纸上的东西），有弹性的是法律的审判过程和执行过程。考虑这个假设，有两个好处：体现你的批判性思维；帮助你限定你行文的范围（在有限时间内，这点尤为重要）。如果不考虑这个假设，即不对这个假设的真伪进行讨论，在行文的过程中直接讨论法律的审判和执行也是可以的，原因在于并不是所有考生都对法律有足够清晰的认识（它是否有弹性这一点，事实上可以划归到法律专业的内容里面去）。总之，不管在行文的过程中是否点明这一个假设，对它进行这样的分析是有助于我们的行文的，所以应当是有益的。</p>
+<p>关于第二个假设，这显然应该是有条件成立的，因此它成为了破题的关键。我们接下来的讨论，应当围绕这个条件是否成立来进行。</p>
+<h2 id=" 第四步，思考论点以及论据。">第四步，思考论点以及论据。</h2>
+<p>按照上面的讨论，根据 statement 的陈述我们知道了应当考虑哪些因素，根据 instruction 我们知道了应当从那几个方面考虑，根据前提假设的挖掘我们知道了应当如何设置 conditions （case-by-case 的 case 如何去构建）.</p>
+<p>事实上我们行文过程中，会需要一两个正面的论点以及一两个负面的论点。所以在思考文章的时候，我们应当对正负两方面都思考两三个论点，同时每个论点有一两个例子。下面是我个人的思考：</p>
+<p>同意的原因：</p>
+<ol>
+<li>考虑不同环境：比如说现在的中国和美国，法律就有不同，这就是环境造成的差异。因为美国相对犯罪率更高，因此公民就有自卫的迫切需要，所以允许枪支合法持有是必须的；然而在中国，就不行，比如因为说犯罪率没那么高，允许持枪可能引发更严重的问题，因为人口太多，允许持枪难以管理之类的。</li>
+<li>考虑不同地点：美国每个州的法律都不尽相同，因为比如说因为每个州的收入情况不同，因此法定的消费税就不一样，法定的所得税也不一样。如果消费税和所得税全合众国一致，那么欠发达的地方人民生活就会很悲惨。</li>
+<li>考虑不同时间（这个最好写了啊，美国有那么多宪法修正案，不就是为了适应不同的时间嘛）：比如黑奴解放了，根据 14 修正案，任何出生在美国并接收管辖的人都是美国公民，不得被取消公民权利，因此过去的针对黑人的歧视性法律就应当废止。</li>
+</ol>
+<p>不同意的原因：</p>
+<ol>
+<li>同地点同环境，如果时间较短的间隔之间，法律过于 flexible, 可能造成不公平。法律作为一个公约性质的东西，意义就在于大家都遵守所以公平。如果法律弹性太大，那么就容易被人钻空子。（反正 flexible 的程度又没说，你说弹性太大又不算错）</li>
+<li>同时间同环境，不同地点的法律之间有差异，弹性过大的话，人们需要适应不同的法律。比如从一个州搬家到另一个州，就需要适应新的法律体系，这是额外的成本和负担，而且可能因为无心之失触犯当地法律造成损失。</li>
+</ol>
+<p>补述：<br>由此观之，事实上我第一反应想出来的例子，都是很「接地气」的例子，并没有很高端大气上档次的东西。能做到这一点，在于我通过控制不同的因素变化（来自第一步），在各个方面（来自第一步），从特定的角度（来自第三步）去思考问题，这样就容易想出符合要求的例子。事实上，我认为，中国考生并非是腹中无物，而是没有「控制变量（因素）」，在一个相对较大的范围内把自己的脑子搞的一团浆糊，所以想不出合适的例子。</p>
+<h2 id=" 第五步，思考 _refutation_ 以及你的 _defence-">第五步，思考 refutation 以及你的 defence.</h2>
+<p>在考场上，如果觉得时间不够，这一步可以省略。<br>事实上进行到第四步，就已经能够写出一篇足够好的 Issue 文章了。会进行第五步的原因在于两点：通过论点中的局部让步，体现更成熟的思变；通过进行 refutation &amp; defence 的训练来增强批判性思维的能力。</p>
+<p>你可以想象一下脑海里有一只小人，在「叽里呱啦」说你的论点哪里有问题，然后你在脑海中为自己的论点做辩护——我想这种事情大家都干过。你需要做的，就是选取一个会在行文中使用的论点（经过第三第四步的思考，这个问题应当是清晰的，尽管行文的细节可能还不明了），然后针对其中的一个例子进行辩驳（如同你在 Argument 中做的那样），然后再为你原来的观点进行辩护。</p>
+<p>在此之后，你就可以在论点的陈述过程中使用局部让步了，比如有下面的句式：<br>「可能有人说 … （反例）所以 … （讨论中心）应当会 …（与你论点相反的论点）, 但是我认为，在更 … （选择第一步以外的 element）的意义上，…（会怎么样）, 因此还是 … （我的观点）更好。」</p>
+<p>举一个例子如下：</p>
+<p>（不同意）. 同地点同环境，如果时间较短的间隔之间，法律过于 flexible, 可能造成不公平。法律作为一个公约性质的东西，意义就在于大家都遵守所以公平。如果法律弹性太大，那么就容易被人钻空子。（反正 flexible 的程度又没说，你说弹性太大又不算错）</p>
+<p>可能有人会说，只要法院的判决公正并且执行机构给力，那样就不会有人能够钻空子了，所以还是不要 flexible 比较好。但是我认为，法院的判决受到各种因素的影响，包括陪审团的情绪 / 他们自身的经历 / 被告人的家世，不可能特别公正，并且执法部门在执法的过程中，可能遇到各类问题，心有余而力不足。因此空子总是有可能被发现并利用的，也就是说实际上判决公正和执行给力本身就是不可能的事情，因此这种论调是不靠谱的。</p>
+<h2 id=" 第六步，整理素材，根据逻辑链形成提纲。">第六步，整理素材，根据逻辑链形成提纲。</h2>
+<p>这应该不需要我详述，实际上就是根据第二步的「纲」穿起第四步和第五步形成的素材，列出的过程就是所谓「提」了。</p>
+<hr>
+<p>[^1]: 这篇文章最先发表在 ChaseDream: <a href="http://forum.chasedream.com/thread-875967-1-1.html" target="_blank">http://forum.chasedream.com/thread-875967-1-1.html</a>.</p>
+
+    
+  </div>
+  <footer>
+    
+      <div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1406015473860">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+      </div>
+      
+  
+  <div class="categories">
+    <a href="/categories/GRE/">GRE</a>
+  </div>
+
+      
+  
+  <div class="tags">
+    <a href="/tags/GRE/">GRE</a>, <a href="/tags/AW/">AW</a>, <a href="/tags/Issue/">Issue</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<!-- wumii Button BEGIN -->
+<div style="margin:0px auto; padding-left:23px; text-align:center;">
+	
+	
+
+	<script type="text/javascript" id="wumiiRelatedItems"></script>
+	<script type="text/javascript">
+		var wumiiPermaLink  = "http://liam0205.me/2013/10/04/GRE-Issue/"; //请用代码生成文章永久的链接
+		var wumiiTitle      = "【透过例子谈 Issue 思路】Issue 21：法律的弹性"; //请用代码生成文章标题
+		var wumiiTags       = "GRE, AW, Issue"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
+		var wumiiCategories = ["GRE"]; //请用代码生成文章分类，分类名放在 JSONArray 中，如: ["分类1", "分类2"]
+		var wumiiSitePrefix = "http://liam0205.me/";
+		var wumiiParams     = "&num=5&mode=3&pf=JAVASCRIPT";
+	</script>
+	<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+	<!--
+	<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+	    <img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
+	</a>
+	-->
+</div>
+<!-- wumii Button END -->
+
+<!-- UJian Button BEGIN -->
+<!-- 	<div class="ujian-hook" style="padding-left: 17px;"></div>
+	<script type="text/javascript">var ujian_config = {num:6,picSize:83,textHeight:45};</script>
+	<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1893018"></script>-->
+<!-- UJian Button END -->
+
+<!-- baidu tuijian BEGIN -->
+<!-- <div id="hm_t_22763"></div> -->
+<!-- baidu tuijian BEGIN -->
+<!--	<div style="padding-left: 17px;"> -->
+<!--		<script src="http://wm.lrswl.com/page/s.php?s=103186&w=640&h=60"></script> -->
+<!--	</div> -->
+
+
+
+
+<section id="comment">
+  <script>var duoshuoQuery = {short_name:"cnliam"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <script type="text/javascript">
+    function toggleDuoshuoComments(container, id, url){
+      if(jQuery(container).has("div").length>0){
+        jQuery(container).empty();
+        return;
+      }
+      var el = document.createElement('div');
+      el.setAttribute('data-thread-key', id);//必选参数
+      el.setAttribute('data-url', url);//必选参数
+      DUOSHUO.EmbedThread(el);
+      jQuery(container).append(el);
+    }
+  </script>
+  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '【透过例子谈 Issue 思路】Issue 21：法律的弹性', 'http://liam0205.me/2013/10/04/GRE-Issue/');">查看评论</a></h1>
+  <!-- <div class="ds-thread" data-title="【透过例子谈 Issue 思路】Issue 21：法律的弹性"></div> -->
+  <div id="comment-box" ></div>
+</section>
+
+
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/CamStudio/">CamStudio</a><small>1</small></li>
+  
+    <li><a href="/categories/Duoshuo/">Duoshuo</a><small>1</small></li>
+  
+    <li><a href="/categories/English/">English</a><small>2</small></li>
+  
+    <li><a href="/categories/GRE/">GRE</a><small>3</small></li>
+  
+    <li><a href="/categories/Kindle/">Kindle</a><small>2</small></li>
+  
+    <li><a href="/categories/LaTeX/">LaTeX</a><small>33</small></li>
+  
+    <li><a href="/categories/Life/">Life</a><small>1</small></li>
+  
+    <li><a href="/categories/Python/">Python</a><small>5</small></li>
+  
+    <li><a href="/categories/Sublime/">Sublime</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+  <!--
+  <a href="/tags/AW/" style="font-size: 15.00px;">AW</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 10.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 10.00px;">Chinese</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Equation number/" style="font-size: 10.00px;">Equation number</a><a href="/tags/Exam/" style="font-size: 10.00px;">Exam</a><a href="/tags/Float/" style="font-size: 10.00px;">Float</a><a href="/tags/Footnote/" style="font-size: 10.00px;">Footnote</a><a href="/tags/Format/" style="font-size: 10.00px;">Format</a><a href="/tags/GRE/" style="font-size: 20.00px;">GRE</a><a href="/tags/Game/" style="font-size: 10.00px;">Game</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Grammar/" style="font-size: 15.00px;">Grammar</a><a href="/tags/Graphicx/" style="font-size: 10.00px;">Graphicx</a><a href="/tags/Hearing/" style="font-size: 10.00px;">Hearing</a><a href="/tags/Highlight/" style="font-size: 15.00px;">Highlight</a><a href="/tags/Images/" style="font-size: 15.00px;">Images</a><a href="/tags/Include/" style="font-size: 10.00px;">Include</a><a href="/tags/Input/" style="font-size: 10.00px;">Input</a><a href="/tags/Issue/" style="font-size: 10.00px;">Issue</a><a href="/tags/KUAL/" style="font-size: 10.00px;">KUAL</a><a href="/tags/Kindle/" style="font-size: 15.00px;">Kindle</a>
+  -->
+  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/English/" style="font-size: 12.50px;">English</a><a href="/tags/GRE/" style="font-size: 15.00px;">GRE</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Grammar/" style="font-size: 12.50px;">Grammar</a><a href="/tags/Highlight/" style="font-size: 12.50px;">Highlight</a><a href="/tags/Images/" style="font-size: 12.50px;">Images</a><a href="/tags/Kindle/" style="font-size: 12.50px;">Kindle</a><a href="/tags/LaTeX/" style="font-size: 20.00px;">LaTeX</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/LaTeXTools/" style="font-size: 10.00px;">LaTeXTools</a><a href="/tags/Listings/" style="font-size: 12.50px;">Listings</a><a href="/tags/Number/" style="font-size: 10.00px;">Number</a><a href="/tags/Parallelogram/" style="font-size: 10.00px;">Parallelogram</a><a href="/tags/Pro Git/" style="font-size: 10.00px;">Pro Git</a><a href="/tags/Python/" style="font-size: 17.50px;">Python</a><a href="/tags/Roman/" style="font-size: 10.00px;">Roman</a><a href="/tags/Rule/" style="font-size: 10.00px;">Rule</a><a href="/tags/SYSENGI/" style="font-size: 10.00px;">SYSENGI</a><a href="/tags/Sublime/" style="font-size: 15.00px;">Sublime</a><a href="/tags/Sublime-Package/" style="font-size: 10.00px;">Sublime-Package</a><a href="/tags/THM-RESTATE/" style="font-size: 10.00px;">THM-RESTATE</a><a href="/tags/Table/" style="font-size: 10.00px;">Table</a><a href="/tags/Tecall/" style="font-size: 10.00px;">Tecall</a><a href="/tags/Template/" style="font-size: 15.00px;">Template</a><a href="/tags/Text Completion/" style="font-size: 10.00px;">Text Completion</a><a href="/tags/Theorem/" style="font-size: 10.00px;">Theorem</a><a href="/tags/Tool/" style="font-size: 10.00px;">Tool</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Watermark/" style="font-size: 10.00px;">Watermark</a><a href="/tags/Website/" style="font-size: 10.00px;">Website</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget recent-posts">
+  <h3 class="title">最近文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/08/17/kindle-paperwhite2-stop-slient-updating/">禁止 Kindle Paperwhite2 在连接 WiFi 的情况下静默升级</a>
+      </li>
+    
+      <li>
+        <a href="/2014/07/22/duoshuo-delay/">异步加载多说评论框以加快页面访问速度</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/22/noun-phrase-and-articles/">英语语法之二：名词短语</a>
+      </li>
+    
+      <li>
+        <a href="/2014/06/21/basic-sentence-and-the-complement/">英语语法之一：基本句型、动词分类、补语</a>
+      </li>
+    
+      <li>
+        <a href="/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/">使用 Virtual Audio Cable 解决 CamStudio 在部分 ThinkPad 机型上无法内录的问题</a>
+      </li>
+    
+      <li>
+        <a href="/2014/05/20/koreader-on-kindle-paperwhite/">使用 Koreader 阅读 PDF 让 Kindle Paperwhite 如虎添翼</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2013 - 2014 <a href="/">Liam Huang</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   |
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a> and <a href="http://liam0205.me/" target="_blank">Liam Huang</a>
+</div>
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'cnliam' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+</body>
+</html>
