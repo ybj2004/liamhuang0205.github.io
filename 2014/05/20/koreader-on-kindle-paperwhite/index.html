@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>始终</title>
+  <title>使用 Koreader 阅读 PDF 让 Kindle Paperwhite 如虎添翼 | 始终</title>
   <meta name="author" content="Liam Huang">
   
   <meta name="description" content="Liam&#39;s Blog | Liam Huang&#39;s Blog | Liam | Huang | Python | LaTeX | C++ | Java | GRE | TOEFL">
@@ -12,7 +12,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  
+  <meta property="og:title" content="使用 Koreader 阅读 PDF 让 Kindle Paperwhite 如虎添翼"/>
   <meta property="og:site_name" content="始终"/>
 
   <link rel="alternate" href="/atom.xml" title="始终" type="application/atom+xml">
@@ -100,222 +100,188 @@
 </nav>
 <div class="clearfix"></div>
 </header>
-    <div class="content">
-  <article class="post">
+    <div class="content"><article class="post">
   <header>
     
       <div class="icon"></div>
-      <time datetime="2014-08-17T02:40:38.000Z"><a href="/2014/08/17/kindle-paperwhite2-stop-slient-updating/">2014 年 08 月 17 日</a></time>
+      <time datetime="2014-05-20T03:53:38.000Z"><a href="/2014/05/20/koreader-on-kindle-paperwhite/">2014 年 05 月 20 日</a></time>
     
     
   
-    <h1 class="title"><a href="/2014/08/17/kindle-paperwhite2-stop-slient-updating/">禁止 Kindle Paperwhite2 在连接 WiFi 的情况下静默升级</a></h1>
+    <h1 class="title">使用 Koreader 阅读 PDF 让 Kindle Paperwhite 如虎添翼</h1>
   
 
   </header>
   
   <div class="entry">
     
-      <p>又是关于 Kindle 的文章呢，不过心情和上一篇可谓截然相反。嘛，生活还要继续，不想了。</p>
-<p>Kindle 的原生系统实在是欠调教，想要用得顺手不得不自己安装插件。若是如此也就罢了，恼人的是，Amazon 会在 Kindle 链接 WiFi 的情况下为 Kindle 推送更新，而这些不经过用户同意静默安装的升级，会使得不少插件失效。这样一来，每次升级就得重新安装优化不少插件，着实浪费时间，于是禁止静默升级变得十分有必要。</p>
+      <p>和媳妇谈恋爱快一年了，远在大洋彼岸的媳妇托人带了份礼物给我，说是「知道我常看电子书，用电脑或者 iPad 看书对眼睛不好，所以送了一只『Kindle』给我」。这真是</p>
+<blockquote>
+<p>有妻如此，夫复何求。</p>
+</blockquote>
+<p>不过，也有「甜蜜的烦恼」。6 英寸的屏幕对付 A4 纸张大小的 PDF 文件，特别是扫描版的 PDF 文件总是让人不快；尤其 Kindle 原生的阅读器还要在 PDF 文件周边加上白边。好在经过一番搜索和折腾，终于找到了合适的解决方案——神器 Koreader.</p>
+<a id="more"></a>
+
+<h2 id="Koreader_ 简介 ">Koreader 简介</h2>
+<p><a href="https://github.com/koreader/koreader" target="_blank">Koreader</a> 是用 <a href="http://www.lua.org/about.html" target="_blank">Lua</a> 这个脚本语言开发的 Kindle 插件，它基于 GPLv3 协议发布，可以运行在 Kindle 原生系统上，并支持 PDF, DJVU, EPUB 等格式。</p>
+<p>Koreader 通过 <a href="https://github.com/koreader/kpvbooklet/" target="_blank">KPVBooklet</a> 与原生系统集成。成功安装后，将会默认使用 Koreader 打开 PDF, EPUB, DJVU, FB2, CHM 和 DOC 文档，MOBI, AZW, TXT 等格式则会默认使用原生阅读器打开。如果希望通过原生阅读器打开 PDF 等（默认使用 Koreader 的）格式，可以长按文档图标 / 标题，在弹出的窗口中选择「GOTO…/ 前往…」。二者的切换十分方便。</p>
+<p>Koreader 的重排（Text Reflow）功能实际上是对另一个开源项目 <a href="http://www.willus.com/k2pdfopt/" target="_blank">K2pdfopt</a> 的移植以及再开发。K2pdfopt 使用完全基于图像处理的方法对文字重新排版：把原始 PDF/DJVU 页面放大，而后再分割成以词为单位的像素区域，把这些像素区域重新排列到目标宽度的页面中（原理如下图）。所以理论上只要能够读取文档的页面像素就可以对其中的文字进行重新排版。</p>
+<p><img src="http://vislab.bjmu.edu.cn/blog/hwangxin/wp-content/uploads/2012/10/k2pdfopt.png" alt="K2pdfopt 文字重排原理 "></p>
+<p>对 K2pdfopt 的移植和再开发，使得在 Kindle 上实时重排、交互式地微调效果成为可能，而这几乎就完美地解决了 Kindle 用户对 PDF 阅读的全部需求。</p>
+<p>Koreader 文字重排效果可以参见 <a href="http://vislab.bjmu.edu.cn/blog/hwangxin/2012/10/read-scanned-pdfs-with-kindlepdfviewer/#i-2" target="_blank">Huang Xin 博客上的一篇文章</a>。</p>
+<h2 id=" 在 _Kindle_Paperwrite_ 上的安装 ">在 Kindle Paperwrite 上的安装</h2>
+<p>要在 Kindle 上安装插件必须对设备进行越狱（Jailbreak）；而后需要安装 Koreader 依赖的 KPVBooklet；最后安装 Koreader。</p>
+<h3 id=" 越狱 ">越狱</h3>
+<p>不同于 iOS 系统越狱的极度困难，Kindle 的越狱相对简单许多。</p>
+<ul>
+<li>到 <a href="http://www.mobileread.com/" target="_blank">MobileRead 论坛</a>上的<a href="http://www.mobileread.com/forums/showthread.php?t=186645" target="_blank">这个帖子</a>中下载 <a href="http://www.mobileread.com/forums/attachment.php?attachmentid=121550&amp;d=1397223190" target="_blank">kindle-jailbreak-x.x.N.zip</a>（x.x.N 是版本号）。当前版本为 1.10.N, 能够胜任 Kindle 固件版本 5.0.x - 5.4.4.2 的越狱工作。</li>
+<li>使用 USB 数据线将 Kindle 与计算机连接。</li>
+<li>ZIP 归档中有名为 <code>kindle-5.4-jailbreak.zip</code> 的文件，解压其中的三个文件到 Kindle 根目录。<ul>
+<li><code>bridge.sh</code></li>
+<li><code>jb.sh</code></li>
+<li><code>Update_jb_$(cd mnt &amp;&amp; cd us &amp;&amp; sh jb.sh).bin</code></li>
+</ul>
+</li>
+<li>断开 Kindle 与计算机的 USB 连接。</li>
+<li>依次进行如下操作<ul>
+<li>主页按钮（[Home]）</li>
+<li>菜单按钮（[Menu]）</li>
+<li>设置选项（Settings）</li>
+<li>菜单按钮（[Menu]）</li>
+<li>更新您的 Kindle（Update Your Kindle）</li>
+</ul>
+</li>
+<li>几秒钟后屏幕下方出现「<strong>*</strong> JAILBREAK <strong>*</strong>」字样表示越狱成功。</li>
+</ul>
+<h3 id=" 安装 _KPVBooklet">安装 KPVBooklet</h3>
+<ul>
+<li>到<a href="https://github.com/koreader/kpvbooklet/releases" target="_blank">这里</a>下载 KPVBooklet 的安装包。</li>
+<li>使用 USB 数据线将 Kindle 与计算机连接。</li>
+<li>ZIP 归档中有名为 <code>update_kpvbooklet_x.x.x_install.bin</code> 的文件，将其解压到 Kindle 根目录。</li>
+<li>断开 Kindle 与计算机的 USB 连接。</li>
+<li>依次进行如下操作<ul>
+<li>主页按钮（[Home]）</li>
+<li>菜单按钮（[Menu]）</li>
+<li>设置选项（Settings）</li>
+<li>菜单按钮（[Menu]）</li>
+<li>更新您的 Kindle（Update Your Kindle）</li>
+</ul>
+</li>
+</ul>
+<h3 id=" 安装 _Koreader">安装 Koreader</h3>
+<ul>
+<li>到<a href="https://github.com/koreader/koreader/releases" target="_blank">这里</a>下载 Koreader 的安装包，其中最新的版本在最上方，依次向下可以回溯各个版本。<ul>
+<li>对于使用 Kindle 原生系统的用户，应当下载名为 <code>koreader-kindle-arm-linux-gnueabi-*.zip</code> 的文件。</li>
+</ul>
+</li>
+<li>使用 USB 数据线将 Kindle 与计算机连接。</li>
+<li>ZIP 归档中有三个目录，将它们全都解压到 Kindle 根目录。<ul>
+<li><code>extensions</code></li>
+<li><code>koreader</code></li>
+<li><code>launchpad</code></li>
+</ul>
+</li>
+<li>断开 Kindle 与计算机的 USB 连接。</li>
+</ul>
+<p>至此，安装完毕，在 Kindle 主界面即可直接用 Koreader 打开 PDF 和 EPUB 文档。</p>
+<h3 id=" 关于原生系统固件升级 ">关于原生系统固件升级</h3>
+<p>开启 WIFI 的情况下原生系统可能会在后台自动升级固件。不管手动固件升级还是自动固件升级都会擦除 KPVBooklet 启动器造成 Koreader 无法启动，解决这个问题只需要升级完成后重新安装 KPVBooklet 即可，Koreader 无需重新安装。</p>
 
     
   </div>
-  <footer class="end-sep">
+  <footer>
     
+      <div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1406015473860">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+      </div>
       
-        <div class="alignleft">
-          <a href="/2014/08/17/kindle-paperwhite2-stop-slient-updating/#more" class="more-link">全文</a>
-        </div>
+  
+  <div class="categories">
+    <a href="/categories/Kindle/">Kindle</a>
+  </div>
+
       
-      
+  
+  <div class="tags">
+    <a href="/tags/Kindle/">Kindle</a>, <a href="/tags/PDF/">PDF</a>, <a href="/tags/Koreader/">Koreader</a>
+  </div>
+
     
     <div class="clearfix"></div>
   </footer>
 </article>
 
 
+<!-- wumii Button BEGIN -->
+<div style="margin:0px auto; padding-left:23px; text-align:center;">
+	
+	
+
+	<script type="text/javascript" id="wumiiRelatedItems"></script>
+	<script type="text/javascript">
+		var wumiiPermaLink  = "http://liam0205.me/2014/05/20/koreader-on-kindle-paperwhite/"; //请用代码生成文章永久的链接
+		var wumiiTitle      = "使用 Koreader 阅读 PDF 让 Kindle Paperwhite 如虎添翼"; //请用代码生成文章标题
+		var wumiiTags       = "Kindle, PDF, Koreader"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
+		var wumiiCategories = ["Kindle"]; //请用代码生成文章分类，分类名放在 JSONArray 中，如: ["分类1", "分类2"]
+		var wumiiSitePrefix = "http://liam0205.me/";
+		var wumiiParams     = "&num=5&mode=3&pf=JAVASCRIPT";
+	</script>
+	<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+	<!--
+	<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+	    <img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
+	</a>
+	-->
+</div>
+<!-- wumii Button END -->
+
+<!-- UJian Button BEGIN -->
+<!-- 	<div class="ujian-hook" style="padding-left: 17px;"></div>
+	<script type="text/javascript">var ujian_config = {num:6,picSize:83,textHeight:45};</script>
+	<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1893018"></script>-->
+<!-- UJian Button END -->
+
+<!-- baidu tuijian BEGIN -->
+<!-- <div id="hm_t_22763"></div> -->
+<!-- baidu tuijian BEGIN -->
+<!--	<div style="padding-left: 17px;"> -->
+<!--		<script src="http://wm.lrswl.com/page/s.php?s=103186&w=640&h=60"></script> -->
+<!--	</div> -->
 
 
 
 
-  <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2014-07-22T09:52:50.000Z"><a href="/2014/07/22/duoshuo-delay/">2014 年 07 月 22 日</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2014/07/22/duoshuo-delay/">异步加载多说评论框以加快页面访问速度</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>多说评论框可以让静态博客实现评论功能，对于搭在 GitHub Pages 上的博客来说是非常好用的功能。美中不足的是，多说评论框的加载速度有些慢；默认情况下，多说评论框总是随页面一起加载，拖慢了整个页面的加载速度。</p>
-<p>本希望用自动异步加载的方式，在页面加载完成之后，再加载多说评论框。奈何多说没有提供所需的 API。于是只能退而求其次，采用手动的方法。</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2014/07/22/duoshuo-delay/#more" class="more-link">全文</a>
-        </div>
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
+<section id="comment">
+  <script>var duoshuoQuery = {short_name:"cnliam"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <script type="text/javascript">
+    function toggleDuoshuoComments(container, id, url){
+      if(jQuery(container).has("div").length>0){
+        jQuery(container).empty();
+        return;
+      }
+      var el = document.createElement('div');
+      el.setAttribute('data-thread-key', id);//必选参数
+      el.setAttribute('data-url', url);//必选参数
+      DUOSHUO.EmbedThread(el);
+      jQuery(container).append(el);
+    }
+  </script>
+  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '使用 Koreader 阅读 PDF 让 Kindle Paperwhite 如虎添翼', 'http://liam0205.me/2014/05/20/koreader-on-kindle-paperwhite/');">查看评论</a></h1>
+  <!-- <div class="ds-thread" data-title="使用 Koreader 阅读 PDF 让 Kindle Paperwhite 如虎添翼"></div> -->
+  <div id="comment-box" ></div>
+</section>
 
 
-
-
-
-
-  <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2014-06-22T01:01:50.000Z"><a href="/2014/06/22/noun-phrase-and-articles/">2014 年 06 月 22 日</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2014/06/22/noun-phrase-and-articles/">英语语法之二：名词短语</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>语法是语言的规范，制定语法的目的是为了让表达清晰、意思完整、不致有歧义。人类活动中的情形千差万别，为了表达清晰等目的，会形成许多特例。因此如果尝试通过列举语法现象及特例来描述语法，可想见是非常繁琐的，并且这种行为有舍本逐末之嫌。</p>
-<p>在看过旋元佑先生写的《语法俱乐部》之后，我更坚定了这个想法，并尝试将自己对该书的理解结合自己的经验和思考写出来，成为一个系列。</p>
-<p>这是这个系列的第二篇，主要讨论名词短语以及冠词的使用。</p>
-<h2 id=" 名词短语的基本形态 ">名词短语的基本形态</h2>
-<p>名词短语可以充当句子中的主语、宾语、补语等成分，出现的频率相当高。同时，在名词短语中充当限定词的冠词涉及到许多规则，也是容易弄错的地方。涉及到名词短语的语法规则有很多，特例也有很多。基本属于「有二十条规则，又有二十条特例」的情况，令人烦不胜烦。但其实，在表达清晰、意思完整、无有歧义的要求下，这些规则并不需要死记硬背，借由客观地讨论就能形成完整的体系。</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2014/06/22/noun-phrase-and-articles/#more" class="more-link">全文</a>
-        </div>
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2014-06-21T04:44:23.000Z"><a href="/2014/06/21/basic-sentence-and-the-complement/">2014 年 06 月 21 日</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2014/06/21/basic-sentence-and-the-complement/">英语语法之一：基本句型、动词分类、补语</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>语法是语言的规范，制定语法的目的是为了让表达清晰、意思完整、不致有歧义。人类活动中的情形千差万别，为了表达清晰等目的，会形成许多特例。因此如果尝试通过列举语法现象及特例来描述语法，可想见是非常繁琐的，并且这种行为有舍本逐末之嫌。</p>
-<p>在看过旋元佑先生写的《语法俱乐部》之后，我更坚定了这个想法，并尝试将自己对该书的理解结合自己的经验和思考写出来，成为一个系列。</p>
-<p>这是这个系列的第一篇，主要讨论动词分类与补语的关系。</p>
-<h2 id=" 基本句型 ">基本句型</h2>
-<p>英语中的基本句型有五种：</p>
-<ol>
-<li>S + V</li>
-<li>S + V + O</li>
-<li>S + V + C</li>
-<li>S + V + O + O</li>
-<li>S + V + O + C</li>
-</ol>
-<p>从意思上说，一个完整句子表达的无非是「一个人 / 一个东西怎么样了」。这里「一个人 / 一个东西」称为主语部分（subject），告诉人们「这个句子讨论的是『一个人或者一个东西』」；「怎么样了」称为谓语部分（predicate，也称「述语部分」），它可以是「做了什么事情」或者「具有某种特性」。主语部分形式比较单一，通常由名词性的结构来担任。谓语部分的形式变化较多，五种基本句型实际就是通过不同的谓语部分结构来表达五种类型的含义。</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2014/06/21/basic-sentence-and-the-complement/#more" class="more-link">全文</a>
-        </div>
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2014-05-23T03:24:46.000Z"><a href="/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/">2014 年 05 月 23 日</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/">使用 Virtual Audio Cable 解决 CamStudio 在部分 ThinkPad 机型上无法内录的问题</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>最近因为一些缘故，需要在 Win7 上实现录屏和声音内录功能：前者记录计算机屏幕的内容变化，后者记录通过计算机扬声器或耳机线路发出的声音（Speaker 的声音）。在朋友圈中问了一圈，结合自己搜索之后，决定使用开源的 <a href="http://camstudio.org/" target="_blank">CamStudio</a> 来录屏。</p>
-<p>CamStudio 十分优秀，视频上支持多种区域方式（全屏、区域、固定大小、窗口），声音上支持计算机内录和从麦克风输入录制，甚至可选鼠标和键盘操作的录制。但在实际操作中 CamStudio 的内录功能无法正常进行，提示 <code>WaveoutGetSelectControl() failed</code> 的错误，并且官方似乎也没有定位问题所在，导致在多个版本中都存在这个错误（见<a href="http://camstudio.org/forum/discussion/33/waveoutgetselectcontrol-failed/p1" target="_blank">官方论坛的讨论</a>）。</p>
-<p>Woedge 在上述<a href="http://camstudio.org/forum/discussion/33/waveoutgetselectcontrol-failed/p1" target="_blank">讨论</a>中给出了一个解决方案，帮助一些用户解决了问题。这个方案的关键步骤，是打开 Windows 系统录音设备中的禁用设备——立体声混响（Stereo Mix）功能，然后使用立体声混响将系统内部声音和麦克风声音混在一起，交付给 CamStudio 进行录制。</p>
-<p>这个方案无疑帮很多用户解决了问题，但在许多 ThinkPad 机型上却不行。原因是部分 ThinkPad 安装的声卡并不支持 Stereo Mix 功能，故而上述关键步骤无法执行。</p>
-<p>经过一番研究之后，决定使用 Virtual Audio Cable 来解决问题。</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/#more" class="more-link">全文</a>
-        </div>
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-
-
-
-
-
-<nav id="pagination">
-  
-  
-    <a href="/page/2/" class="next">下一页</a>
-  
-  <div class="clearfix"></div>
-</nav></div>
+</div>
   </div>
   <div class="widget-wrapper">
     <aside id="sidebar">
