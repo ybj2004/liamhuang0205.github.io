@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-07-23T04:33:05.411Z</updated>
+  <updated>2014-08-17T03:13:41.727Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,79 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[禁止 Kindle Paperwhite2 在连接 WiFi 的情况下静默升级]]></title>
+    <link href="http://liam0205.me/2014/08/17/kindle-paperwhite2-stop-slient-updating/"/>
+    <id>http://liam0205.me/2014/08/17/kindle-paperwhite2-stop-slient-updating/</id>
+    <published>2014-08-17T02:40:38.000Z</published>
+    <updated>2014-08-17T03:12:01.000Z</updated>
+    <content type="html"><![CDATA[<p>又是关于 Kindle 的文章呢，不过心情和上一篇可谓截然相反。嘛，生活还要继续，不想了。</p>
+<p>Kindle 的原生系统实在是欠调教，想要用得顺手不得不自己安装插件。若是如此也就罢了，恼人的是，Amazon 会在 Kindle 链接 WiFi 的情况下为 Kindle 推送更新，而这些不经过用户同意静默安装的升级，会使得不少插件失效。这样一来，每次升级就得重新安装优化不少插件，着实浪费时间，于是禁止静默升级变得十分有必要。</p>
+<a id="more"></a>
+
+<h2 id="BackDoorLock_ 介绍 ">BackDoorLock 介绍</h2>
+<p><a href="http://www.mobileread.com/forums/showthread.php?t=205666" target="_blank">BackDoorLock</a> 是 <a href="http://www.mobileread.com/" target="_blank">mobileread 论坛</a> 上的 dsmid 前辈制作的插件，其作用只有一个：禁止 Amazon 在不经用户同意的情况下静默升级 Kindle 的固件。</p>
+<p>BackDoorLock 并不会阻止 Kindle 从 Amazon 上取得升级所需的安装文件，它会在 Kindle 尝试安装升级的时候打断这个过程。这样设计是有意义的，因为如果阻止 Kindle 下载升级文件，则 Kindle 在联网的情况下会不断尝试下载，从而造成耗电量剧增，并最终影响电池寿命。</p>
+<h2 id="BackDoorLock_ 的安装 ">BackDoorLock 的安装</h2>
+<p>首先保证你的 Kindle PW2 已经越狱（参考<a href="http://liam0205.me/2014/05/20/koreader-on-kindle-paperwhite/">这篇文章</a>中关于越狱的部分）。dsmid 提供了两种方法安装 BackDoorLock。其一是下载 <code>.bin</code> 文件，放在 Kindle 根目录，使用「更新您的 Kindle」的方式安装。其二是先安装 KUAL (Kindle Unified Application Launcher) 安装，然后以查件的方式运行。这里推荐使用第二种方法。</p>
+<h3 id=" 安装 _MKK">安装 MKK</h3>
+<p>KUAL 需要 MKK (Mobileread Kindlet Kit) 的支持，所以先安装 MKK。</p>
+<ul>
+<li>到<a href="http://www.mobileread.com/forums/showthread.php?t=233932" target="_blank">这里</a>下载 MKK 的安装包。</li>
+<li>使用 USB 数据线将 Kindle 与计算机连接。</li>
+<li>ZIP 归档中有名为 <code>Update_mkk-20140214-k5-ALL_install.bin</code> 的文件，将其解压到 Kindle 根目录。</li>
+<li>断开 Kindle 与计算机的 USB 连接。</li>
+<li>依次进行如下操作<ul>
+<li>主页按钮（[Home]）</li>
+<li>菜单按钮（[Menu]）</li>
+<li>设置选项（Settings）</li>
+<li>菜单按钮（[Menu]）</li>
+<li>更新您的 Kindle（Update Your Kindle）</li>
+</ul>
+</li>
+</ul>
+<h3 id=" 安装 _KUAL">安装 KUAL</h3>
+<ul>
+<li>到<a href="http://www.mobileread.com/forums/showthread.php?t=203326" target="_blank">这里</a>下载 KUAL 的安装包。</li>
+<li>使用 USB 数据线将 Kindle 与计算机连接。</li>
+<li>ZIP 归档中有名为 <code>KUAL-KDK-2.0.azw2</code> 的文件，将其解压到 Kindle 的 <code>documents</code> 目录。</li>
+</ul>
+<h3 id=" 安装 _BackDoorLock">安装 BackDoorLock</h3>
+<ul>
+<li>到<a href="http://www.mobileread.com/forums/showthread.php?t=205666" target="_blank">这里</a>下载 MKK 的安装包。</li>
+<li>使用 USB 数据线将 Kindle 与计算机连接。</li>
+<li>ZIP 归档中有名为 <code>backdoorlock</code> 的目录，将其完整地解压到 Kindle 的 <code>extensions</code> 目录（若不存在则新建）。</li>
+</ul>
+<h3 id=" 启用 _BackDoorLock">启用 BackDoorLock</h3>
+<p>将 Kindle 从电脑中退出后，在 Kindle 首页能看到如下图所示的图标，标有「Kindle Launcher」的就是 KUAL 启动图标了。</p>
+<p><img src="/attachment/images/Kindle/Home_KUAL.png" alt=" 安装完成后的主界面 "></p>
+<p>点击 KUAL 图标，进入 KUAL 界面。</p>
+<p><img src="/attachment/images/Kindle/KUAL_BackDoorLock.png" alt="KUAL 界面 "></p>
+<p>点击 BackDoorLock，打开 BackDoorLock。</p>
+<p><img src="/attachment/images/Kindle/BackDoorLock.png" alt="BackDoorLock 界面 "></p>
+<p>这里</p>
+<ul>
+<li><code>Lock the back door</code> 是禁用静默升级，</li>
+<li><code>Unlock the back door</code> 是启用静默升级，</li>
+<li><code>Lock state</code> 是查看 BackDoorLock 的工作状态，</li>
+<li><code>Delete update file(s)</code> 是删除升级文件，以腾出空间，</li>
+<li><code>Move update file(s)</code> 则是移动升级文件。</li>
+</ul>
+]]></content>
+    <summary type="html"><![CDATA[<p>又是关于 Kindle 的文章呢，不过心情和上一篇可谓截然相反。嘛，生活还要继续，不想了。</p>
+<p>Kindle 的原生系统实在是欠调教，想要用得顺手不得不自己安装插件。若是如此也就罢了，恼人的是，Amazon 会在 Kindle 链接 WiFi 的情况下为 Kindle 推送更新，而这些不经过用户同意静默安装的升级，会使得不少插件失效。这样一来，每次升级就得重新安装优化不少插件，着实浪费时间，于是禁止静默升级变得十分有必要。</p>
+]]></summary>
+    
+      <category term="Kindle" scheme="http://liam0205.me/tags/Kindle/"/>
+    
+      <category term="BackDoorLock" scheme="http://liam0205.me/tags/BackDoorLock/"/>
+    
+      <category term="KUAL" scheme="http://liam0205.me/tags/KUAL/"/>
+    
+      <category term="Kindle" scheme="http://liam0205.me/categories/Kindle/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[异步加载多说评论框以加快页面访问速度]]></title>
@@ -2101,39 +2174,6 @@ found <span class="keyword">in</span> <span class="string">'hyperref.sty'</span>
       <category term="package" scheme="http://liam0205.me/tags/package/"/>
     
       <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[笨办法学 Python 中译版]]></title>
-    <link href="http://liam0205.me/2013/11/18/pyhardway/"/>
-    <id>http://liam0205.me/2013/11/18/pyhardway/</id>
-    <published>2013-11-17T16:00:00.000Z</published>
-    <updated>2014-05-23T07:40:03.000Z</updated>
-    <content type="html"><![CDATA[<p>这是一本优秀的 Python 入门教材，作者为 Zed A. Shaw, 译者为 Wang<br>Dingwei。原文发布在 <a href="http://learnpythonthehardway.org/" target="_blank">http://learnpythonthehardway.org/</a>，译文发布在 <a href="https:
-//learn-python-the-hard-way-zh_cn-translation.readthedocs.org/en/1.
-0/index.html">https:<br>//learn-python-the-hard-way-zh_cn-translation.readthedocs.org/en/1.<br>0/index.html</a>. 因未能找到译本的 PDF 版，我使用 LaTeX 排版了这本书。</p>
-<p>本书 PDF 版未经校对，翻译和排版漏洞在所难免，欢迎留言以便修正。</p>
-<a id="more"></a>
-
-<p>掀桌！刚排完发现这本书已经有第三版了，我排版的只是第一版……嘛，不过内容不算过时，之后可能会接着排第三版吧……</p>
-<hr>
-<p><a href="/attachment/Python/PyHardWay/Learn_Python_The_Hard_Way_zh-cn.pdf">PDF 文档下载</a></p>
-<p><a href="/attachment/Python/PyHardWay/PyHardWay.zip">LaTeX 源码</a></p>
-]]></content>
-    <summary type="html"><![CDATA[<p>这是一本优秀的 Python 入门教材，作者为 Zed A. Shaw, 译者为 Wang<br>Dingwei。原文发布在 <a href="http://learnpythonthehardway.org/" target="_blank">http://learnpythonthehardway.org/</a>，译文发布在 <a href="https:
-//learn-python-the-hard-way-zh_cn-translation.readthedocs.org/en/1.
-0/index.html">https:<br>//learn-python-the-hard-way-zh_cn-translation.readthedocs.org/en/1.<br>0/index.html</a>. 因未能找到译本的 PDF 版，我使用 LaTeX 排版了这本书。</p>
-<p>本书 PDF 版未经校对，翻译和排版漏洞在所难免，欢迎留言以便修正。</p>
-]]></summary>
-    
-      <category term="Python" scheme="http://liam0205.me/tags/Python/"/>
-    
-      <category term="PyHardWay" scheme="http://liam0205.me/tags/PyHardWay/"/>
-    
-      <category term="Translation" scheme="http://liam0205.me/tags/Translation/"/>
-    
-      <category term="Python" scheme="http://liam0205.me/categories/Python/"/>
     
   </entry>
   

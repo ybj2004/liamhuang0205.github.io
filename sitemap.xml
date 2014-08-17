@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://liam0205.me/2014/08/17/kindle-paperwhite2-stop-slient-updating/</loc>
+    <lastmod>2014-08-17T02:40:38.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://liam0205.me/2014/07/22/duoshuo-delay/</loc>
     <lastmod>2014-07-22T09:52:50.000Z</lastmod>
   </url>
@@ -37,8 +42,13 @@
   </url>
   
   <url>
-    <loc>http://liam0205.me/2014/05/08/float-setting/</loc>
-    <lastmod>2014-05-07T16:00:00.000Z</lastmod>
+    <loc>http://liam0205.me/2014/05/09/gbt7714-2005-bibtex-style/</loc>
+    <lastmod>2014-05-08T16:00:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://liam0205.me/2014/05/20/koreader-on-kindle-paperwhite/</loc>
+    <lastmod>2014-05-20T03:53:38.000Z</lastmod>
   </url>
   
   <url>
@@ -59,6 +69,11 @@
   <url>
     <loc>http://liam0205.me/2013/05/15/LaTeX-Chinese-parindent/</loc>
     <lastmod>2013-05-14T16:00:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://liam0205.me/2013/12/07/LaTeX-Choose-picture-format/</loc>
+    <lastmod>2013-12-06T16:00:00.000Z</lastmod>
   </url>
   
   <url>
@@ -107,11 +122,6 @@
   </url>
   
   <url>
-    <loc>http://liam0205.me/2013/12/07/LaTeX-Choose-picture-format/</loc>
-    <lastmod>2013-12-06T16:00:00.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://liam0205.me/2013/09/10/LaTeX-RomanNumber/</loc>
     <lastmod>2013-09-09T16:00:00.000Z</lastmod>
   </url>
@@ -127,8 +137,8 @@
   </url>
   
   <url>
-    <loc>http://liam0205.me/2013/10/15/LaTeX-SYSENGI-template/</loc>
-    <lastmod>2013-10-14T16:00:00.000Z</lastmod>
+    <loc>http://liam0205.me/2014/05/08/float-setting/</loc>
+    <lastmod>2014-05-07T16:00:00.000Z</lastmod>
   </url>
   
   <url>
@@ -137,8 +147,8 @@
   </url>
   
   <url>
-    <loc>http://liam0205.me/2014/05/20/koreader-on-kindle-paperwhite/</loc>
-    <lastmod>2014-05-20T03:53:38.000Z</lastmod>
+    <loc>http://liam0205.me/2013/10/18/LaTeX-brace-overlap/</loc>
+    <lastmod>2013-10-17T16:00:00.000Z</lastmod>
   </url>
   
   <url>
@@ -247,13 +257,8 @@
   </url>
   
   <url>
-    <loc>http://liam0205.me/2014/05/09/gbt7714-2005-bibtex-style/</loc>
-    <lastmod>2014-05-08T16:00:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://liam0205.me/2013/10/18/LaTeX-brace-overlap/</loc>
-    <lastmod>2013-10-17T16:00:00.000Z</lastmod>
+    <loc>http://liam0205.me/2013/10/15/LaTeX-SYSENGI-template/</loc>
+    <lastmod>2013-10-14T16:00:00.000Z</lastmod>
   </url>
   
   <url>
