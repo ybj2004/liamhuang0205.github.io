@@ -1,6 +1,5 @@
 ---
 layout: post
-date: Python/tut
 date: 2013/11/02
 title: Python 入门中译版
 description: The Python Tutorial 的中文翻译版。

@@ -1,7 +1,7 @@
 title: 为什么一些种类的听力损失是不可逆转的？
 date: 2014-05-10 15:47:56
-categories: life
-tags: [听力, 损伤]
+categories: Life
+tags: [Hearing, Damnification]
 ---
 
 > 原文发布在[我][zhihu-me]在[知乎上的回答][zhihu-ans]，有节选。

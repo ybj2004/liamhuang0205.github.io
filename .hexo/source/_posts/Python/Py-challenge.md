@@ -1,6 +1,5 @@
 ---
 layout: post
-date: Py/challen
 date: 2014/01/18
 title: 【Life on Python】一个古老闯关游戏
 description: 这是一个用来学习 Python 的闯关游戏。

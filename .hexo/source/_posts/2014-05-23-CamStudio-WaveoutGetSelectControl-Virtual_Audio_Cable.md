@@ -1,7 +1,7 @@
 title: 使用 Virtual Audio Cable 解决 CamStudio 在部分 ThinkPad 机型上无法内录的问题
 date: 2014-05-23 11:24:46
 categories: CamStudio
-tags: [ThinkPad, CamStudio, Virtual Audio Cable, 虚拟声卡, WaveoutGetSelectControl]
+tags: [ThinkPad, CamStudio, Virtual Audio Cable, Vitual Sound Card, WaveoutGetSelectControl]
 ---
 
 最近因为一些缘故，需要在 Win7 上实现录屏和声音内录功能：前者记录计算机屏幕的内容变化，后者记录通过计算机扬声器或耳机线路发出的声音（Speaker 的声音）。在朋友圈中问了一圈，结合自己搜索之后，决定使用开源的 [CamStudio][CamStudio-site] 来录屏。

@@ -1,14 +1,10 @@
 ---
 layout: post
-date: LaTeX/How/
-date: LaTeX/How/
-date: LaTeX/How/
-date: LaTeX/How/
 date: 2013/12/02
 title: 【LaTeX Tips】在文本的同一行开始一个列表环境
 description: 有时我们会需要在文本的同一行开始一个列表环境，这里是解决方法。
 category: LaTeX
-tags: [LaTeX, listings, line number, copy]
+tags: [LaTeX, List]
 image:
   feature: so-simple-sample-image-3.jpg
   credit: Michael Rose

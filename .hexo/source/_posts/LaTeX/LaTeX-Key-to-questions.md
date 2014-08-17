@@ -4,7 +4,7 @@ date: 2013/10/14
 title: 【LaTeX Tips】使用 LaTeX 排版试卷挖空的问题
 description: 我们编写试卷的时候，通常会把答案也一并填上，打印的时候却希望按照答案的长度挖空。本文整理了 CTeX 论坛上的一些讨论，尝试解决这个问题。
 category: LaTeX
-tags: [LaTeX, blank, exam]
+tags: [LaTeX, Blank, Exam]
 image:
   feature: so-simple-sample-image-2.jpg
   credit: Michael Rose

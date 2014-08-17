@@ -1,6 +1,5 @@
 ---
 layout: post
-date: pyhardway.
 date: 2013/11/18
 title: 笨办法学 Python 中译版
 description: Learn Python The Hard Way 的中文翻译版。

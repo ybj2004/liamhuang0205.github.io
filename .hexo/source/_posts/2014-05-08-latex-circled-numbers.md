@@ -1,7 +1,7 @@
 title: 【LaTeX Tips】带圈数字与带圈数字列表
 date: 2014-05-08 20:32:22
 date: 2014/05/08
-tags: [LaTeX, TikZ, circled]
+tags: [LaTeX, TikZ, Circled]
 category: LaTeX
 ---
 

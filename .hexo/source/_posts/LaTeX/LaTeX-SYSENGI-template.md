@@ -1,14 +1,10 @@
 ---
 layout: post
-date: LaTeX/SYSE
-date: LaTeX/SYSE
-date: LaTeX/SYSE
-date: LaTeX/SYSE
 date: 2013/10/15
 title: 【LaTeX Tips】系统工程理论与实践模板编译的一些经验
 description: 这篇文章介绍了使用系统工程理论与实践的 LaTeX 模板的一些经验。
 category: LaTeX
-tags: [LaTeX, sysengi, template]
+tags: [LaTeX, SYSENGI, Template]
 image:
   feature: so-simple-sample-image-3.jpg
   credit: Michael Rose

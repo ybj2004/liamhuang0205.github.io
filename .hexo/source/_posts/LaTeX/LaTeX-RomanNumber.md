@@ -1,14 +1,10 @@
 ---
 layout: post
-date: LaTeX/Roma
-date: LaTeX/Roma
-date: LaTeX/Roma
-date: LaTeX/Roma
 date: 2013/09/10
 title: 【LaTeX Tips】输出罗马数字
 description: 本文解决如何在 LaTeX 中输出罗马数字的问题。
 category: LaTeX
-tags: [LaTeX, Roman, number]
+tags: [LaTeX, Roman, Number]
 image:
   feature: so-simple-sample-image-1.jpg
   credit: Michael Rose

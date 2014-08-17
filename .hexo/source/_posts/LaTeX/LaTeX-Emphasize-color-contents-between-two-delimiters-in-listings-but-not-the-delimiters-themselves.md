@@ -1,14 +1,10 @@
 ---
 layout: post
-date: LaTeX/Emph
-date: LaTeX/Emph
-date: LaTeX/Emph
-date: LaTeX/Emph
 date: 2013/12/05
 title: 【LaTeX Tips】listings 中高亮定界符内的文本而不高亮定界符本身
 description: 我们在排版代码的时候，有时会希望高亮定界符内的文本而不高亮定界符本身，这里是解决方法。
 category: LaTeX
-tags: [LaTeX, listings, highlight, delimiter]
+tags: [LaTeX, Listings, Highlight, Delimiter]
 image:
   feature: highlightOutput.png
   credit: Liam Huang

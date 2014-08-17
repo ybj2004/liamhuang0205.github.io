@@ -1,6 +1,5 @@
 ---
 layout: post
-date: Sublime/wi
 date: 2013/11/13
 title: 将 Sublime Text 作为 LaTeX 前端编辑器
 description: Sublimne Text 是最近一个非常火的编辑器，这里介绍如何将 Sublime Text 作为 LaTeX 前端编辑器。

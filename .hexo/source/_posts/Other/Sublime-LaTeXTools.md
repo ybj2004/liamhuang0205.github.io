@@ -1,6 +1,5 @@
 ---
 layout: post
-date: Sublime/La
 date: 2013/11/12
 title: Sublime Text 的 LaTeXTools 插件教程
 description: Sublimne Text 是最近一个非常火的编辑器，这里介绍如何用 LaTeX Tools.

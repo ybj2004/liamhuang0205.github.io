@@ -4,7 +4,7 @@ date: 2013/10/17
 title: 【LaTeX Tips】关于行距的研究
 description: 这篇文章介绍了 LaTeX 中关于行距控制的内容。
 category: LaTeX
-tags: [LaTeX, linespace, baseline, baselineskip, baselinestretch, setspace]
+tags: [LaTeX, Linespace, Baseline, Baselineskip, Baselinestretch, Setspace]
 image:
   feature: so-simple-sample-image-4.jpg
   credit: Michael Rose

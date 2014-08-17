@@ -1,6 +1,5 @@
 ---
 layout: post
-date: LaTeX/para
 date: 2013/04/13
 title: 【LaTeX Tips】绘制平行四边形符号
 description: 在 LaTeX 中绘制平行四边形符号。

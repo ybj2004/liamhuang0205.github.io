@@ -1,14 +1,10 @@
 ---
 layout: post
-date: LaTeX/How/
-date: LaTeX/How/
-date: LaTeX/How/
-date: LaTeX/How/
 date: 2013/11/20
 title: 【LaTeX Tips】如何确定某个宏定义的位置
 description: 我们在排错的时候，经常希望知道出错的宏是在哪里定义的，然后通过比对定义和现有情况判断错误原因。这里给出确定位置的方法。
 category: LaTeX
-tags: [LaTeX, macro, package]
+tags: [LaTeX, Macro, Package]
 image:
   feature: so-simple-sample-image-5.jpg
   credit: Michael Rose

@@ -1,14 +1,10 @@
 ---
 layout: post
-date: LaTeX/Rule
-date: LaTeX/Rule
-date: LaTeX/Rule
-date: LaTeX/Rule
 date: 2013/08/25
 title: 【LaTeX Tips】画一条自动延伸到行尾的线
 description: 在 LaTeX 的使用过程中，我们有时候需要画一条自动延伸到行尾的线。本文提供了这样的解决方案，并且这条线可以调整高度位置/粗细/颜色。
 category: LaTeX
-tags: [LaTeX, rule, till end]
+tags: [LaTeX, Rule]
 image:
   feature: so-simple-sample-image-3.jpg
   credit: Michael Rose

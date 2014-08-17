@@ -1,11 +1,10 @@
 ---
 layout: post
-date: LaTeX/Choo
 date: 2013/12/07
 title: 【LaTeX Tips】选择加载的图片类型
 description: 我们在排版时可能会希望最终稿输出高质量图片而初稿放入低质量位图，这里提供了一个快速切换的方法。
 category: LaTeX
-tags: [LaTeX, graphicx, images, format]
+tags: [LaTeX, Graphicx, Images, Format]
 image:
   feature: so-simple-sample-image-4.jpg
   credit: Michael Rose

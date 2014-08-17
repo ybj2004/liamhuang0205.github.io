@@ -1,14 +1,10 @@
 ---
 layout: post
-date: LaTeX/def/
-date: LaTeX/def/
-date: LaTeX/def/
-date: LaTeX/def/
 date: 2013/10/08
 title: 【LaTeX Tips】在 LaTeX 中实现「子定理」
 description:
 category: LaTeX
-tags: [LaTeX, subnumber, definition]
+tags: [LaTeX, Subnumber, Definition]
 image:
   feature: so-simple-sample-image-4.jpg
   credit: Michael Rose

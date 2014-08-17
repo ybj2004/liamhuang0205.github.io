@@ -1,6 +1,5 @@
 ---
 layout: post
-date: Py/Incise/
 date: 2014/01/27
 title: 【Life on Python】批量切割图片
 description: 批量切割图片。

@@ -1,11 +1,10 @@
 ---
 layout: post
-date: Sublime/el
 date: 2013/11/11
 title: 极致优雅——Sublime Text 简介/入门/技巧
 description: Sublimne Text 是最近一个非常火的编辑器，这里介绍它的一些情况、入门和技巧。
 category: Sublime
-tags: [Sublime, tricks, tips]
+tags: [Sublime, Tricks, Tips]
 image:
   feature: sublime-text-2.png
   credit: Lucifr

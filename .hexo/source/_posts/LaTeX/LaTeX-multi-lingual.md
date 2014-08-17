@@ -1,9 +1,5 @@
 ---
 layout: post
-date: LaTeX/mult
-date: LaTeX/mult
-date: LaTeX/mult
-date: LaTeX/mult
 date: 2013/10/11
 title: 【LaTeX Tips】在 LaTeX 中输出多国语言
 description: 以输出俄语为例，介绍如何在 LaTeX 中输出多国语言。

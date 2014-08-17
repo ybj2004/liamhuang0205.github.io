@@ -4,7 +4,7 @@ date: 2013/11/05
 title: 【LaTeX Tips】指定 include 的路径
 description: 有时我们会将所有 sections 放在特定的路径下，再用 include 调用。为了不每次都输入这个路径，本文提供了一个解决办法。
 category: LaTeX
-tags: [LaTeX, path, include, input]
+tags: [LaTeX, Path, Include, Input]
 image:
   feature: so-simple-sample-image-2.jpg
   credit: Michael Rose
