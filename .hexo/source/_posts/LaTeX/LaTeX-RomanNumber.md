@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/09/10
 title: 【LaTeX Tips】输出罗马数字

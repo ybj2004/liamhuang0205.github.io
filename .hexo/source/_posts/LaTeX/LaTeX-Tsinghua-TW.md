@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/10/18
 title: 【LaTeX Tips】2013 清華大學（臺灣） LaTeX 研習投影片——蔡炎龍

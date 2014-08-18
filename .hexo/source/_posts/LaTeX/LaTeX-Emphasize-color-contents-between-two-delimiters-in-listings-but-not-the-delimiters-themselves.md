@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/12/05
 title: 【LaTeX Tips】listings 中高亮定界符内的文本而不高亮定界符本身

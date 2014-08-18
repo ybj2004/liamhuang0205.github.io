@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/09/26
 title: 【LaTeX Tips】How to highlight text.

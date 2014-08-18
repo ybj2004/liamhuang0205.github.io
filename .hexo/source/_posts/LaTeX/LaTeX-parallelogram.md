@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/04/13
 title: 【LaTeX Tips】绘制平行四边形符号

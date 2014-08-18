@@ -1,6 +1,6 @@
 title: 使用 Virtual Audio Cable 解决 CamStudio 在部分 ThinkPad 机型上无法内录的问题
 date: 2014-05-23 11:24:46
-categories: CamStudio
+categories: IT
 tags: [ThinkPad, CamStudio, Virtual Audio Cable, Vitual Sound Card, WaveoutGetSelectControl]
 ---
 

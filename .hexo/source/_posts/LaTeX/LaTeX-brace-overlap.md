@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/10/18
 title: 【LaTeX Tips】LaTeX 公式上下花括号的交错

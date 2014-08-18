@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/11/05
 title: 【LaTeX Tips】指定 include 的路径

@@ -1,6 +1,6 @@
 title: 异步加载多说评论框以加快页面访问速度
 date: 2014-07-22 17:52:50
-categories: Duoshuo
+categories: IT
 tags: [Blog, Duoshuo, Async Loading]
 ---
 

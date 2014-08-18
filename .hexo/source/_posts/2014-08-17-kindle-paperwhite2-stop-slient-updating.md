@@ -1,6 +1,6 @@
 title: 禁止 Kindle Paperwhite2 在连接 WiFi 的情况下静默升级
 date: 2014-08-17 10:40:38
-categories: Kindle
+categories: IT
 tags: [Kindle, BackDoorLock, KUAL]
 ---
 

@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/11/13
 title: 将 Sublime Text 作为 LaTeX 前端编辑器

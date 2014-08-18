@@ -1,6 +1,6 @@
 title: 英语语法之一：基本句型、动词分类、补语
 date: 2014-06-21 12:44:23
-categories: English
+categories: Literature and Social Sciences
 tags: [English, Grammar]
 ---
 

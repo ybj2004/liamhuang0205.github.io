@@ -1,6 +1,6 @@
 title: 使用 Koreader 阅读 PDF 让 Kindle Paperwhite 如虎添翼
 date: 2014-05-20 11:53:38
-categories: Kindle
+categories: IT
 tags: [Kindle, PDF, Koreader]
 ---
 

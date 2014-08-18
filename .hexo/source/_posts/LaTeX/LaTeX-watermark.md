@@ -1,4 +1,3 @@
----
 layout: post
 date: 2014/04/22
 title: 【LaTeX Tips】利用 TikZ 在 LaTeX 文档中制作水印效果

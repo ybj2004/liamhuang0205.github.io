@@ -1,9 +1,8 @@
----
 layout: post
 date: 2013/11/02
 title: Python 入门中译版
 description: The Python Tutorial 的中文翻译版。
-category: Python
+category: IT
 tags: [Python, Tutorial, Translation]
 image:
   feature: so-simple-sample-image-1.jpg

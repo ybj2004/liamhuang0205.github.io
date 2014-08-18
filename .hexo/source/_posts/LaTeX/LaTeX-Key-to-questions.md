@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/10/14
 title: 【LaTeX Tips】使用 LaTeX 排版试卷挖空的问题

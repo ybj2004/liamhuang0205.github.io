@@ -1,9 +1,8 @@
----
 layout: post
 date: 2014/01/29
 title: 【Life on Python】一个简易的通讯录
 description: 这是一个用 Python 编写的简易通讯录。
-category: Python
+category: IT
 tags: [Python, Contact]
 image:
   feature: so-simple-sample-image-1.jpg

@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/08/23
 title: 【LaTeX Tips】LaTeX 中公式编号括号样式及章节关联的方法

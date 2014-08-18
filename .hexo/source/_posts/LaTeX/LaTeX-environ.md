@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/05/14
 title: 【LaTeX Tips】定义新环境时，花括号意外匹配的解决

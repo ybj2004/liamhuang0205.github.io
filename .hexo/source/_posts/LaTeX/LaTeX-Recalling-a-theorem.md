@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/12/04
 title: 【LaTeX Tips】如何复写定理

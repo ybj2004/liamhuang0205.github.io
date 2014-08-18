@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/10/15
 title: 【LaTeX Tips】系统工程理论与实践模板编译的一些经验

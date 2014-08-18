@@ -1,9 +1,8 @@
----
 layout: post
 date: 2014/01/27
 title: 【Life on Python】批量切割图片
 description: 批量切割图片。
-category: Python
+category: IT
 tags: [Python, Images]
 image:
   feature: so-simple-sample-image-4.jpg

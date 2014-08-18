@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/05/12
 title: 【LaTeX Tips】LaTeX 山东大学学位论文模板

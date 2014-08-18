@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/10/11
 title: 【LaTeX Tips】在 LaTeX 中输出多国语言

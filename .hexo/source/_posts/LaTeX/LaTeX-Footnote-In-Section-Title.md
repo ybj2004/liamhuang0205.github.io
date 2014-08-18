@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/08/26
 title: 【LaTeX Tips】在 Chapter/Section 等标题中插入脚注

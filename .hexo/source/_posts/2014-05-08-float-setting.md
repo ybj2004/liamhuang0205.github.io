@@ -1,8 +1,7 @@
 title: 【LaTeX Tips】为所有的浮动体一次性设置浮动选项
 date: 2014-05-08 18:47:41
-date: 2014/05/08
-tags: [LaTeX, Float]
 category: LaTeX
+tags: [LaTeX, Float]
 ---
 
 节选自 [elegantlatex](http://elegantlatex.tk/2014/04/02/float-setting/).

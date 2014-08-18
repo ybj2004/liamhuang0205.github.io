@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-08-17T23:56:12.119Z</updated>
+  <updated>2014-08-18T00:11:37.290Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://liam0205.me/2014/08/17/kindle-paperwhite2-stop-slient-updating/"/>
     <id>http://liam0205.me/2014/08/17/kindle-paperwhite2-stop-slient-updating/</id>
     <published>2014-08-17T02:40:38.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:06:42.000Z</updated>
     <content type="html"><![CDATA[<p>又是关于 Kindle 的文章呢，不过心情和上一篇可谓截然相反。嘛，生活还要继续，不想了。</p>
 <p>Kindle 的原生系统实在是欠调教，想要用得顺手不得不自己安装插件。若是如此也就罢了，恼人的是，Amazon 会在 Kindle 链接 WiFi 的情况下为 Kindle 推送更新，而这些不经过用户同意静默安装的升级，会使得不少插件失效。这样一来，每次升级就得重新安装优化不少插件，着实浪费时间，于是禁止静默升级变得十分有必要。</p>
 <a id="more"></a>
@@ -83,7 +83,7 @@
     
       <category term="KUAL" scheme="http://liam0205.me/tags/KUAL/"/>
     
-      <category term="Kindle" scheme="http://liam0205.me/categories/Kindle/"/>
+      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
     
   </entry>
   
@@ -92,7 +92,7 @@
     <link href="http://liam0205.me/2014/07/22/duoshuo-delay/"/>
     <id>http://liam0205.me/2014/07/22/duoshuo-delay/</id>
     <published>2014-07-22T09:52:50.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:04:40.000Z</updated>
     <content type="html"><![CDATA[<p>多说评论框可以让静态博客实现评论功能，对于搭在 GitHub Pages 上的博客来说是非常好用的功能。美中不足的是，多说评论框的加载速度有些慢；默认情况下，多说评论框总是随页面一起加载，拖慢了整个页面的加载速度。</p>
 <p>本希望用自动异步加载的方式，在页面加载完成之后，再加载多说评论框。奈何多说没有提供所需的 API。于是只能退而求其次，采用手动的方法。</p>
 <a id="more"></a>
@@ -163,7 +163,7 @@
     
       <category term="Async Loading" scheme="http://liam0205.me/tags/Async%20Loading/"/>
     
-      <category term="Duoshuo" scheme="http://liam0205.me/categories/Duoshuo/"/>
+      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
     
   </entry>
   
@@ -172,7 +172,7 @@
     <link href="http://liam0205.me/2014/06/22/noun-phrase-and-articles/"/>
     <id>http://liam0205.me/2014/06/22/noun-phrase-and-articles/</id>
     <published>2014-06-22T01:01:50.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:05:44.000Z</updated>
     <content type="html"><![CDATA[<p>语法是语言的规范，制定语法的目的是为了让表达清晰、意思完整、不致有歧义。人类活动中的情形千差万别，为了表达清晰等目的，会形成许多特例。因此如果尝试通过列举语法现象及特例来描述语法，可想见是非常繁琐的，并且这种行为有舍本逐末之嫌。</p>
 <p>在看过旋元佑先生写的《语法俱乐部》之后，我更坚定了这个想法，并尝试将自己对该书的理解结合自己的经验和思考写出来，成为一个系列。</p>
 <p>这是这个系列的第二篇，主要讨论名词短语以及冠词的使用。</p>
@@ -295,7 +295,7 @@
     
       <category term="Grammar" scheme="http://liam0205.me/tags/Grammar/"/>
     
-      <category term="English" scheme="http://liam0205.me/categories/English/"/>
+      <category term="Literature and Social Sciences" scheme="http://liam0205.me/categories/Literature%20and%20Social%20Sciences/"/>
     
   </entry>
   
@@ -304,7 +304,7 @@
     <link href="http://liam0205.me/2014/06/21/basic-sentence-and-the-complement/"/>
     <id>http://liam0205.me/2014/06/21/basic-sentence-and-the-complement/</id>
     <published>2014-06-21T04:44:23.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:05:50.000Z</updated>
     <content type="html"><![CDATA[<p>语法是语言的规范，制定语法的目的是为了让表达清晰、意思完整、不致有歧义。人类活动中的情形千差万别，为了表达清晰等目的，会形成许多特例。因此如果尝试通过列举语法现象及特例来描述语法，可想见是非常繁琐的，并且这种行为有舍本逐末之嫌。</p>
 <p>在看过旋元佑先生写的《语法俱乐部》之后，我更坚定了这个想法，并尝试将自己对该书的理解结合自己的经验和思考写出来，成为一个系列。</p>
 <p>这是这个系列的第一篇，主要讨论动词分类与补语的关系。</p>
@@ -447,7 +447,7 @@
     
       <category term="Grammar" scheme="http://liam0205.me/tags/Grammar/"/>
     
-      <category term="English" scheme="http://liam0205.me/categories/English/"/>
+      <category term="Literature and Social Sciences" scheme="http://liam0205.me/categories/Literature%20and%20Social%20Sciences/"/>
     
   </entry>
   
@@ -456,7 +456,7 @@
     <link href="http://liam0205.me/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/"/>
     <id>http://liam0205.me/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/</id>
     <published>2014-05-23T03:24:46.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:05:55.000Z</updated>
     <content type="html"><![CDATA[<p>最近因为一些缘故，需要在 Win7 上实现录屏和声音内录功能：前者记录计算机屏幕的内容变化，后者记录通过计算机扬声器或耳机线路发出的声音（Speaker 的声音）。在朋友圈中问了一圈，结合自己搜索之后，决定使用开源的 <a href="http://camstudio.org/" target="_blank">CamStudio</a> 来录屏。</p>
 <p>CamStudio 十分优秀，视频上支持多种区域方式（全屏、区域、固定大小、窗口），声音上支持计算机内录和从麦克风输入录制，甚至可选鼠标和键盘操作的录制。但在实际操作中 CamStudio 的内录功能无法正常进行，提示 <code>WaveoutGetSelectControl() failed</code> 的错误，并且官方似乎也没有定位问题所在，导致在多个版本中都存在这个错误（见<a href="http://camstudio.org/forum/discussion/33/waveoutgetselectcontrol-failed/p1" target="_blank">官方论坛的讨论</a>）。</p>
 <p>Woedge 在上述<a href="http://camstudio.org/forum/discussion/33/waveoutgetselectcontrol-failed/p1" target="_blank">讨论</a>中给出了一个解决方案，帮助一些用户解决了问题。这个方案的关键步骤，是打开 Windows 系统录音设备中的禁用设备——立体声混响（Stereo Mix）功能，然后使用立体声混响将系统内部声音和麦克风声音混在一起，交付给 CamStudio 进行录制。</p>
@@ -505,7 +505,7 @@
     
       <category term="WaveoutGetSelectControl" scheme="http://liam0205.me/tags/WaveoutGetSelectControl/"/>
     
-      <category term="CamStudio" scheme="http://liam0205.me/categories/CamStudio/"/>
+      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
     
   </entry>
   
@@ -514,7 +514,7 @@
     <link href="http://liam0205.me/2014/05/20/koreader-on-kindle-paperwhite/"/>
     <id>http://liam0205.me/2014/05/20/koreader-on-kindle-paperwhite/</id>
     <published>2014-05-20T03:53:38.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:06:01.000Z</updated>
     <content type="html"><![CDATA[<p>和媳妇谈恋爱快一年了，远在大洋彼岸的媳妇托人带了份礼物给我，说是「知道我常看电子书，用电脑或者 iPad 看书对眼睛不好，所以送了一只『Kindle』给我」。这真是</p>
 <blockquote>
 <p>有妻如此，夫复何求。</p>
@@ -600,7 +600,7 @@
     
       <category term="Koreader" scheme="http://liam0205.me/tags/Koreader/"/>
     
-      <category term="Kindle" scheme="http://liam0205.me/categories/Kindle/"/>
+      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
     
   </entry>
   
@@ -718,67 +718,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[【LaTeX Tips】为所有的浮动体一次性设置浮动选项]]></title>
-    <link href="http://liam0205.me/2014/05/08/float-setting/"/>
-    <id>http://liam0205.me/2014/05/08/float-setting/</id>
-    <published>2014-05-07T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
-    <content type="html"><![CDATA[<p>节选自 <a href="http://elegantlatex.tk/2014/04/02/float-setting/" target="_blank">elegantlatex</a>.</p>
-<p>在我们插图或者插入表格到 LaTeX 文档中，我们会碰到一个概念——浮动体，有时候，我们在文中用到的 table 或者 figure 环境的浮动选项都是相同的，比如 htbp，并且对 table 内、或者 figure 中的内容居中对齐（\centering），本文将介绍如何统一设置浮动体的浮动选项，以及居中设置。本文以 table 环境为例，figure 类似。</p>
-<a id="more"></a>
-
-<p>可以借助 <code>floatrow</code> 宏包来达到目的。</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-
-<span class="command">\usepackage</span><span class="special">{</span>floatrow<span class="special">}</span>        <span class="comment">% this automatically centers all floats</span>
-<span class="command">\floatplacement</span><span class="special">{</span>table<span class="special">}</span><span class="special">{</span>hbtp<span class="special">}</span> <span class="comment">% all tables are given the [hbtp] option</span>
-
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-
-<span class="command">\begin</span><span class="special">{</span>table<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>tabular<span class="special">}</span><span class="special">{</span>lll<span class="special">}</span>
-1 <span class="special">&amp;</span> 2 <span class="special">&amp;</span> 3<span class="command">\\</span>
-a <span class="special">&amp;</span> b <span class="special">&amp;</span> c<span class="command">\\</span>
-<span class="command">\end</span><span class="special">{</span>tabular<span class="special">}</span>
-<span class="command">\end</span><span class="special">{</span>table<span class="special">}</span>
-
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-]]></content>
-    <summary type="html"><![CDATA[<p>节选自 <a href="http://elegantlatex.tk/2014/04/02/float-setting/" target="_blank">elegantlatex</a>.</p>
-<p>在我们插图或者插入表格到 LaTeX 文档中，我们会碰到一个概念——浮动体，有时候，我们在文中用到的 table 或者 figure 环境的浮动选项都是相同的，比如 htbp，并且对 table 内、或者 figure 中的内容居中对齐（\centering），本文将介绍如何统一设置浮动体的浮动选项，以及居中设置。本文以 table 环境为例，figure 类似。</p>
-]]></summary>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/tags/LaTeX/"/>
-    
-      <category term="Float" scheme="http://liam0205.me/tags/Float/"/>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[【LaTeX Tips】带圈数字与带圈数字列表]]></title>
     <link href="http://liam0205.me/2014/05/08/latex-circled-numbers/"/>
     <id>http://liam0205.me/2014/05/08/latex-circled-numbers/</id>
-    <published>2014-05-07T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <published>2014-05-08T12:32:22.000Z</published>
+    <updated>2014-08-18T00:08:58.000Z</updated>
     <content type="html"><![CDATA[<p>在许多文章中，特别是中文文章中，我们会见到带有圆圈的数字。它们有点是单独出现的，有点作为列表的计数出现。</p>
 <p>LaTeX 提供了 <code>\textcircled</code> 命令，但<a href="http://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers" target="_blank">效果并不好</a>。<a href="http://www.latexstudio.net/latex-tips-768-defined-for-the-enclosed-list-of-environment/" target="_blank">LaTeX studio</a> 曾经提供了一个方法，但缺乏通用性。</p>
 <p>这里给出一个利用 Ti<em>k</em>Z 绘制的方法，能较好地解决这个问题，但仍需完善。</p>
@@ -899,11 +843,67 @@ This is the circled number <span class="command">\circled</span><span class="spe
   </entry>
   
   <entry>
+    <title><![CDATA[【LaTeX Tips】为所有的浮动体一次性设置浮动选项]]></title>
+    <link href="http://liam0205.me/2014/05/08/float-setting/"/>
+    <id>http://liam0205.me/2014/05/08/float-setting/</id>
+    <published>2014-05-08T10:47:41.000Z</published>
+    <updated>2014-08-18T00:09:02.000Z</updated>
+    <content type="html"><![CDATA[<p>节选自 <a href="http://elegantlatex.tk/2014/04/02/float-setting/" target="_blank">elegantlatex</a>.</p>
+<p>在我们插图或者插入表格到 LaTeX 文档中，我们会碰到一个概念——浮动体，有时候，我们在文中用到的 table 或者 figure 环境的浮动选项都是相同的，比如 htbp，并且对 table 内、或者 figure 中的内容居中对齐（\centering），本文将介绍如何统一设置浮动体的浮动选项，以及居中设置。本文以 table 环境为例，figure 类似。</p>
+<a id="more"></a>
+
+<p>可以借助 <code>floatrow</code> 宏包来达到目的。</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+
+<span class="command">\usepackage</span><span class="special">{</span>floatrow<span class="special">}</span>        <span class="comment">% this automatically centers all floats</span>
+<span class="command">\floatplacement</span><span class="special">{</span>table<span class="special">}</span><span class="special">{</span>hbtp<span class="special">}</span> <span class="comment">% all tables are given the [hbtp] option</span>
+
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+
+<span class="command">\begin</span><span class="special">{</span>table<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>tabular<span class="special">}</span><span class="special">{</span>lll<span class="special">}</span>
+1 <span class="special">&amp;</span> 2 <span class="special">&amp;</span> 3<span class="command">\\</span>
+a <span class="special">&amp;</span> b <span class="special">&amp;</span> c<span class="command">\\</span>
+<span class="command">\end</span><span class="special">{</span>tabular<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>table<span class="special">}</span>
+
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html"><![CDATA[<p>节选自 <a href="http://elegantlatex.tk/2014/04/02/float-setting/" target="_blank">elegantlatex</a>.</p>
+<p>在我们插图或者插入表格到 LaTeX 文档中，我们会碰到一个概念——浮动体，有时候，我们在文中用到的 table 或者 figure 环境的浮动选项都是相同的，比如 htbp，并且对 table 内、或者 figure 中的内容居中对齐（\centering），本文将介绍如何统一设置浮动体的浮动选项，以及居中设置。本文以 table 环境为例，figure 类似。</p>
+]]></summary>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/tags/LaTeX/"/>
+    
+      <category term="Float" scheme="http://liam0205.me/tags/Float/"/>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[【LaTeX Tips】利用 TikZ 在 LaTeX 文档中制作水印效果]]></title>
     <link href="http://liam0205.me/2014/04/22/LaTeX-watermark/"/>
     <id>http://liam0205.me/2014/04/22/LaTeX-watermark/</id>
     <published>2014-04-21T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:10:14.000Z</updated>
     <content type="html"><![CDATA[<p>本文最早发布于<a href="http://zhuanlan.zhihu.com/LaTeX/19734756" target="_blank">知乎专栏</a>，略有修改.</p>
 <p><strong>在未获得本人书面许可的情况下，禁止任何形式的「合理使用」、转载、分享以及将链接发至知乎主站外任何网站或 App （包括知乎日报），外泄斩立决。智商欠奉，中文阅读障碍或微博控患者, 请在监护人及医师协助下学习本段落，谢谢合作。</strong></p>
 <p>制作水印基本上需要解决下面几个问题：</p>
@@ -979,7 +979,7 @@ This is the circled number <span class="command">\circled</span><span class="spe
     <link href="http://liam0205.me/2014/04/01/LaTeX-Pro-Git-zh/"/>
     <id>http://liam0205.me/2014/04/01/LaTeX-Pro-Git-zh/</id>
     <published>2014-03-31T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:10:32.000Z</updated>
     <content type="html"><![CDATA[<p>Pro Git 是 Git Hub 员工 Scott Chacon 撰写的关于 Git 版本控制系统的书籍，其源码开源，托管在 <a href="https://github.com/progit/progit" target="_blank">Git Hub</a> 上。</p>
 <p>我将当前（2014-4-2）的仓库克隆到本地，并将其中的 markdown 文件转换成了 LaTeX 文件，编译得到 PDF 档案。</p>
 <a id="more"></a>
@@ -1009,7 +1009,7 @@ This is the circled number <span class="command">\circled</span><span class="spe
     <link href="http://liam0205.me/2014/01/29/Py-Contacts/"/>
     <id>http://liam0205.me/2014/01/29/Py-Contacts/</id>
     <published>2014-01-28T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:09:18.000Z</updated>
     <content type="html"><![CDATA[<p>提供了 add, remove, find, view 和 exit 几个命令行接口，意义很明确了，所以 help 选项没空写内容也无所谓了。第一次自己思考结构写的 Python 程序，有点小爽。XD</p>
 <pre><code><span class="keyword">import</span> os
 <span class="keyword">import</span> cPickle <span class="keyword">as</span> pickle
@@ -1108,7 +1108,7 @@ This is the circled number <span class="command">\circled</span><span class="spe
     
       <category term="Contact" scheme="http://liam0205.me/tags/Contact/"/>
     
-      <category term="Python" scheme="http://liam0205.me/categories/Python/"/>
+      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
     
   </entry>
   
@@ -1117,7 +1117,7 @@ This is the circled number <span class="command">\circled</span><span class="spe
     <link href="http://liam0205.me/2014/01/27/Py-Incise-Images/"/>
     <id>http://liam0205.me/2014/01/27/Py-Incise-Images/</id>
     <published>2014-01-26T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:09:14.000Z</updated>
     <content type="html"><![CDATA[<p>按照 <code>horizon</code> 和 <code>vertic</code> 两个变量切割当前目录下所有图片（包括子目录）。</p>
 <p>代码很简单，就不封装了。</p>
 <pre><code>import Image <span class="keyword">as</span> img
@@ -1151,7 +1151,7 @@ vertic  = <span class="number">1</span>
     
       <category term="Images" scheme="http://liam0205.me/tags/Images/"/>
     
-      <category term="Python" scheme="http://liam0205.me/categories/Python/"/>
+      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
     
   </entry>
   
@@ -1160,7 +1160,7 @@ vertic  = <span class="number">1</span>
     <link href="http://liam0205.me/2014/01/18/Py-challenge/"/>
     <id>http://liam0205.me/2014/01/18/Py-challenge/</id>
     <published>2014-01-17T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:09:15.000Z</updated>
     <content type="html"><![CDATA[<p>Python 是一个很实用的脚本语言，学习 Python 无疑需要辅以大量的练习，才能把自己所学运用到实践中去。<a href="http://www.pythonchallenge.com/" target="_blank">PythonChallenge</a> 是国外的一款闯关游戏，在挑战关卡的同时学习如何运用 Python 解决问题。</p>
 <a id="more"></a>
 
@@ -1481,7 +1481,7 @@ org = im.load()
     
       <category term="Game" scheme="http://liam0205.me/tags/Game/"/>
     
-      <category term="Python" scheme="http://liam0205.me/categories/Python/"/>
+      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
     
   </entry>
   
@@ -1490,7 +1490,7 @@ org = im.load()
     <link href="http://liam0205.me/2013/12/07/LaTeX-Choose-picture-format/"/>
     <id>http://liam0205.me/2013/12/07/LaTeX-Choose-picture-format/</id>
     <published>2013-12-06T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:10:58.000Z</updated>
     <content type="html"><![CDATA[<p>我们在排版很长的文章或者书籍的时候，编译一次通常需要花费很长时间，并且生成文件的体积也会比较大。而通常我们会希望文档中的图片足够高清，但在写文章的时候又希望能节省时间（同时声称小体积的文件供预览）。因此有一个快速选择图片类型的方法就变得很有必要了。</p>
 <a id="more"></a>
 
@@ -1528,7 +1528,7 @@ org = im.load()
     <link href="http://liam0205.me/2013/12/05/LaTeX-Emphasize-color-contents-between-two-delimiters-in-listings-but-not-the-delimiters-themselves/"/>
     <id>http://liam0205.me/2013/12/05/LaTeX-Emphasize-color-contents-between-two-delimiters-in-listings-but-not-the-delimiters-themselves/</id>
     <published>2013-12-04T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:10:56.000Z</updated>
     <content type="html"><![CDATA[<p>背景图里的代码高亮十分漂亮，用 <code>listings</code> 宏包实现的难点在于如何高亮某种定界符内的内容，而定界符本身保留 <code>basicstyle</code> 设定的样式。</p>
 <a id="more"></a>
 
@@ -1779,7 +1779,7 @@ org = im.load()
     <link href="http://liam0205.me/2013/12/04/LaTeX-Recalling-a-theorem/"/>
     <id>http://liam0205.me/2013/12/04/LaTeX-Recalling-a-theorem/</id>
     <published>2013-12-03T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:10:25.000Z</updated>
     <content type="html"><![CDATA[<p>在书写定理时，我们可能会将定理的结论写在前面，而后展开对它的讨论。定理复杂的证明过程，通常会放在后文的附录中。这时候，我们就需要复写这个定理。</p>
 <p>下面这个来自 <a href="http://tex.stackexchange.com/a/51288/38350" target="_blank">TeX.SX</a> 的方法由 <a href="http://tex.stackexchange.com/users/510/lockstep" target="_blank">lockstep</a> 提供。</p>
 <a id="more"></a>
@@ -1931,7 +1931,7 @@ We recall <span class="command">\cref</span><span class="special">{</span>thm:go
     <link href="http://liam0205.me/2013/12/02/LaTeX-How-to-start-itemize-on-same-line-as-text/"/>
     <id>http://liam0205.me/2013/12/02/LaTeX-How-to-start-itemize-on-same-line-as-text/</id>
     <published>2013-12-01T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:10:44.000Z</updated>
     <content type="html"><![CDATA[<p>有时我们会希望在文本的同一行开始一个列表环境，而非是使用默认的在下一行开始。同时，我们会希望列表环境的标签仍旧在垂直方向上对齐。</p>
 <p>LaTeX 提供的 itemize 环境和 enumerate 环境事实上都是 list 环境的一种，但 itemize 和 enumerate 不允许修改 <code>\labelsep</code> 等距离。因此，要达到我们的目的，我们要么使用原始的 list 环境，要么使用 description 环境——它允许修改这些距离。</p>
 <a id="more"></a>
@@ -2053,7 +2053,7 @@ We recall <span class="command">\cref</span><span class="special">{</span>thm:go
     <link href="http://liam0205.me/2013/11/20/LaTeX-How-to-find-out-where-a-macro-is-defined/"/>
     <id>http://liam0205.me/2013/11/20/LaTeX-How-to-find-out-where-a-macro-is-defined/</id>
     <published>2013-11-19T16:00:00.000Z</published>
-    <updated>2014-08-17T23:51:09.000Z</updated>
+    <updated>2014-08-18T00:10:45.000Z</updated>
     <content type="html"><![CDATA[<p>我们在排错的时候，经常希望知道出错的宏是在哪里定义的，然后通过比对定义和现有情况判断错误原因。</p>
 <p>LeoLiu 在 <a href="http://tex.stackexchange.com/a/8523/38350" target="_blank">TeX.SX</a> 给出了一个利用 <code>filehook</code> 宏包实现的方法，效果拔群！当然，方法有些讨巧。</p>
 <a id="more"></a>

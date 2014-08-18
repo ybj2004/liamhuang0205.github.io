@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/10/08
 title: 【LaTeX Tips】在 LaTeX 中实现「子定理」

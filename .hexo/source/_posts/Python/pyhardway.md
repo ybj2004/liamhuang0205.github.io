@@ -1,9 +1,8 @@
----
 layout: post
 date: 2013/11/18
 title: 笨办法学 Python 中译版
 description: Learn Python The Hard Way 的中文翻译版。
-category: Python
+category: IT
 tags: [Python, PyHardWay, Translation]
 image:
   feature: so-simple-sample-image-2.jpg

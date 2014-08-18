@@ -1,4 +1,3 @@
----
 layout: post
 date: 2013/12/07
 title: 【LaTeX Tips】选择加载的图片类型
