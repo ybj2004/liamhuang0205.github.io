@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-08-21T02:48:32.267Z</updated>
+  <updated>2014-08-27T03:33:55.815Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,11 +19,11 @@
     <link href="http://liam0205.me/2014/08/21/bitmap-convert-to-eps-batch/"/>
     <id>http://liam0205.me/2014/08/21/bitmap-convert-to-eps-batch/</id>
     <published>2014-08-21T02:38:38.000Z</published>
-    <updated>2014-08-21T02:46:59.000Z</updated>
+    <updated>2014-08-21T09:34:04.000Z</updated>
     <content type="html"><![CDATA[<p>虽然「LaTeX 只能识别 EPS 格式的图档」是多年的误传，但是仍有许多杂志和期刊只接受 EPS 格式的图档。所以，尽管在日常使用中，我们很少会用到 EPS 格式，但是有时候不得不用。</p>
+<p>今天帮朋友排版论文的时候，就又遇到了这样无节操的期刊。没办法，转呗。结果一看傻眼了，一共五六十个图片，手工得弄到猴年马月……于是动了动脑，写了个批处理搞定。</p>
 <a id="more"></a>
 
-<p>今天帮朋友排版论文的时候，就又遇到了这样无节操的期刊。没办法，转呗。结果一看傻眼了，一共五六十个图片，手工得弄到猴年马月……于是动了动脑，写了个批处理搞定。</p>
 <p>在现在的 TeX 发行版中，一般都带有一个 <code>bmeps</code> 的小程序，它能将 <code>png</code>, <code>jpg</code> 和 <code>bmp</code> 等格式的位图转换成 EPS 格式的图档。我们用它来处理图片是最好不过了，以 <code>png</code> 格式为例，批处理命令如下</p>
 <pre><code><span class="keyword">for</span> /f <span class="string">%%i in ('dir /b *.png') do (
     @echo %</span>%i
@@ -34,6 +34,7 @@
 <p>我写了一个完整的批处理文件，可以在<a href="/attachment/LaTeX-useful-tools/epscolor.bat">这里</a>下载，置于位图所在的目录，双击运行即可。</p>
 ]]></content>
     <summary type="html"><![CDATA[<p>虽然「LaTeX 只能识别 EPS 格式的图档」是多年的误传，但是仍有许多杂志和期刊只接受 EPS 格式的图档。所以，尽管在日常使用中，我们很少会用到 EPS 格式，但是有时候不得不用。</p>
+<p>今天帮朋友排版论文的时候，就又遇到了这样无节操的期刊。没办法，转呗。结果一看傻眼了，一共五六十个图片，手工得弄到猴年马月……于是动了动脑，写了个批处理搞定。</p>
 ]]></summary>
     
       <category term="LaTeX" scheme="http://liam0205.me/tags/LaTeX/"/>
