@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-09-08T03:52:38.034Z</updated>
+  <updated>2014-09-08T04:11:57.396Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,14 +19,14 @@
     <link href="http://liam0205.me/2014/09/08/latex-introduction/"/>
     <id>http://liam0205.me/2014/09/08/latex-introduction/</id>
     <published>2014-09-08T03:46:31.000Z</published>
-    <updated>2014-09-08T03:50:34.000Z</updated>
+    <updated>2014-09-08T04:11:45.000Z</updated>
     <content type="html"><![CDATA[<h1 id=" 优雅的 _LaTeX">优雅的 LaTeX</h1>
 <p>有很多 Geeks 或者 LaTeX’s Fanatical Fans 过分地强调了 LaTeX 的一些并非重点的特性，以至于很多初学者会觉得 LaTeX 很神秘很复杂，从而引发了初学者的畏难情绪甚至是负面情绪。尽管这些 Fans 说得并没有错，我是说在事实上，但是他们的表达方式和内心态度却间接阻碍了 LaTeX 的发展，我想这也是和他们的初衷相悖的。</p>
 <p>我曾经也受到过这些言论的影响，但幸运的事，至今为止我已经越过了这些障碍，并更加坚信了他们所言（LaTeX 的优点）的正确性。因此我想以我自己的方式，向更多的人介绍 LaTeX —— <strong>这个优雅，但有着自己高傲，却绝不复杂甚至神秘的东西</strong>。</p>
 <a id="more"></a>
 
 <blockquote>
-<p>这篇文章发出来已经有不短的时间了，承蒙各位同学厚爱。但是，其中已经有一部分内容不适合当前的 LaTeX 发展形势了；我自身也从一个 LaTeX 使用者成长为了 LaTeX Programmer，对 LaTeX 也有了更深的理解；同时，系统也从 Windows XP 经历 Windows 7 转为了 OS X。这样看来，对这篇文章的修缮就势在必行了。然而我已经很少使用校内，因此这将是我最后一次在校内更新这篇文章。同时，这篇文章将会拷贝在我的博客，如果有后续的更新，可以在博客里只看到。参考：<a href="http://liam0205.me/2014/09/08/latex-introduction/">http://liam0205.me/2014/09/08/latex-introduction/</a></p>
+<p> 欢迎从校内转移过来的同学们，因为校内的技术原因，文章无法在校内继续更新。尽管非我之故，但还是给各位同学说声抱歉。同时，欢迎各位来到我的博客。<code>: )</code></p>
 </blockquote>
 <p>ps, 来自 楠哥 的吐槽：“这篇小文的例子因为要兼容中文，变得太复杂了，可以先看<a href="http://blog.renren.com/blog/bp/Q7LjRQLBcl" target="_blank">这篇文章</a>，再回来看这篇小文”。</p>
 <h2 id=" 你将从这里看到 ">你将从这里看到</h2>
