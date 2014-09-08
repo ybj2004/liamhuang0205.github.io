@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-09-08T04:11:57.396Z</updated>
+  <updated>2014-09-08T04:16:43.699Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://liam0205.me/2014/09/08/latex-introduction/"/>
     <id>http://liam0205.me/2014/09/08/latex-introduction/</id>
     <published>2014-09-08T03:46:31.000Z</published>
-    <updated>2014-09-08T04:11:45.000Z</updated>
-    <content type="html"><![CDATA[<h1 id=" 优雅的 _LaTeX">优雅的 LaTeX</h1>
+    <updated>2014-09-08T04:16:18.000Z</updated>
+    <content type="html"><![CDATA[<h2 id=" 优雅的 _LaTeX">优雅的 LaTeX</h2>
 <p>有很多 Geeks 或者 LaTeX’s Fanatical Fans 过分地强调了 LaTeX 的一些并非重点的特性，以至于很多初学者会觉得 LaTeX 很神秘很复杂，从而引发了初学者的畏难情绪甚至是负面情绪。尽管这些 Fans 说得并没有错，我是说在事实上，但是他们的表达方式和内心态度却间接阻碍了 LaTeX 的发展，我想这也是和他们的初衷相悖的。</p>
 <p>我曾经也受到过这些言论的影响，但幸运的事，至今为止我已经越过了这些障碍，并更加坚信了他们所言（LaTeX 的优点）的正确性。因此我想以我自己的方式，向更多的人介绍 LaTeX —— <strong>这个优雅，但有着自己高傲，却绝不复杂甚至神秘的东西</strong>。</p>
 <a id="more"></a>
@@ -634,7 +634,7 @@ Mac OS <span class="special">&amp;</span> MacTeX <span class="special">&amp;</sp
 <p>CTeX 论坛提问版：<a href="http://bbs.ctex.org/forum.php?mod=forumdisplay&amp;fid=6&amp;page=1" target="_blank">http://bbs.ctex.org/forum.php?mod=forumdisplay&amp;fid=6&amp;page=1</a></p>
 <p>提供一个交流 QQ 群：141877998</p>
 ]]></content>
-    <summary type="html"><![CDATA[<h1 id=" 优雅的 _LaTeX">优雅的 LaTeX</h1>
+    <summary type="html"><![CDATA[<h2 id=" 优雅的 _LaTeX">优雅的 LaTeX</h2>
 <p>有很多 Geeks 或者 LaTeX’s Fanatical Fans 过分地强调了 LaTeX 的一些并非重点的特性，以至于很多初学者会觉得 LaTeX 很神秘很复杂，从而引发了初学者的畏难情绪甚至是负面情绪。尽管这些 Fans 说得并没有错，我是说在事实上，但是他们的表达方式和内心态度却间接阻碍了 LaTeX 的发展，我想这也是和他们的初衷相悖的。</p>
 <p>我曾经也受到过这些言论的影响，但幸运的事，至今为止我已经越过了这些障碍，并更加坚信了他们所言（LaTeX 的优点）的正确性。因此我想以我自己的方式，向更多的人介绍 LaTeX —— <strong>这个优雅，但有着自己高傲，却绝不复杂甚至神秘的东西</strong>。</p>
 ]]></summary>
