@@ -6,7 +6,7 @@ tags: [Python, Matplotlib, Tutorial]
 
 ## Matplotlib 教程
 
-> 本文为译文，原文[载于此](http://www.loria.fr/~rougier/teaching/matplotlib/)。本文欢迎转载，但请保留本段文字，尊重作者和译者的权益。谢谢。`: )`
+> 本文为译文，原文[载于此](http://www.loria.fr/~rougier/teaching/matplotlib/)，译文[原载于此](http://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/)。本文欢迎转载，但请保留本段文字，尊重作者和译者的权益。谢谢。`: )`
 
 ### 介绍
 

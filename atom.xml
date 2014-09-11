@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-09-11T13:55:16.691Z</updated>
+  <updated>2014-09-11T13:57:28.541Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,10 +19,10 @@
     <link href="http://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/"/>
     <id>http://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/</id>
     <published>2014-09-11T13:51:15.000Z</published>
-    <updated>2014-09-11T13:55:06.000Z</updated>
+    <updated>2014-09-11T13:57:00.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Matplotlib_ 教程 ">Matplotlib 教程</h2>
 <blockquote>
-<p>本文为译文，原文<a href="http://www.loria.fr/~rougier/teaching/matplotlib/" target="_blank">载于此</a>。本文欢迎转载，但请保留本段文字，尊重作者和译者的权益。谢谢。<code>: )</code></p>
+<p>本文为译文，原文<a href="http://www.loria.fr/~rougier/teaching/matplotlib/" target="_blank">载于此</a>，译文<a href="http://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/">原载于此</a>。本文欢迎转载，但请保留本段文字，尊重作者和译者的权益。谢谢。<code>: )</code></p>
 </blockquote>
 <h3 id=" 介绍 ">介绍</h3>
 <p>Matplotlib 可能是 Python 2D- 绘图领域使用最广泛的套件。它能让使用者很轻松地将数据图形化，并且提供多样化的输出格式。这里将会探索 matplotlib 的常见用法。</p>
