@@ -12,6 +12,8 @@ tags: [Python, Matplotlib, Tutorial]
 
 Matplotlib 可能是 Python 2D-绘图领域使用最广泛的套件。它能让使用者很轻松地将数据图形化，并且提供多样化的输出格式。这里将会探索 matplotlib 的常见用法。
 
+<!--more-->
+
 #### IPython 以及 pylab 模式
 
 [IPython][IPython-link] 是 Python 的一个增强版本。它在下列方面有所增强：命名输入输出、使用系统命令（shell commands）、排错（debug）能力。我们在命令行终端给 IPython 加上参数 `-pylab` （0.12 以后的版本是 `--pylab`）之后，就可以像 Matlab 或者 Mathematica 那样以交互的方式绘图。
