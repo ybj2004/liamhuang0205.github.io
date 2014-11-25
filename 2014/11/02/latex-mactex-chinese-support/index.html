@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>为 MacTeX 配置中文支持 | 始终</title>
+  <meta name="author" content="Liam Huang">
+  
+  <meta name="description" content="Liam&#39;s Blog | Liam Huang&#39;s Blog | Liam | Huang | Python | LaTeX | C++ | Java | GRE | TOEFL">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:title" content="为 MacTeX 配置中文支持"/>
+  <meta property="og:site_name" content="始终"/>
+
+  <link rel="alternate" href="/atom.xml" title="始终" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!-- 被墙 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->
+  <script src="//lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44836433-1', 'liam0205.me');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <header id="header"><div class="title">
+  <h1><a href="/">始终</a></h1>
+  <a href="/">不忘初心</a>
+</div>
+<!--
+<div>
+<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+ <input style="width:60px;background-color:transparent;text-align:center; border-width:0px;border-top-style: none; border-right-style: none; border-left-style: none; border-bottom-style: none; "  type="search" name="q" id="search" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="20" placeholder="s" />
+ <input type="hidden" name="q" value="site:liam0205.me">
+</form>
+</div>
+-->
+<nav class="nav">
+  <ul>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">链接</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li><a href="http://collect.liam0205.me">文摘</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2014-11-02T10:07:28.000Z"><a href="/2014/11/02/latex-mactex-chinese-support/">2014 年 11 月 2 日</a></time>
+    
+    
+  
+    <h1 class="title">为 MacTeX 配置中文支持</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id=" 介绍 ">介绍</h2>
+<p>最近有人问到如何在 MacTeX 里配置中文支持，这里一并回答。</p>
+<p>目前来说，结合 <code>xeCJK</code> 宏包使用 XeLaTeX 编译，应该是最方便的方式了。</p>
+<p>XeLaTeX 要求 <code>.tex</code> 文档保存为 UTF-8 编码。所以要做的事情只有两件：</p>
+<ul>
+<li>配置一个 UTF-8 的编辑环境；</li>
+<li>用 <code>xeCJK</code> 的语法选择合适的字体。</li>
+</ul>
+<a id="more"></a>
+
+<h2 id=" 配置 _UTF-8_ 的编辑环境 ">配置 UTF-8 的编辑环境</h2>
+<p>MacTeX 自带了名为 TeXshop 的编辑器，这里以它为例配置 UTF-8 的编辑环境。其他编辑器也有类似配置。</p>
+<p>打开 TeXshop，按下 <code>cmd + ,</code> 打开偏好设置。在「源代码」标签下找到编码设置，调整为 UTF-8。然后单击「好」保存即可。</p>
+<p><img src="/attachment/images/MacTeX_xeCJK/01.png" alt=" 调整 TeXshop 的编码 "></p>
+<h2 id=" 查找字体信息 ">查找字体信息</h2>
+<p>XeTeX 在 Mac OS X 下的行为和 Windows/Linux 下不大一样。Mac 底下，XeTeX 并不使用 <code>fontconfig</code> 库来搜索字体，所以我们没法在终端里通过 <code>fc-list</code> 命令来查看可用的字体列表。不过 Mac 里提供了名为「字体册」的程序，来列出系统中所有可用的字体信息。</p>
+<p>其实这样的设计挺讨厌的，TeX Live 自带了许多开源字体，因此没有办法很好地使用。必须用字体名而不是字族名来调用这些字体，实在是不太方便。当然，如果又需要，我们可以把 TeX 里自带的这些开源字体用硬链接的方式，添加到 Mac 的字体目录下。</p>
+<p>打开字体册程序，找到需要的字体信息：</p>
+<p><img src="/attachment/images/MacTeX_xeCJK/02.png" alt=" 在字体册中查找字体信息 "></p>
+<p>这里的 PostScript 名称就是我们需要的信息，我们记下华文宋体的名字：「STSong」。你还可以按需找到其他字体的名字，比如华文中宋、华文楷体、华文黑体等字体的名字。</p>
+<h2 id=" 用 _xeCJK_ 的语法配置字体 ">用 xeCJK 的语法配置字体</h2>
+<p>使用下列代码，配置中文字体。</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="command">\usepackage</span><span class="special">{</span>xeCJK<span class="special">}</span>
+<span class="command">\setCJKmainfont</span><span class="special">[</span>BoldFont=STZhongsong, ItalicFont=STKaiti<span class="special">]</span><span class="special">{</span>STSong<span class="special">}</span>
+<span class="command">\setCJKsansfont</span><span class="special">[</span>BoldFont=STHeiti<span class="special">]</span><span class="special">{</span>STXihei<span class="special">}</span>
+<span class="command">\setCJKmonofont</span><span class="special">{</span>STFangsong<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>这里，</p>
+<ul>
+<li>文档中文主字体是华文宋体，对应的 bfseries 字体是华文中宋，对应的 itshape 字体是华文楷体；</li>
+<li>文档的「无衬线」中文字体是华文新黑，对应的 bfseries 是华文黑体；</li>
+<li>文档的「等宽」中文字体是华文仿宋。</li>
+</ul>
+<p>完整代码的编译效果截图如下：</p>
+<p><img src="/attachment/images/MacTeX_xeCJK/03.png" alt=" 编译效果 "></p>
+<h2 id=" 额外的工作 ">额外的工作</h2>
+<p>尽管这一节的操作有些复杂，而且对于中文支持来说是可选的，但是依旧推荐按步骤操作。</p>
+<p><code>xeCJK</code> 之解决了中文支持问题，以及一些关于标点的处理，并没有提供和中文版式相关的解决方案。<code>ctex</code> 宏包和文档类封装了 xeCJK，同时提供了中文版式的相关支持。不过 <code>ctex</code> 的默认配置是为 Windows 平台配置的，Mac 用户需要对默认配置做一些修改。具体如下。</p>
+<p>打开终端，键入命令：</p>
+<figure class="highlight shell"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="built_in">cd</span> /usr/local/texlive/texmf-local/tex/latex/
+<span class="built_in">sudo</span> mkdir ./ctex/
+<span class="built_in">sudo</span> mkdir ./ctex/cfg/
+<span class="built_in">cd</span> ./ctex/cfg/
+<span class="built_in">sudo</span> vim ctexopts.cfg
+</pre></td></tr></table></figure>
+
+
+
+<p>复制以下内容：</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="command">\ExecuteOptions</span><span class="special">{</span>UTF8<span class="special">}</span>
+<span class="command">\ExecuteOptions</span><span class="special">{</span>nofonts<span class="special">}</span>
+
+<span class="command">\endinput</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>切换回到终端窗口，按 <code>i</code> 进入编辑模式，按 <code>cmd + v</code> 粘贴，按 <code>esc</code> 退出编辑模式，输入 <code>:x</code> 保存退出（半角冒号紧接着 x）。<br>在终端窗口继续操作，键入命令：</p>
+<figure class="highlight shell"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> vim ctex.cfg
+</pre></td></tr></table></figure>
+
+
+
+<p>复制以下内容：</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="command">\RequirePackage</span><span class="special">{</span>ifxetex<span class="special">}</span>
+<span class="command">\ifxetex</span>
+  <span class="command">\setCJKmainfont</span><span class="special">[</span>BoldFont=STZhongsong, ItalicFont=STKaiti<span class="special">]</span><span class="special">{</span>STSong<span class="special">}</span>
+  <span class="command">\setCJKsansfont</span><span class="special">[</span>BoldFont=STHeiti<span class="special">]</span><span class="special">{</span>STXihei<span class="special">}</span>
+  <span class="command">\setCJKmonofont</span><span class="special">{</span>STFangsong<span class="special">}</span>
+
+  <span class="command">\newCJKfontfamily</span><span class="special">[</span>stsong<span class="special">]</span><span class="command">\songti</span><span class="special">[</span>BoldFont=STZhongsong, ItalicFont=STKaiti<span class="special">]</span><span class="special">{</span>STSong<span class="special">}</span>
+  <span class="command">\newCJKfontfamily</span><span class="special">[</span>sthei<span class="special">]</span><span class="command">\heiti</span><span class="special">[</span>BoldFont=STHeiti<span class="special">]</span><span class="special">{</span>STXihei<span class="special">}</span>
+  <span class="command">\newCJKfontfamily</span><span class="special">[</span>stkai<span class="special">]</span><span class="command">\kaishu</span><span class="special">{</span>STKaiti<span class="special">}</span>
+  <span class="command">\newCJKfontfamily</span><span class="special">[</span>stfang<span class="special">]</span><span class="command">\fangsong</span><span class="special">{</span>STFangsong<span class="special">}</span>
+  <span class="command">\newCJKfontfamily</span><span class="special">[</span>stli<span class="special">]</span><span class="command">\lishu</span><span class="special">{</span>STLiti<span class="special">}</span>
+<span class="command">\fi</span>
+<span class="command">\endinput</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>切换回到终端窗口，按 <code>i</code> 进入编辑模式，按 <code>cmd + v</code> 粘贴，按 <code>esc</code> 退出编辑模式，输入 <code>:x</code> 保存退出（半角冒号紧接着 x）。<br>在终端窗口继续操作，键入命令：</p>
+<figure class="highlight shell"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> texhash
+</pre></td></tr></table></figure>
+
+
+
+<p>这里，</p>
+<ul>
+<li><code>ctexopts.cfg</code> 会在 <code>ctex</code> 宏包 / 文档类的选项定义之后被载入，我们启用了 <code>nofonts</code> 和 <code>UTF8</code> 这两个选项；</li>
+<li><code>ctex.cfg</code> 则会在 <code>ctex</code> 宏包 / 文档类的结尾被载入，我们配置了字体；</li>
+<li><code>texhash</code> 会刷新 TeX 的文件名数据库。</li>
+</ul>
+<p>至此，<code>ctex</code> 宏包 / 文档类在 Mac 里就可以正常工作了。测试截图如下：</p>
+<p><img src="/attachment/images/MacTeX_xeCJK/04.png" alt=" 编译效果 "></p>
+
+    
+  </div>
+  <footer>
+    
+      <div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1406015473860">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+      </div>
+      
+  
+  <div class="categories">
+    <a href="/categories/LaTeX/">LaTeX</a>
+  </div>
+
+      
+  
+  <div class="tags">
+    <a href="/tags/CJK/">CJK</a>, <a href="/tags/MacTeX/">MacTeX</a>, <a href="/tags/OS X/">OS X</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<!-- wumii Button BEGIN -->
+<div style="margin:0px auto; padding-left:23px; text-align:center;">
+	
+	
+
+	<script type="text/javascript" id="wumiiRelatedItems"></script>
+	<script type="text/javascript">
+		var wumiiPermaLink  = "http://liam0205.me/2014/11/02/latex-mactex-chinese-support/"; //请用代码生成文章永久的链接
+		var wumiiTitle      = "为 MacTeX 配置中文支持"; //请用代码生成文章标题
+		var wumiiTags       = "CJK, MacTeX, OS X"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
+		var wumiiCategories = ["LaTeX"]; //请用代码生成文章分类，分类名放在 JSONArray 中，如: ["分类1", "分类2"]
+		var wumiiSitePrefix = "http://liam0205.me/";
+		var wumiiParams     = "&num=5&mode=3&pf=JAVASCRIPT";
+	</script>
+	<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+	<!--
+	<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+	    <img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
+	</a>
+	-->
+</div>
+<!-- wumii Button END -->
+
+<!-- UJian Button BEGIN -->
+<!-- 	<div class="ujian-hook" style="padding-left: 17px;"></div>
+	<script type="text/javascript">var ujian_config = {num:6,picSize:83,textHeight:45};</script>
+	<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1893018"></script>-->
+<!-- UJian Button END -->
+
+<!-- baidu tuijian BEGIN -->
+<!-- <div id="hm_t_22763"></div> -->
+<!-- baidu tuijian BEGIN -->
+<!--	<div style="padding-left: 17px;"> -->
+<!--		<script src="http://wm.lrswl.com/page/s.php?s=103186&w=640&h=60"></script> -->
+<!--	</div> -->
+
+
+
+
+<section id="comment">
+  <script>var duoshuoQuery = {short_name:"cnliam"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <script type="text/javascript">
+    function toggleDuoshuoComments(container, id, url){
+      if(jQuery(container).has("div").length>0){
+        jQuery(container).empty();
+        return;
+      }
+      var el = document.createElement('div');
+      el.setAttribute('data-thread-key', id);//必选参数
+      el.setAttribute('data-url', url);//必选参数
+      DUOSHUO.EmbedThread(el);
+      jQuery(container).append(el);
+    }
+  </script>
+  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '为 MacTeX 配置中文支持', 'http://liam0205.me/2014/11/02/latex-mactex-chinese-support/');">查看评论</a></h1>
+  <!-- <div class="ds-thread" data-title="为 MacTeX 配置中文支持"></div> -->
+  <div id="comment-box" ></div>
+</section>
+
+
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/IT/">IT</a><small>10</small></li>
+  
+    <li><a href="/categories/LaTeX/">LaTeX</a><small>39</small></li>
+  
+    <li><a href="/categories/Life/">Life</a><small>1</small></li>
+  
+    <li><a href="/categories/Literature and Social Sciences/">Literature and Social Sciences</a><small>7</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+  <!--
+  <a href="/tags/AW/" style="font-size: 15.00px;">AW</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Bitmap/" style="font-size: 10.00px;">Bitmap</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blindness/" style="font-size: 10.00px;">Blindness</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Book review/" style="font-size: 10.00px;">Book review</a><a href="/tags/Bookmarks/" style="font-size: 10.00px;">Bookmarks</a><a href="/tags/CJK/" style="font-size: 15.00px;">CJK</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 10.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 10.00px;">Chinese</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/EPS/" style="font-size: 10.00px;">EPS</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Equation number/" style="font-size: 10.00px;">Equation number</a><a href="/tags/Error Codes/" style="font-size: 10.00px;">Error Codes</a><a href="/tags/Exam/" style="font-size: 10.00px;">Exam</a><a href="/tags/Float/" style="font-size: 10.00px;">Float</a><a href="/tags/Footnote/" style="font-size: 10.00px;">Footnote</a><a href="/tags/Format/" style="font-size: 10.00px;">Format</a><a href="/tags/GRE/" style="font-size: 20.00px;">GRE</a><a href="/tags/Game/" style="font-size: 10.00px;">Game</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Grammar/" style="font-size: 15.00px;">Grammar</a><a href="/tags/Graphicx/" style="font-size: 10.00px;">Graphicx</a><a href="/tags/Han Han/" style="font-size: 10.00px;">Han Han</a>
+  -->
+  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/CJK/" style="font-size: 12.50px;">CJK</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/English/" style="font-size: 12.50px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/GRE/" style="font-size: 15.00px;">GRE</a><a href="/tags/Grammar/" style="font-size: 12.50px;">Grammar</a><a href="/tags/Highlight/" style="font-size: 12.50px;">Highlight</a><a href="/tags/Images/" style="font-size: 12.50px;">Images</a><a href="/tags/Include/" style="font-size: 10.00px;">Include</a><a href="/tags/Input/" style="font-size: 10.00px;">Input</a><a href="/tags/Kindle/" style="font-size: 12.50px;">Kindle</a><a href="/tags/LaTeX/" style="font-size: 20.00px;">LaTeX</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Line number/" style="font-size: 10.00px;">Line number</a><a href="/tags/Listings/" style="font-size: 12.50px;">Listings</a><a href="/tags/Newenvironment/" style="font-size: 10.00px;">Newenvironment</a><a href="/tags/Overbrace/" style="font-size: 10.00px;">Overbrace</a><a href="/tags/PDF/" style="font-size: 12.50px;">PDF</a><a href="/tags/Path/" style="font-size: 10.00px;">Path</a><a href="/tags/Phantom/" style="font-size: 10.00px;">Phantom</a><a href="/tags/Python/" style="font-size: 17.50px;">Python</a><a href="/tags/Rlap/" style="font-size: 10.00px;">Rlap</a><a href="/tags/Robust/" style="font-size: 10.00px;">Robust</a><a href="/tags/SYSENGI/" style="font-size: 10.00px;">SYSENGI</a><a href="/tags/Sublime/" style="font-size: 15.00px;">Sublime</a><a href="/tags/Subnumber/" style="font-size: 10.00px;">Subnumber</a><a href="/tags/Template/" style="font-size: 15.00px;">Template</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 12.50px;">Tutorial</a><a href="/tags/Ulem/" style="font-size: 10.00px;">Ulem</a><a href="/tags/Underbrace/" style="font-size: 10.00px;">Underbrace</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget recent-posts">
+  <h3 class="title">最近文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/11/22/latex-pdf-cjk-bookmarks/">在 LaTeX 中使用含有中文的 PDF 书签的正确姿势</a>
+      </li>
+    
+      <li>
+        <a href="/2014/11/02/latex-mactex-chinese-support/">为 MacTeX 配置中文支持</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/28/review-of-the-continent/">后会无期于后会有期的平凡之路</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/11/matplotlib-tutorial-zh-cn/">Matplotlib 教程</a>
+      </li>
+    
+      <li>
+        <a href="/2014/09/08/latex-introduction/">一份其实很短的 LaTeX 入门文档</a>
+      </li>
+    
+      <li>
+        <a href="/2014/08/21/bitmap-convert-to-eps-batch/">在 Windows 下批量将位图转为 EPS 格式的图档</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2013 -- 2014 <a href="/">Liam Huang</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   |
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a> and <a href="http://liam0205.me/" target="_blank">Liam Huang</a>
+</div>
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'cnliam' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+</body>
+</html>
