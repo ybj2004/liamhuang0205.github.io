@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-11-25T10:33:50.076Z</updated>
+  <updated>2014-11-25T11:47:49.039Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,9 +19,8 @@
     <link href="http://liam0205.me/2014/11/22/latex-pdf-cjk-bookmarks/"/>
     <id>http://liam0205.me/2014/11/22/latex-pdf-cjk-bookmarks/</id>
     <published>2014-11-22T08:57:54.000Z</published>
-    <updated>2014-11-25T09:28:12.000Z</updated>
-    <content type="html"><![CDATA[<h2 id=" 介绍 ">介绍</h2>
-<p>LaTeX 的 <code>hyperref</code> 宏包能够在 PDF 文件里生成 PDF 书签，然而「书签乱码」是困扰很多 LaTeX 使用者的麻烦问题。</p>
+    <updated>2014-11-25T11:47:40.000Z</updated>
+    <content type="html"><![CDATA[<p>LaTeX 的 <code>hyperref</code> 宏包能够在 PDF 文件里生成 PDF 书签，然而「书签乱码」是困扰很多 LaTeX 使用者的麻烦问题。</p>
 <p>早年李树钧和张林波老师共同开发了名为 <a href="http://www.hooklee.com/tex/gbk2uni.zip" target="_blank">gbk2uni</a> 的小工具，用以将 <code>filename.out</code> 中的 GBK 编码的字符转换成八进制数据；刘海洋和李清在 <a href="https://code.google.com/p/ctex-kit/" target="_blank"><code>ctex</code></a> 宏包 / 文档类对此做了处理，使得 <code>ctex</code> 宏包 / 文档类能够正确处理大部分的情况；后来李清编写了 <a href="http://www.ctan.org/pkg/xcjk2uni" target="_blank"><code>xCJK2uni</code></a> 宏包，使得在 pdfLaTeX 编译方式下用 <code>CJK</code> 的 GBK 编码模式也能正确输出 PDF 书签，而不必借用额外的工具。</p>
 <p>这里对全部正确的方式做一个总结。</p>
 <a id="more"></a>
@@ -264,8 +263,7 @@ GBK<span class="special">~</span>编码，<span class="command">\LaTeX</span><sp
 
 
 ]]></content>
-    <summary type="html"><![CDATA[<h2 id=" 介绍 ">介绍</h2>
-<p>LaTeX 的 <code>hyperref</code> 宏包能够在 PDF 文件里生成 PDF 书签，然而「书签乱码」是困扰很多 LaTeX 使用者的麻烦问题。</p>
+    <summary type="html"><![CDATA[<p>LaTeX 的 <code>hyperref</code> 宏包能够在 PDF 文件里生成 PDF 书签，然而「书签乱码」是困扰很多 LaTeX 使用者的麻烦问题。</p>
 <p>早年李树钧和张林波老师共同开发了名为 <a href="http://www.hooklee.com/tex/gbk2uni.zip" target="_blank">gbk2uni</a> 的小工具，用以将 <code>filename.out</code> 中的 GBK 编码的字符转换成八进制数据；刘海洋和李清在 <a href="https://code.google.com/p/ctex-kit/" target="_blank"><code>ctex</code></a> 宏包 / 文档类对此做了处理，使得 <code>ctex</code> 宏包 / 文档类能够正确处理大部分的情况；后来李清编写了 <a href="http://www.ctan.org/pkg/xcjk2uni" target="_blank"><code>xCJK2uni</code></a> 宏包，使得在 pdfLaTeX 编译方式下用 <code>CJK</code> 的 GBK 编码模式也能正确输出 PDF 书签，而不必借用额外的工具。</p>
 <p>这里对全部正确的方式做一个总结。</p>
 ]]></summary>
@@ -287,9 +285,8 @@ GBK<span class="special">~</span>编码，<span class="command">\LaTeX</span><sp
     <link href="http://liam0205.me/2014/11/02/latex-mactex-chinese-support/"/>
     <id>http://liam0205.me/2014/11/02/latex-mactex-chinese-support/</id>
     <published>2014-11-02T10:07:28.000Z</published>
-    <updated>2014-11-25T10:31:36.000Z</updated>
-    <content type="html"><![CDATA[<h2 id=" 介绍 ">介绍</h2>
-<p>最近有人问到如何在 MacTeX 里配置中文支持，这里一并回答。</p>
+    <updated>2014-11-25T11:47:39.000Z</updated>
+    <content type="html"><![CDATA[<p>最近有人问到如何在 MacTeX 里配置中文支持，这里一并回答。</p>
 <p>目前来说，结合 <code>xeCJK</code> 宏包使用 XeLaTeX 编译，应该是最方便的方式了。</p>
 <p>XeLaTeX 要求 <code>.tex</code> 文档保存为 UTF-8 编码。所以要做的事情只有两件：</p>
 <ul>
@@ -415,8 +412,7 @@ GBK<span class="special">~</span>编码，<span class="command">\LaTeX</span><sp
 <p>至此，<code>ctex</code> 宏包 / 文档类在 Mac 里就可以正常工作了。测试截图如下：</p>
 <p><img src="/attachment/images/MacTeX_xeCJK/04.png" alt=" 编译效果 "></p>
 ]]></content>
-    <summary type="html"><![CDATA[<h2 id=" 介绍 ">介绍</h2>
-<p>最近有人问到如何在 MacTeX 里配置中文支持，这里一并回答。</p>
+    <summary type="html"><![CDATA[<p>最近有人问到如何在 MacTeX 里配置中文支持，这里一并回答。</p>
 <p>目前来说，结合 <code>xeCJK</code> 宏包使用 XeLaTeX 编译，应该是最方便的方式了。</p>
 <p>XeLaTeX 要求 <code>.tex</code> 文档保存为 UTF-8 编码。所以要做的事情只有两件：</p>
 <ul>

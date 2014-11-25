@@ -4,8 +4,6 @@ categories: LaTeX
 tags: [PDF, Bookmarks, CJK, Error Codes]
 ---
 
-## 介绍
-
 LaTeX 的 `hyperref` 宏包能够在 PDF 文件里生成 PDF 书签，然而「书签乱码」是困扰很多 LaTeX 使用者的麻烦问题。
 
 早年李树钧和张林波老师共同开发了名为 [gbk2uni][dlgbk2uni] 的小工具，用以将 `filename.out` 中的 GBK 编码的字符转换成八进制数据；刘海洋和李清在 [`ctex`][ctex-kit] 宏包/文档类对此做了处理，使得 `ctex` 宏包/文档类能够正确处理大部分的情况；后来李清编写了 [`xCJK2uni`][ctan-xcjk2uni] 宏包，使得在 pdfLaTeX 编译方式下用 `CJK` 的 GBK 编码模式也能正确输出 PDF 书签，而不必借用额外的工具。

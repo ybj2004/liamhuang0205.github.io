@@ -4,8 +4,6 @@ categories: [LaTeX]
 tags: [CJK, MacTeX, OS X]
 ---
 
-## 介绍
-
 最近有人问到如何在 MacTeX 里配置中文支持，这里一并回答。
 
 目前来说，结合 `xeCJK` 宏包使用 XeLaTeX 编译，应该是最方便的方式了。
