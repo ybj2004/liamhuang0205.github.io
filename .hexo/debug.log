@@ -1,0 +1,240 @@
+date: 2014-12-03 14:41:33.314
+argv: node /usr/local/bin/hexo s
+os: Darwin 13.4.0 darwin x64
+version:
+  hexo: 2.5.7
+  http_parser: 1.0
+  node: 0.10.31
+  v8: 3.14.5.9
+  ares: 1.9.0-DEV
+  uv: 0.10.28
+  zlib: 1.2.3
+  modules: 11
+  openssl: 1.0.1i
+---
+
+[debug] 14:41:32.416 Config file loaded
+[debug] 14:41:32.417 Version info checked successfully
+[debug] 14:41:32.436 Loading database.
+[debug] 14:41:32.464 Plugin loaded successfully: hexo-generator-feed
+[debug] 14:41:32.475 Plugin loaded successfully: hexo-generator-sitemap
+[debug] 14:41:32.482 Plugin loaded successfully: hexo-math
+[debug] 14:41:32.513 Processed: LICENSE
+[debug] 14:41:32.513 Processed: README.md
+[debug] 14:41:32.514 Processed: bak.git.rar
+[debug] 14:41:32.526 Processed: source/css/_base/layout.styl
+[debug] 14:41:32.526 Processed: source/css/_base/variable.styl
+[debug] 14:41:32.527 Processed: source/css/_partial/archive.styl
+[debug] 14:41:32.527 Processed: source/css/_partial/article.styl
+[debug] 14:41:32.527 Processed: source/css/_partial/comment.styl
+[debug] 14:41:32.527 Processed: source/css/_partial/footer.styl
+[debug] 14:41:32.527 Processed: source/css/_partial/header.styl
+[debug] 14:41:32.527 Processed: source/css/_partial/index.styl
+[debug] 14:41:32.527 Processed: source/css/_partial/sidebar.styl
+[debug] 14:41:32.527 Processed: source/css/_partial/syntax.styl
+[debug] 14:41:32.530 Processed: source/fancybox/blank.gif
+[debug] 14:41:32.535 Processed: source/fancybox/fancybox_loading.gif
+[debug] 14:41:32.536 Processed: source/fancybox/fancybox_overlay.png
+[debug] 14:41:32.536 Processed: source/fancybox/fancybox_sprite.png
+[debug] 14:41:32.536 Processed: source/fancybox/jquery.fancybox.css
+[debug] 14:41:32.536 Processed: source/fancybox/jquery.fancybox.pack.js
+[debug] 14:41:32.536 Processed: source/js/MathJax.js
+[debug] 14:41:32.537 Processed: source/js/counter.js
+[debug] 14:41:32.537 Processed: source/js/gallery.js
+[debug] 14:41:32.537 Processed: source/js/jquery.imagesloaded.min.js
+[debug] 14:41:32.537 Processed: source/js/moment.min.js
+[debug] 14:41:32.538 Processed: source/js/scale.fix.js
+[debug] 14:41:32.538 Processed: source/css/style.styl
+[debug] 14:41:32.538 Processed: source/css/fonts/FontAwesome.otf
+[debug] 14:41:32.539 Processed: source/css/fonts/fontawesome-webfont.eot
+[debug] 14:41:32.539 Processed: source/css/fonts/fontawesome-webfont.svg
+[debug] 14:41:32.539 Processed: source/css/fonts/fontawesome-webfont.ttf
+[debug] 14:41:32.540 Processed: source/css/fonts/fontawesome-webfont.woff
+[debug] 14:41:32.540 Processed: source/css/images/checker.png
+[debug] 14:41:32.541 Processed: layout/archive.ejs
+[debug] 14:41:32.541 Processed: layout/index.ejs
+[debug] 14:41:32.541 Processed: layout/layout.ejs
+[debug] 14:41:32.541 Processed: layout/page.ejs
+[debug] 14:41:32.541 Processed: layout/post.ejs
+[debug] 14:41:32.541 Processed: layout/tag.ejs
+[debug] 14:41:32.541 Processed: layout/_widget/blogroll.ejs
+[debug] 14:41:32.541 Processed: layout/_widget/category.ejs
+[debug] 14:41:32.541 Processed: layout/_widget/recent_posts.ejs
+[debug] 14:41:32.541 Processed: layout/_widget/tag.ejs
+[debug] 14:41:32.541 Processed: layout/_widget/tagcloud.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/after-footer.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/after_footer.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/archive-post.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/archive.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/archive_title.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/article.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/baidu_tongji_old.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/comment.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/footer.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/footer_old.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/google_analytics.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/guess.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/head.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/header.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/math-jax.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/pagination.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/sidebar.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/post/category.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/post/date.ejs
+[debug] 14:41:32.541 Processed: layout/_partial/post/gallery.ejs
+[debug] 14:41:32.542 Processed: layout/_partial/post/tag.ejs
+[debug] 14:41:32.542 Processed: layout/_partial/post/title.ejs
+[debug] 14:41:32.545 Processed: _drafts/2014-05-25-assassins-creed-new.md
+[debug] 14:41:32.545 Processed: _drafts/2014-07-05-let-it-go.md
+[debug] 14:41:32.557 Processed: _posts/adjust_quote.py
+[debug] 14:41:32.558 Processed: _posts/migration.py
+[debug] 14:41:32.558 Processed: _posts/rename.py
+[debug] 14:41:32.652 Processed: CNAME
+[debug] 14:41:32.652 Processed: favicon.ico
+[debug] 14:41:32.652 Processed: robots.txt
+[debug] 14:41:32.655 Processed: images/avatar.jpg
+[debug] 14:41:32.655 Processed: images/avatar2.jpg
+[debug] 14:41:32.655 Processed: images/avatar3.jpg
+[debug] 14:41:32.655 Processed: images/bio-photo.jpg
+[debug] 14:41:32.656 Processed: images/highlightOutput.png
+[debug] 14:41:32.656 Processed: images/letterL.jpg
+[debug] 14:41:32.656 Processed: images/simple-search-screenshot.jpg
+[debug] 14:41:32.657 Processed: images/sublime-text-2.png
+[debug] 14:41:32.657 Processed: images/LaTeX/recall-theorem.png
+[debug] 14:41:32.658 Processed: images/LaTeX/redefine-proof.png
+[debug] 14:41:32.658 Processed: attachment/LaTeX_howtoask.pdf
+[debug] 14:41:32.658 Processed: attachment/LaTeX_howtoask_20131008.pdf
+[debug] 14:41:32.659 Processed: attachment/Fonts/Adina.zip
+[debug] 14:41:32.659 Processed: attachment/Fonts/Fandol.zip
+[debug] 14:41:32.660 Processed: attachment/Fonts/TeX_Gyre_Pagella.zip
+[debug] 14:41:32.660 Processed: attachment/Git/progit.en.pdf
+[debug] 14:41:32.660 Processed: attachment/Git/progit.ja.pdf
+[debug] 14:41:32.661 Processed: attachment/Git/progit.zh.pdf
+[debug] 14:41:32.661 Processed: attachment/LaTeX-useful-tools/LaTeX_Docs_2014.rar
+[debug] 14:41:32.662 Processed: attachment/LaTeX-useful-tools/LaTeX_Docs_2014.zip
+[debug] 14:41:32.662 Processed: attachment/LaTeX-useful-tools/LaTeX_Intro.pdf
+[debug] 14:41:32.662 Processed: attachment/LaTeX-useful-tools/epscolor.bat
+[debug] 14:41:32.663 Processed: attachment/LaTeX-useful-tools/texlivefont-20070828.pdf
+[debug] 14:41:32.663 Processed: attachment/LaTeX-useful-tools/xdvipdfmx.exe.xz
+[debug] 14:41:32.664 Processed: attachment/LaTeX-useful-tools/xdvipdfmx.exe.zip
+[debug] 14:41:32.664 Processed: attachment/RuleTillEnd/RuleTillEnd.tex
+[debug] 14:41:32.664 Processed: attachment/SourceCode/brace-rlap.tex
+[debug] 14:41:32.665 Processed: attachment/Sublime/Default.sublime-package
+[debug] 14:41:32.665 Processed: attachment/Sublime/Sublime Text Build 3047.zip
+[debug] 14:41:32.666 Processed: attachment/TsinghuaLaTeX/latex01.pdf
+[debug] 14:41:32.666 Processed: attachment/TsinghuaLaTeX/latex02.pdf
+[debug] 14:41:32.666 Processed: attachment/TsinghuaLaTeX/latex03.pdf
+[debug] 14:41:32.667 Processed: attachment/TsinghuaLaTeX/latex04.pdf
+[debug] 14:41:32.667 Processed: attachment/soft/Virtual_Audio_Cable_4_10.zip
+[debug] 14:41:32.668 Processed: attachment/xcumcmart/xcumcmart-Ver.1.00.00.zip
+[debug] 14:41:32.668 Processed: attachment/Python/Python_Tutorial_zh-cn_Demo.pdf
+[debug] 14:41:32.669 Processed: attachment/Python/The_Python_Tutorial_zh-cn.pdf
+[debug] 14:41:32.669 Processed: attachment/Python/PyChallenge/lv2.txt
+[debug] 14:41:32.670 Processed: attachment/Python/PyChallenge/lv3.txt
+[debug] 14:41:32.670 Processed: attachment/Python/PyHardWay/Learn_Python_The_Hard_Way_zh-cn.pdf
+[debug] 14:41:32.671 Processed: attachment/Python/PyHardWay/PyHardWay.zip
+[debug] 14:41:32.671 Processed: attachment/images/brace-overlap.jpg
+[debug] 14:41:32.672 Processed: attachment/images/Book_Reviews/blindness.jpg
+[debug] 14:41:32.673 Processed: attachment/images/Kindle/BackDoorLock.png
+[debug] 14:41:32.673 Processed: attachment/images/Kindle/Home_KUAL.png
+[debug] 14:41:32.674 Processed: attachment/images/Kindle/KUAL_BackDoorLock.png
+[debug] 14:41:32.675 Processed: attachment/images/MacTeX_xeCJK/01.png
+[debug] 14:41:32.675 Processed: attachment/images/MacTeX_xeCJK/02.png
+[debug] 14:41:32.676 Processed: attachment/images/MacTeX_xeCJK/03.png
+[debug] 14:41:32.677 Processed: attachment/images/MacTeX_xeCJK/04.png
+[debug] 14:41:32.677 Processed: attachment/images/Sublime/Compile_info.png
+[debug] 14:41:32.678 Processed: attachment/images/Sublime/Installing_LaTeXTools.png
+[debug] 14:41:32.679 Processed: attachment/images/Sublime/LaTeXTools_Setup.png
+[debug] 14:41:32.679 Processed: attachment/images/Sublime/LaTeX_UI.png
+[debug] 14:41:32.680 Processed: attachment/images/Sublime/Loading_Repo.png
+[debug] 14:41:32.680 Processed: attachment/images/Sublime/Package_Install.png
+[debug] 14:41:32.681 Processed: attachment/images/Sublime/Set_Syntax_LaTeX.png
+[debug] 14:41:32.681 Processed: attachment/images/Sublime/sublime_text_package_control.png
+[debug] 14:41:32.683 Processed: attachment/images/listingsCopy/right.png
+[debug] 14:41:32.684 Processed: attachment/images/listingsCopy/wrong.png
+[debug] 14:41:32.684 Processed: attachment/images/Friends/Nanzhi_Zang_01.jpg
+[debug] 14:41:32.685 Processed: attachment/images/Friends/Irene Yang/02.jpg
+[debug] 14:41:32.686 Processed: attachment/images/Friends/Irene Yang/01.jpg
+[debug] 14:41:32.686 Processed: attachment/images/Friends/Irene Yang/03.jpg
+[debug] 14:41:32.687 Processed: attachment/images/Friends/Irene Yang/04.jpg
+[debug] 14:41:32.687 Processed: attachment/images/Friends/Irene Yang/05.jpg
+[debug] 14:41:32.688 Processed: attachment/images/Friends/Irene Yang/06.jpg
+[debug] 14:41:32.688 Processed: attachment/images/Friends/Irene Yang/07.jpg
+[debug] 14:41:32.689 Processed: attachment/images/Friends/Irene Yang/08.jpg
+[debug] 14:41:32.690 Processed: attachment/images/Friends/Irene Yang/09.jpg
+[debug] 14:41:32.690 Processed: attachment/images/Friends/Irene Yang/10.jpg
+[debug] 14:41:32.691 Processed: attachment/images/Friends/Irene Yang/11.jpg
+[debug] 14:41:32.692 Processed: attachment/images/Friends/Irene Yang/12.jpg
+[debug] 14:41:32.692 Processed: attachment/images/Friends/Irene Yang/13.jpg
+[debug] 14:41:32.693 Processed: attachment/images/Friends/Qi Meng/01.jpg
+[debug] 14:41:32.693 Processed: attachment/images/Friends/Qi Meng/02.jpg
+[debug] 14:41:32.694 Processed: attachment/images/Friends/Qi Meng/03.jpg
+[debug] 14:41:32.695 Processed: attachment/images/Friends/Xinyang He/01.jpg
+[debug] 14:41:32.695 Processed: attachment/images/Friends/Xinyang He/02.jpg
+[debug] 14:41:32.696 Processed: attachment/images/Friends/Xinyang He/03.jpg
+[debug] 14:41:32.697 Processed: attachment/images/Friends/Xinyang He/04.jpg
+[debug] 14:41:32.697 Processed: attachment/images/Friends/Xinyang He/05.jpg
+[debug] 14:41:32.698 Processed: attachment/images/Friends/Xinyang He/06.jpg
+[debug] 14:41:32.698 Processed: attachment/images/Friends/Xinyang He/07.jpg
+[debug] 14:41:32.699 Processed: attachment/images/Friends/Xinyang He/08.jpg
+[debug] 14:41:32.700 Processed: attachment/images/Python/HOCKEY.png
+[debug] 14:41:32.701 Processed: attachment/images/Python/channel.png
+[debug] 14:41:32.702 Processed: attachment/images/Python/good.png
+[debug] 14:41:32.703 Processed: attachment/images/Python/oddeven/0.png
+[debug] 14:41:32.703 Processed: attachment/images/Python/oddeven/1.png
+[debug] 14:41:32.704 Processed: attachment/images/Python/oddeven/2.png
+[debug] 14:41:32.705 Theme config loaded
+[debug] 14:41:32.705 Processed: _config.yml
+[debug] 14:41:32.706 Processed: attachment/images/Python/oddeven/3.png
+[debug] 14:41:32.707 Processed: languages/default.yml
+[debug] 14:41:32.707 Processed: languages/zh-CN.yml
+[debug] 14:41:32.871 Processed: 404.html
+[debug] 14:41:32.872 Processed: google3bcd21dc892a1d61.html
+[debug] 14:41:32.872 Processed: wumii-verification.htm
+[debug] 14:41:32.876 Processed: about/index.md
+[debug] 14:41:32.877 Processed: links/index.md
+[error] 14:41:33.295 HexoError: Process failed: _posts/2014-12-03-how-to-define-a-proof-like-environment.md
+Error: Unexpected tag "\ifmmode \mathbxz
+  \else
+    \leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
+    \quad\hbox{\bxzsymbol}%
+  \fi
+}
+\newcommand{\mathbxz}{\quad\hbox{\bxzsymbol}}
+\newenvironment{foo}[1][\fooname]{\par
+  \pushQED{\bxz}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{\popQED\endtrivlist\@endpefalse}
+\providecommand{\bxzsymbol}{\fbox{\footnotesize B.X.Z}}
+\providecommand{\fooname}{Foo}
+\makeatother
+\begin{document}
+\begin{proof}
+\begin{foo}
+  The foo goes here.
+\end{foo}
+\begin{foo}
+  \[
+    E = mc^{2}.\qedhere
+  \]
+\end{foo}
+This is the conclusion that we need.
+\end{proof}
+\end{document}
+{% endcode" on line 62 in file /Users/Liam/Documents/git-dev/blog-source/.hexo/source/_posts/2014-12-03-how-to-define-a-proof-like-environment.md.
+    at Object.exports.throwError (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/utils.js:183:9)
+    at parseTag (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/parser.js:543:13)
+    at /usr/local/lib/node_modules/hexo/node_modules/swig/lib/parser.js:638:15
+    at Object.exports.each (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/utils.js:45:11)
+    at Object.exports.parse (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/parser.js:622:9)
+    at parse (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/swig.js:349:19)
+    at precompile (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/swig.js:479:23)
+    at compile (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/swig.js:584:16)
+    at Object.render (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/swig.js:513:17)
+    at /usr/local/lib/node_modules/hexo/lib/post/render.js:67:29
+
+[debug] 14:41:33.314 Cache saved

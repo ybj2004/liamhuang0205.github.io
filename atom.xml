@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-11-25T11:47:49.039Z</updated>
+  <updated>2014-12-03T06:44:18.971Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,179 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[在 LaTeX 里定义一个类似 proof 的环境]]></title>
+    <link href="http://liam0205.me/2014/12/03/how-to-define-a-proof-like-environment/"/>
+    <id>http://liam0205.me/2014/12/03/how-to-define-a-proof-like-environment/</id>
+    <published>2014-12-03T06:12:57.000Z</published>
+    <updated>2014-12-03T06:44:12.000Z</updated>
+    <content type="html"><![CDATA[<p>美国数学协会（AMS）是 TeX 发展中的一支重要的力量。AMS 定义的 <code>proof</code> 环境非常好用，能在证明结束的末尾，自动添加一个「证毕」的符号。</p>
+<p>有时我们需要类似的环境，比如<a href="http://bbs.ctex.org/forum.php?mod=viewthread&amp;tid=79516" target="_blank">这里</a>的题主希望用两个环境区分「证明」和「解答」，并且都需要自动添加结束符号。这时我们可以仿照 <code>amsthm</code> 宏包的做法，自己定义一套环境。</p>
+<a id="more"></a>
+
+<p><code>proof</code> 环境的原始定义是这样的：</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="command">\newenvironment</span><span class="special">{</span>proof<span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">[</span><span class="command">\proofname</span><span class="special">]</span><span class="special">{</span><span class="command">\par</span>
+  <span class="command">\pushQED</span><span class="special">{</span><span class="command">\qed</span><span class="special">}</span><span class="comment">%</span>
+  <span class="command">\normalfont</span> <span class="command">\topsep</span>6<span class="command">\p</span>@<span class="command">\@</span>plus6<span class="command">\p</span>@<span class="command">\relax</span>
+  <span class="command">\trivlist</span>
+  <span class="command">\item</span><span class="special">[</span><span class="command">\hskip</span><span class="command">\labelsep</span>
+        <span class="command">\itshape</span>
+    <span class="special">#</span>1<span class="command">\@</span>addpunct<span class="special">{</span>.<span class="special">}</span><span class="special">]</span><span class="command">\ignorespaces</span>
+<span class="special">}</span><span class="special">{</span><span class="command">\popQED</span><span class="command">\endtrivlist</span><span class="command">\@</span>endpefalse<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>这里 <code>\pushQED{\qed}</code> 把 <code>\qed</code> 压入了 QED 这个堆栈，然后在环境结束的地方，通过 <code>\popQED</code> 把压入堆栈的最后一个元素弹出来。这样的设计是非常合理的。比如，如果在证明的过程中，需要分别证明两个小的情形，这样就能按照次序依次给出证明的结束符号。此外，证明开始的标题通过 <code>\proofname</code> 来控制。</p>
+<p>通过这些分析，我们知道定义一个新的环境，我们需要从两个方面入手。其一是 <code>\proofname</code> 的位置需要改变，其二是压入堆栈的内容需要更改。</p>
+<p>下面的代码我们定义了一个名为 <code>\fooname</code> 的宏，来替代 <code>\proofname</code>。</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="command">\providecommand</span><span class="special">{</span><span class="command">\fooname</span><span class="special">}</span><span class="special">{</span>Foo<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>下面的代码我们定义了名为 <code>\bxz</code> 的宏，来替换原本压入堆栈的 <code>\qed</code>。其中 <code>\bxz</code> 具体的符号内容用 <code>\bxzsymbol</code> 这个宏来控制。</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="command">\DeclareRobustCommand</span><span class="special">{</span><span class="command">\bxz</span><span class="special">}</span><span class="special">{</span><span class="command">\ifmmode</span> <span class="command">\mathbxz</span>
+  <span class="command">\else</span>
+    <span class="command">\leavevmode</span><span class="command">\unskip</span><span class="command">\penalty</span>9999 <span class="command">\hbox</span><span class="special">{</span><span class="special">}</span><span class="command">\nobreak</span><span class="command">\hfill</span>
+    <span class="command">\quad</span><span class="command">\hbox</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="comment">%</span>
+  <span class="command">\fi</span>
+<span class="special">}</span>
+<span class="command">\newcommand</span><span class="special">{</span><span class="command">\mathbxz</span><span class="special">}</span><span class="special">{</span><span class="command">\quad</span><span class="command">\hbox</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="special">}</span>
+<span class="command">\providecommand</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="special">{</span><span class="command">\fbox</span><span class="special">{</span><span class="command">\footnotesize</span> B.X.Z<span class="special">}</span><span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>最后，重新定义一个名为 <code>foo</code> 的环境。</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="command">\newenvironment</span><span class="special">{</span>foo<span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">[</span><span class="command">\fooname</span><span class="special">]</span><span class="special">{</span><span class="command">\par</span>
+  <span class="command">\pushQED</span><span class="special">{</span><span class="command">\bxz</span><span class="special">}</span><span class="comment">%</span>
+  <span class="command">\normalfont</span> <span class="command">\topsep</span>6<span class="command">\p</span>@<span class="command">\@</span>plus6<span class="command">\p</span>@<span class="command">\relax</span>
+  <span class="command">\trivlist</span>
+  <span class="command">\item</span><span class="special">[</span><span class="command">\hskip</span><span class="command">\labelsep</span>
+        <span class="command">\itshape</span>
+    <span class="special">#</span>1<span class="command">\@</span>addpunct<span class="special">{</span>.<span class="special">}</span><span class="special">]</span><span class="command">\ignorespaces</span>
+<span class="special">}</span><span class="special">{</span><span class="command">\popQED</span><span class="command">\endtrivlist</span><span class="command">\@</span>endpefalse<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>完整的测试代码如下：</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>amsthm<span class="special">}</span>
+<span class="command">\makeatletter</span>
+<span class="command">\DeclareRobustCommand</span><span class="special">{</span><span class="command">\bxz</span><span class="special">}</span><span class="special">{</span><span class="command">\ifmmode</span> <span class="command">\mathbxz</span>
+  <span class="command">\else</span>
+    <span class="command">\leavevmode</span><span class="command">\unskip</span><span class="command">\penalty</span>9999 <span class="command">\hbox</span><span class="special">{</span><span class="special">}</span><span class="command">\nobreak</span><span class="command">\hfill</span>
+    <span class="command">\quad</span><span class="command">\hbox</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="comment">%</span>
+  <span class="command">\fi</span>
+<span class="special">}</span>
+<span class="command">\newcommand</span><span class="special">{</span><span class="command">\mathbxz</span><span class="special">}</span><span class="special">{</span><span class="command">\quad</span><span class="command">\hbox</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="special">}</span>
+<span class="command">\newenvironment</span><span class="special">{</span>foo<span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">[</span><span class="command">\fooname</span><span class="special">]</span><span class="special">{</span><span class="command">\par</span>
+  <span class="command">\pushQED</span><span class="special">{</span><span class="command">\bxz</span><span class="special">}</span><span class="comment">%</span>
+  <span class="command">\normalfont</span> <span class="command">\topsep</span>6<span class="command">\p</span>@<span class="command">\@</span>plus6<span class="command">\p</span>@<span class="command">\relax</span>
+  <span class="command">\trivlist</span>
+  <span class="command">\item</span><span class="special">[</span><span class="command">\hskip</span><span class="command">\labelsep</span>
+        <span class="command">\itshape</span>
+    <span class="special">#</span>1<span class="command">\@</span>addpunct<span class="special">{</span>.<span class="special">}</span><span class="special">]</span><span class="command">\ignorespaces</span>
+<span class="special">}</span><span class="special">{</span><span class="command">\popQED</span><span class="command">\endtrivlist</span><span class="command">\@</span>endpefalse<span class="special">}</span>
+<span class="command">\providecommand</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="special">{</span><span class="command">\fbox</span><span class="special">{</span><span class="command">\footnotesize</span> B.X.Z<span class="special">}</span><span class="special">}</span>
+<span class="command">\providecommand</span><span class="special">{</span><span class="command">\fooname</span><span class="special">}</span><span class="special">{</span>Foo<span class="special">}</span>
+<span class="command">\makeatother</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>proof<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>foo<span class="special">}</span>
+  The foo goes here.
+<span class="command">\end</span><span class="special">{</span>foo<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>foo<span class="special">}</span>
+  <span class="command">\[</span>
+    E = mc^<span class="special">{</span>2<span class="special">}</span>.<span class="command">\qedhere</span>
+  <span class="command">\]</span>
+<span class="command">\end</span><span class="special">{</span>foo<span class="special">}</span>
+This is the conclusion that we need.
+<span class="command">\end</span><span class="special">{</span>proof<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p><img src="/images/LaTeX/redefine-proof.png" alt=" 测试代码截图 "></p>
+]]></content>
+    <summary type="html"><![CDATA[<p>美国数学协会（AMS）是 TeX 发展中的一支重要的力量。AMS 定义的 <code>proof</code> 环境非常好用，能在证明结束的末尾，自动添加一个「证毕」的符号。</p>
+<p>有时我们需要类似的环境，比如<a href="http://bbs.ctex.org/forum.php?mod=viewthread&amp;tid=79516" target="_blank">这里</a>的题主希望用两个环境区分「证明」和「解答」，并且都需要自动添加结束符号。这时我们可以仿照 <code>amsthm</code> 宏包的做法，自己定义一套环境。</p>
+]]></summary>
+    
+      <category term="Proof" scheme="http://liam0205.me/tags/Proof/"/>
+    
+      <category term="Environment" scheme="http://liam0205.me/tags/Environment/"/>
+    
+      <category term="Macros" scheme="http://liam0205.me/tags/Macros/"/>
+    
+      <category term="AMS" scheme="http://liam0205.me/tags/AMS/"/>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[在 LaTeX 中使用含有中文的 PDF 书签的正确姿势]]></title>
@@ -2569,114 +2742,6 @@ a <span class="special">&amp;</span> b <span class="special">&amp;</span> c<span
       <category term="Pro Git" scheme="http://liam0205.me/tags/Pro%20Git/"/>
     
       <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【Life on Python】一个简易的通讯录]]></title>
-    <link href="http://liam0205.me/2014/01/29/Py-Contacts/"/>
-    <id>http://liam0205.me/2014/01/29/Py-Contacts/</id>
-    <published>2014-01-28T16:00:00.000Z</published>
-    <updated>2014-08-30T10:11:22.000Z</updated>
-    <content type="html"><![CDATA[<p>提供了 add, remove, find, view 和 exit 几个命令行接口，意义很明确了，所以 help 选项没空写内容也无所谓了。第一次自己思考结构写的 Python 程序，有点小爽。XD</p>
-<pre><code><span class="keyword">import</span> os
-<span class="keyword">import</span> cPickle <span class="keyword">as</span> pickle
-<span class="class"><span class="keyword">class</span> <span class="title">Persion</span>:</span>
-    <span class="string">'''\
-    Describe a nature persion, his/her name, sex, and \
-    age.'''</span>
-    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, info)</span>:</span>
-        <span class="string">'''Initializes the person's data.'''</span>
-        self.name = info[<span class="number">0</span>]
-        self.sex  = info[<span class="number">1</span>]
-        self.age  = info[<span class="number">2</span>]
-        <span class="keyword">print</span> <span class="string">'(Initializing %s)'</span> % self.name
-<span class="class"><span class="keyword">class</span> <span class="title">Contact</span><span class="params">(Persion)</span>:</span>
-    <span class="string">'''\
-    Describe a contact that is a nature persion, and \
-    has his/her Tel., Addr., and Email.'''</span>
-    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, info)</span>:</span>
-        Persion.__init__(self, info)
-        self.tel   = info[<span class="number">3</span>]
-        self.addr  = info[<span class="number">4</span>]
-        self.email = info[<span class="number">5</span>]
-        self.info  = {self.name : (self.sex, self.age, self.tel, self.addr,\
-            self.email)}
-    <span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span>
-        <span class="keyword">print</span> self.info
-
-<span class="function"><span class="keyword">def</span> <span class="title">command_line_interface</span><span class="params">()</span>:</span>
-    prompt = <span class="string">'--&gt; '</span>
-    workingDict = {}
-    <span class="keyword">if</span> os.path.exists(<span class="string">r'.\Contact.data'</span>):
-        workingDict = pickle.load(open(<span class="string">r'.\Contact.data'</span>, <span class="string">'r'</span>))
-    <span class="keyword">else</span>:
-        <span class="keyword">pass</span>
-    <span class="keyword">while</span> <span class="keyword">True</span>:
-        getInput = raw_input(prompt)
-        <span class="keyword">if</span> getInput == <span class="string">'exit'</span>:
-            pickle.dump(workingDict, open(<span class="string">r'.\Contact.data'</span>, <span class="string">'w'</span>))
-            <span class="keyword">break</span>
-        <span class="keyword">elif</span> getInput == <span class="string">'add'</span>:
-            newContact = generate_new_contact(get_info_from_raw_input())
-            workingDict[newContact.name] = newContact.info[newContact.name]
-            <span class="keyword">pass</span>
-        <span class="keyword">elif</span> getInput == <span class="string">'find'</span>:
-            pattern = raw_input(<span class="string">'Enter the name:'</span>)
-            <span class="keyword">if</span> pattern <span class="keyword">in</span> workingDict:
-                <span class="keyword">print</span> <span class="string">'-'</span> * <span class="number">45</span>
-                <span class="keyword">print</span> <span class="string">'Name:  %s\nSex:   %s\nAge:   %s\nTel.:  %s\nAddr.: %s\nEmail: %s'</span> % (pattern, workingDict[pattern][<span class="number">0</span>], workingDict[pattern][<span class="number">1</span>], workingDict[pattern][<span class="number">2</span>], workingDict[pattern][<span class="number">3</span>], workingDict[pattern][<span class="number">4</span>])
-                <span class="keyword">print</span> <span class="string">'-'</span> * <span class="number">45</span>
-            <span class="keyword">else</span>:
-                <span class="keyword">print</span> <span class="string">'Sorry, but "%s" is not in your contacts list.'</span> % pattern
-        <span class="keyword">elif</span> getInput == <span class="string">'remove'</span>:
-            pattern = raw_input(<span class="string">'Enter the name:'</span>)
-            <span class="keyword">if</span> pattern <span class="keyword">in</span> workingDict:
-                workingDict.pop(pattern)
-                <span class="keyword">print</span> <span class="string">'Contact "%s" has been removed.'</span> % pattern
-            <span class="keyword">else</span>:
-                <span class="keyword">print</span> <span class="string">'Sorry, but "%s" is not in your contacts list.'</span> % pattern
-        <span class="keyword">elif</span> getInput == <span class="string">'view'</span>:
-            population = len(workingDict)
-            <span class="keyword">if</span> population == <span class="number">1</span>:
-                <span class="keyword">print</span> <span class="string">'There is only one contact:'</span>
-            <span class="keyword">elif</span> population == <span class="number">0</span>:
-                <span class="keyword">print</span> <span class="string">'There is no contact.'</span>
-                <span class="keyword">continue</span>
-            <span class="keyword">else</span>:
-                <span class="keyword">print</span> <span class="string">'There are %d contacts:'</span> % population
-            <span class="keyword">for</span> name, info <span class="keyword">in</span> workingDict.items():
-                <span class="keyword">print</span> <span class="string">'-'</span> * <span class="number">45</span>
-                <span class="keyword">print</span> <span class="string">'Name:  %s\nSex:   %s\nAge:   %s\nTel.:  %s\nAddr.: %s\nEmail: %s'</span> % (name, info[<span class="number">0</span>], info[<span class="number">1</span>], info[<span class="number">2</span>], info[<span class="number">3</span>], info[<span class="number">4</span>])
-            <span class="keyword">pass</span>
-        <span class="keyword">elif</span> getInput == <span class="string">'help'</span>:
-            <span class="keyword">print</span> getInput
-        <span class="keyword">else</span>:
-            exec(getInput)
-            <span class="keyword">pass</span>
-
-<span class="function"><span class="keyword">def</span> <span class="title">get_info_from_raw_input</span><span class="params">()</span>:</span>
-    info = []
-    info.append(raw_input(<span class="string">'Name:  '</span>))
-    info.append(raw_input(<span class="string">'Sex:   '</span>))
-    info.append(raw_input(<span class="string">'Age:   '</span>))
-    info.append(raw_input(<span class="string">'Tel.:  '</span>))
-    info.append(raw_input(<span class="string">'Addr.: '</span>))
-    info.append(raw_input(<span class="string">'Email: '</span>))
-    <span class="keyword">return</span> info
-<span class="function"><span class="keyword">def</span> <span class="title">generate_new_contact</span><span class="params">(info)</span>:</span>
-    <span class="keyword">return</span> Contact(info)
-
-<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
-    command_line_interface()
-</code></pre>]]></content>
-    
-    
-      <category term="Python" scheme="http://liam0205.me/tags/Python/"/>
-    
-      <category term="Contact" scheme="http://liam0205.me/tags/Contact/"/>
-    
-      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
     
   </entry>
   
