@@ -1,4 +1,4 @@
-title: 在 LaTeX 中使用含有中文的 PDF 书签的正确姿势
+title: 在 LaTeX 中使用含有中文的 PDF 书签避免乱码的正确姿势
 date: 2014-11-22 16:57:54
 categories: LaTeX
 tags: [PDF, Bookmarks, CJK, Error Codes]
