@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-12-07T14:16:55.755Z</updated>
+  <updated>2014-12-07T14:30:12.574Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://liam0205.me/2014/12/07/ptex-intro-and-tutorial-01/"/>
     <id>http://liam0205.me/2014/12/07/ptex-intro-and-tutorial-01/</id>
     <published>2014-12-07T12:29:35.000Z</published>
-    <updated>2014-12-07T13:17:43.000Z</updated>
+    <updated>2014-12-07T14:29:59.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>本文为译文，原文载于<a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-1-introduction/" target="_blank">这里</a>。尽请关注本系列的文章。</p>
 </blockquote>
@@ -71,7 +71,7 @@
 <p>下一篇文章里我会介绍一下各种方式底下的最简日文示例。</p>
 <p>谢谢！</p>
 <h2 id=" 译者续 ">译者续</h2>
-<p>马起园 (Clerk Ma) 的 pTeX-ng 是下一代的 pTeX-ng。pTeX-ng 从 Y&amp;Y TeX 发展而来，是纯 C 编写的 TeX 引擎。它带有 e-TeX, pTeX 的补丁，并原生支持 Unicode 编码，对字体支持良好，并且能够直接输出 PDF 文档。pTeX-ng 的前景十分喜人。</p>
+<p>马起园 (Clerk Ma) 的 pTeX-ng 是下一代的 pTeX。pTeX-ng 从 Y&amp;Y TeX 发展而来，是纯 C 编写的 TeX 引擎。它带有 e-TeX, pTeX 的补丁，并原生支持 Unicode 编码，对字体支持良好，并且能够直接输出 PDF 文档。pTeX-ng 的前景十分喜人。</p>
 ]]></content>
     <summary type="html"><![CDATA[<blockquote>
 <p>本文为译文，原文载于<a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-1-introduction/" target="_blank">这里</a>。尽请关注本系列的文章。</p>

@@ -67,5 +67,5 @@ tags: [pTeX]
 
 ## 译者续
 
-马起园 (Clerk Ma) 的 pTeX-ng 是下一代的 pTeX-ng。pTeX-ng 从 Y&Y TeX 发展而来，是纯 C 编写的 TeX 引擎。它带有 e-TeX, pTeX 的补丁，并原生支持 Unicode 编码，对字体支持良好，并且能够直接输出 PDF 文档。pTeX-ng 的前景十分喜人。
+马起园 (Clerk Ma) 的 pTeX-ng 是下一代的 pTeX。pTeX-ng 从 Y&Y TeX 发展而来，是纯 C 编写的 TeX 引擎。它带有 e-TeX, pTeX 的补丁，并原生支持 Unicode 编码，对字体支持良好，并且能够直接输出 PDF 文档。pTeX-ng 的前景十分喜人。
 
