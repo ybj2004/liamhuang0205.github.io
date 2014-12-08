@@ -8,7 +8,7 @@ tags: [pTeX, Encoding]
 
 [上一篇文章](http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-1-introduction/)（[译文](http://liam0205.me/2014/12/07/ptex-intro-and-tutorial-01/)）简单介绍了在 LaTeX 中排版日文的一些情况，今次我们会探讨一些关于字符和编码的技术细节。
 
-![](http://www.preining.info/blog/wp-content/uploads/2014/12/nihongo-latex.jpg)
+![]({{site.url}}/images/pTeX-intro/nihongo-latex.jpg)
 
 <!--more-->
 

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-12-08T10:29:08.205Z</updated>
+  <updated>2014-12-08T10:33:35.620Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,12 +19,12 @@
     <link href="http://liam0205.me/2014/12/08/ptex-intro-and-tutorial-02/"/>
     <id>http://liam0205.me/2014/12/08/ptex-intro-and-tutorial-02/</id>
     <published>2014-12-08T07:36:29.000Z</published>
-    <updated>2014-12-08T10:28:12.000Z</updated>
+    <updated>2014-12-08T10:33:28.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>本文为译文，原文载于<a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-2-characters-and-encodings/" target="_blank">这里</a>。欢迎关注本系列的文章。</p>
 </blockquote>
 <p><a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-1-introduction/" target="_blank">上一篇文章</a>（<a href="http://liam0205.me/2014/12/07/ptex-intro-and-tutorial-01/">译文</a>）简单介绍了在 LaTeX 中排版日文的一些情况，今次我们会探讨一些关于字符和编码的技术细节。</p>
-<p><img src="http://www.preining.info/blog/wp-content/uploads/2014/12/nihongo-latex.jpg" alt=""></p>
+<p><img src="/images/pTeX-intro/nihongo-latex.jpg" alt=""></p>
 <a id="more"></a>
 
 <p>这篇文章我们将讨论字符集和编码。在书写欧洲文字的时候，人们就已经需要用到非 ASCII 字符了；诸如日文这样的有成千上万个表义字符的书写系统，其字符数量更是远超 ASCII 所能涵盖的数量。同时我们也会琢磨一下为什么在日文文档里的转义字符为什么不是反斜线（\），而是日本货币标志（￥）。</p>
@@ -106,7 +106,7 @@ a4 d2 a4 e9 a4 ac a4 ca
 <p>本文为译文，原文载于<a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-2-characters-and-encodings/" target="_blank">这里</a>。欢迎关注本系列的文章。</p>
 </blockquote>
 <p><a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-1-introduction/" target="_blank">上一篇文章</a>（<a href="http://liam0205.me/2014/12/07/ptex-intro-and-tutorial-01/">译文</a>）简单介绍了在 LaTeX 中排版日文的一些情况，今次我们会探讨一些关于字符和编码的技术细节。</p>
-<p><img src="http://www.preining.info/blog/wp-content/uploads/2014/12/nihongo-latex.jpg" alt=""></p>
+<p><img src="/images/pTeX-intro/nihongo-latex.jpg" alt=""></p>
 ]]></summary>
     
       <category term="pTeX" scheme="http://liam0205.me/tags/pTeX/"/>
