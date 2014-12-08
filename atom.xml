@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-12-07T14:30:12.574Z</updated>
+  <updated>2014-12-08T10:29:08.205Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,109 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[日文 LaTeX 系统介绍 - 字符与编码]]></title>
+    <link href="http://liam0205.me/2014/12/08/ptex-intro-and-tutorial-02/"/>
+    <id>http://liam0205.me/2014/12/08/ptex-intro-and-tutorial-02/</id>
+    <published>2014-12-08T07:36:29.000Z</published>
+    <updated>2014-12-08T10:28:12.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>本文为译文，原文载于<a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-2-characters-and-encodings/" target="_blank">这里</a>。欢迎关注本系列的文章。</p>
+</blockquote>
+<p><a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-1-introduction/" target="_blank">上一篇文章</a>（<a href="http://liam0205.me/2014/12/07/ptex-intro-and-tutorial-01/">译文</a>）简单介绍了在 LaTeX 中排版日文的一些情况，今次我们会探讨一些关于字符和编码的技术细节。</p>
+<p><img src="http://www.preining.info/blog/wp-content/uploads/2014/12/nihongo-latex.jpg" alt=""></p>
+<a id="more"></a>
+
+<p>这篇文章我们将讨论字符集和编码。在书写欧洲文字的时候，人们就已经需要用到非 ASCII 字符了；诸如日文这样的有成千上万个表义字符的书写系统，其字符数量更是远超 ASCII 所能涵盖的数量。同时我们也会琢磨一下为什么在日文文档里的转义字符为什么不是反斜线（\），而是日本货币标志（￥）。</p>
+<p>首先，我并不精于此道。因此，文中讲解的内容十分简单，并且不可避免地会有谬误。如有发现请指出。</p>
+<h2 id=" 字符集和编码 ">字符集和编码</h2>
+<p>对于 ASCII 来说，这事儿很简单。比如，在计算机中表示「A」这个字母，我们只需要用 65 这个十进制数来表示即可。并且，65 对应的二进制数，也正是字母「A」在计算机中的样子。因此，对于 ASCII 来说，它既是字符集又是编码。</p>
+<p>对于非 ASCII 字符来说，这事儿就变得复杂起来了。</p>
+<p>对于欧洲的字符来说可能还好。比如常用的 Latin1 字符集中，字符「Ö」的码位是 214。由于一个字节可以表示 256 个不同的值，所以勉强能装下整个 Latin1 字符集。</p>
+<p>但是对于成千上万的日文汉字 (Kanji) 来说，这就不行了。首先需要有一个统一的方式将字形 (glyph) 编号，每个字形对应一个 ID (数字)。然后再寻找一个合适的方式去编码这些字形。</p>
+<h3 id=" 字符集标准 ">字符集标准</h3>
+<ul>
+<li><strong>JIS</strong> - 实践中有一些日本工业标准 (<a href="http://en.wikipedia.org/wiki/Japanese_Industrial_Standard" target="_blank">Japanese Industrial Standards</a>)。比如，JIS X 0201 在 ASCII 字符集的基础上，增加了 64 个半宽 (half-width) 的片假名；又比如，<a href="http://en.wikipedia.org/wiki/JIS_X_0208" target="_blank">JIS X 0208</a> 是最常见的汉字字符集，它包含 6879 个字符，其中有 6355 个汉字，另有 524 个其他类型的字符。</li>
+<li><strong>UCS</strong> - 通用字符集 (<a href="http://zh.wikipedia.org/wiki/ 通用字符集 " target="_blank">Universal Character Set</a>) 中包含了近十万个抽象字符，它试图将有史以来所有的字符都包含进来。涉及到日语的部分是统一汉码 (<a href="http://en.wikipedia.org/wiki/Han_unification" target="_blank">Han Unification</a>)，这个编码将中日韩表意相同的形近字统一映射到一个码位上。</li>
+</ul>
+<h3 id=" 编码 ">编码</h3>
+<p>有了字符集标准，接下来需要考虑如何在计算机中用二进制和字节表示这些字符。编码和字符集是两个不同的概念，但因为总是一起提及，所以经常有人混淆。</p>
+<p>对于现代计算机和 TeX 来说，有以下一些常见的编码。其中前三个编码了 JIS 字符集；最后一个编码了 Unicode 字符集。</p>
+<ul>
+<li>SJIS (<a href="http://zh.wikipedia.org/wiki/Shift_JIS" target="_blank">Shift JIS</a>) - SJIS 编码了 JIS X 0201 和 JIS X 0208 两个字符集。它很好地兼容了 ASCII 和 JIS X 0201，这使得它在老的计算机上工作正常；但是它也有一些奇怪的性质，并因此在一些通用解析器上工作不正常。</li>
+<li>JIS X 0202 - 通称 JIS 的编码标准，它编码了 JIS X 0208。这个编码在诸如电子邮件的 7-bit 信道上的传输性能良好；老的 Emacs 也将其当做内部编码。</li>
+<li>EUC(-JP) Extanded Unix Code - 实际上是符合 ISO 2022 标准的字符集的编码族。这种编码在日本的 Unix-affine 计算机上流行多年。</li>
+<li><a href="http://en.wikipedia.org/wiki/UTF-8" target="_blank">UTF-8</a> - 编码了 UCS 字符集，是 <a href="http://en.wikipedia.org/wiki/Unicode" target="_blank">Unicode 标准</a>的一部分，先行与几乎所有现代计算机上。</li>
+</ul>
+<p>最后我们来看一个例子。</p>
+<pre><code><span class="keyword">Language</span>
+Ä á
+日本語
+ひらがな
+</code></pre><p>注意观察他们在不同编码规则情况下对应的十六进制数据。</p>
+<p><strong>UTF-8</strong></p>
+<p>第一行的「Language」在 UTF-8 编码中对应的十六进制与 ASCII 完全相同，用一个字节表示一个字符；第二行的注音字母则用两个字节来编码，其中 0x20 是单字节的空格；第三行的日文汉字和第四行的平假名都用三个字符来编码。</p>
+<pre><code>4c 61 6e 67 75 61 67 65
+c3 84 20 c3 a1a8
+e6 97 a5 e6 9c ac e8 aa 9e
+e3 81 b2 e3 82 89 e3 81 8c e3 81 aa
+</code></pre><p><strong>SJIS</strong></p>
+<p>SJIS 编码就有点意思了。首先，第一行保持相同，与 ASCII 兼容。第二行的「Ä」并不在字符集当中，于是 SJIS 把它当做是「”A」，编码成「0x22 0x41」；另一方面，「á」在字符集当中，SJIS 用三个字节将它编码成「0x81 0x4c 0x61」。注意第一行的编码，「0x4c」是字母「L」，「0x61」是字母「a」。它们连在一起与「á」的第二和第三个字节完全相同。这样「La」的编码就出现了歧义，一些解析器就无法正常工作了。</p>
+<p>接下来的日文汉字和平假名分别用两个字节来编码。</p>
+<pre><code>4c 61 6e 67 75 61 67 65
+22 41 20 81 4c 61
+93 fa 96 7b 8c ea
+82 d0 82 e7 82 aa 82 c8
+</code></pre><p><strong>ISO2022-JP</strong></p>
+<p>同样由于「Ä」不在字符集当中，ISO2022-JP 把它当做是「”A」来进行编码；但「á」却花了 9 个字节来编码。同时汉字和平假名的编码方式也是不固定的。</p>
+<pre><code><span class="number">4</span>c <span class="number">61</span> <span class="number">6</span>e <span class="number">67</span> <span class="number">75</span> <span class="number">61</span> <span class="number">67</span> <span class="number">65</span>
+<span class="number">22</span> <span class="number">41</span> <span class="number">20</span> <span class="number">1</span>b <span class="number">24</span> <span class="number">42</span> <span class="number">21</span> <span class="number">2</span>d <span class="number">1</span>b <span class="number">28</span> <span class="number">42</span> <span class="number">61</span>
+<span class="number">1</span>b <span class="number">24</span> <span class="number">42</span> <span class="number">46</span> <span class="number">7</span>c <span class="number">4</span>b <span class="number">5</span>c <span class="number">38</span> <span class="number">6</span>c <span class="number">1</span>b <span class="number">28</span> <span class="number">42</span>
+<span class="number">1</span>b <span class="number">24</span> <span class="number">42</span> <span class="number">24</span> <span class="number">52</span> <span class="number">24</span> <span class="number">69</span> <span class="number">24</span> <span class="number">2</span>c <span class="number">24</span> <span class="number">4</span><span class="operator">a</span> <span class="number">1</span>b <span class="number">28</span> <span class="number">42</span>
+</code></pre><p><strong>EUC-JP</strong></p>
+<p>EUC-JP 编码对应的字符集是 JIS X 0212，比之前的 JIS X 0201 和 JIS X 0208 大得多。这次「Ä」能够正确编码了。两个变音的拉丁字符被分别编码成三个字节；汉字和假名则是两个字节。</p>
+<pre><code><span class="number">4</span>c <span class="number">61</span> <span class="number">6</span>e <span class="number">67</span> <span class="number">75</span> <span class="number">61</span> <span class="number">67</span> <span class="number">65</span>
+<span class="number">8f</span> aa a3 <span class="number">20</span> <span class="number">8f</span> ab a1
+c6 fc cb dc b8 ec
+a4 d2 a4 e9 a4 ac a4 ca
+</code></pre><p>从这里可以看到，UTF-8 编码汉字和假名需要用到三个字节。因此用 UTF-8 编码来处理文档，得到的文件体积要大上不少。同时，旧有的编码沿用多年，惯性很大。因此 UTF-8 编码在日本用了很多年才得以推广。</p>
+<h2 id=" 我的计算机在用什么编码？">我的计算机在用什么编码？</h2>
+<p>这取决于你的计算机操作系统。</p>
+<ul>
+<li>Linux: 大多数情况下，Linux 系统使用 UTF-8 编码。在终端里执行 <code>locale</code> 命令，输出结果中的 <code>LC_CTYPE</code> 字段里可以看到系统语言和使用编码的信息。比如，<code>en_US.utf8</code>。</li>
+<li>Mac: 在 OS X 之前，Mac 使用的是苹果公司修改的 SJIS 版本，其名为 MacJapanese。从 OS X 开始，Mac 使用的是 UTF-8。</li>
+<li>Windows: 老版本使用 M$ 家修改的 SJIS 版本，其名为 CP932 （代码页 932，简体中文系统则是 CP936)。不过，新版本的 Windows 也使用了 UTF-8。</li>
+<li>BSD: 据我所知，用的是 UTF-8。</li>
+</ul>
+<h2 id=" 小结 ">小结</h2>
+<p>在 LaTeX 里些日文文档之前，你先要确定你使用的是什么编码。不同的 TeX 引擎对编码支持的情况不同，你应该根据需要选择合适的编码和 TeX 引擎。最好是使用 UTF-8 编码，pTeX, upTeX, XeTeX, LuaTeX 都支持 UTF-8 编码。</p>
+<p>不过，不少老版本的文档使用 SJIS 编码。此时你应该使用 pTeX，或者将他们转换为 UTF-8 编码后使用。</p>
+<h2 id=" 关于 _\_ 和 _￥">关于 \ 和 ￥</h2>
+<p>以下内容来自维基百科 <a href="http://en.wikipedia.org/wiki/Shift_JIS" target="_blank">ShiftJIS</a> 词条：</p>
+<blockquote>
+<p>The single-byte characters 0x00 to 0x7F match the ASCII encoding, except for a yen sign (U+00A5) at 0x5C and an overline (U+203E) at 0x7E in place of the ASCII character set’s backslash and tilde respectively.</p>
+</blockquote>
+<p>也就是说，在 SJIS 中，符号「¥」的编码与 ASCII 里的反斜线「\」的编码相同；与此同时，TeX 将 0x5C 当做是转义符。于是，在使用 SJIS 编码的计算机里，TeX 控制序列就都变成了类似 <code>¥hfill</code> 的样子。</p>
+<p>下一篇文章，我们将正式开始编写 LaTeX 代码！</p>
+<h2 id=" 译者续 ">译者续</h2>
+<p>SJIS 在日本的地位和 GBK 在中国的地位差不多。在早期的 Windows 系统里，使用的 CP936 与 GBK 几乎相同。同时，中文 LaTeX 早期的支持方式也都是基于 GBK 编码的。</p>
+<p>为了避免不必要的麻烦，我们的口号是：「<strong>珍爱生命，远离 GBK</strong>」。</p>
+]]></content>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本文为译文，原文载于<a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-2-characters-and-encodings/" target="_blank">这里</a>。欢迎关注本系列的文章。</p>
+</blockquote>
+<p><a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-1-introduction/" target="_blank">上一篇文章</a>（<a href="http://liam0205.me/2014/12/07/ptex-intro-and-tutorial-01/">译文</a>）简单介绍了在 LaTeX 中排版日文的一些情况，今次我们会探讨一些关于字符和编码的技术细节。</p>
+<p><img src="http://www.preining.info/blog/wp-content/uploads/2014/12/nihongo-latex.jpg" alt=""></p>
+]]></summary>
+    
+      <category term="pTeX" scheme="http://liam0205.me/tags/pTeX/"/>
+    
+      <category term="Encoding" scheme="http://liam0205.me/tags/Encoding/"/>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[日文 LaTeX 系统介绍 - 简介]]></title>
@@ -2706,82 +2809,6 @@ a <span class="special">&amp;</span> b <span class="special">&amp;</span> c<span
       <category term="LaTeX" scheme="http://liam0205.me/tags/LaTeX/"/>
     
       <category term="Float" scheme="http://liam0205.me/tags/Float/"/>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【LaTeX Tips】利用 TikZ 在 LaTeX 文档中制作水印效果]]></title>
-    <link href="http://liam0205.me/2014/04/22/LaTeX-watermark/"/>
-    <id>http://liam0205.me/2014/04/22/LaTeX-watermark/</id>
-    <published>2014-04-21T16:00:00.000Z</published>
-    <updated>2014-08-30T10:11:22.000Z</updated>
-    <content type="html"><![CDATA[<p>本文最早发布于<a href="http://zhuanlan.zhihu.com/LaTeX/19734756" target="_blank">知乎专栏</a>，略有修改.</p>
-<p><strong>在未获得本人书面许可的情况下，禁止任何形式的「合理使用」、转载、分享以及将链接发至知乎主站外任何网站或 App （包括知乎日报），外泄斩立决。智商欠奉，中文阅读障碍或微博控患者, 请在监护人及医师协助下学习本段落，谢谢合作。</strong></p>
-<p>制作水印基本上需要解决下面几个问题：</p>
-<ul>
-<li>水印应该叠放在正文的下面，不得覆盖文字</li>
-<li>水印应该放置在合适的位置</li>
-<li>水印的颜色应该足够淡，因此不会影响（太多）文章正文的阅读</li>
-</ul>
-<a id="more"></a>
-
-<p>在 LaTeX 中，可以用 <a href="http://www.ctan.org/pkg/eso-pic" target="_blank">eso-pic 宏包</a>提供的 \AddToShipoutPictureBG 命令，来将内容叠放在正文的下面；使用 <a href="http://www.ctan.org/pkg/pgf" target="_blank">Ti<em>k</em>Z 宏包</a>（这是绘图工具 PGF 的前端）来为水印文字定位；使用 <a href="http://www.ctan.org/pkg/xcolor" target="_blank">xcolor 宏包</a>设置水印的颜色。</p>
-<p>同时，我们会希望：</p>
-<ul>
-<li>设定水印文字内容</li>
-<li>设定水印文字大小</li>
-<li>设定水印文字偏转角度</li>
-<li>能够在合适的位置开启水印效果</li>
-</ul>
-<p>于是我们有了下面这样的实现：</p>
-<pre><code><span class="command">\newcommand</span><span class="special">{</span><span class="command">\watermark</span><span class="special">}</span><span class="special">[</span>3<span class="special">]</span><span class="special">{</span><span class="command">\AddToShipoutPictureBG</span><span class="special">{</span>
-<span class="command">\parbox</span><span class="special">[</span>b<span class="special">]</span><span class="special">[</span><span class="command">\paperheight</span><span class="special">]</span><span class="special">{</span><span class="command">\paperwidth</span><span class="special">}</span><span class="special">{</span>
-<span class="command">\vfill</span><span class="comment">%</span>
-<span class="command">\centering</span><span class="comment">%</span>
-<span class="command">\tikz</span><span class="special">[</span>remember picture, overlay<span class="special">]</span><span class="comment">%</span>
-  <span class="command">\node</span> <span class="special">[</span>rotate = <span class="special">#</span>1, scale = <span class="special">#</span>2<span class="special">]</span> at (current page.center)<span class="comment">%</span>
-    <span class="special">{</span><span class="command">\textcolor</span><span class="special">{</span>gray!80!cyan!30<span class="special">}</span><span class="special">{</span><span class="special">#</span>3<span class="special">}</span><span class="special">}</span>;
-<span class="command">\vfill</span><span class="special">}</span><span class="special">}</span><span class="special">}</span>
-<span class="command">\newcommand</span><span class="special">{</span><span class="command">\watermarkoff</span><span class="special">}</span><span class="special">{</span><span class="command">\ClearShipoutPictureBG</span><span class="special">}</span>
-</code></pre><p>一个可供测试的完整例子是：</p>
-<pre><code><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>tikz<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>xcolor<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>eso-pic<span class="special">}</span>
-
-<span class="command">\newcommand</span><span class="special">{</span><span class="command">\watermark</span><span class="special">}</span><span class="special">[</span>3<span class="special">]</span><span class="special">{</span><span class="command">\AddToShipoutPictureBG</span><span class="special">{</span>
-<span class="command">\parbox</span><span class="special">[</span>b<span class="special">]</span><span class="special">[</span><span class="command">\paperheight</span><span class="special">]</span><span class="special">{</span><span class="command">\paperwidth</span><span class="special">}</span><span class="special">{</span>
-<span class="command">\vfill</span><span class="comment">%</span>
-<span class="command">\centering</span><span class="comment">%</span>
-<span class="command">\tikz</span><span class="special">[</span>remember picture, overlay<span class="special">]</span><span class="comment">%</span>
-  <span class="command">\node</span> <span class="special">[</span>rotate = <span class="special">#</span>1, scale = <span class="special">#</span>2<span class="special">]</span> at (current page.center)<span class="comment">%</span>
-    <span class="special">{</span><span class="command">\textcolor</span><span class="special">{</span>gray!80!cyan!30<span class="special">}</span><span class="special">{</span><span class="special">#</span>3<span class="special">}</span><span class="special">}</span>;
-<span class="command">\vfill</span><span class="special">}</span><span class="special">}</span><span class="special">}</span>
-
-<span class="command">\usepackage</span><span class="special">{</span>blindtext<span class="special">}</span>
-
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\watermark</span><span class="special">{</span>60<span class="special">}</span><span class="special">{</span>10<span class="special">}</span><span class="special">{</span>DRAFT<span class="special">}</span>
-<span class="command">\blinddocument</span>
-<span class="command">\clearpage</span>
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</code></pre><p>以上。</p>
-]]></content>
-    <summary type="html"><![CDATA[<p>本文最早发布于<a href="http://zhuanlan.zhihu.com/LaTeX/19734756" target="_blank">知乎专栏</a>，略有修改.</p>
-<p><strong>在未获得本人书面许可的情况下，禁止任何形式的「合理使用」、转载、分享以及将链接发至知乎主站外任何网站或 App （包括知乎日报），外泄斩立决。智商欠奉，中文阅读障碍或微博控患者, 请在监护人及医师协助下学习本段落，谢谢合作。</strong></p>
-<p>制作水印基本上需要解决下面几个问题：</p>
-<ul>
-<li>水印应该叠放在正文的下面，不得覆盖文字</li>
-<li>水印应该放置在合适的位置</li>
-<li>水印的颜色应该足够淡，因此不会影响（太多）文章正文的阅读</li>
-</ul>
-]]></summary>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/tags/LaTeX/"/>
-    
-      <category term="Watermark" scheme="http://liam0205.me/tags/Watermark/"/>
     
       <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
     
