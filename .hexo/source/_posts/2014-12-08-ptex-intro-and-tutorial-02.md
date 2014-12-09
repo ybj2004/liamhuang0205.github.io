@@ -29,7 +29,7 @@ tags: [pTeX, Encoding]
 ### 字符集标准
 
 * **JIS** - 实践中有一些日本工业标准 ([Japanese Industrial Standards](http://en.wikipedia.org/wiki/Japanese_Industrial_Standard))。比如，JIS X 0201 在 ASCII 字符集的基础上，增加了 64 个半宽 (half-width) 的片假名；又比如，[JIS X 0208](http://en.wikipedia.org/wiki/JIS_X_0208) 是最常见的汉字字符集，它包含 6879 个字符，其中有 6355 个汉字，另有 524 个其他类型的字符。
-* **UCS** - 通用字符集 ([Universal Character Set](http://zh.wikipedia.org/wiki/通用字符集)) 中包含了近十万个抽象字符，它试图将有史以来所有的字符都包含进来。涉及到日语的部分是统一汉码 ([Han Unification](http://en.wikipedia.org/wiki/Han_unification))，这个编码将中日韩表意相同的形近字统一映射到一个码位上。
+* **UCS** - 通用字符集 ([Universal Character Set](http://zh.wikipedia.org/wiki/通用字符集)) 中包含了近十万个抽象字符，它试图将有史以来所有的字符都包含进来。涉及到日语的部分有一些例外，对应的标准是统一汉码 ([Han Unification](http://en.wikipedia.org/wiki/Han_unification))，这个字符集将中日韩表意相同的形近字统一映射到一个码位上。
 
 ### 编码
 
@@ -40,7 +40,7 @@ tags: [pTeX, Encoding]
 * SJIS ([Shift JIS](http://zh.wikipedia.org/wiki/Shift_JIS)) - SJIS 编码了 JIS X 0201 和 JIS X 0208 两个字符集。它很好地兼容了 ASCII 和 JIS X 0201，这使得它在老的计算机上工作正常；但是它也有一些奇怪的性质，并因此在一些通用解析器上工作不正常。
 * JIS X 0202 - 通称 JIS 的编码标准，它编码了 JIS X 0208。这个编码在诸如电子邮件的 7-bit 信道上的传输性能良好；老的 Emacs 也将其当做内部编码。
 * EUC(-JP) Extanded Unix Code - 实际上是符合 ISO 2022 标准的字符集的编码族。这种编码在日本的 Unix-affine 计算机上流行多年。
-* [UTF-8](http://en.wikipedia.org/wiki/UTF-8) - 编码了 UCS 字符集，是 [Unicode 标准](http://en.wikipedia.org/wiki/Unicode)的一部分，先行与几乎所有现代计算机上。
+* [UTF-8](http://en.wikipedia.org/wiki/UTF-8) - 编码了 UCS 字符集，是 [Unicode 标准](http://en.wikipedia.org/wiki/Unicode)的一部分，先行与几乎所有现代计算机操作系统上。
 
 最后我们来看一个例子。
 
@@ -56,7 +56,7 @@ tags: [pTeX, Encoding]
 第一行的「Language」在 UTF-8 编码中对应的十六进制与 ASCII 完全相同，用一个字节表示一个字符；第二行的注音字母则用两个字节来编码，其中 0x20 是单字节的空格；第三行的日文汉字和第四行的平假名都用三个字符来编码。
 
     4c 61 6e 67 75 61 67 65
-    c3 84 20 c3 a1a8
+    c3 84 20 c3 a1
     e6 97 a5 e6 9c ac e8 aa 9e
     e3 81 b2 e3 82 89 e3 81 8c e3 81 aa
 
@@ -97,14 +97,14 @@ EUC-JP 编码对应的字符集是 JIS X 0212，比之前的 JIS X 0201 和 JIS 
 
 * Linux: 大多数情况下，Linux 系统使用 UTF-8 编码。在终端里执行 `locale` 命令，输出结果中的 `LC_CTYPE` 字段里可以看到系统语言和使用编码的信息。比如，`en_US.utf8`。
 * Mac: 在 OS X 之前，Mac 使用的是苹果公司修改的 SJIS 版本，其名为 MacJapanese。从 OS X 开始，Mac 使用的是 UTF-8。
-* Windows: 老版本使用 M$ 家修改的 SJIS 版本，其名为 CP932 （代码页 932，简体中文系统则是 CP936)。不过，新版本的 Windows 也使用了 UTF-8。
+* Windows: 老版本使用 M$ 家修改的 SJIS 版本，其名为 CP932 （代码页 932，简体中文系统则是 CP936)。不过，新版本的 Windows 也有可能使用 UTF-8。
 * BSD: 据我所知，用的是 UTF-8。
 
 ## 小结
 
-在 LaTeX 里些日文文档之前，你先要确定你使用的是什么编码。不同的 TeX 引擎对编码支持的情况不同，你应该根据需要选择合适的编码和 TeX 引擎。最好是使用 UTF-8 编码，pTeX, upTeX, XeTeX, LuaTeX 都支持 UTF-8 编码。
+在 LaTeX 里些日文文档之前，你先要确定你使用的是什么编码。不同的 TeX 引擎对编码支持的情况不同，你应该根据需要选择合适的编码和 TeX 引擎。目前被 TeX 引擎支持最好的编码（译注：原文是字符集）是 UTF-8。新版本的 pTeX 接受 UTF-8 编码；upTeX, XeTeX, LuaTeX 原生支持 UTF-8 编码；使用 BXcjkjatype 时，也应当使用 UTF-8 编码。
 
-不过，不少老版本的文档使用 SJIS 编码。此时你应该使用 pTeX，或者将他们转换为 UTF-8 编码后使用。
+不过，不少老版本的文档使用 SJIS 编码。此时你应该使用 pTeX，用 pLaTeX 来编译；或者将他们转换为 UTF-8 编码后使用。
 
 ## 关于 \ 和 ￥
 
@@ -112,7 +112,7 @@ EUC-JP 编码对应的字符集是 JIS X 0212，比之前的 JIS X 0201 和 JIS 
 
 > The single-byte characters 0x00 to 0x7F match the ASCII encoding, except for a yen sign (U+00A5) at 0x5C and an overline (U+203E) at 0x7E in place of the ASCII character set’s backslash and tilde respectively.
 
-也就是说，在 SJIS 中，符号「¥」的编码与 ASCII 里的反斜线「\」的编码相同；与此同时，TeX 将 0x5C 当做是转义符。于是，在使用 SJIS 编码的计算机里，TeX 控制序列就都变成了类似 `¥hfill` 的样子。
+也就是说，在 SJIS 中，符号「¥」的编码与 ASCII 里的反斜线「\」的编码相同，都是 0x5C；与此同时，TeX 将 0x5C 当做是转义符。于是，在使用 SJIS 编码的计算机里，TeX 控制序列就都变成了类似 `¥hfill` 的样子。
 
 下一篇文章，我们将正式开始编写 LaTeX 代码！
 
@@ -121,5 +121,3 @@ EUC-JP 编码对应的字符集是 JIS X 0212，比之前的 JIS X 0201 和 JIS 
 SJIS 在日本的地位和 GBK 在中国的地位差不多。在早期的 Windows 系统里，使用的 CP936 与 GBK 几乎相同。同时，中文 LaTeX 早期的支持方式也都是基于 GBK 编码的。
 
 为了避免不必要的麻烦，我们的口号是：「**珍爱生命，远离 GBK**」。
-
-
