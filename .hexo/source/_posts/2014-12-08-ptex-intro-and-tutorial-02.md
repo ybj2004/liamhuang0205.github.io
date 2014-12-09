@@ -29,7 +29,7 @@ tags: [pTeX, Encoding]
 ### 字符集标准
 
 * **JIS** - 实践中有一些日本工业标准 ([Japanese Industrial Standards](http://en.wikipedia.org/wiki/Japanese_Industrial_Standard))。比如，JIS X 0201 在 ASCII 字符集的基础上，增加了 64 个半宽 (half-width) 的片假名；又比如，[JIS X 0208](http://en.wikipedia.org/wiki/JIS_X_0208) 是最常见的汉字字符集，它包含 6879 个字符，其中有 6355 个汉字，另有 524 个其他类型的字符。
-* **UCS** - 通用字符集 ([Universal Character Set](http://zh.wikipedia.org/wiki/通用字符集)) 中包含了近十万个抽象字符，它试图将有史以来所有的字符都包含进来。涉及到日语的部分有一些例外，对应的标准是统一汉码 ([Han Unification](http://en.wikipedia.org/wiki/Han_unification))，这个字符集将中日韩表意相同的形近字统一映射到一个码位上。
+* **UCS** - 通用字符集 ([Universal Character Set](http://zh.wikipedia.org/wiki/通用字符集)) 中包含了近十万个抽象字符，它试图将有史以来所有的字符都包含进来。涉及到日语的部分有一些特殊，对应的标准是统一汉码 ([Han Unification](http://en.wikipedia.org/wiki/Han_unification))，这个字符集将中日韩表意相同的形近字统一映射到一个码位上。
 
 ### 编码
 

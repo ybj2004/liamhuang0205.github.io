@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-12-09T03:17:28.924Z</updated>
+  <updated>2014-12-09T03:29:46.065Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://liam0205.me/2014/12/08/ptex-intro-and-tutorial-02/"/>
     <id>http://liam0205.me/2014/12/08/ptex-intro-and-tutorial-02/</id>
     <published>2014-12-08T07:36:29.000Z</published>
-    <updated>2014-12-09T03:09:25.000Z</updated>
+    <updated>2014-12-09T03:29:41.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>本文为译文，原文载于<a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-2-characters-and-encodings/" target="_blank">这里</a>。欢迎关注本系列的文章。</p>
 </blockquote>
@@ -37,7 +37,7 @@
 <h3 id=" 字符集标准 ">字符集标准</h3>
 <ul>
 <li><strong>JIS</strong> - 实践中有一些日本工业标准 (<a href="http://en.wikipedia.org/wiki/Japanese_Industrial_Standard" target="_blank">Japanese Industrial Standards</a>)。比如，JIS X 0201 在 ASCII 字符集的基础上，增加了 64 个半宽 (half-width) 的片假名；又比如，<a href="http://en.wikipedia.org/wiki/JIS_X_0208" target="_blank">JIS X 0208</a> 是最常见的汉字字符集，它包含 6879 个字符，其中有 6355 个汉字，另有 524 个其他类型的字符。</li>
-<li><strong>UCS</strong> - 通用字符集 (<a href="http://zh.wikipedia.org/wiki/ 通用字符集 " target="_blank">Universal Character Set</a>) 中包含了近十万个抽象字符，它试图将有史以来所有的字符都包含进来。涉及到日语的部分有一些例外，对应的标准是统一汉码 (<a href="http://en.wikipedia.org/wiki/Han_unification" target="_blank">Han Unification</a>)，这个字符集将中日韩表意相同的形近字统一映射到一个码位上。</li>
+<li><strong>UCS</strong> - 通用字符集 (<a href="http://zh.wikipedia.org/wiki/ 通用字符集 " target="_blank">Universal Character Set</a>) 中包含了近十万个抽象字符，它试图将有史以来所有的字符都包含进来。涉及到日语的部分有一些特殊，对应的标准是统一汉码 (<a href="http://en.wikipedia.org/wiki/Han_unification" target="_blank">Han Unification</a>)，这个字符集将中日韩表意相同的形近字统一映射到一个码位上。</li>
 </ul>
 <h3 id=" 编码 ">编码</h3>
 <p>有了字符集标准，接下来需要考虑如何在计算机中用二进制和字节表示这些字符。编码和字符集是两个不同的概念，但因为总是一起提及，所以经常有人混淆。</p>
