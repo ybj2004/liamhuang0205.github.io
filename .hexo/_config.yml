@@ -103,8 +103,9 @@ stylus:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github
-  repository: git@github.com:liamhuang0205/liamhuang0205.github.io.git
+  type: git
+  repository:
+    gitcafe: git@gitcafe.com:hellccm/hellccm.git,gitcafe-pages
 
 feed:
     type: atom

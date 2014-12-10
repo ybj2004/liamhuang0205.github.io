@@ -5,6 +5,6 @@ _site
 codekit-config.json
 node_modules
 Gemfile.lock
-
+.hexo/.deploy/
 *.*~
 _posts/Life/2014-03-01-life.html
