@@ -1,0 +1,5 @@
+hexo g -d
+git add ..
+current=`date +%Y-%m-%d %H:%M:%S`
+git commit -m "site update $current"
+git push
