@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://liam0205.me/2014/12/11/ptex-intro-and-tutorial-03/</loc>
+    <lastmod>2014-12-11T04:13:13.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://liam0205.me/2014/12/08/ptex-intro-and-tutorial-02/</loc>
     <lastmod>2014-12-08T07:36:29.000Z</lastmod>
   </url>
@@ -57,11 +62,6 @@
   </url>
   
   <url>
-    <loc>http://liam0205.me/2014/08/21/bitmap-convert-to-eps-batch/</loc>
-    <lastmod>2014-08-21T02:38:38.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://liam0205.me/2014/05/08/float-setting/</loc>
     <lastmod>2014-05-08T10:47:41.000Z</lastmod>
   </url>
@@ -99,6 +99,11 @@
   <url>
     <loc>http://liam0205.me/2014/07/22/duoshuo-delay/</loc>
     <lastmod>2014-07-22T09:52:50.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://liam0205.me/2014/08/17/kindle-paperwhite2-stop-slient-updating/</loc>
+    <lastmod>2014-08-17T02:40:38.000Z</lastmod>
   </url>
   
   <url>
@@ -307,13 +312,13 @@
   </url>
   
   <url>
-    <loc>http://liam0205.me/2014/08/17/kindle-paperwhite2-stop-slient-updating/</loc>
-    <lastmod>2014-08-17T02:40:38.000Z</lastmod>
+    <loc>http://liam0205.me/2014/08/20/book-review-blindness/</loc>
+    <lastmod>2014-08-20T10:13:38.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://liam0205.me/2014/08/20/book-review-blindness/</loc>
-    <lastmod>2014-08-20T10:13:38.000Z</lastmod>
+    <loc>http://liam0205.me/2014/08/21/bitmap-convert-to-eps-batch/</loc>
+    <lastmod>2014-08-21T02:38:38.000Z</lastmod>
   </url>
   
   <url>

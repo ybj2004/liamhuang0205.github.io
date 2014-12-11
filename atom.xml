@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-12-10T17:36:21.722Z</updated>
+  <updated>2014-12-11T06:21:10.362Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,431 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[日文 LaTeX 系统介绍 - 最简示例]]></title>
+    <link href="http://liam0205.me/2014/12/11/ptex-intro-and-tutorial-03/"/>
+    <id>http://liam0205.me/2014/12/11/ptex-intro-and-tutorial-03/</id>
+    <published>2014-12-11T04:13:13.000Z</published>
+    <updated>2014-12-11T06:19:52.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>本文为译文，原文载于<a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-3-simple-documents/" target="_blank">这里</a>。欢迎关注本系列的文章。</p>
+</blockquote>
+<p><a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-2-characters-and-encodings/" target="_blank">上一篇文章</a>（<a href="http://liam0205.me/2014/12/08/ptex-intro-and-tutorial-02/">译文</a>）我们探讨了关于字符集和编码的一些细节，今次我们继续讨论如何在 LaTeX 中书写日文。今天的内容需要动手操作试试，要用不同的引擎和宏包写一些 Hello world 类型的文档。</p>
+<p><img src="/images/pTeX-intro/nihongo-latex.jpg" alt=""></p>
+<p>今天的内容同样会涉及到一些配置 TeX 环境的内容，会讲一讲如何在 <a href="http://tug.org/texlive/" target="_blank">TeX Live</a> 里配置书写日文的环境。</p>
+<a id="more"></a>
+
+<h2 id=" 配置日文 _TeX_ 环境 ">配置日文 TeX 环境</h2>
+<p>我们假设，你已经在计算机上安装好了类似 TeX Live 2014 的 TeX 系统。你可以在下列 TeX 系统中选择其一安装。</p>
+<ul>
+<li>TeX Live 的原始版本 (Upstream TeX Live installation) - 完整的安装步骤，请参考 <a href="http://tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf" target="_blank">TeX Live 的文档（中文版）</a>的第三章。对于 <a href="http://tug.org/texlive/quickinstall.html" target="_blank">Linux</a> 和 <a href="http://tug.org/texlive/windows.html" target="_blank">Windows</a> 系统，也可以参照相应的快速安装教程。对于 Mac OS X 的用户，则建议安装基于 TeX Live 的 <a href="http://tug.org/mactex/" target="_blank">MacTeX</a>。</li>
+<li>发行版里的 TeX Live (Distribution’s TeX Live) - 具体的安装取决于你使用的发行版。如果你用的是 Debian/jessie 或者 Debian/sid，那么你只需要运行 <code>apt-get install texlive-full</code> 即可。其他发行版 (Fedora, RedHat, SuSE) 的用户请注意检查发行版里当前的 TeX Live 版本。在老版本的环境下，后文中的例子可能无法得到预期的结果。</li>
+<li>W32TeX - <a href="http://w32tex.org/index-zh.html" target="_blank">W32TeX</a> 是 Akira KAKUTO 针对 Windows 系统制作的 TeX 发行版，其中的宏包也专门为 Windows 系统筛选过。W32TeX 对日文的配置可能是最周全的，不过我没有亲身体验过。</li>
+<li>其他 TeX 发行版 - <a href="http://miktex.org/" target="_blank">MiKTeX</a> 是另一个重要的 TeX 发行版。MiKTeX 是 Windows 平台上高度集成的优秀发行版。不过因为打包和依赖脚本的差异，特别是涉及到 <code>udpmap</code> 的部分与 TeX Live 完全不同，MiKTeX 在我手头的一些设备上并不能很好地运行。</li>
+</ul>
+<p>我的建议是，如果你的发行版足够新，那最好使用软件源里的 TeX Live；不然的话最好是使用 TUG 上的 TeX Live，包括 MacTeX。</p>
+<h2 id=" 最简示例 ">最简示例</h2>
+<p>言归正传。接下来我们来写几个「Hello world」文档。当然，「Hello world」这几个字母里并没有日文字，所以文章的正文部分看起来会是这个样子：</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\LaTeX</span> で日本語を書きましょう！
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>在进行下一步之前，有必要说一下关于编码的问题。请按以下规则，在保存文件的时候选择正确的编码：</p>
+<ul>
+<li>Unix-like 系统以及 Mac OS X 系统：总是保存为 UTF-8 编码</li>
+<li>Windows 系统：在测试 pLaTeX 的时候使用 ShiftJIS 编码，其他时候使用 UTF-8 编码</li>
+</ul>
+<p>这样做的原因在于：在 Windows 系统上，pTeX 以 ShiftJIS 编码作为默认编码；在其他系统上以 UTF-8 编码作为默认编码。当然，你也可以在 Windows 上把 pLaTeX 的测试文档以 UTF-8 编码保存，但是在编译的时候你得加上 <code>-kanji utf8</code> 这样的参数。</p>
+<h3 id="pLaTeX_ 以及 _upLaTeX">pLaTeX 以及 upLaTeX</h3>
+<p>这是最简单的情况，我们只需要加上 <code>\documentclass</code> 就好了。</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\LaTeX</span> で日本語を書きましょう！
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>以正确的编码将其保存为 <code>hello-ptex.tex</code>，然后运行 <code>platex</code>，UTF-8 编码的控制台会有类似于如下的输出：</p>
+<figure class="highlight text"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre>$ platex hello-ptex.tex
+This <span class="keyword">is</span> e-pTeX, Version <span class="number">3.14159265</span>-p3<span class="number">.5</span>-<span class="number">130605</span>-<span class="number">2.6</span> (utf8.euc) (TeX Live <span class="number">2014</span>) (preloaded format=platex)
+ restricted \write18 enabled.
+entering extended mode
+(./hello-ptex.tex
+pLaTeX2e &lt;<span class="number">2006</span>/<span class="number">11</span>/<span class="number">10</span>&gt; (based <span class="function_start"><span class="keyword">on</span></span> LaTeX2e &lt;<span class="number">2014</span>/<span class="number">05</span>/<span class="number">01</span>&gt; patch level <span class="number">0</span>)
+Babel &lt;<span class="number">3.9</span>k&gt; <span class="keyword">and</span> hyphenation patterns <span class="keyword">for</span> <span class="number">79</span> languages loaded.
+(/home/norbert/tl/<span class="number">2014</span>/texmf-dist/tex/latex/base/article.cls
+Document Class: article <span class="number">2007</span>/<span class="number">10</span>/<span class="number">19</span> v1<span class="number">.4</span>h Standard LaTeX document <span class="type">class</span>
+(/home/norbert/tl/<span class="number">2014</span>/texmf-dist/tex/latex/base/size10.clo)) (./hello-ptex.aux
+) [<span class="number">1</span>] (./hello-ptex.aux) )
+Output written <span class="function_start"><span class="keyword">on</span></span> hello-ptex.dvi (<span class="number">1</span> page, <span class="number">384</span> bytes).
+Transcript written <span class="function_start"><span class="keyword">on</span></span> hello-ptex.<span class="command">log</span>.
+</pre></td></tr></table></figure>
+
+
+
+<p>Windows 系统上的输出与此类似，只不过在版本号后面的不是 <code>utf8.euc</code> 而是 <code>sjis</code>。</p>
+<p>如你所见，输出结果是一个 DVI 文件。注意，此处<strong>不要</strong>使用 <code>dvips</code> 将其转换为 PostScript 文件，<code>dvips</code> 也许能够工作，但是 PS 文件却无法正常显示；请总是使用 <code>dvipdfmx</code> 将 pTeX/upTeX 输出的 DVI 文件转换为 PDF 文件。</p>
+<p>因此，我们输入命令</p>
+<figure class="highlight text"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>$ dvipdfmx hello<span class="attribute">-ptex</span><span class="built_in">.</span>dvi
+hello<span class="attribute">-ptex</span><span class="built_in">.</span>dvi <span class="subst">-&gt; </span>hello<span class="attribute">-ptex</span><span class="built_in">.</span>pdf
+<span class="preprocessor">[</span><span class="number">1</span><span class="preprocessor">]</span><span class="markup">
+7636 bytes written</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>接下来，使用 PDF 阅读器打开得到的 PDF 文档，效果类似于下：</p>
+<p><img src="/images/pTeX-intro/hello-ptex.jpg" alt=" 输出效果 "></p>
+<p>如果觉得字体效果看起来稍有不同，也暂时不用担心，之后对此会有解释。但不论如何，你应该能看到日文字符，不然就说明有哪里错了。</p>
+<p>类似的步骤在 upTeX 下同样奏效：</p>
+<figure class="highlight text"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre>$ uplatex hello-ptex<span class="preprocessor">.tex</span>
+This is e-upTeX, Version <span class="number">3.14159265</span>-p3<span class="number">.5</span>-u1<span class="number">.11</span>-<span class="number">130605</span>-<span class="number">2.6</span> (utf8<span class="preprocessor">.uptex</span>) (TeX Live <span class="number">2014</span>) (preloaded format=uplatex)
+ restricted \write18 enabled.
+entering extended mode
+(./hello-ptex<span class="preprocessor">.tex</span>
+pLaTeX2e &lt;<span class="number">2011</span>/<span class="number">05</span>/<span class="number">07</span>u00&gt;+<span class="number">0</span> (based on LaTeX2e &lt;<span class="number">2014</span>/<span class="number">05</span>/<span class="number">01</span>&gt; patch level <span class="number">0</span>)
+Babel &lt;<span class="number">3.9</span>k&gt; <span class="keyword">and</span> hyphenation patterns for <span class="number">79</span> languages loaded.
+(/home/norbert/tl/<span class="number">2014</span>/texmf-dist/tex/latex/base/article<span class="preprocessor">.cls</span>
+Document Class: article <span class="number">2007</span>/<span class="number">10</span>/<span class="number">19</span> v1<span class="number">.4</span>h Standard LaTeX document class
+(/home/norbert/tl/<span class="number">2014</span>/texmf-dist/tex/latex/base/size10<span class="preprocessor">.clo</span>)) (./hello-ptex<span class="preprocessor">.aux</span>
+) [<span class="number">1</span>] (./hello-ptex<span class="preprocessor">.aux</span>) )
+Output written on hello-ptex<span class="preprocessor">.dvi</span> (<span class="number">1</span> page, <span class="number">380</span> bytes).
+Transcript written on hello-ptex<span class="preprocessor">.log</span>.
+$ dvipdfmx hello-ptex<span class="preprocessor">.dvi</span>
+hello-ptex<span class="preprocessor">.dvi</span> -&gt; hello-ptex<span class="preprocessor">.pdf</span>
+[<span class="number">1</span>]
+<span class="number">7638</span> bytes written
+</pre></td></tr></table></figure>
+
+
+
+<p>输出结果与之前应当完全相同。</p>
+<p>多简单啊~</p>
+<h3 id="XeLaTeX">XeLaTeX</h3>
+<p>如果你用 XeLaTeX 编译同样的代码，输出结果里就不会有日文字符。这里我们要多写一点代码。这里我会展示使用 <a href="http://ctan.org/pkg/xecjk" target="_blank">xeCJK</a> 和 <a href="http://ctan.org/pkg/zxjatype" target="_blank">ZXjatype</a> 的最简示例。这两个宏包在 TeX Live 里都有，你可以选择其一。</p>
+<p>不管你用哪个宏包，你都得选择一个日文字体，不然的话日文字符就不会输出。</p>
+<h4 id="xeCJK">xeCJK</h4>
+<p>对于 xeCJK 来说，你得这么写：</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>xeCJK<span class="special">}</span>
+<span class="command">\setCJKmainfont</span><span class="special">{</span>ipaexm.ttf<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\LaTeX</span> で日本語を書きましょう！
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>将其以 UTF-8 编码保存为 <code>hello-xetex.tex</code>，之后运行 <code>xelatex</code>:</p>
+<figure class="highlight text"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre><span class="variable">$ </span>xelatex hello-xetex.tex
+<span class="constant">This</span> is <span class="constant">XeTeX</span>, <span class="constant">Version</span> <span class="number">3.14159265</span>-<span class="number">2.6</span>-<span class="number">0</span>.<span class="number">99991</span> (<span class="constant">TeX</span> <span class="constant">Live</span> <span class="number">2014</span>) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./hello-xetex.tex
+<span class="constant">LaTeX2e</span> &lt;<span class="number">2014</span>/<span class="number">05</span>/<span class="number">01</span>&gt;
+<span class="constant">Babel</span> &lt;<span class="number">3.9</span>k&gt; <span class="keyword">and</span> hyphenation patterns <span class="keyword">for</span> <span class="number">79</span> languages loaded.
+(<span class="regexp">/home/norbert</span><span class="regexp">/tl/</span><span class="number">2014</span>/texmf-dist/tex/latex/base/article.cls
+<span class="constant">Document</span> <span class="constant">Class</span><span class="symbol">:</span> article <span class="number">2007</span>/<span class="number">10</span>/<span class="number">19</span> v1.<span class="number">4</span>h <span class="constant">Standard</span> <span class="constant">LaTeX</span> document <span class="class"><span class="keyword">class</span></span>
+(<span class="regexp">/home/norbert</span><span class="regexp">/tl/</span><span class="number">2014</span>/texmf-dist/tex/latex/base/size1<span class="number">0</span>.clo))
+(<span class="regexp">/home/norbert</span><span class="regexp">/tl/</span><span class="number">2014</span>/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+(<span class="regexp">/home/norbert</span><span class="regexp">/tl/</span><span class="number">2014</span>/texmf-dist/tex/latex/l3kernel/expl3.sty
+.....
+(./hello-xetex.aux) (<span class="regexp">/home/norbert</span><span class="regexp">/tl/</span><span class="number">2014</span>/texmf-dist/tex/latex/tipa/t3cmr.fd)
+[<span class="number">1</span>] (./hello-xetex.aux) )
+<span class="constant">Output</span> written on hello-xetex.pdf (<span class="number">1</span> page).
+<span class="constant">Transcript</span> written on hello-xetex.log.
+</pre></td></tr></table></figure>
+
+
+
+<p>直接就能得到 PDF 文档。</p>
+<h4 id="ZXjatype">ZXjatype</h4>
+<p>对于 ZXjatype 来说，你得这么写：</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>zxjatype<span class="special">}</span>
+<span class="command">\setjamainfont</span><span class="special">{</span>ipaexm.ttf<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\LaTeX</span> で日本語を書きましょう！
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<h3 id="pdfLaTeX">pdfLaTeX</h3>
+<p>接下来，我们看看在 pdfLaTeX 底下怎么使用。pdfTeX 引擎可能是全球范围内使用最广泛的引擎了。这里，我们也将讨论两个宏包的使用方法：Werner Lemberg 的 <a href="http://cjk.ffii.org/" target="_blank">CJK</a> 宏包和 Takayuki Yato 的 <a href="http://www.ctan.org/pkg/bxcjkjatype" target="_blank">BXcjkjatype</a>。</p>
+<h4 id="CJK">CJK</h4>
+<p>译注：这里作者用了一个很别扭的方式来构建文档，已改用通常习惯的方式。</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>CJKutf8<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>CJK*<span class="special">}</span><span class="special">{</span>UTF8<span class="special">}</span><span class="special">{</span>min<span class="special">}</span>
+<span class="command">\LaTeX</span> で日本語を書きましょう！
+<span class="command">\end</span><span class="special">{</span>CJK*<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>将其以 UTF-8 编码保存为 <code>hello-cjk.tex</code>，之后运行 <code>pdflatex</code>:</p>
+<figure class="highlight text"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre>$ pdflatex hello<span class="attribute">-cjk</span><span class="built_in">.</span>tex
+This is pdfTeX, Version <span class="number">3.14159265</span><span class="subst">-</span><span class="number">2.6</span><span class="subst">-</span><span class="number">1.40</span><span class="number">.15</span> (TeX Live <span class="number">2014</span>) (preloaded format<span class="subst">=</span>pdflatex)
+ restricted <span class="subst">\</span>write18 enabled<span class="built_in">.</span>
+entering extended mode
+(<span class="built_in">.</span>/hello<span class="attribute">-cjk</span><span class="built_in">.</span>tex
+LaTeX2e <span class="subst">&lt;</span><span class="number">2014</span>/<span class="number">05</span>/<span class="number">01</span><span class="subst">&gt;</span>
+Babel <span class="subst">&lt;</span><span class="number">3.9</span>k<span class="subst">&gt;</span> <span class="literal">and</span> hyphenation patterns for <span class="number">79</span> languages loaded<span class="built_in">.</span>
+(/home/norbert/tl/<span class="number">2014</span>/texmf<span class="attribute">-dist</span>/tex/latex/base/article<span class="built_in">.</span>cls
+Document Class: article <span class="number">2007</span>/<span class="number">10</span>/<span class="number">19</span> v1<span class="number">.4</span>h Standard LaTeX document class
+(/home/norbert/tl/<span class="number">2014</span>/texmf<span class="attribute">-dist</span>/tex/latex/base/size10<span class="built_in">.</span>clo))
+(/home/norbert/tl/<span class="number">2014</span>/texmf<span class="attribute">-dist</span>/tex/latex/cjk/texinput/CJKutf8<span class="built_in">.</span>sty
+<span class="attribute">...</span>
+t/fonts/type1/wadalab/dmj/dmjkk<span class="built_in">.</span>pfb<span class="subst">&gt;&lt;</span>/home/norbert/tl/<span class="number">2014</span>/texmf<span class="attribute">-dist</span>/fonts/typ
+e1/wadalab/dmj/dmjsy<span class="built_in">.</span>pfb<span class="subst">&gt;</span>
+Output written <span class="keyword">on</span> hello<span class="attribute">-cjk</span><span class="built_in">.</span>pdf (<span class="number">1</span> page, <span class="number">29574</span> <span class="built_in">bytes</span>)<span class="built_in">.</span>
+Transcript written <span class="keyword">on</span> hello<span class="attribute">-cjk</span><span class="built_in">.</span><span class="keyword">log</span><span class="built_in">.</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>如果你仔细观察的话，你会发现：LaTeX 几个字母后的空距和之前的输出不大一样。尽管代码看起来有些麻烦，不过，如果你只是想在非日文的文档里嵌入一小段日文，这仍然是个不错的方案。</p>
+<p>译者注：实际上，用下面的代码，也能得到正确的 CJK-western 空距。这应该是原作者不熟悉 CJK 导致的。</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>CJKutf8<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>CJKspace<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>CJK*<span class="special">}</span><span class="special">{</span>UTF8<span class="special">}</span><span class="special">{</span>min<span class="special">}</span>
+<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span> で日本語を書きましょう！
+<span class="command">\end</span><span class="special">{</span>CJK*<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<h4 id="BXcjkjatype">BXcjkjatype</h4>
+<p>如果上面的代码看起来十分冗长，那么 BXcjkjatype 则提供了一种更简洁也更好的封装。这里只需要用下面简单的代码就能得到输出了：</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">[</span>whole<span class="special">]</span><span class="special">{</span>bxcjkjatype<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\LaTeX</span> で日本語を書きましょう！
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>输出结果和之前 CJK 方式的结果类似。不过，嵌入的字体和之前有所不同。BXcjkjatype 默认使用 IPAex 字体。使用此方式请注意：不要在文档中使用任何非 ASCII 字符。</p>
+<h3 id="LuaLaTeX">LuaLaTeX</h3>
+<p>LuaTeX 是一个嵌入了 Lua 解释器的新的 TeX 引擎，这使得我们可以使用 Lua 语言来控制和调整许多 TeX 内部的行为。尽管它还不能完全取代 pdfTeX，但是至少拿来输出文档还是可以的。一些日本 TeX 同好为其开发了 <a href="http://ctan.org/pkg/luatexja" target="_blank">LuaTeX-ja</a> 宏包，用以在 LuaTeX 里使用日文。最简示例是这样的：</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>luatexja<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\LaTeX</span> で日本語を書きましょう！
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>运行 <code>lualatex</code> 之后，你可能要等上不少时间。这是因为第一次运行 LuaLaTeX 的时候，系统需要刷新字体，耐心等待就好。最终在控制台终端上，你大概会得到下面的输出内容：</p>
+<figure class="highlight text"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre>$ lualatex hello<span class="attribute">-luatexja</span><span class="built_in">.</span>tex
+This is LuaTeX, Version beta<span class="subst">-</span><span class="number">0.79</span><span class="number">.1</span> (TeX Live <span class="number">2014</span>) (rev <span class="number">4971</span>)
+ restricted <span class="subst">\</span>write18 enabled<span class="built_in">.</span>
+(<span class="built_in">.</span>/hello<span class="attribute">-luatexja</span><span class="built_in">.</span>tex
+LaTeX2e <span class="subst">&lt;</span><span class="number">2014</span>/<span class="number">05</span>/<span class="number">01</span><span class="subst">&gt;</span>
+Babel <span class="subst">&lt;</span><span class="number">3.9</span>k<span class="subst">&gt;</span> <span class="literal">and</span> hyphenation patterns for <span class="number">79</span> languages loaded<span class="built_in">.</span>
+(/home/norbert/tl/<span class="number">2014</span>/texmf<span class="attribute">-dist</span>/tex/latex/base/article<span class="built_in">.</span>cls
+Document Class: article <span class="number">2007</span>/<span class="number">10</span>/<span class="number">19</span> v1<span class="number">.4</span>h Standard LaTeX document class
+(/home/norbert/tl/<span class="number">2014</span>/texmf<span class="attribute">-dist</span>/tex/latex/base/size10<span class="built_in">.</span>clo))
+(/home/norbert/tl/<span class="number">2014</span>/texmf<span class="attribute">-dist</span>/tex/luatex/luatexja/luatexja<span class="built_in">.</span>sty
+<span class="attribute">...</span>
+ <span class="number">1923</span> words of node memory still <span class="keyword">in</span> use:
+   <span class="number">6</span> hlist, <span class="number">1</span> vlist, <span class="number">3</span> rule, <span class="number">3</span> glue, <span class="number">10</span> kern, <span class="number">1</span> glyph, <span class="number">241</span> attribute, <span class="number">299</span> glue_s
+pec, <span class="number">16</span> attribute_list, <span class="number">1</span> write nodes
+   avail lists: <span class="number">1</span>:<span class="number">1</span>,<span class="number">2</span>:<span class="number">888</span>,<span class="number">3</span>:<span class="number">5</span>,<span class="number">4</span>:<span class="number">40</span>,<span class="number">5</span>:<span class="number">4</span>,<span class="number">6</span>:<span class="number">25</span>,<span class="number">7</span>:<span class="number">3</span>,<span class="number">9</span>:<span class="number">12</span>
+<span class="subst">&lt;&lt;</span>/home/norbert/tl/<span class="number">2014</span>/texmf<span class="attribute">-dist</span>/fonts/type1/<span class="keyword">public</span>/amsfonts/cm/cmr10<span class="built_in">.</span>pfb<span class="subst">&gt;&lt;&lt;</span>/h
+ome/norbert/tl/<span class="number">2014</span>/texmf<span class="attribute">-dist</span>/fonts/type1/<span class="keyword">public</span>/amsfonts/cm/cmr7<span class="built_in">.</span>pfb<span class="subst">&gt;</span>
+Output written <span class="keyword">on</span> hello<span class="attribute">-luatexja</span><span class="built_in">.</span>pdf (<span class="number">1</span> page, <span class="number">17058</span> <span class="built_in">bytes</span>)<span class="built_in">.</span>
+Transcript written <span class="keyword">on</span> hello<span class="attribute">-luatexja</span><span class="built_in">.</span><span class="keyword">log</span><span class="built_in">.</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>输出结果同样取决于你系统里的默认字体，但和之前的截图应该差不多。</p>
+<h2 id=" 总结 ">总结</h2>
+<p>文章介绍了在不同 TeX 引擎和宏包下的最简日文示例。如果你能够运行这些示例，那么更复杂的文档你也应该能够运行，你的 TeX 系统完全可以进行日文排版。</p>
+<p>不过，仍然还有不少问题需要讨论。比如：字体选择，插图，多语种混排以及非 ASCII 字符的使用。这些我们之后再讨论。</p>
+<h2 id=" 译者续 ">译者续</h2>
+<p>在 pdfLaTeX 编译的情况下，还有一种排版 CJK 文字的方法。可以使用刘海洋前辈的 <a href="http://www.ctan.org/tex-archive/language/chinese/zhmcjk" target="_blank">zhmCJK</a> 宏包。这个宏包因为一些原因暂时没有收录到 TeX Live 中，不过，这系列文章的作者正好是 TeX Live 的开发者之一，我最近正在和他沟通这件事情。</p>
+<p>zhmCJK 宏包提供了类似于 xeCJK 宏包的接口，相应的功能也完全类似。因此可以看做是不能使用 XeLaTeX 而必须使用 pdfLaTeX 的情况下的一个替代。对应于文章中 xeCJK 的例子，最简示例是：</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>zhmCJK<span class="special">}</span>
+<span class="command">\setCJKmainfont</span><span class="special">{</span>ipaexm.ttf<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span> で日本語を書きましょう！
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>LaTeX 新手可以将宏包内的文件解压，释放到和你的 <code>.tex</code> 文件同目录下；有经验的 LaTeX 使用者，可以按照宏包文档，将宏包文件放在 TEXMF 中的合适位置，然后刷新 TeX 系统。</p>
+<p>另外，正如刘海洋前辈和李清前辈（他们是当前 xeCJK 宏包的维护者）<a href="http://www.zhihu.com/question/26705259" target="_blank">所言</a>，xeCJK 虽然取名如此，但实际上只是对中文的支持比较完善。因此用 xeCJK 来排版日文在细节上还是会有一些问题的，特别是对日文排版规则的处理。此外，原作者提到的 ZXjatype 宏包，实际上是在 xeCJK 基础上再开发的结果。由于 xeCJK 的局限，ZXjatype 也不可避免地会有一些问题。</p>
+]]></content>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本文为译文，原文载于<a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-3-simple-documents/" target="_blank">这里</a>。欢迎关注本系列的文章。</p>
+</blockquote>
+<p><a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-2-characters-and-encodings/" target="_blank">上一篇文章</a>（<a href="http://liam0205.me/2014/12/08/ptex-intro-and-tutorial-02/">译文</a>）我们探讨了关于字符集和编码的一些细节，今次我们继续讨论如何在 LaTeX 中书写日文。今天的内容需要动手操作试试，要用不同的引擎和宏包写一些 Hello world 类型的文档。</p>
+<p><img src="/images/pTeX-intro/nihongo-latex.jpg" alt=""></p>
+<p>今天的内容同样会涉及到一些配置 TeX 环境的内容，会讲一讲如何在 <a href="http://tug.org/texlive/" target="_blank">TeX Live</a> 里配置书写日文的环境。</p>
+]]></summary>
+    
+      <category term="pTeX" scheme="http://liam0205.me/tags/pTeX/"/>
+    
+      <category term="Japanese" scheme="http://liam0205.me/tags/Japanese/"/>
+    
+      <category term="Demo" scheme="http://liam0205.me/tags/Demo/"/>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[日文 LaTeX 系统介绍 - 字符与编码]]></title>
@@ -2752,63 +3177,6 @@ This is the circled number <span class="command">\circled</span><span class="spe
       <category term="TikZ" scheme="http://liam0205.me/tags/TikZ/"/>
     
       <category term="Circled" scheme="http://liam0205.me/tags/Circled/"/>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【LaTeX Tips】为所有的浮动体一次性设置浮动选项]]></title>
-    <link href="http://liam0205.me/2014/05/08/float-setting/"/>
-    <id>http://liam0205.me/2014/05/08/float-setting/</id>
-    <published>2014-05-08T10:47:41.000Z</published>
-    <updated>2014-08-30T10:11:22.000Z</updated>
-    <content type="html"><![CDATA[<p>节选自 <a href="http://elegantlatex.tk/2014/04/02/float-setting/" target="_blank">elegantlatex</a>.</p>
-<p>在我们插图或者插入表格到 LaTeX 文档中，我们会碰到一个概念——浮动体，有时候，我们在文中用到的 table 或者 figure 环境的浮动选项都是相同的，比如 htbp，并且对 table 内、或者 figure 中的内容居中对齐（\centering），本文将介绍如何统一设置浮动体的浮动选项，以及居中设置。本文以 table 环境为例，figure 类似。</p>
-<a id="more"></a>
-
-<p>可以借助 <code>floatrow</code> 宏包来达到目的。</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-
-<span class="command">\usepackage</span><span class="special">{</span>floatrow<span class="special">}</span>        <span class="comment">% this automatically centers all floats</span>
-<span class="command">\floatplacement</span><span class="special">{</span>table<span class="special">}</span><span class="special">{</span>hbtp<span class="special">}</span> <span class="comment">% all tables are given the [hbtp] option</span>
-
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-
-<span class="command">\begin</span><span class="special">{</span>table<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>tabular<span class="special">}</span><span class="special">{</span>lll<span class="special">}</span>
-1 <span class="special">&amp;</span> 2 <span class="special">&amp;</span> 3<span class="command">\\</span>
-a <span class="special">&amp;</span> b <span class="special">&amp;</span> c<span class="command">\\</span>
-<span class="command">\end</span><span class="special">{</span>tabular<span class="special">}</span>
-<span class="command">\end</span><span class="special">{</span>table<span class="special">}</span>
-
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-]]></content>
-    <summary type="html"><![CDATA[<p>节选自 <a href="http://elegantlatex.tk/2014/04/02/float-setting/" target="_blank">elegantlatex</a>.</p>
-<p>在我们插图或者插入表格到 LaTeX 文档中，我们会碰到一个概念——浮动体，有时候，我们在文中用到的 table 或者 figure 环境的浮动选项都是相同的，比如 htbp，并且对 table 内、或者 figure 中的内容居中对齐（\centering），本文将介绍如何统一设置浮动体的浮动选项，以及居中设置。本文以 table 环境为例，figure 类似。</p>
-]]></summary>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/tags/LaTeX/"/>
-    
-      <category term="Float" scheme="http://liam0205.me/tags/Float/"/>
     
       <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
     
