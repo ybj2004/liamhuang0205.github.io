@@ -6,6 +6,7 @@ date: 2014-07-16 11:04:03
 * [DDSWHU](http://ddswhu.tk/) is a Graduate Student in the Economics School of Fudan University, co-woker in Elegant LaTeX program.
 * [xwyam](http://blog.xwyam.info/) is one of my senior in SDU.
 * [王穆荣](http://www.wangmurong.org.cn/) is a PhD student, majored in machine vision.
+* [唐秋平](http://qtang.gitcafe.com)
 
 ## Weblogs
 
