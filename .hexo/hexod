@@ -2,5 +2,5 @@ hexo g -d
 git add ..
 ctoday=`date +%Y-%m-%d`
 ctime=`date +%H:%M:%S`
-git commit -m "Site updated $ctoday $ctime"
+git commit -m "Site updated: $ctoday $ctime"
 git push
