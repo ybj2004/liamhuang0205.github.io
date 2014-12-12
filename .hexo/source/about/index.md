@@ -17,5 +17,5 @@ date: 2014-05-08 17:06:30
 [CTeX-kit]: https://code.google.com/p/ctex-kit/
 [fandol-font]: https://code.google.com/p/fandol-font/
 [pTeX-ng]: https://github.com/clerkma/ptex-ng
-[blog]: {{site.url}}
+[blog]: /
 [collect]: http://collect.liam0205.me
