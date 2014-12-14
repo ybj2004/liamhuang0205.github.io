@@ -29,7 +29,7 @@ tags: [LaTeXTools, Python, Compile]
 
 可以在主文档开头的注释中，使用下列语法改变编译流程。
 
-{% code demo lang:tex %}
+{% code lang:tex %}
 %!TEX builder = BUILDER
 {% endcode %}
 
@@ -39,7 +39,7 @@ tags: [LaTeXTools, Python, Compile]
 * `LATEXMK`
 * `TEXIFY`
 
-大小写不论，默认是 `SIMPLE`。
+大小写不论，默认是 `SIMPLE`，即只编译一遍。
 
 ### 选择编译引擎
 
@@ -47,7 +47,7 @@ tags: [LaTeXTools, Python, Compile]
 
 可以在主文档开头的注释中，使用下列语法改变编译引擎。
 
-{% code demo lang:tex %}
+{% code lang:tex %}
 %!TEX program = PROGRAM
 {% endcode %}
 
@@ -68,7 +68,7 @@ tags: [LaTeXTools, Python, Compile]
 
 可以在主文档开头的注释中，使用下列语法添加编译参数。
 
-{% code demo lang:tex %}
+{% code lang:tex %}
 %!TEX option = OPTION
 {% endcode %}
 
@@ -82,8 +82,75 @@ tags: [LaTeXTools, Python, Compile]
 
 可以在子文档的开头注释中，使用下列语法指定主文档。
 
-{% code demo lang:tex %}
+{% code lang:tex %}
 %!TEX root = ROOT
 {% endcode %}
 
 其中 `ROOT` 为主文档相对当前子文档的路径。指定主文档之后，可以在子文档中直接使用快捷键编译主文档，而不用将 Sublime Text 标签页切换到主文档再进行编译。
+
+## 示例
+
+{% code foo lang:tex %}
+\documentclass{article}
+\begin{document}
+Hello world!
+\end{document}
+{% endcode %}
+
+对应的命令行为：
+
+{% code lang:shell %}
+pdflatex -interaction=nonstopmode -synctex=1  foo.tex
+{% endcode %}
+
+{% code foo lang:tex %}
+%!TEX builder = latexmk
+\documentclass{article}
+\begin{document}
+Hello world!
+\end{document}
+{% endcode %}
+
+对应的命令行为：
+
+{% code lang:shell %}
+latexmk -cd -e $pdflatex = 'pdflatex -interaction=nonstopmode -synctex=1  %S %O' -f -pdf foo.tex
+{% endcode %}
+
+{% code foo lang:tex %}
+%!TEX builder = latexmk
+%!TEX program = xelatex
+%!TEX option = -shell-escape
+\documentclass{article}
+\begin{document}
+Hello world!
+\end{document}
+{% endcode %}
+
+
+对应的命令行为：
+
+{% code lang:shell %}
+latexmk -cd -e $pdflatex = 'xelatex -interaction=nonstopmode -synctex=1  %S %O' -f -pdf foo.tex
+{% endcode %}
+
+{% code foo lang:tex %}
+%!TEX builder = latexmk
+%!TEX program = xelatex
+%!TEX option = -shell-escape
+\documentclass{article}
+\begin{document}
+\input{bar.tex}
+\end{document}
+{% endcode %}
+
+{% code bar lang:tex %}
+%!TEX root = foo.tex
+Hello world!
+{% endcode %}
+
+在 `bar.tex` 的窗口编译，命令行为：
+
+{% code lang:shell %}
+latexmk -cd -e $pdflatex = 'xelatex -interaction=nonstopmode -synctex=1  %S %O' -f -pdf foo.tex
+{% endcode %}

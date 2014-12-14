@@ -136,7 +136,7 @@
 <p>基本的使用方法和原本的 <code>traditionalBuilder.py</code> 相同，即使用快捷键 <code>Ctrl + B</code> 编译（Mac OS X 是 <code>CMD + B</code>）。但在文档开头的注释中，增加了更多的用法。</p>
 <h3 id=" 改变编译流程 ">改变编译流程</h3>
 <p>可以在主文档开头的注释中，使用下列语法改变编译流程。</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="comment">%!TEX builder = BUILDER</span>
 </pre></td></tr></table></figure>
 
@@ -148,13 +148,13 @@
 <li><code>LATEXMK</code></li>
 <li><code>TEXIFY</code></li>
 </ul>
-<p>大小写不论，默认是 <code>SIMPLE</code>。</p>
+<p>大小写不论，默认是 <code>SIMPLE</code>，即只编译一遍。</p>
 <h3 id=" 选择编译引擎 ">选择编译引擎</h3>
 <blockquote>
 <p>此功能继承自默认编译脚本，有增强。</p>
 </blockquote>
 <p>可以在主文档开头的注释中，使用下列语法改变编译引擎。</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="comment">%!TEX program = PROGRAM</span>
 </pre></td></tr></table></figure>
 
@@ -174,7 +174,7 @@
 <p>大小写敏感，默认值是 <code>pdflatex</code>。</p>
 <h3 id=" 选择编译参数 ">选择编译参数</h3>
 <p>可以在主文档开头的注释中，使用下列语法添加编译参数。</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="comment">%!TEX option = OPTION</span>
 </pre></td></tr></table></figure>
 
@@ -187,13 +187,120 @@
 <p>此功能完整继承自默认编译脚本。</p>
 </blockquote>
 <p>可以在子文档的开头注释中，使用下列语法指定主文档。</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="comment">%!TEX root = ROOT</span>
 </pre></td></tr></table></figure>
 
 
 
 <p>其中 <code>ROOT</code> 为主文档相对当前子文档的路径。指定主文档之后，可以在子文档中直接使用快捷键编译主文档，而不用将 Sublime Text 标签页切换到主文档再进行编译。</p>
+<h2 id=" 示例 ">示例</h2>
+<figure class="highlight tex"><figcaption><span>foo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+Hello world!
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>对应的命令行为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>pdflatex <span class="attribute">-interaction</span><span class="subst">=</span>nonstopmode <span class="attribute">-synctex</span><span class="subst">=</span><span class="number">1</span>  foo<span class="built_in">.</span>tex
+</pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight tex"><figcaption><span>foo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="comment">%!TEX builder = latexmk</span>
+<span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+Hello world!
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>对应的命令行为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>latexmk <span class="attribute">-cd</span> <span class="attribute">-e</span> <span class="variable">$pdflatex</span> <span class="subst">=</span> <span class="string">'pdflatex -interaction=nonstopmode -synctex=1  %S %O'</span> <span class="attribute">-f</span> <span class="attribute">-pdf</span> foo<span class="built_in">.</span>tex
+</pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight tex"><figcaption><span>foo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="comment">%!TEX builder = latexmk</span>
+<span class="comment">%!TEX program = xelatex</span>
+<span class="comment">%!TEX option = -shell-escape</span>
+<span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+Hello world!
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+
+<p>对应的命令行为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>latexmk <span class="attribute">-cd</span> <span class="attribute">-e</span> <span class="variable">$pdflatex</span> <span class="subst">=</span> <span class="string">'xelatex -interaction=nonstopmode -synctex=1  %S %O'</span> <span class="attribute">-f</span> <span class="attribute">-pdf</span> foo<span class="built_in">.</span>tex
+</pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight tex"><figcaption><span>foo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="comment">%!TEX builder = latexmk</span>
+<span class="comment">%!TEX program = xelatex</span>
+<span class="comment">%!TEX option = -shell-escape</span>
+<span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\input</span><span class="special">{</span>bar.tex<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight tex"><figcaption><span>bar </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="comment">%!TEX root = foo.tex</span>
+Hello world!
+</pre></td></tr></table></figure>
+
+
+
+<p>在 <code>bar.tex</code> 的窗口编译，命令行为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>latexmk <span class="attribute">-cd</span> <span class="attribute">-e</span> <span class="variable">$pdflatex</span> <span class="subst">=</span> <span class="string">'xelatex -interaction=nonstopmode -synctex=1  %S %O'</span> <span class="attribute">-f</span> <span class="attribute">-pdf</span> foo<span class="built_in">.</span>tex
+</pre></td></tr></table></figure>
+
+
 
     
   </div>
