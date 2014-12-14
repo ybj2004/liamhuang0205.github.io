@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-12-14T11:16:04.998Z</updated>
+  <updated>2014-12-14T11:22:38.495Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://liam0205.me/2014/12/14/advanced-builder-latextools/"/>
     <id>http://liam0205.me/2014/12/14/advanced-builder-latextools/</id>
     <published>2014-12-14T10:15:34.000Z</published>
-    <updated>2014-12-14T11:06:52.000Z</updated>
+    <updated>2014-12-14T11:22:25.000Z</updated>
     <content type="html"><![CDATA[<p><a href="https://github.com/SublimeText/LaTeXTools" target="_blank">LaTeXTools</a> 是 <a href="http://www.sublimetext.com" target="_blank">Sublime Text</a> 上的一个插件，用以增强在 Sublime Text 上编辑和编译 LaTeX 文档的体验。但是其自带的编译脚本比较难用，缺点如下：</p>
 <ul>
 <li>调用 LaTeXmk 或者 TeXify，多次编译，速度缓慢，难以切换。</li>
@@ -33,7 +33,7 @@
 <li>在<a href="/attachment/LaTeX-useful-tools/advancedBuilder.py">这里</a>下载编译脚本；</li>
 <li>打开 Sublime Text 目录；</li>
 <li>将脚本拷贝至 <code>./Packages/LaTeXTools/builders/</code>；</li>
-<li>编辑 <code>./Packages/User/LaTeXTools.sublime-settings</code>，将 <code>&quot;builder&quot;</code> 值改为 <code>advanced</code>：<code>&quot;builder&quot;: &quot;advanced&quot;</code>；</li>
+<li>编辑 <code>./Packages/User/LaTeXTools.sublime-settings</code>，将 <code>&quot;builder&quot;</code> 值改为 <code>advanced</code>，即：<code>&quot;builder&quot;: &quot;advanced&quot;</code>；</li>
 <li>重启 Sublime Text。</li>
 </ul>
 <h2 id=" 使用方法 ">使用方法</h2>

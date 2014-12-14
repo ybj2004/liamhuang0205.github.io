@@ -18,7 +18,7 @@ tags: [LaTeXTools, Python, Compile]
 * 在[这里]({{site.url}}/attachment/LaTeX-useful-tools/advancedBuilder.py)下载编译脚本；
 * 打开 Sublime Text 目录；
 * 将脚本拷贝至 `./Packages/LaTeXTools/builders/`；
-* 编辑 `./Packages/User/LaTeXTools.sublime-settings`，将 `"builder"` 值改为 `advanced`：`"builder": "advanced"`；
+* 编辑 `./Packages/User/LaTeXTools.sublime-settings`，将 `"builder"` 值改为 `advanced`，即：`"builder": "advanced"`；
 * 重启 Sublime Text。
 
 ## 使用方法
