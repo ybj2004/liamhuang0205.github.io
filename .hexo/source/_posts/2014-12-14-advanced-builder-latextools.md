@@ -134,7 +134,7 @@ Hello world!
 对应的命令行为：
 
 {% code lang:shell %}
-latexmk -cd -e $pdflatex = 'xelatex -interaction=nonstopmode -synctex=1  %S %O' -f -pdf foo.tex
+latexmk -cd -e $pdflatex = 'xelatex -interaction=nonstopmode -synctex=1 -shell-escape %S %O' -f -pdf
 {% endcode %}
 
 -------
@@ -157,5 +157,5 @@ Hello world!
 在 `bar.tex` 的窗口编译，命令行为：
 
 {% code lang:shell %}
-latexmk -cd -e $pdflatex = 'xelatex -interaction=nonstopmode -synctex=1  %S %O' -f -pdf foo.tex
+latexmk -cd -e $pdflatex = 'xelatex -interaction=nonstopmode -synctex=1 -shell-escape %S %O' -f -pdf
 {% endcode %}
