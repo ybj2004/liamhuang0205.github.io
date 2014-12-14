@@ -103,6 +103,8 @@ Hello world!
 pdflatex -interaction=nonstopmode -synctex=1  foo.tex
 {% endcode %}
 
+-------
+
 {% code foo lang:tex %}
 %!TEX builder = latexmk
 \documentclass{article}
@@ -117,6 +119,8 @@ Hello world!
 latexmk -cd -e $pdflatex = 'pdflatex -interaction=nonstopmode -synctex=1  %S %O' -f -pdf foo.tex
 {% endcode %}
 
+-------
+
 {% code foo lang:tex %}
 %!TEX builder = latexmk
 %!TEX program = xelatex
@@ -127,12 +131,13 @@ Hello world!
 \end{document}
 {% endcode %}
 
-
 对应的命令行为：
 
 {% code lang:shell %}
 latexmk -cd -e $pdflatex = 'xelatex -interaction=nonstopmode -synctex=1  %S %O' -f -pdf foo.tex
 {% endcode %}
+
+-------
 
 {% code foo lang:tex %}
 %!TEX builder = latexmk
