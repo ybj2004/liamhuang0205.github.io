@@ -100,7 +100,7 @@ class AdvancedBuilder(PdfBuilder):
                 sublime.error_message("Sorry, cannot select engine using a %!TEX program directive on MikTeX.\n")
                 yield("", "Could not compile.")
             if option != self.option:
-                cmd[4] = "--tex-option=\"%s\"" % option
+                cmd[4] = " ".join(["--tex-option=\"%s\"" % opt for opt in option.split(" ")])
             else:
                 cmd[4] = ""
         else: # SIMPLE
