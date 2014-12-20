@@ -3,7 +3,7 @@ date: 2013/05/14
 title: 【LaTeX Tips】定义新环境时，花括号意外匹配的解决
 description: 有时候定义新环境时，因为命令的花括号错误匹配而导致错误。本文给出解决方法。
 category: LaTeX
-tags: [LaTeX, Environ, Newenvironment]
+tags: [Environ, Newenvironment]
 image:
   feature: so-simple-sample-image-4.jpg
   credit: Michael Rose

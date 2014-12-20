@@ -3,7 +3,7 @@ date: 2013/10/11
 title: 【LaTeX Tips】在 LaTeX 中输出多国语言
 description: 以输出俄语为例，介绍如何在 LaTeX 中输出多国语言。
 category: LaTeX
-tags: [LaTeX, Multi-lingual]
+tags: [Multi-lingual]
 image:
   feature: so-simple-sample-image-1.jpg
   credit: Michael Rose

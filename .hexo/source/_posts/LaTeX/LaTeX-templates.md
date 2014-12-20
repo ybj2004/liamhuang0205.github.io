@@ -3,7 +3,7 @@ date: 2013/05/18
 title: 【LaTeX Tips】LaTeX 模板收集
 description: LaTeX 模板收集
 category: LaTeX
-tags: [LaTeX, Template]
+tags: [Template]
 image:
   feature: so-simple-sample-image-3.jpg
   credit: Michael Rose

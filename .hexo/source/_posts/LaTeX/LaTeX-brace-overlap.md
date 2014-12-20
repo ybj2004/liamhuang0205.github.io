@@ -3,7 +3,7 @@ date: 2013/10/18
 title: 【LaTeX Tips】LaTeX 公式上下花括号的交错
 description: overbrace 和 underbrace 可以嵌套但是不能交错，本文解决了这个问题。
 category: LaTeX
-tags: [LaTeX, Overbrace, Underbrace, Rlap, Phantom]
+tags: [Overbrace, Underbrace, Rlap, Phantom]
 image:
   feature: so-simple-sample-image-2.jpg
   credit: Michael Rose

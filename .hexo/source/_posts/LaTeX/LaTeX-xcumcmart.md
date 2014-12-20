@@ -2,7 +2,7 @@ date: 2013/08/25
 title: 【LaTeX Tips】全国大学生数学竞赛论文模板
 description: 按照 2013 高教社杯全国大学生数学建模竞赛论文格式规范写了个 LaTeX 模板，仅供参考。
 category: LaTeX
-tags: [LaTeX, XCUMCMART]
+tags: [XCUMCMART]
 image:
   feature: so-simple-sample-image-4.jpg
   credit: Michael Rose

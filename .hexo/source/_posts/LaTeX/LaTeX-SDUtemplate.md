@@ -3,7 +3,7 @@ date: 2013/05/12
 title: 【LaTeX Tips】LaTeX 山东大学学位论文模板
 description: 本文发布山东大学学位论文模板。
 category: LaTeX
-tags: [LaTeX, SDU, Template]
+tags: [SDU, Template]
 image:
   feature: so-simple-sample-image-1.jpg
   credit: Michael Rose

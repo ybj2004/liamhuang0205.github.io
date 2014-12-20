@@ -3,7 +3,7 @@ date: 2013/04/13
 title: 【LaTeX Tips】绘制平行四边形符号
 description: 在 LaTeX 中绘制平行四边形符号。
 category: LaTeX
-tags: [LaTeX, Parallelogram]
+tags: [Parallelogram]
 image:
   feature: so-simple-sample-image-3.jpg
   credit: Michael Rose

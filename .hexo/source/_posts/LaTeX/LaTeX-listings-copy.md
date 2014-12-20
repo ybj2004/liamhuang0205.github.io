@@ -3,7 +3,7 @@ date: 2013/11/04
 title: 【LaTeX Tips】复制代码时避免复制行号的正确方法
 description: 在使用 listings 宏包输出代码时，如果输出行号，则在复制代码时会连同行号一起复制，本文提供了解决方法。
 category: LaTeX
-tags: [LaTeX, Listings, Line number, Copy]
+tags: [Listings, Line number, Copy]
 image:
   feature: so-simple-sample-image-1.jpg
   credit: Michael Rose

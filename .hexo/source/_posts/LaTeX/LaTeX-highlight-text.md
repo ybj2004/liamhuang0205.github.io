@@ -3,7 +3,7 @@ date: 2013/09/26
 title: 【LaTeX Tips】How to highlight text.
 description: How to highlight text in LaTeX. 如何在 LaTeX 中高亮一段文字。
 category: LaTeX
-tags: [LaTeX, Highlight, Ulem, Robust]
+tags: [Highlight, Ulem, Robust]
 image:
   feature: so-simple-sample-image-3.jpg
   credit: Michael Rose

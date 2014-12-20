@@ -3,7 +3,7 @@ date: 2014/04/01
 title: 【LaTeX】Pro Git 中文版
 description: 排版了 LaTeX 中文翻译版本。
 category: LaTeX
-tags: [LaTeX, Git, Pro Git]
+tags: [Git, Pro Git]
 image:
   feature: so-simple-sample-image-1.jpg
   credit: Michael Rose

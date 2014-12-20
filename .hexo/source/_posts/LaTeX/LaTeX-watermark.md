@@ -3,7 +3,7 @@ date: 2014/04/22
 title: 【LaTeX Tips】利用 TikZ 在 LaTeX 文档中制作水印效果
 description: 如何在 LaTeX 文稿中制作「水印」
 category: LaTeX
-tags: [LaTeX, Watermark]
+tags: [Watermark]
 image:
   feature: so-simple-sample-image-2.jpg
   credit: Michael Rose

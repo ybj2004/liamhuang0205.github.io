@@ -3,7 +3,7 @@ date: 2013/08/04
 title: 【LaTeX Tips】各种表格的绘制
 description: 听说 LaTeX 中有一只表格君欠调教，于是有了以下调教指南【雾。。】
 category: LaTeX
-tags: [LaTeX, Table]
+tags: [Table]
 image:
   feature: so-simple-sample-image-1.jpg
   credit: Michael Rose

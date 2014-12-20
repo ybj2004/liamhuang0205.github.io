@@ -3,7 +3,7 @@ date: 2013/08/23
 title: 【LaTeX Tips】LaTeX 中公式编号括号样式及章节关联的方法
 description: LaTeX 能为公式自动编号，在使用 LaTeX 的过程中，我们有时会对公式编号的样式有一定的需求。
 category: LaTeX
-tags: [LaTeX, Equation number]
+tags: [Equation number]
 image:
   feature: so-simple-sample-image-2.jpg
   credit: Michael Rose

@@ -3,7 +3,7 @@ date: 2013/10/18
 title: 【LaTeX Tips】LaTeX 相关工具网站
 description: 介绍几个 LaTeX 相关的工具网站
 category: LaTeX
-tags: [LaTeX, Tool, Website]
+tags: [Tool, Website]
 image:
   feature: so-simple-sample-image-5.jpg
   credit: Michael Rose

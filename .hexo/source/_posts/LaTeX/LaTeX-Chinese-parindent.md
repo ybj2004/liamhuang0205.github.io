@@ -3,7 +3,7 @@ date: 2013/05/15
 title: 【LaTeX Tips】如何正确定义中文段落缩进
 description: 中文行文有在每个自然段段首缩进两个字符的习惯。但是 LaTeX 是美国人做的，CJK 宏包是德国人做的，在段落缩进这方面设计得并不符合中国人的使用习惯。本文讲述如何正确定义这一缩进。
 category: LaTeX
-tags: [LaTeX, Chinese, Parindent]
+tags: [Chinese, Parindent]
 image:
   feature: so-simple-sample-image-5.jpg
   credit: Michael Rose

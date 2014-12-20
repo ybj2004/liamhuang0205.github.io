@@ -3,7 +3,7 @@ date: 2013/12/04
 title: 【LaTeX Tips】如何复写定理
 description: 有时我们会需要在文本的同一行开始一个列表环境，这里是解决方法。
 category: LaTeX
-tags: [LaTeX, Theorem, Tecall, THM-RESTATE]
+tags: [Theorem, Tecall, THM-RESTATE]
 image:
   feature: ./LaTeX/recall-theorem.png
   credit: Liam Huang

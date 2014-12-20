@@ -3,7 +3,7 @@ date: 2013/10/18
 title: 【LaTeX Tips】2013 清華大學（臺灣） LaTeX 研習投影片——蔡炎龍
 description: 这是台湾清华大学 2013 年在清大『LaTeX 研習』上使用的投影片。
 category: LaTeX
-tags: [LaTeX, LaTeX speech]
+tags: [LaTeX speech]
 image:
   feature: so-simple-sample-image-1.jpg
   credit: Michael Rose
