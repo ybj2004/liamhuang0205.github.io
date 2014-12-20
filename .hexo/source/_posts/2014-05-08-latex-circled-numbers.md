@@ -76,6 +76,3 @@ The improved version: \circled[10]{1} and \circled[10]{10}.
 \end{document}
 {% endcode %}
 
------------
-
-转载请注明作者，并保留原文链接。
