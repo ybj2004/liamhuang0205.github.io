@@ -163,14 +163,41 @@
 <p>如果你坚持<strong>不改动模板</strong>，那么就只好使用与模板同时代的 TeX 发行版。当然，你必须使用 Windows 操作系统。</p>
 <p>你可以到下载 <a href="ftp://ftp.ctex.org/pub/tex/systems/ctex/obsolete/2.4/">CTeX 2.4.6</a> 并安装。CTeX 2.4.6 里的 WinEdt 有一个 CCTLaTeX 按钮，点击它之后，可以正确编译得到 <code>.dvi</code> 和 <code>.ps</code> 文件，如果需要 <code>.pdf</code> 文件可以用 <code>ps2pdf</code> 工具转换。</p>
 <hr>
-<p>如果你坚持<strong>使用现代的发行版</strong>，那么就需要对模板进行一些微调。这一方法适用于各个操作系统。</p>
+<p>如果你坚持<strong>使用现代的发行版</strong>，那么就需要对模板进行一些微调。这里提供两种方法，两种方法均适用于各个操作系统。</p>
+<p><strong>使用 <code>ctexart</code></strong></p>
 <ul>
 <li>将 <code>\documentclass</code> 里载入的文档类，从 <code>cctart</code> 更换为 <code>ctexart</code>；</li>
 <li>下载本站提供的 <a href="/attachment/LaTeX-useful-tools/old_style/vatola.sty"><code>vatola.sty</code></a> 和 <a href="/attachment/LaTeX-useful-tools/old_style/headrule.sty"><code>headrule.sty</code></a> 两个宏包文件（<strong>2014-12-17 更新</strong>）；</li>
 <li>到 CTAN 上下载 <a href="http://www.ctan.org/pkg/slashbox" target="_blank"><code>slashbox</code> 宏包</a> 并安装；</li>
-<li>将上述三个宏包安装至 TEXMFLOCAL，或者直接将它们放在与模板文件相同的文件夹里面；</li>
+<li>将上述三个宏包安装至 TEXMFLOCAL，然后执行 <code>texhash</code> 命令；或者直接将它们放在与模板文件相同的文件夹里面；</li>
 <li>使用 pdfLaTeX 编译，可以得到与原模板几乎完全一致的结果；</li>
 <li>正式投稿时，只需要将 <code>ctexart</code> 换回 <code>cctart</code> 即可。</li>
+</ul>
+<p><strong>安装新版 CCT 系统 (2014-12-21 更新）</strong></p>
+<ul>
+<li>下载 CCT 的 <a href="/attachment/LaTeX-useful-tools/CCT_TDS.zip">TDS 安装包</a>；</li>
+<li>将 TDS 安装包中的内容，解压合并至 TEXMFLOCAL 的相应目录；</li>
+<li>将 <code>\documentclass</code> 里文档类选项，从 <code>twoside</code> 更换为 <code>twoside, CJK</code>；</li>
+<li>在 <code>\documentclass</code> 之后加载 <code>ifpdf</code> 宏包：<code>\usepackage{ifpdf}</code>；</li>
+<li>下载本站提供的 <a href="/attachment/LaTeX-useful-tools/old_style/vatola.sty"><code>vatola.sty</code></a> 和 <a href="/attachment/LaTeX-useful-tools/old_style/headrule.sty"><code>headrule.sty</code></a> 两个宏包文件（<strong>2014-12-17 更新</strong>）；</li>
+<li>到 CTAN 上下载 <a href="http://www.ctan.org/pkg/slashbox" target="_blank"><code>slashbox</code> 宏包</a> 并安装；</li>
+<li>将上述三个宏包安装至 TEXMFLOCAL，然后执行 <code>texhash</code> 命令；</li>
+<li>分情况讨论：<ul>
+<li>如果使用 Windows 系统，则在 <code>\begin{document}</code> 之前添加一行命令 <code>\AtBeginDvi{\input{zhwinfonts}}</code>；</li>
+<li>如果使用 Mac OS X 或 Linux 系统，则需要安装好 Windows 的中易字体，然后在 <code>\begin{document}</code> 之前添加一行命令 <code>\AtBeginDvi{\input{zhwinfonts}}</code>；</li>
+<li>如果使用 Mac OS X 或 Linux 系统，你也可以安装下列字库，然后在 <code>\begin{document}</code> 之前添加一行命令 <code>\AtBeginDvi{\input{zhfzfonts}}</code>；<ul>
+<li>方正书宋 GBK：FZSSK.TTF</li>
+<li>方正楷体 GBK：FZKTK.TTF</li>
+<li>方正黑体 GBK：FZHTK.TTF</li>
+<li>方正仿宋 GBK：FZFSK.TTF</li>
+<li>华文隶体：STLITI.ttf</li>
+<li>华文琥珀：STHUPO.TTF</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用 pdfLaTeX 编译，可以得到与原模板完全一致的结果；</li>
+<li>正式投稿时，只需要将添加的 <code>CJK</code> 选项和 <code>ifpdf</code> 宏包以及 <code>\AtBeginDvi{}</code> 命令删除就可以了。</li>
 </ul>
 <h2 id=" 总结 ">总结</h2>
 <p>总的来说 CCT 是一个过时的中文支持方式，非常希望系统工程理论与实践的编辑部能与时俱进改用新的方式支持中文，为所有作者提供方便。对于广大的 LaTeX 用户，除非特别需要，不要使用老旧的 TeX 发行，以增强文档的兼容性。</p>
@@ -306,7 +333,7 @@
   <!--
   <a href="/tags/AMS/" style="font-size: 10.00px;">AMS</a><a href="/tags/AW/" style="font-size: 20.00px;">AW</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Bitmap/" style="font-size: 10.00px;">Bitmap</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blindness/" style="font-size: 10.00px;">Blindness</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Book review/" style="font-size: 10.00px;">Book review</a><a href="/tags/Bookmarks/" style="font-size: 10.00px;">Bookmarks</a><a href="/tags/CCT/" style="font-size: 10.00px;">CCT</a><a href="/tags/CJK/" style="font-size: 20.00px;">CJK</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 10.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 10.00px;">Chinese</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Compile/" style="font-size: 10.00px;">Compile</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/EPS/" style="font-size: 10.00px;">EPS</a><a href="/tags/Encoding/" style="font-size: 10.00px;">Encoding</a><a href="/tags/English/" style="font-size: 20.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Environment/" style="font-size: 10.00px;">Environment</a><a href="/tags/Equation number/" style="font-size: 10.00px;">Equation number</a><a href="/tags/Error Codes/" style="font-size: 10.00px;">Error Codes</a><a href="/tags/Exam/" style="font-size: 10.00px;">Exam</a><a href="/tags/Float/" style="font-size: 10.00px;">Float</a><a href="/tags/Footnote/" style="font-size: 10.00px;">Footnote</a><a href="/tags/Format/" style="font-size: 10.00px;">Format</a>
   -->
-  <a href="/tags/AW/" style="font-size: 13.33px;">AW</a><a href="/tags/CJK/" style="font-size: 13.33px;">CJK</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/English/" style="font-size: 13.33px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/GRE/" style="font-size: 16.67px;">GRE</a><a href="/tags/Grammar/" style="font-size: 13.33px;">Grammar</a><a href="/tags/Highlight/" style="font-size: 13.33px;">Highlight</a><a href="/tags/Images/" style="font-size: 13.33px;">Images</a><a href="/tags/Include/" style="font-size: 10.00px;">Include</a><a href="/tags/Input/" style="font-size: 10.00px;">Input</a><a href="/tags/Kindle/" style="font-size: 13.33px;">Kindle</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Listings/" style="font-size: 13.33px;">Listings</a><a href="/tags/Newenvironment/" style="font-size: 10.00px;">Newenvironment</a><a href="/tags/Number/" style="font-size: 10.00px;">Number</a><a href="/tags/Overbrace/" style="font-size: 10.00px;">Overbrace</a><a href="/tags/PDF/" style="font-size: 13.33px;">PDF</a><a href="/tags/Path/" style="font-size: 10.00px;">Path</a><a href="/tags/Phantom/" style="font-size: 10.00px;">Phantom</a><a href="/tags/PyHardWay/" style="font-size: 10.00px;">PyHardWay</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Rlap/" style="font-size: 10.00px;">Rlap</a><a href="/tags/Robust/" style="font-size: 10.00px;">Robust</a><a href="/tags/Rule/" style="font-size: 10.00px;">Rule</a><a href="/tags/SDU/" style="font-size: 10.00px;">SDU</a><a href="/tags/Subnumber/" style="font-size: 10.00px;">Subnumber</a><a href="/tags/Template/" style="font-size: 16.67px;">Template</a><a href="/tags/Translation/" style="font-size: 13.33px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 13.33px;">Tutorial</a><a href="/tags/Ulem/" style="font-size: 10.00px;">Ulem</a><a href="/tags/Underbrace/" style="font-size: 10.00px;">Underbrace</a><a href="/tags/pTeX/" style="font-size: 16.67px;">pTeX</a>
+  <a href="/tags/AW/" style="font-size: 13.33px;">AW</a><a href="/tags/CJK/" style="font-size: 13.33px;">CJK</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/English/" style="font-size: 13.33px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/GRE/" style="font-size: 16.67px;">GRE</a><a href="/tags/Grammar/" style="font-size: 13.33px;">Grammar</a><a href="/tags/Highlight/" style="font-size: 13.33px;">Highlight</a><a href="/tags/Images/" style="font-size: 13.33px;">Images</a><a href="/tags/Include/" style="font-size: 10.00px;">Include</a><a href="/tags/Input/" style="font-size: 10.00px;">Input</a><a href="/tags/Kindle/" style="font-size: 13.33px;">Kindle</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Line number/" style="font-size: 10.00px;">Line number</a><a href="/tags/Listings/" style="font-size: 13.33px;">Listings</a><a href="/tags/Multi-lingual/" style="font-size: 10.00px;">Multi-lingual</a><a href="/tags/Newenvironment/" style="font-size: 10.00px;">Newenvironment</a><a href="/tags/Overbrace/" style="font-size: 10.00px;">Overbrace</a><a href="/tags/PDF/" style="font-size: 13.33px;">PDF</a><a href="/tags/Parallelogram/" style="font-size: 10.00px;">Parallelogram</a><a href="/tags/Path/" style="font-size: 10.00px;">Path</a><a href="/tags/Phantom/" style="font-size: 10.00px;">Phantom</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Rlap/" style="font-size: 10.00px;">Rlap</a><a href="/tags/Robust/" style="font-size: 10.00px;">Robust</a><a href="/tags/Subnumber/" style="font-size: 10.00px;">Subnumber</a><a href="/tags/Template/" style="font-size: 16.67px;">Template</a><a href="/tags/Translation/" style="font-size: 13.33px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 13.33px;">Tutorial</a><a href="/tags/Ulem/" style="font-size: 10.00px;">Ulem</a><a href="/tags/Underbrace/" style="font-size: 10.00px;">Underbrace</a><a href="/tags/pTeX/" style="font-size: 16.67px;">pTeX</a>
   </div>
 </div>
 

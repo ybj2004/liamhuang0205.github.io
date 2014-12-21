@@ -54,19 +54,42 @@ modified: 2014-12-21
 
 如果你坚持**不改动模板**，那么就只好使用与模板同时代的 TeX 发行版。当然，你必须使用 Windows 操作系统。
 
-
 你可以到下载 [CTeX 2.4.6](ftp://ftp.ctex.org/pub/tex/systems/ctex/obsolete/2.4/) 并安装。CTeX 2.4.6 里的 WinEdt 有一个 CCTLaTeX 按钮，点击它之后，可以正确编译得到 `.dvi` 和 `.ps` 文件，如果需要 `.pdf` 文件可以用 `ps2pdf` 工具转换。
 
 -----
 
-如果你坚持**使用现代的发行版**，那么就需要对模板进行一些微调。这一方法适用于各个操作系统。
+如果你坚持**使用现代的发行版**，那么就需要对模板进行一些微调。这里提供两种方法，两种方法均适用于各个操作系统。
+
+**使用 `ctexart`**
 
 * 将 `\documentclass` 里载入的文档类，从 `cctart` 更换为 `ctexart`；
 * 下载本站提供的 [`vatola.sty`]({{site.url}}/attachment/LaTeX-useful-tools/old_style/vatola.sty) 和 [`headrule.sty`]({{site.url}}/attachment/LaTeX-useful-tools/old_style/headrule.sty) 两个宏包文件（**2014-12-17 更新**）；
 * 到 CTAN 上下载 [`slashbox` 宏包](http://www.ctan.org/pkg/slashbox) 并安装；
-* 将上述三个宏包安装至 TEXMFLOCAL，或者直接将它们放在与模板文件相同的文件夹里面；
+* 将上述三个宏包安装至 TEXMFLOCAL，然后执行 `texhash` 命令；或者直接将它们放在与模板文件相同的文件夹里面；
 * 使用 pdfLaTeX 编译，可以得到与原模板几乎完全一致的结果；
 * 正式投稿时，只需要将 `ctexart` 换回 `cctart` 即可。
+
+**安装新版 CCT 系统 (2014-12-21 更新）**
+
+* 下载 CCT 的 [TDS 安装包]({{site.url}}/attachment/LaTeX-useful-tools/CCT_TDS.zip)；
+* 将 TDS 安装包中的内容，解压合并至 TEXMFLOCAL 的相应目录；
+* 将 `\documentclass` 里文档类选项，从 `twoside` 更换为 `twoside, CJK`；
+* 在 `\documentclass` 之后加载 `ifpdf` 宏包：`\usepackage{ifpdf}`；
+* 下载本站提供的 [`vatola.sty`]({{site.url}}/attachment/LaTeX-useful-tools/old_style/vatola.sty) 和 [`headrule.sty`]({{site.url}}/attachment/LaTeX-useful-tools/old_style/headrule.sty) 两个宏包文件（**2014-12-17 更新**）；
+* 到 CTAN 上下载 [`slashbox` 宏包](http://www.ctan.org/pkg/slashbox) 并安装；
+* 将上述三个宏包安装至 TEXMFLOCAL，然后执行 `texhash` 命令；
+* 分情况讨论：
+    - 如果使用 Windows 系统，则在 `\begin{document}` 之前添加一行命令 `\AtBeginDvi{\input{zhwinfonts}}`；
+    - 如果使用 Mac OS X 或 Linux 系统，则需要安装好 Windows 的中易字体，然后在 `\begin{document}` 之前添加一行命令 `\AtBeginDvi{\input{zhwinfonts}}`；
+    - 如果使用 Mac OS X 或 Linux 系统，你也可以安装下列字库，然后在 `\begin{document}` 之前添加一行命令 `\AtBeginDvi{\input{zhfzfonts}}`；
+        * 方正书宋GBK：FZSSK.TTF
+        * 方正楷体GBK：FZKTK.TTF
+        * 方正黑体GBK：FZHTK.TTF
+        * 方正仿宋GBK：FZFSK.TTF
+        * 华文隶体：STLITI.ttf
+        * 华文琥珀：STHUPO.TTF
+* 使用 pdfLaTeX 编译，可以得到与原模板完全一致的结果；
+* 正式投稿时，只需要将添加的 `CJK` 选项和 `ifpdf` 宏包以及 `\AtBeginDvi{}` 命令删除就可以了。
 
 ## 总结
 
