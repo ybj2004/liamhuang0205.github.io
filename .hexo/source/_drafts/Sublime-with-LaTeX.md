@@ -3,7 +3,7 @@ date: 2013/11/13
 title: 将 Sublime Text 作为 LaTeX 前端编辑器
 description: Sublimne Text 是最近一个非常火的编辑器，这里介绍如何将 Sublime Text 作为 LaTeX 前端编辑器。
 category: LaTeX
-tags: [Sublime, LaTeX, LaTeXTools]
+tags: [Sublime, LaTeXTools]
 image:
   feature: so-simple-sample-image-3.jpg
   credit: Michael Rose

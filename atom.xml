@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2014-12-21T07:29:15.831Z</updated>
+  <updated>2014-12-21T07:33:12.500Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -2483,7 +2483,7 @@ Mac OS <span class="special">&amp;</span> MacTeX <span class="special">&amp;</sp
     <link href="http://liam0205.me/2014/08/21/bitmap-convert-to-eps-batch/"/>
     <id>http://liam0205.me/2014/08/21/bitmap-convert-to-eps-batch/</id>
     <published>2014-08-21T02:38:38.000Z</published>
-    <updated>2014-08-30T10:11:22.000Z</updated>
+    <updated>2014-12-21T07:31:30.000Z</updated>
     <content type="html"><![CDATA[<p>虽然「LaTeX 只能识别 EPS 格式的图档」是多年的误传，但是仍有许多杂志和期刊只接受 EPS 格式的图档。所以，尽管在日常使用中，我们很少会用到 EPS 格式，但是有时候不得不用。</p>
 <p>今天帮朋友排版论文的时候，就又遇到了这样无节操的期刊。没办法，转呗。结果一看傻眼了，一共五六十个图片，手工得弄到猴年马月……于是动了动脑，写了个批处理搞定。</p>
 <a id="more"></a>
@@ -2500,8 +2500,6 @@ Mac OS <span class="special">&amp;</span> MacTeX <span class="special">&amp;</sp
     <summary type="html"><![CDATA[<p>虽然「LaTeX 只能识别 EPS 格式的图档」是多年的误传，但是仍有许多杂志和期刊只接受 EPS 格式的图档。所以，尽管在日常使用中，我们很少会用到 EPS 格式，但是有时候不得不用。</p>
 <p>今天帮朋友排版论文的时候，就又遇到了这样无节操的期刊。没办法，转呗。结果一看傻眼了，一共五六十个图片，手工得弄到猴年马月……于是动了动脑，写了个批处理搞定。</p>
 ]]></summary>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/tags/LaTeX/"/>
     
       <category term="Bitmap" scheme="http://liam0205.me/tags/Bitmap/"/>
     

@@ -1,7 +1,7 @@
 title: 在 Windows 下批量将位图转为 EPS 格式的图档
 date: 2014-08-21 10:38:38
 categories: LaTeX
-tags: [LaTeX, Bitmap, EPS, Windows Batch]
+tags: [Bitmap, EPS, Windows Batch]
 ---
 
 虽然「LaTeX 只能识别 EPS 格式的图档」是多年的误传，但是仍有许多杂志和期刊只接受 EPS 格式的图档。所以，尽管在日常使用中，我们很少会用到 EPS 格式，但是有时候不得不用。
