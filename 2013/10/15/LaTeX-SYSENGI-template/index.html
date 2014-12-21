@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>【LaTeX Tips】系统工程理论与实践模板编译的一些经验 | 始终</title>
+  <title>【LaTeX Tips】国内期刊 CCT 模板编译经验 | 始终</title>
   <meta name="author" content="Liam Huang">
   
-  <meta name="description" content="这篇文章介绍了使用系统工程理论与实践的 LaTeX 模板的一些经验。">
+  <meta name="description" content="Liam&#39;s Blog | Liam Huang&#39;s Blog | Liam | Huang | Python | LaTeX | C++ | Java | GRE | TOEFL">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  <meta property="og:title" content="【LaTeX Tips】系统工程理论与实践模板编译的一些经验"/>
+  <meta property="og:title" content="【LaTeX Tips】国内期刊 CCT 模板编译经验"/>
   <meta property="og:site_name" content="始终"/>
 
   <link rel="alternate" href="/atom.xml" title="始终" type="application/atom+xml">
@@ -109,28 +109,71 @@
     
     
   
-    <h1 class="title">【LaTeX Tips】系统工程理论与实践模板编译的一些经验</h1>
+    <h1 class="title">【LaTeX Tips】国内期刊 CCT 模板编译经验</h1>
   
 
   </header>
   
   <div class="entry">
     
-      <p>《<a href="http://www.sysengi.com/" target="_blank">系统工程理论与实践</a>》主要刊登系统工程在工业、农业、军事、教育、科研、经济与金融、及信息管理等领域中的重要应用成果, 具有重要意义的创造性的优秀理论成果。<a href="http://www.sysengi.com/UserFiles/File/model2013.tex" target="_blank">它的 LaTeX 模板</a>使用过时的 CCT 方式支持中文，并且模板使用了 <code>headrule</code>, <code>vatola</code> 等 LaTeX 2.09 时代的老旧宏包，因此在新版的 <a href="http://www.tug.org/texlive/" target="_blank">TeX Live</a> 以及 <a href="http://www.ctex.org/CTeXDownload" target="_blank">CTeX 2.9.2.164</a> 上可能无法编译得到正确结果。经过一番实践，得出结论如下：</p>
+      <p>国内有不少期刊依旧在使用过时的 CCT 方式来支持中文，这些模板非常相似，似乎系出同源。由于这些模板在现代的 TeX 发行版内无法正确编译，对不少投稿人造成困扰，所以我写下这篇文章，希望对投稿人有一些帮助。</p>
 <a id="more"></a>
 
-<ol>
-<li>使用 <a href="ftp://ftp.ctex.org/pub/tex/systems/ctex/obsolete/2.4/">CTeX 2.4.6</a> 中自带的 WinEdt 中的 CCTLaTeX 可以正确编译得到 <code>.dvi</code> 和 <code>.ps</code> 文件，如果需要 <code>.pdf</code> 文件可以用 <code>ps2pdf</code> 工具转换。</li>
-<li>使用 TeX Live, 替换 <code>cctart</code> 为 <code>ctexart</code> 可以得到几乎完全一致的结果，但需要额外下载前述两个 2.09 时代的老旧宏包，并且会因为 <code>cctart</code> 中的 <code>\pushziti</code> 等命令未经定义会报错。你可以删掉这些命令，或者直接忽略这些错误。</li>
-</ol>
-<p>总的来说 CCT 是一个过时的中文支持方式，非常希望系统工程理论与实践的编辑部能与时俱进改用新的方式支持中文，为所有作者提供方便。对于广大的 LaTeX 用户，除非特别需要（比如本文所述内容），不要使用老旧的 TeX 发行，以增强文档的兼容性。</p>
-<hr>
-<p><strong>2014-12-17 更新</strong></p>
-<p>提供宏包文件下载：</p>
+<h2 id=" 模板特征 ">模板特征</h2>
+<p>这些模板的导言区内代码大致如下：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">[</span>twoside<span class="special">]</span><span class="special">{</span>cctart<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>headrule,vatola,amssymb<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>graphicx,multirow,bm<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>booktabs,dcolumn<span class="special">}</span>
+<span class="command">\newcolumntype</span><span class="special">{</span>z<span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">{</span>D<span class="special">{</span>.<span class="special">}</span><span class="special">{</span>.<span class="special">}</span><span class="special">{</span><span class="special">#</span>1<span class="special">}</span><span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>tabularx<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>slashbox<span class="special">}</span>
+<span class="comment">%\usepackage{footmisc,perpage}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>提取出以下几条特征：</p>
 <ul>
-<li><a href="/attachment/LaTeX-useful-tools/old_style/vatola.sty"><code>vatola.sty</code></a></li>
-<li><a href="/attachment/LaTeX-useful-tools/old_style/headrule.sty"><code>headrule.sty</code></a></li>
+<li><code>\documentclass</code> 里载入 <code>cctart</code> 文档类；</li>
+<li>载入了 <code>vatola</code> 宏包；</li>
+<li>载入了 <code>headrule</code> 宏包；</li>
+<li>载入了 <code>slashbox</code> 宏包。</li>
 </ul>
+<p>如果你手上的模板符合这些特征，那么这篇文章将对你有帮助。</p>
+<h3 id=" 列表 ">列表</h3>
+<p>这里给出一个列表，记录使用此类模板的期刊。如果你发现你投稿的期刊也使用了这样的模板（符合上述特征），请留言告诉我；我将会及时补充到列表当中，方便后来者。</p>
+<ul>
+<li><a href="http://www.sysengi.com/" target="_blank">系统工程理论与实践</a> - <a href="http://www.sysengi.com/UserFiles/File/model2013.tex" target="_blank">LaTeX 模板</a></li>
+</ul>
+<h2 id=" 问题分析 ">问题分析</h2>
+<p>这些模板使用的文档类是 <code>cctart</code>，是 CCT 系统的一部分。CCT 系统是早年的一个中文支持方式，现在已经过时。虽然 CTeX 里还保留了 CCT，但是和这些编写模板时的版本已经不同；至于 TeX Live 里，根本就没有 CCT 系统。所以，编译报错也就是自然而然的事情了。</p>
+<p>模板使用了 <code>vatola</code> 和 <code>headrule</code> 两个宏包。这两个宏包均是 LaTeX 2.09 时代的陈旧宏包；他们的功能已为其他宏包所替代。因此，现代的发行版（<a href="http://www.tug.org/texlive/" target="_blank">TeX Live</a>、<a href="http://www.ctex.org/CTeXDownload" target="_blank">CTeX 2.9.2.164</a>）不再包含这些宏包；于是，编译的时候会提示缺少宏包的错误。</p>
+<p>此外，虽然 <code>slashbox</code> 宏包是为当前的 LaTeX 2e 设计的，但是它的许可协议与 TeX Live 的协议有冲突，因此 TeX Live 中并不包含这个宏包。于是，如果你的 TeX 发行版是 TeX Live，那么编译的时候也会提示错误。</p>
+<h2 id=" 解决方案 ">解决方案</h2>
+<p>陈旧的模板与现代的 TeX 发行版之间的矛盾不可调和，因此必有一方需要妥协。</p>
+<p>如果你坚持<strong>不改动模板</strong>，那么就只好使用与模板同时代的 TeX 发行版。当然，你必须使用 Windows 操作系统。</p>
+<p>你可以到下载 <a href="ftp://ftp.ctex.org/pub/tex/systems/ctex/obsolete/2.4/">CTeX 2.4.6</a> 并安装。CTeX 2.4.6 里的 WinEdt 有一个 CCTLaTeX 按钮，点击它之后，可以正确编译得到 <code>.dvi</code> 和 <code>.ps</code> 文件，如果需要 <code>.pdf</code> 文件可以用 <code>ps2pdf</code> 工具转换。</p>
+<p>如果你坚持<strong>使用现代的发行版</strong>，那么就需要对模板进行一些微调。这一方法适用于各个操作系统。</p>
+<ul>
+<li>将 <code>\documentclass</code> 里载入的文档类，从 <code>cctart</code> 更换为 <code>ctexart</code>；</li>
+<li>下载本站提供的 <a href="/attachment/LaTeX-useful-tools/old_style/vatola.sty"><code>vatola.sty</code></a> 和 <a href="/attachment/LaTeX-useful-tools/old_style/headrule.sty"><code>headrule.sty</code></a> 两个宏包文件（<strong>2014-12-17 更新</strong>）；</li>
+<li>到 CTAN 上下载 <a href="http://www.ctan.org/pkg/slashbox" target="_blank"><code>slashbox</code> 宏包</a> 并安装；</li>
+<li>将上述三个宏包安装至 TEXMFLOCAL，或者直接将它们放在与模板文件相同的文件夹里面；</li>
+<li>使用 pdfLaTeX 编译，可以得到与原模板几乎完全一致的结果；</li>
+<li>正式投稿时，只需要将 <code>ctexart</code> 换回 <code>cctart</code> 即可。</li>
+</ul>
+<h2 id=" 总结 ">总结</h2>
+<p>总的来说 CCT 是一个过时的中文支持方式，非常希望系统工程理论与实践的编辑部能与时俱进改用新的方式支持中文，为所有作者提供方便。对于广大的 LaTeX 用户，除非特别需要，不要使用老旧的 TeX 发行，以增强文档的兼容性。</p>
+<p>同时也希望各位作者向期刊编辑反映这个问题，尽快淘汰这些模板。</p>
 
     
   </div>
@@ -156,7 +199,7 @@
       
   
   <div class="tags">
-    <a href="/tags/SYSENGI/">SYSENGI</a>, <a href="/tags/Template/">Template</a>
+    <a href="/tags/CCT/">CCT</a>, <a href="/tags/SYSENGI/">SYSENGI</a>, <a href="/tags/Template/">Template</a>
   </div>
 
     
@@ -173,8 +216,8 @@
 	<script type="text/javascript" id="wumiiRelatedItems"></script>
 	<script type="text/javascript">
 		var wumiiPermaLink  = "http://liam0205.me/2013/10/15/LaTeX-SYSENGI-template/"; //请用代码生成文章永久的链接
-		var wumiiTitle      = "【LaTeX Tips】系统工程理论与实践模板编译的一些经验"; //请用代码生成文章标题
-		var wumiiTags       = "SYSENGI, Template"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
+		var wumiiTitle      = "【LaTeX Tips】国内期刊 CCT 模板编译经验"; //请用代码生成文章标题
+		var wumiiTags       = "CCT, SYSENGI, Template"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
 		var wumiiCategories = ["LaTeX"]; //请用代码生成文章分类，分类名放在 JSONArray 中，如: ["分类1", "分类2"]
 		var wumiiSitePrefix = "http://liam0205.me/";
 		var wumiiParams     = "&num=5&mode=3&pf=JAVASCRIPT";
@@ -220,8 +263,8 @@
       jQuery(container).append(el);
     }
   </script>
-  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '【LaTeX Tips】系统工程理论与实践模板编译的一些经验', 'http://liam0205.me/2013/10/15/LaTeX-SYSENGI-template/');">查看评论</a></h1>
-  <!-- <div class="ds-thread" data-title="【LaTeX Tips】系统工程理论与实践模板编译的一些经验"></div> -->
+  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '【LaTeX Tips】国内期刊 CCT 模板编译经验', 'http://liam0205.me/2013/10/15/LaTeX-SYSENGI-template/');">查看评论</a></h1>
+  <!-- <div class="ds-thread" data-title="【LaTeX Tips】国内期刊 CCT 模板编译经验"></div> -->
   <div id="comment-box" ></div>
 </section>
 
@@ -260,9 +303,9 @@
   <h3 class="title">标签云</h3>
   <div class="entry">
   <!--
-  <a href="/tags/AMS/" style="font-size: 10.00px;">AMS</a><a href="/tags/AW/" style="font-size: 20.00px;">AW</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Bitmap/" style="font-size: 10.00px;">Bitmap</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blindness/" style="font-size: 10.00px;">Blindness</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Book review/" style="font-size: 10.00px;">Book review</a><a href="/tags/Bookmarks/" style="font-size: 10.00px;">Bookmarks</a><a href="/tags/CJK/" style="font-size: 20.00px;">CJK</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 10.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 10.00px;">Chinese</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Compile/" style="font-size: 10.00px;">Compile</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/EPS/" style="font-size: 10.00px;">EPS</a><a href="/tags/Encoding/" style="font-size: 10.00px;">Encoding</a><a href="/tags/English/" style="font-size: 20.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Environment/" style="font-size: 10.00px;">Environment</a><a href="/tags/Equation number/" style="font-size: 10.00px;">Equation number</a><a href="/tags/Error Codes/" style="font-size: 10.00px;">Error Codes</a><a href="/tags/Exam/" style="font-size: 10.00px;">Exam</a><a href="/tags/Float/" style="font-size: 10.00px;">Float</a><a href="/tags/Footnote/" style="font-size: 10.00px;">Footnote</a><a href="/tags/Format/" style="font-size: 10.00px;">Format</a><a href="/tags/GBT7714-2005/" style="font-size: 10.00px;">GBT7714-2005</a>
+  <a href="/tags/AMS/" style="font-size: 10.00px;">AMS</a><a href="/tags/AW/" style="font-size: 20.00px;">AW</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Bitmap/" style="font-size: 10.00px;">Bitmap</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blindness/" style="font-size: 10.00px;">Blindness</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Book review/" style="font-size: 10.00px;">Book review</a><a href="/tags/Bookmarks/" style="font-size: 10.00px;">Bookmarks</a><a href="/tags/CCT/" style="font-size: 10.00px;">CCT</a><a href="/tags/CJK/" style="font-size: 20.00px;">CJK</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 10.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 10.00px;">Chinese</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Compile/" style="font-size: 10.00px;">Compile</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/EPS/" style="font-size: 10.00px;">EPS</a><a href="/tags/Encoding/" style="font-size: 10.00px;">Encoding</a><a href="/tags/English/" style="font-size: 20.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Environment/" style="font-size: 10.00px;">Environment</a><a href="/tags/Equation number/" style="font-size: 10.00px;">Equation number</a><a href="/tags/Error Codes/" style="font-size: 10.00px;">Error Codes</a><a href="/tags/Exam/" style="font-size: 10.00px;">Exam</a><a href="/tags/Float/" style="font-size: 10.00px;">Float</a><a href="/tags/Footnote/" style="font-size: 10.00px;">Footnote</a><a href="/tags/Format/" style="font-size: 10.00px;">Format</a>
   -->
-  <a href="/tags/AW/" style="font-size: 13.33px;">AW</a><a href="/tags/CJK/" style="font-size: 13.33px;">CJK</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/English/" style="font-size: 13.33px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/GRE/" style="font-size: 16.67px;">GRE</a><a href="/tags/Grammar/" style="font-size: 13.33px;">Grammar</a><a href="/tags/Highlight/" style="font-size: 13.33px;">Highlight</a><a href="/tags/Images/" style="font-size: 13.33px;">Images</a><a href="/tags/Include/" style="font-size: 10.00px;">Include</a><a href="/tags/Input/" style="font-size: 10.00px;">Input</a><a href="/tags/Kindle/" style="font-size: 13.33px;">Kindle</a><a href="/tags/LaTeX/" style="font-size: 16.67px;">LaTeX</a><a href="/tags/LaTeXTools/" style="font-size: 13.33px;">LaTeXTools</a><a href="/tags/Line number/" style="font-size: 10.00px;">Line number</a><a href="/tags/Listings/" style="font-size: 13.33px;">Listings</a><a href="/tags/Newenvironment/" style="font-size: 10.00px;">Newenvironment</a><a href="/tags/Overbrace/" style="font-size: 10.00px;">Overbrace</a><a href="/tags/PDF/" style="font-size: 13.33px;">PDF</a><a href="/tags/Path/" style="font-size: 10.00px;">Path</a><a href="/tags/Phantom/" style="font-size: 10.00px;">Phantom</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Rlap/" style="font-size: 10.00px;">Rlap</a><a href="/tags/Robust/" style="font-size: 10.00px;">Robust</a><a href="/tags/Sublime/" style="font-size: 16.67px;">Sublime</a><a href="/tags/Subnumber/" style="font-size: 10.00px;">Subnumber</a><a href="/tags/Template/" style="font-size: 16.67px;">Template</a><a href="/tags/Translation/" style="font-size: 13.33px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 13.33px;">Tutorial</a><a href="/tags/Ulem/" style="font-size: 10.00px;">Ulem</a><a href="/tags/Underbrace/" style="font-size: 10.00px;">Underbrace</a><a href="/tags/pTeX/" style="font-size: 16.67px;">pTeX</a>
+  <a href="/tags/AW/" style="font-size: 13.33px;">AW</a><a href="/tags/CJK/" style="font-size: 13.33px;">CJK</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/English/" style="font-size: 13.33px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/GRE/" style="font-size: 16.67px;">GRE</a><a href="/tags/Grammar/" style="font-size: 13.33px;">Grammar</a><a href="/tags/Highlight/" style="font-size: 13.33px;">Highlight</a><a href="/tags/Images/" style="font-size: 13.33px;">Images</a><a href="/tags/Include/" style="font-size: 10.00px;">Include</a><a href="/tags/Input/" style="font-size: 10.00px;">Input</a><a href="/tags/Kindle/" style="font-size: 13.33px;">Kindle</a><a href="/tags/LaTeX/" style="font-size: 16.67px;">LaTeX</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/LaTeXTools/" style="font-size: 13.33px;">LaTeXTools</a><a href="/tags/Line number/" style="font-size: 10.00px;">Line number</a><a href="/tags/Listings/" style="font-size: 13.33px;">Listings</a><a href="/tags/Newenvironment/" style="font-size: 10.00px;">Newenvironment</a><a href="/tags/Overbrace/" style="font-size: 10.00px;">Overbrace</a><a href="/tags/PDF/" style="font-size: 13.33px;">PDF</a><a href="/tags/Path/" style="font-size: 10.00px;">Path</a><a href="/tags/Phantom/" style="font-size: 10.00px;">Phantom</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Rlap/" style="font-size: 10.00px;">Rlap</a><a href="/tags/Robust/" style="font-size: 10.00px;">Robust</a><a href="/tags/Sublime/" style="font-size: 16.67px;">Sublime</a><a href="/tags/Subnumber/" style="font-size: 10.00px;">Subnumber</a><a href="/tags/Template/" style="font-size: 16.67px;">Template</a><a href="/tags/Translation/" style="font-size: 13.33px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 13.33px;">Tutorial</a><a href="/tags/Ulem/" style="font-size: 10.00px;">Ulem</a><a href="/tags/Underbrace/" style="font-size: 10.00px;">Underbrace</a><a href="/tags/pTeX/" style="font-size: 16.67px;">pTeX</a>
   </div>
 </div>
 

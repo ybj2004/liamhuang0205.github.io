@@ -1,32 +1,73 @@
 layout: post
 date: 2013/10/15
-title: 【LaTeX Tips】系统工程理论与实践模板编译的一些经验
-description: 这篇文章介绍了使用系统工程理论与实践的 LaTeX 模板的一些经验。
+title: 【LaTeX Tips】国内期刊 CCT 模板编译经验
 category: LaTeX
-tags: [SYSENGI, Template]
-image:
-  feature: so-simple-sample-image-3.jpg
-  credit: Michael Rose
-  creditlink: http://mademistakes.com
-share: true
-comments: true
-modified: 2014-12-17
+tags: [CCT, SYSENGI, Template]
+modified: 2014-12-21
 ---
 
-《[系统工程理论与实践](http://www.sysengi.com/)》主要刊登系统工程在工业、农业、军事、教育、科研、经济与金融、及信息管理等领域中的重要应用成果,具有重要意义的创造性的优秀理论成果。[它的 LaTeX 模板](http://www.sysengi.com/UserFiles/File/model2013.tex)使用过时的 CCT 方式支持中文，并且模板使用了 `headrule`, `vatola` 等 LaTeX 2.09 时代的老旧宏包，因此在新版的 [TeX Live](http://www.tug.org/texlive/) 以及 [CTeX 2.9.2.164](http://www.ctex.org/CTeXDownload) 上可能无法编译得到正确结果。经过一番实践，得出结论如下：
+国内有不少期刊依旧在使用过时的 CCT 方式来支持中文，这些模板非常相似，似乎系出同源。由于这些模板在现代的 TeX 发行版内无法正确编译，对不少投稿人造成困扰，所以我写下这篇文章，希望对投稿人有一些帮助。
 
 <!--more-->
 
-1. 使用 [CTeX 2.4.6](ftp://ftp.ctex.org/pub/tex/systems/ctex/obsolete/2.4/) 中自带的 WinEdt 中的 CCTLaTeX 可以正确编译得到 `.dvi` 和 `.ps` 文件，如果需要 `.pdf` 文件可以用 `ps2pdf` 工具转换。
-1. 使用 TeX Live, 替换 `cctart` 为 `ctexart` 可以得到几乎完全一致的结果，但需要额外下载前述两个 2.09 时代的老旧宏包，并且会因为 `cctart` 中的 `\pushziti` 等命令未经定义会报错。你可以删掉这些命令，或者直接忽略这些错误。
+## 模板特征
 
-总的来说 CCT 是一个过时的中文支持方式，非常希望系统工程理论与实践的编辑部能与时俱进改用新的方式支持中文，为所有作者提供方便。对于广大的 LaTeX 用户，除非特别需要（比如本文所述内容），不要使用老旧的 TeX 发行，以增强文档的兼容性。
+这些模板的导言区内代码大致如下：
 
--------
+{% code lang:tex %}
+\documentclass[twoside]{cctart}
+\usepackage{headrule,vatola,amssymb}
+\usepackage{graphicx,multirow,bm}
+\usepackage{booktabs,dcolumn}
+\newcolumntype{z}[1]{D{.}{.}{#1}}
+\usepackage{tabularx}
+\usepackage{slashbox}
+%\usepackage{footmisc,perpage}
+{% endcode %}
 
-**2014-12-17 更新**
+提取出以下几条特征：
 
-提供宏包文件下载：
+* `\documentclass` 里载入 `cctart` 文档类；
+* 载入了 `vatola` 宏包；
+* 载入了 `headrule` 宏包；
+* 载入了 `slashbox` 宏包。
 
-* [`vatola.sty`]({{site.url}}/attachment/LaTeX-useful-tools/old_style/vatola.sty)
-* [`headrule.sty`]({{site.url}}/attachment/LaTeX-useful-tools/old_style/headrule.sty)
+如果你手上的模板符合这些特征，那么这篇文章将对你有帮助。
+
+### 列表
+
+这里给出一个列表，记录使用此类模板的期刊。如果你发现你投稿的期刊也使用了这样的模板（符合上述特征），请留言告诉我；我将会及时补充到列表当中，方便后来者。
+
+* [系统工程理论与实践](http://www.sysengi.com/) - [LaTeX 模板](http://www.sysengi.com/UserFiles/File/model2013.tex)
+
+## 问题分析
+
+这些模板使用的文档类是 `cctart`，是 CCT 系统的一部分。CCT 系统是早年的一个中文支持方式，现在已经过时。虽然 CTeX 里还保留了 CCT，但是和这些编写模板时的版本已经不同；至于 TeX Live 里，根本就没有 CCT 系统。所以，编译报错也就是自然而然的事情了。
+
+模板使用了 `vatola` 和 `headrule` 两个宏包。这两个宏包均是 LaTeX 2.09 时代的陈旧宏包；他们的功能已为其他宏包所替代。因此，现代的发行版（[TeX Live](http://www.tug.org/texlive/)、[CTeX 2.9.2.164](http://www.ctex.org/CTeXDownload)）不再包含这些宏包；于是，编译的时候会提示缺少宏包的错误。
+
+此外，虽然 `slashbox` 宏包是为当前的 LaTeX 2e 设计的，但是它的许可协议与 TeX Live 的协议有冲突，因此 TeX Live 中并不包含这个宏包。于是，如果你的 TeX 发行版是 TeX Live，那么编译的时候也会提示错误。
+
+## 解决方案
+
+陈旧的模板与现代的 TeX 发行版之间的矛盾不可调和，因此必有一方需要妥协。
+
+如果你坚持**不改动模板**，那么就只好使用与模板同时代的 TeX 发行版。当然，你必须使用 Windows 操作系统。
+
+
+你可以到下载 [CTeX 2.4.6](ftp://ftp.ctex.org/pub/tex/systems/ctex/obsolete/2.4/) 并安装。CTeX 2.4.6 里的 WinEdt 有一个 CCTLaTeX 按钮，点击它之后，可以正确编译得到 `.dvi` 和 `.ps` 文件，如果需要 `.pdf` 文件可以用 `ps2pdf` 工具转换。
+
+如果你坚持**使用现代的发行版**，那么就需要对模板进行一些微调。这一方法适用于各个操作系统。
+
+* 将 `\documentclass` 里载入的文档类，从 `cctart` 更换为 `ctexart`；
+* 下载本站提供的 [`vatola.sty`]({{site.url}}/attachment/LaTeX-useful-tools/old_style/vatola.sty) 和 [`headrule.sty`]({{site.url}}/attachment/LaTeX-useful-tools/old_style/headrule.sty) 两个宏包文件（**2014-12-17 更新**）；
+* 到 CTAN 上下载 [`slashbox` 宏包](http://www.ctan.org/pkg/slashbox) 并安装；
+* 将上述三个宏包安装至 TEXMFLOCAL，或者直接将它们放在与模板文件相同的文件夹里面；
+* 使用 pdfLaTeX 编译，可以得到与原模板几乎完全一致的结果；
+* 正式投稿时，只需要将 `ctexart` 换回 `cctart` 即可。
+
+## 总结
+
+总的来说 CCT 是一个过时的中文支持方式，非常希望系统工程理论与实践的编辑部能与时俱进改用新的方式支持中文，为所有作者提供方便。对于广大的 LaTeX 用户，除非特别需要，不要使用老旧的 TeX 发行，以增强文档的兼容性。
+
+同时也希望各位作者向期刊编辑反映这个问题，尽快淘汰这些模板。
