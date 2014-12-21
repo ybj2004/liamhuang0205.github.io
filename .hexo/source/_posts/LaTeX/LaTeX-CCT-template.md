@@ -57,6 +57,8 @@ modified: 2014-12-21
 
 你可以到下载 [CTeX 2.4.6](ftp://ftp.ctex.org/pub/tex/systems/ctex/obsolete/2.4/) 并安装。CTeX 2.4.6 里的 WinEdt 有一个 CCTLaTeX 按钮，点击它之后，可以正确编译得到 `.dvi` 和 `.ps` 文件，如果需要 `.pdf` 文件可以用 `ps2pdf` 工具转换。
 
+-----
+
 如果你坚持**使用现代的发行版**，那么就需要对模板进行一些微调。这一方法适用于各个操作系统。
 
 * 将 `\documentclass` 里载入的文档类，从 `cctart` 更换为 `ctexart`；
