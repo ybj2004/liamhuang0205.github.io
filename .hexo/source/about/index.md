@@ -25,7 +25,7 @@ date: 2014-05-08 17:06:30
 * [`xprintlen`][xprintlen] 和 [`sduthesis`][sduthesis] 宏包的作者
 * [CTeX-kit][CTeX-kit] 的第九位开发者
 * [fandol-font][fandol-font] 的开发者之一，它是一款遵循 GPL 的开源中文字体
-* 最近也有参与 [pTeX-ng][pTeX-ng] 的一些开发
+* 最近也有参与 [pTeX-ng][pTeX-ng] 的一些开发，主要是文档部分
 
 ### 出版
 
