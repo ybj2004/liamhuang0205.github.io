@@ -35,11 +35,11 @@ date: 2014-05-08 17:06:30
 
 这是我的博客的[主站][blog]，你还可以访问[文摘][collect]。
 
+[blog]: /
+[collect]: http://collect.liam0205.me
 [CTeX-kit]: https://code.google.com/p/ctex-kit/
 [fandol-font]: https://code.google.com/p/fandol-font/
 [pTeX-ng]: https://github.com/clerkma/ptex-ng
-[blog]: /
-[collect]: http://collect.liam0205.me
 [xprintlen]: http://www.ctan.org/pkg/xprintlen
 [sduthesis]: http://www.ctan.org/pkg/sduthesis
 [GRE-24]: http://www.dogwood.com.cn/book/gre/1808.html
