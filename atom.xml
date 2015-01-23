@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-01-22T16:14:12.490Z</updated>
+  <updated>2015-01-23T15:38:00.895Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,321 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[在 LaTeX 中进行文学编程]]></title>
+    <link href="http://liam0205.me/2015/01/23/literate-programming-in-latex/"/>
+    <id>http://liam0205.me/2015/01/23/literate-programming-in-latex/</id>
+    <published>2015-01-23T07:48:35.000Z</published>
+    <updated>2015-01-23T15:37:24.000Z</updated>
+    <content type="html"><![CDATA[<p>文学编程是 TeX 的作者高德纳提出的编程方式，主张程序员在编写代码的过程中详细地记录自己的思维方式和内在逻辑。</p>
+<p>这种编程方式注重编码的逻辑而将编码本身放在更次要的位置，因而不充分的设计在这种变成方式下无所遁形。文学编程的另一个优点是它产生的代码文档能帮助程序员在任意时候重新会想起当时编码的思路。</p>
+<p>在 LaTeX 中，可以用 Doc 和 DocStrip 这两个工具来实现文学编程。</p>
+<a id="more"></a>
+
+<p>对于程序员来说，最重要的有三个部分：</p>
+<ul>
+<li>代码；</li>
+<li>代码文档；</li>
+<li>用户手册。</li>
+</ul>
+<p>使用 Doc 和 DocStrip 可以将这三个部分集中到一个 <code>.dtx</code> 文件当中。这篇文章将分三个部分讲述如何构建这样一个 <code>.dtx</code> 文件。</p>
+<h2 id="-ins_ 文件 "><code>.ins</code> 文件</h2>
+<p>INS 三个字母是「Install」的缩写，顾名思义，这个文件是和安装相关的。<code>.ins</code> 文件通常用来控制 TeX 从 <code>.dtx</code> 文件里释放宏包文件，它的结构最为简单，大概是这样的。</p>
+<ol>
+<li>作为注释的版权信息</li>
+<li><strong>载入 <code>docstrip.tex</code></strong></li>
+<li>写入 DocStrip 的控制命令</li>
+<li>编写将写入生成文件的版权信息</li>
+<li><strong>生成文件指令</strong></li>
+<li>写入提示信息用以完成安装</li>
+<li><strong>结束安装文件</strong></li>
+</ol>
+<p>这里粗体标记的是必不可少的部分，其他部分或多或少都可以省略。</p>
+<p>我们逐步构建一个完整的 <code>.ins</code> 文件。</p>
+<hr>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="comment">%% Copyright (C) 2003--2015</span>
+<span class="comment">%% CTEX.ORG and any individual authors listed elsewhere in this file.</span>
+<span class="comment">%% --------------------------------------------------------------------------</span>
+<span class="comment">%%</span>
+<span class="comment">%% This work may be distributed and/or modified under the</span>
+<span class="comment">%% conditions of the LaTeX Project Public License, either</span>
+<span class="comment">%% version 1.3c of this license or (at your option) any later</span>
+<span class="comment">%% version. This version of this license is in</span>
+<span class="comment">%%    http://www.latex-project.org/lppl/lppl-1-3c.txt</span>
+<span class="comment">%% and the latest version of this license is in</span>
+<span class="comment">%%    http://www.latex-project.org/lppl.txt</span>
+<span class="comment">%% and version 1.3 or later is part of all distributions of</span>
+<span class="comment">%% LaTeX version 2005/12/01 or later.</span>
+<span class="comment">%%</span>
+<span class="comment">%% This work has the LPPL maintenance status `maintained'.</span>
+<span class="comment">%%</span>
+<span class="comment">%% The Current Maintainers of this work are Leo Liu, Qing Lee and Liam Huang.</span>
+<span class="comment">%% --------------------------------------------------------------------------</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>这是 <code>ctex</code> 宏包的版权声明信息。</p>
+<ul>
+<li>这里的每一行都以百分号开头，因此在声明版权的同时不会影响正常的编译流程。</li>
+<li>版权声明部分，首先是声明版权的归属。</li>
+<li>接下来，声明许可协议为 LPPL。大多数 TeX 相关的宏包或软件，都在 LPPL 协议下发布。</li>
+</ul>
+<hr>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="command">\input</span> docstrip.tex
+</pre></td></tr></table></figure>
+
+
+
+<p>载入 <code>docstrip.tex</code>。</p>
+<hr>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="command">\keepsilent</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>这是 DocStrip 的控制命令之一，其作用是关闭 DocStrip 的日志输出功能。默认情况下，DocStrip 会详细输出它的每一步操作。对于大多数人来说，成败上千行的日志徒惹人嫌弃，因此我们关闭它。</p>
+<p>更多的控制命令可以参考 DocStrip 的文档。</p>
+<hr>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="code"><pre><span class="command">\preamble</span>
+
+    Copyright (C) 2003-2015
+    CTEX.ORG and any individual authors listed in the documentation.
+------------------------------------------------------------------------------
+
+    This work may be distributed and/or modified under the
+    conditions of the LaTeX Project Public License, either
+    version 1.3c of this license or (at your option) any later
+    version. This version of this license is in
+       http://www.latex-project.org/lppl/lppl-1-3c.txt
+    and the latest version of this license is in
+       http://www.latex-project.org/lppl.txt
+    and version 1.3 or later is part of all distributions of
+    LaTeX version 2005/12/01 or later.
+
+    This work has the LPPL maintenance status `maintained'.
+
+    The Current Maintainers of this work are Leo Liu, Qing Lee and Liam Huang.
+------------------------------------------------------------------------------
+
+<span class="command">\endpreamble</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>在 <code>\preamble</code> 和 <code>\endpreamble</code> 之间的部分，将被写入由 DocStrip 生成的所有文档（默认情况下）。比如上面这段 <code>ctex</code> 宏包的版权信息将写入每一个生成的文件。</p>
+<hr>
+<p>下面的内容是整个 <code>.ins</code> 文件里最重要的部分，它控制着如何生成最终的宏包文件。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="command">\generate</span>
+  <span class="special">{</span>
+    <span class="command">\usedir</span><span class="special">{</span>tex/latex/ctex<span class="special">}</span>
+    <span class="command">\file</span><span class="special">{</span>ctex.sty<span class="special">}</span>                 <span class="special">{</span><span class="command">\from</span><span class="special">{</span><span class="command">\jobname</span>.dtx<span class="special">}</span><span class="special">{</span>package,style<span class="special">}</span><span class="special">}</span>
+    <span class="command">\file</span><span class="special">{</span>ctexcap.sty<span class="special">}</span>              <span class="special">{</span><span class="command">\from</span><span class="special">{</span><span class="command">\jobname</span>.dtx<span class="special">}</span><span class="special">{</span>package,ctexcap<span class="special">}</span><span class="special">}</span>
+    <span class="command">\file</span><span class="special">{</span>ctexsize.sty<span class="special">}</span>             <span class="special">{</span><span class="command">\from</span><span class="special">{</span><span class="command">\jobname</span>.dtx<span class="special">}</span><span class="special">{</span>package,ctexsize<span class="special">}</span><span class="special">}</span>
+    <span class="command">\file</span><span class="special">{</span>ctexart.cls<span class="special">}</span>              <span class="special">{</span><span class="command">\from</span><span class="special">{</span><span class="command">\jobname</span>.dtx<span class="special">}</span><span class="special">{</span>class,article<span class="special">}</span><span class="special">}</span>
+    <span class="command">\file</span><span class="special">{</span>ctexbook.cls<span class="special">}</span>             <span class="special">{</span><span class="command">\from</span><span class="special">{</span><span class="command">\jobname</span>.dtx<span class="special">}</span><span class="special">{</span>class,book<span class="special">}</span><span class="special">}</span>
+    <span class="command">\file</span><span class="special">{</span>ctexrep.cls<span class="special">}</span>              <span class="special">{</span><span class="command">\from</span><span class="special">{</span><span class="command">\jobname</span>.dtx<span class="special">}</span><span class="special">{</span>class,report<span class="special">}</span><span class="special">}</span>
+    <span class="command">\file</span><span class="special">{</span>ctexspa.def<span class="special">}</span>
+      <span class="special">{</span>
+        <span class="command">\from</span><span class="special">{</span><span class="command">\jobname</span>.dtx<span class="special">}</span>         <span class="special">{</span>ctexspa<span class="special">}</span>
+        <span class="command">\from</span><span class="special">{</span>ctexpunct.spa<span class="special">}</span>        <span class="special">{</span><span class="special">}</span>
+      <span class="special">}</span>
+  <span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p><code>\generate</code> 命令中的<code>\file{⟨filename⟩}{\from{⟨sourcefilename⟩}{⟨optionlist⟩}}</code> 用来指定宏包文件的生成方式。这里的含义是，从 <code>⟨sourcefilename⟩</code> 中抽取含有 <code>⟨optionlist⟩</code> 标记的部分，生成 <code>⟨filename⟩</code> 这个文件。</p>
+<p>一个 <code>\generate</code> 里可以有多个 <code>\file</code> 命令。一个 <code>\file</code> 命令里可以有多个 <code>\from</code> 命令。一个 <code>\from</code> 命令里的 <code>⟨option⟩</code>，组成 <code>⟨optionlist⟩</code>。其中 <code>⟨option⟩</code> 需要用逗号隔开，<code>\file</code> 之间和 <code>\from</code> 之间则不需要。</p>
+<hr>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="code"><pre><span class="command">\obeyspaces</span>
+<span class="command">\Msg</span><span class="special">{</span>*************************************************************<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*                                                           *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>* To finish the installation you have to move the following *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>* file into proper directories searched by TeX:             *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*                                                           *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>* The recommended directory is TDS:tex/latex/ctex           *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*                                                           *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*     ctex.sty                                              *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*     ctexcap.sty                                           *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*     ctexsize.sty                                          *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*     ctexart.cls                                           *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*     ctexbook.cls                                          *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*     ctexrep.cls                                           *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*     ctexspa.def                                           *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*                                                           *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>* To produce the documentation run the file ctex.dtx        *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>* through XeLaTeX.                                          *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*                                                           *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>* Happy TeXing!                                             *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*                                                           *<span class="special">}</span>
+<span class="command">\Msg</span><span class="special">{</span>*************************************************************<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>这里的内容会在处理完 <code>.ins</code> 文件之后显示在控制台，用来提示使用者将文件置入指定的目录。TeX 会忽略连续的空格，第一行的 <code>\obeyspaces</code> 则会让 TeX 输出这些空格。</p>
+<hr>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="command">\endbatchfile</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>显式地结束安装文件，此后的所有内容都会被忽略。</p>
+<p>将上面的代码依次粘贴到一起，就是一个最简单的 <code>.ins</code> 文件了。</p>
+<h2 id="-dtx_ 文件 "><code>.dtx</code> 文件</h2>
+<p><code>.dtx</code> 文件比 <code>.ins</code> 文件复杂得多。<code>.ins</code> 文件在整个过程中会被读取一次，而 <code>.dtx</code> 文件却会被读取三次。下面是对此三个步骤的简略描述。如果暂时看不懂也没有关系，下一节我们将会化身人肉编译器，逐行分析示例。</p>
+<p>处理 <code>.ins</code> 文件的时候，会载入 <code>.dtx</code> 文件。这时候 <code>.dtx</code> 文件中以 <code>%</code> 开头的行将被全部忽略，而以 <code>%</code> 开头的行则会用于记录 <code>⟨option⟩</code>。程序会根据 <code>.ins</code> 文件中 <code>\generate</code> 命令里 <code>\from</code> 的指示的 <code>⟨option⟩</code> 抽取 <code>.dtx</code> 文件中 <code>⟨option⟩</code> 相关内容。这个过程中，没有以 <code>%</code> 开头的行会根据 <code>⟨option⟩</code> 写入文件，而 <code>%</code> 开头的行则被抑制并保护起来。最终生成宏包文件。</p>
+<p>第二遍处理 <code>.dtx</code> 文件的时候，在读入 <code>\documentclass{ltxdoc}</code> 之前，所有的内容与通常意义上的 LaTeX 代码完全一致。因此需要依靠 <code>\iffalse</code> 和 <code>% \iffalse</code> 来保护相关代码，这些代码通常是 README 文件和 LICENSE 文件。在读入 <code>\DocInput{filename.dtx}</code> 之后，<code>.dtx</code> 文件会被第三次载入处理。处理完成之后遇到 <code>\end{document}</code>，后续的内容被全部忽略。最终生成说明文档。</p>
+<p>第三遍处理 <code>.dtx</code> 是被 <code>\DocInput</code> 载入的。此时，文档内（几乎）所有的 <code>%</code> 都被忽略。因为 LaTeX 只能有一个 <code>\documentclass</code> 以及一对 <code>\begin{document}</code> 和 <code>\end{document}</code>，所以 <code>\end{document}</code> 之前的所有内容都应当在这一次处理的时候被忽略。因此这部分内容应该被 <code>\iffalse</code> 和 <code>\fi</code> 保护起来。</p>
+<p><code>.dtx</code> 文件由以下部分组成。</p>
+<ol>
+<li>包含在 <code>% \iffalse</code> 和 <code>% \fi</code> 中间的版权信息</li>
+<li><strong>包含在 <code>% \iffalse</code> 和 <code>% \fi</code> 中间的宏包基本信息</strong></li>
+<li><strong>包含在 <code>%&lt;*driver&gt;</code> 和 <code>%&lt;/driver&gt;</code> 中间的 <code>ltxdoc</code> 文档类及相关代码，这部分代码也应包含在 <code>% \iffalse</code> 和 <code>% \fi</code> 中间</strong></li>
+<li><strong>在 <code>\end{document}</code> 之后的说明文档，这部分文档应该隐藏在行首的 <code>%</code> 之后</strong></li>
+<li><strong>在说明文档最后的代码说明，以及间杂在代码说明中间的代码，其中代码说明也应该隐藏在行首的 <code>%</code> 之后，而代码本身则不应该被 <code>%</code> 保护</strong></li>
+</ol>
+<p>示例 <code>.dtx</code> 文件的具体内容，可以参看下一节。</p>
+<h2 id=" 人肉编译器 ">人肉编译器</h2>
+<p>我们来看两个文件，分别是 <a href="/attachment/LaTeX-useful-tools/dtxtut/dtxtut.ins"><code>dtxtut.ins</code></a> 和 <a href="/attachment/LaTeX-useful-tools/dtxtut/dtxtut.dtx"><code>dtxtut.dtx</code></a>。你可以下载这两个文件，然后跟着我的思路一起分析。</p>
+<p>首先我们要生成宏包文件，在命令行中运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>xelatex dtxtut.ins
+</pre></td></tr></table></figure>
+
+
+
+<p>注意，这里的后缀名不可省略。</p>
+<p>文件读入之后，直到 12 行都是注释，直接忽略。接着到了第 13 行，读入了 <code>docstrip.tex</code> 这个文件。随后进行了一些设置之后来到了第 26 行.</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="command">\generate</span><span class="special">{</span><span class="command">\file</span><span class="special">{</span><span class="command">\jobname</span>.sty<span class="special">}</span><span class="special">{</span><span class="command">\from</span><span class="special">{</span><span class="command">\jobname</span>.dtx<span class="special">}</span><span class="special">{</span>package<span class="special">}</span><span class="special">}</span><span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>这里 <code>\jobname</code> 是当前文件的名字（不含后缀），即 <code>dtxtut</code>。所以这里会从 <code>dtxtut.dtx</code> 文件中，抽取 <code>package</code> 的部分，组成名为 <code>dtxtut.sty</code> 这个文件。</p>
+<p>现在我们读取 <code>dtxtut.dtx</code>。前 18 行都是注释，忽略。19 — 21 行是 <code>package</code> 部分，输出。23 行开始了名为 <code>driver</code> 的部分，直到 32 行结束。接下来一直到 81 行都是注释，忽略。82 行开始了名为 <code>package</code> 的部分，于是程序将 82 行开始到 100 行中没有注释掉的部分抽出来，输出。这样，输出的内容接在 <code>\preamble</code> 之后，保存为 <code>dtxtut.sty</code> 文件。</p>
+<p>接下来我们生成宏包文档，在命令行中运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>xelatex dtxtut.dtx
+</pre></td></tr></table></figure>
+
+
+
+<p>同样，这里的后缀名不可省略。</p>
+<p>前 23 行都是注释，忽略。24 行载入了 <code>ltxdoc</code> 文档类，随后载入了刚刚生成的 <code>dtxtut.sty</code> 宏包。26 行的 <code>\EnableCrossrefs</code> 打开了代码索引的生成（如果你将来不需要，可以用 <code>\DisableCrossrefs</code> 打开）。27 行的 <code>\CodelineIndex</code> 则使得索引指向代码行号，而不是页码。28 行的 <code>\RecordChanges</code> 则会让文档类记录宏包的变化记录。</p>
+<p>接下来，30 行的 <code>\DocInput{\jobname.dtx}</code> 重新载入了这个文件本身，但（几乎）所有的 <code>%</code> 符号都被忽略。第 1 行遇到 <code>\iffalse</code>，直到 16 行的 <code>\fi</code>，中间的内容都被忽略。17 行是空行。18 行又遇到 <code>\iffalse</code>，直到 33 行的 <code>\fi</code>，中间的内容都被忽略。注意，这里正好跳过了 <code>driver</code> 部分。</p>
+<p>接下来的 <code>\CheckSum</code> 和 <code>\CharacterTable</code> 是为了检测 <code>.dtx</code> 文件完整性的两个工具。众所周知，<code>.dtx</code> 文件包含了一个宏包的几乎所有信息，如果文件在网络传输的过程中出错，则宏包安装必然失败。因此，检测文件的完整性就变得很有必要。</p>
+<p><code>\CheckSum</code> 采用了一个很简单的方案来检验完整性。它将从 <code>\StopEventually</code> 开始到 <code>\Finale</code> 结尾的，在 <code>macrocode</code> 环境里的反斜杠 <code>\</code> 计数，将计数的值作为校验和。在生成文档的过程中，程序将会计算这个值，并于 <code>\CheckSum{}</code> 中的值进行比对。若二者不一致，则说明传输过程中可能出现错误。</p>
+<p><code>\CharacterTable</code> 更为直接一点。程序将检查代码中出现的符号均包含在 <code>\CharacterTable</code> 之中。若不然，则认为传输过程中可能出错。</p>
+<p>接下来的内容，直到第 76 行都很好理解。77 行出现了 <code>\StopEventually</code> 命令，并在参数中启动了 <code>\PrintIndex</code> 命令。我们刚才说了 <code>\StopEventually</code> 会开启校验和的检查，而 <code>\PrintIndex</code> 则会在此处打印代码索引。</p>
+<p><code>macrocode</code> 环境是一个特殊的环境，它有点类似于 LaTeX 原生的 <code>verbatim</code> 环境。它在大多数情况下的行为和 <code>verbatim</code> 环境相同，大体上是将代码输出到最终的文档当中。</p>
+<p>这样持续运行到 103 行，遇到 <code>\Finale</code> 命令，校验和计算的终点。此时，程序将会计算出校验和，并与文档中给出的校验和进行比较。如果 <code>\CheckSum</code> 不存在，或者给出的值为 <code>0</code>，那么程序会给出正确的值，让你填入文档。如果 <code>\CheckSum</code> 存在，但值与程序计算的不符，那么程序会报错，并给出正确的值。改正后重新编译才能得到文档。如果 <code>\CheckSum</code> 存在，且校验和通过，那么程序会继续运行。</p>
+<p>104 行是 <code>\endinput</code>，结束整个文件，本次对 <code>dtxtut.dtx</code> 的处理结束，回到上一次的断点。</p>
+<p>30 行之后，31 行就是 <code>\end{document}</code>，文档处理结束，之后的内容全都被忽略。输出文档，退出。</p>
+<h2 id=" 将 _-dtx_ 和 _-ins_ 合二为一 ">将 <code>.dtx</code> 和 <code>.ins</code> 合二为一</h2>
+<p>细心的读者会发现，整个过程中，<code>.dtx</code> 文件承担了几乎所有的功能，而 <code>.ins</code> 文件只是一个「指路人」。这些读者可能会思考，是不是有办法将 <code>.ins</code> 文件并入 <code>.dtx</code> 文件呢？答案是肯定的。</p>
+<p>对于这类合二为一的 <code>.dtx</code> 文件，使用 Plain TeX 格式编译，会启动 DocStrip 工具，得到宏包文件；使用 LaTeX 格式编译，则会生成文档。</p>
+<p>这里给出一个来自<a href="http://www.zhihu.com/question/27693438" target="_blank">知乎提问</a>的<a href="/attachment/LaTeX-useful-tools/dtxtut/insdtxtut.dtx">示例</a>（略有修改），你可以在<a href="http://www.zhihu.com/question/27693438/answer/37669407" target="_blank">我的答案</a>里看到对此的具体分析。</p>
+<h2 id=" 最后的最后 ">最后的最后</h2>
+<p>今天是 W 的生日。祝你生日快乐~</p>
+]]></content>
+    <summary type="html"><![CDATA[<p>文学编程是 TeX 的作者高德纳提出的编程方式，主张程序员在编写代码的过程中详细地记录自己的思维方式和内在逻辑。</p>
+<p>这种编程方式注重编码的逻辑而将编码本身放在更次要的位置，因而不充分的设计在这种变成方式下无所遁形。文学编程的另一个优点是它产生的代码文档能帮助程序员在任意时候重新会想起当时编码的思路。</p>
+<p>在 LaTeX 中，可以用 Doc 和 DocStrip 这两个工具来实现文学编程。</p>
+]]></summary>
+    
+      <category term="Literate Programming" scheme="http://liam0205.me/tags/Literate%20Programming/"/>
+    
+      <category term="dtx" scheme="http://liam0205.me/tags/dtx/"/>
+    
+      <category term="Macro" scheme="http://liam0205.me/tags/Macro/"/>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[欧洲史·三：浪漫主义与古希腊哲学]]></title>
@@ -3240,64 +3555,6 @@ Mac OS <span class="special">&amp;</span> MacTeX <span class="special">&amp;</sp
       <category term="Grammar" scheme="http://liam0205.me/tags/Grammar/"/>
     
       <category term="Literature and Social Sciences" scheme="http://liam0205.me/categories/Literature%20and%20Social%20Sciences/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[使用 Virtual Audio Cable 解决 CamStudio 在部分 ThinkPad 机型上无法内录的问题]]></title>
-    <link href="http://liam0205.me/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/"/>
-    <id>http://liam0205.me/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/</id>
-    <published>2014-05-23T03:24:46.000Z</published>
-    <updated>2014-08-30T10:11:22.000Z</updated>
-    <content type="html"><![CDATA[<p>最近因为一些缘故，需要在 Win7 上实现录屏和声音内录功能：前者记录计算机屏幕的内容变化，后者记录通过计算机扬声器或耳机线路发出的声音（Speaker 的声音）。在朋友圈中问了一圈，结合自己搜索之后，决定使用开源的 <a href="http://camstudio.org/" target="_blank">CamStudio</a> 来录屏。</p>
-<p>CamStudio 十分优秀，视频上支持多种区域方式（全屏、区域、固定大小、窗口），声音上支持计算机内录和从麦克风输入录制，甚至可选鼠标和键盘操作的录制。但在实际操作中 CamStudio 的内录功能无法正常进行，提示 <code>WaveoutGetSelectControl() failed</code> 的错误，并且官方似乎也没有定位问题所在，导致在多个版本中都存在这个错误（见<a href="http://camstudio.org/forum/discussion/33/waveoutgetselectcontrol-failed/p1" target="_blank">官方论坛的讨论</a>）。</p>
-<p>Woedge 在上述<a href="http://camstudio.org/forum/discussion/33/waveoutgetselectcontrol-failed/p1" target="_blank">讨论</a>中给出了一个解决方案，帮助一些用户解决了问题。这个方案的关键步骤，是打开 Windows 系统录音设备中的禁用设备——立体声混响（Stereo Mix）功能，然后使用立体声混响将系统内部声音和麦克风声音混在一起，交付给 CamStudio 进行录制。</p>
-<p>这个方案无疑帮很多用户解决了问题，但在许多 ThinkPad 机型上却不行。原因是部分 ThinkPad 安装的声卡并不支持 Stereo Mix 功能，故而上述关键步骤无法执行。</p>
-<p>经过一番研究之后，决定使用 Virtual Audio Cable 来解决问题。</p>
-<a id="more"></a>
-
-<h2 id=" 需求分析 ">需求分析</h2>
-<ul>
-<li>将计算机扬声器 / 耳机音频信号直接输入计算机麦克风</li>
-<li>在内录进行时，保证计算机扬声器的正常工作（不能静音）</li>
-</ul>
-<h2 id=" 解决思路 ">解决思路</h2>
-<p>大约是十年前，中国大陆地区流行 MP3 播放器的时候，部分播放器就提供了这种「内录」功能。这些 MP3 播放器大都随机提供了一只内录电缆（Line-in Cable）——类似常见的耳机，只不过正常耳机一头是插头另一头是耳机，而内陆电缆两头都是一模一样的插头，将电缆的一头插入朋友的 MP3 耳机插口中，一头插入自己 MP3 的麦克风插口中，开启录音模式就能录制朋友 MP3 中的歌曲了。当年可是用这个办法节省了不少上网费用（当年家里还是 56K 的拨号上网，一小时六块钱，可贵了）。</p>
-<p>这种方式对我来说固然好，但是不免要浪费朋友的时间——内录进行过程中朋友是无法使用 MP3 听音乐的。作为一个爱动手的好孩子，我制作了一个音频分线器，起作用大约就相当于大家普遍使用的 USB 分线器（当计算机 USB 接口不够时，将它接到计算机的 USB 上，然后让其他设备，比如 U 盘，插入到分线器上）。当然，后来才知道这东西到处都有卖，也很便宜。</p>
-<p><img src="http://liamsblog.qiniudn.com/post35mmhub.jpg" alt="3.5mm 音频分线器 "></p>
-<p>今次我们要做的事情和十年前我曾经做过的事情如出一辙。我们当然也可以用一个分线器加一条内录电缆来达到目的，更好的办法无疑是在计算机内部使用软件来模拟分线器和内录电缆的效果来达到目的。为此，我们需要 Virtual Audio Cable.</p>
-<h2 id=" 配置 _Virtual_Audio_Cable">配置 Virtual Audio Cable</h2>
-<p>我将我使用的版本上传到了<a href="/attachment/soft/Virtual_Audio_Cable_4_10.zip">这里</a>，你可以下载安装。</p>
-<p>接下来我们模拟「内录电缆」的效果。Virtual Audio Cable 在默认设置下，为计算机配置了一些新的输入输出设备。我们暂时不需要修改 Virtual Audio Cable 的设置，直接使用默认设置提供的这些设备即可。</p>
-<p>右键 Windows 任务栏上的音量合成器按钮，选择「播放设备」，将「Line 1」设备设置为默认。</p>
-<p><img src="http://liamsblog.qiniudn.com/2014-05-23-CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cableline1_input.png" alt=" 配置播放设备 "></p>
-<p>然后切换到「录制」标签，同样，将「Line 1」设备设置为默认。</p>
-<p><img src="http://liamsblog.qiniudn.com/2014-05-23-CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cableline1_output.png" alt=" 配置录制设备 "></p>
-<p>这样 Virtual Audio Cable 就接管了操作系统音频的输入与输出，相当于将一条 Line-in 电缆接在了计算机耳机和麦克风的接口上。</p>
-<p>这时，因为计算机的音频输出完全由 Virtual Audio Cable 的虚拟设备「Line 1」接管，计算机的扬声器 / 耳机中是没有音频信号的，因此我们听不到任何声音。为此，我们需要打开 Virtual Audio Cable 的中继器功能，来模拟前文所述的音频分线器。Virtual Audio Cable 提供了两个中继器模式，分别是 MME 和 KS, 你需要根据你的设备型号来选择。如果你不清楚你的设备型号，不知道选择哪一个的话，也不用担心。因为二者内部的配置完全相同；并且如果当前模式不支持你的硬件，Virtual Audio Cable 就会报错，这时候换另一个就行了。</p>
-<p><img src="http://liamsblog.qiniudn.com/2014-05-23-CamStudio-WaveoutGetSelectControl-Virtual_Audio_CableAudio_Repeater.png" alt="Virtual Audio Cable 的中继器 "></p>
-<p>打开中继器窗口之后，将 Wave In 设置为「Line 1」，将 Wave Out 设置为你的系统扬声器。这样就相当于我们用音频分线器将「Line 1」中的信号分流到了系统扬声器之中，同时又输入到了麦克风信号当中。而这正是我们希望的效果。此时点击 Start 启动中继器，计算机的扬声器就会照常工作了。</p>
-<p><img src="http://liamsblog.qiniudn.com/2014-05-23-CamStudio-WaveoutGetSelectControl-Virtual_Audio_CableAudio_Repeater_in_n_out.png" alt=" 中继器窗口的设置 "></p>
-<p>这样我们就成功模拟了「内录电缆」和「分线器」的功能，打开 CamStudio 开始录屏吧！</p>
-]]></content>
-    <summary type="html"><![CDATA[<p>最近因为一些缘故，需要在 Win7 上实现录屏和声音内录功能：前者记录计算机屏幕的内容变化，后者记录通过计算机扬声器或耳机线路发出的声音（Speaker 的声音）。在朋友圈中问了一圈，结合自己搜索之后，决定使用开源的 <a href="http://camstudio.org/" target="_blank">CamStudio</a> 来录屏。</p>
-<p>CamStudio 十分优秀，视频上支持多种区域方式（全屏、区域、固定大小、窗口），声音上支持计算机内录和从麦克风输入录制，甚至可选鼠标和键盘操作的录制。但在实际操作中 CamStudio 的内录功能无法正常进行，提示 <code>WaveoutGetSelectControl() failed</code> 的错误，并且官方似乎也没有定位问题所在，导致在多个版本中都存在这个错误（见<a href="http://camstudio.org/forum/discussion/33/waveoutgetselectcontrol-failed/p1" target="_blank">官方论坛的讨论</a>）。</p>
-<p>Woedge 在上述<a href="http://camstudio.org/forum/discussion/33/waveoutgetselectcontrol-failed/p1" target="_blank">讨论</a>中给出了一个解决方案，帮助一些用户解决了问题。这个方案的关键步骤，是打开 Windows 系统录音设备中的禁用设备——立体声混响（Stereo Mix）功能，然后使用立体声混响将系统内部声音和麦克风声音混在一起，交付给 CamStudio 进行录制。</p>
-<p>这个方案无疑帮很多用户解决了问题，但在许多 ThinkPad 机型上却不行。原因是部分 ThinkPad 安装的声卡并不支持 Stereo Mix 功能，故而上述关键步骤无法执行。</p>
-<p>经过一番研究之后，决定使用 Virtual Audio Cable 来解决问题。</p>
-]]></summary>
-    
-      <category term="ThinkPad" scheme="http://liam0205.me/tags/ThinkPad/"/>
-    
-      <category term="CamStudio" scheme="http://liam0205.me/tags/CamStudio/"/>
-    
-      <category term="Virtual Audio Cable" scheme="http://liam0205.me/tags/Virtual%20Audio%20Cable/"/>
-    
-      <category term="Vitual Sound Card" scheme="http://liam0205.me/tags/Vitual%20Sound%20Card/"/>
-    
-      <category term="WaveoutGetSelectControl" scheme="http://liam0205.me/tags/WaveoutGetSelectControl/"/>
-    
-      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
     
   </entry>
   
