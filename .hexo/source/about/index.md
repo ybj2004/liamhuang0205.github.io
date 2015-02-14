@@ -31,13 +31,17 @@ date: 2014-05-08 17:06:30
 
 * [GRE 基础填空 24 套精析与精练][GRE-24]
 
+### 联系方式
+
+你可以通过邮件联系我，地址是 [liamhuang0205@gmail.com](liamhuang0205+blog@gmail.com)。
+
 ## 关于本站
 
 这是我的博客的[主站][blog]，你还可以访问[文摘][collect]。
 
-## 联系方式
+若无特殊说明，主站所有文章均为原创文章，并遵循 CC BY-SA 3.0 协议发布。
 
-你可以通过邮件联系我，地址是 [liamhuang0205@gmail.com](liamhuang0205+blog@gmail.com)。
+你可以自由地对博客中内容进行分享、创作演绎直至商业性的使用，但必须在文章末尾或参考文献处注明文章的出处（文章链接）。完整的协议可以参看 <http://creativecommons.org/licenses/by-sa/3.0/deed.zh>。
 
 [blog]: /
 [collect]: http://collect.liam0205.me
