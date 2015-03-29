@@ -41,7 +41,7 @@ date: 2014-05-08 17:06:30
 
 若无特殊说明，主站所有文章均为原创文章，并遵循 CC BY-SA 3.0 协议发布。
 
-你可以自由地对博客中内容进行分享、创作演绎直至商业性的使用，但必须在文章末尾或参考文献处注明文章的出处（文章链接）。完整的协议可以参看 <http://creativecommons.org/licenses/by-sa/3.0/deed.zh>。
+你可以自由地对博客中内容进行分享、创作演绎直至商业性的使用，但必须在文章末尾或参考文献处注明文章的出处（文章链接）。完整的协议可以参看 [这里](http://creativecommons.org/licenses/by-sa/3.0/deed.zh)。
 
 [blog]: /
 [collect]: http://collect.liam0205.me
