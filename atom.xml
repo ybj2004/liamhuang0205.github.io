@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-04-10T06:52:36.967Z</updated>
+  <updated>2015-04-10T08:48:09.781Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -131,7 +131,7 @@
     <link href="http://liam0205.me/2015/01/23/literate-programming-in-latex/"/>
     <id>http://liam0205.me/2015/01/23/literate-programming-in-latex/</id>
     <published>2015-01-23T07:48:35.000Z</published>
-    <updated>2015-01-23T15:37:24.000Z</updated>
+    <updated>2015-04-10T08:47:54.000Z</updated>
     <content type="html"><![CDATA[<p>文学编程是 TeX 的作者高德纳提出的编程方式，主张程序员在编写代码的过程中详细地记录自己的思维方式和内在逻辑。</p>
 <p>这种编程方式注重编码的逻辑而将编码本身放在更次要的位置，因而不充分的设计在这种变成方式下无所遁形。文学编程的另一个优点是它产生的代码文档能帮助程序员在任意时候重新会想起当时编码的思路。</p>
 <p>在 LaTeX 中，可以用 Doc 和 DocStrip 这两个工具来实现文学编程。</p>
@@ -219,7 +219,7 @@
 
 
 
-<p>这是 DocStrip 的控制命令之一，其作用是关闭 DocStrip 的日志输出功能。默认情况下，DocStrip 会详细输出它的每一步操作。对于大多数人来说，成败上千行的日志徒惹人嫌弃，因此我们关闭它。</p>
+<p>这是 DocStrip 的控制命令之一，其作用是关闭 DocStrip 的日志输出功能。默认情况下，DocStrip 会详细输出它的每一步操作。对于大多数人来说，成百上千行的日志徒惹人嫌弃，因此我们关闭它。</p>
 <p>更多的控制命令可以参考 DocStrip 的文档。</p>
 <hr>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre>1
