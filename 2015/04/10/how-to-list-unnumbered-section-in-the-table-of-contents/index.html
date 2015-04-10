@@ -1,0 +1,516 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>在 LaTeX 中实现不编号的章节列入目录 | 始终</title>
+  <meta name="author" content="Liam Huang">
+  
+  <meta name="description" content="Liam&#39;s Blog | Liam Huang&#39;s Blog | Liam | Huang | Python | LaTeX | C++ | Java | GRE | TOEFL">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:title" content="在 LaTeX 中实现不编号的章节列入目录"/>
+  <meta property="og:site_name" content="始终"/>
+
+  <link rel="alternate" href="/atom.xml" title="始终" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!-- 被墙 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->
+  <script src="//lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44836433-1', 'liam0205.me');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <header id="header"><div class="title">
+  <h1><a href="/">始终</a></h1>
+  <a href="/">不忘初心</a>
+</div>
+<!--
+<div>
+<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+ <input style="width:60px;background-color:transparent;text-align:center; border-width:0px;border-top-style: none; border-right-style: none; border-left-style: none; border-bottom-style: none; "  type="search" name="q" id="search" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="20" placeholder="s" />
+ <input type="hidden" name="q" value="site:liam0205.me">
+</form>
+</div>
+-->
+<nav class="nav">
+  <ul>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">链接</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li><a href="http://collect.liam0205.me">文摘</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2015-04-10T09:54:32.000Z"><a href="/2015/04/10/how-to-list-unnumbered-section-in-the-table-of-contents/">2015 年 04 月 10 日</a></time>
+    
+    
+  
+    <h1 class="title">在 LaTeX 中实现不编号的章节列入目录</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>LaTeX 标准文档类提供了 <code>\section</code> 和 <code>\section*</code> 等两组命令，用于排版章节标题。其中不带星号的版本有章节编号，会列入目录，同时修改章节标记。带星号的版本只有章节标题格式而不编号，不列入目录，也不会修改章节标记。</p>
+<p>有时，我们会希望将不编号的章节标题列入目录。这种情况使用 <code>\section</code> 或 <code>\section*</code> 都不大合适。本文将对这些问题做出分析，并给出解决方案。</p>
+<a id="more"></a>
+
+<p>LaTeX 标准文档类的 <code>\section</code> 命令做四件事情：</p>
+<ol>
+<li>编号自增 1</li>
+<li>输出章节标题</li>
+<li>处理目录（和 PDF 书签）</li>
+<li>做页眉的章节标记</li>
+</ol>
+<p>相应地，<code>\section*</code> 命令只做上述第二件事情，其余三件都不做。</p>
+<p>因此，我们的思路很简单，有两个方向。第一，使用 <code>\section*</code>，手工做目录的处理；第二，使用 <code>\section</code>，但是抑制编号。</p>
+<h2 id=" 思路一 ">思路一</h2>
+<p>LaTeX 处理目录需要编译两次。在第一次编译的过程中，<code>\section</code> 命令将目录信息写入 <code>.aux</code> 文件。随后，在第二次编译的过程中，LaTeX 读取 <code>.aux</code> 文件中的相应信息，形成目录。因此，我们只需要模仿 <code>\section</code> 写入 <code>.aux</code> 文件的过程就可以了。</p>
+<p>LaTeX 提供了 <code>\addcontentsline{&lt; 辅助文件后缀 &gt;}{&lt; 章节等级 &gt;}{名字}</code> 命令来做这样的工作。我们来看一个例子。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>ctexart<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\tableofcontents</span>
+<span class="command">\section*</span><span class="special">{</span>不编号的章节标题<span class="special">}</span>
+<span class="command">\addcontentsline</span><span class="special">{</span>toc<span class="special">}</span><span class="special">{</span>section<span class="special">}</span><span class="special">{</span>不编号的章节标题<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<h2 id=" 思路二 ">思路二</h2>
+<p>LaTeX 标准文档类中的 <code>\appendix</code> 命令，会使得后续的章节标题从 0 开始编号，同时将编号格式从阿拉伯数字修改为大写英文字母。<code>\appendix</code> 命令虽然不符合我们的需求，但是产生的效果却和我们需要的效果类似：修改了章节标题编号。我们可以对这个命令做适当的修改，达成我们的目的。</p>
+<p>我们来看一下 <code>article.cls</code> 里的 <code>\appendix</code> 是如何定义的。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="command">\newcommand</span><span class="command">\appendix</span><span class="special">{</span><span class="command">\par</span>
+  <span class="command">\setcounter</span><span class="special">{</span>section<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\setcounter</span><span class="special">{</span>subsection<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\gdef</span><span class="command">\thesection</span><span class="special">{</span><span class="command">\@</span>Alph<span class="command">\c</span>@section<span class="special">}</span><span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>接下来，我们仿造它，定义一个新的命令 <code>\specialsectioning</code>。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">[</span>hyperref<span class="special">]</span><span class="special">{</span>ctexart<span class="special">}</span>
+<span class="command">\newcommand</span><span class="command">\specialsectioning</span><span class="special">{</span><span class="command">\par</span>
+  <span class="command">\setcounter</span><span class="special">{</span>section<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\setcounter</span><span class="special">{</span>subsection<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\renewcommand</span><span class="command">\thesection</span><span class="special">{</span><span class="command">\relax</span><span class="special">}</span><span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\tableofcontents</span>
+<span class="command">\section</span><span class="special">{</span>正常编号的章节标题<span class="special">}</span>
+<span class="command">\specialsectioning</span>
+<span class="command">\section</span><span class="special">{</span>不编号的章节标题<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>编译之后我们会发现，在 <code>\specialsectioning</code> 之后的 <code>\section</code> 虽然不带星花，但已然不编号了，并且出现在了目录当中。</p>
+<p>不过，正常标题的编号和标题正文之间是有一定的空距的。我们现在虽然将编号取消了，但是这个空距依然存在。虽然它不明显，但是毕竟是个问题。作为一个精益求精的完美主义者，我们要解决它。</p>
+<p>正文中编号的格式由 LaTeX 内部宏 <code>\@seccntformat</code> 控制，默认是在编号后面加一个 <code>\quad</code>，我们把它去掉。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="command">\def</span><span class="command">\@</span>seccntformat<span class="special">#</span><span class="special">#</span>1<span class="special">{</span><span class="command">\@</span>nameuse<span class="special">{</span>the<span class="special">#</span><span class="special">#</span>1<span class="special">}</span><span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>此外，目录中的编号和章节标题之间也有距离，我们通过 <code>tocloft</code> 宏包来将这个距离设置为 <code>0pt</code>。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="command">\addtocontents</span><span class="special">{</span>toc<span class="special">}</span><span class="special">{</span><span class="command">\def</span><span class="command">\cftsecnumwidth</span><span class="special">{</span>0pt<span class="special">}</span><span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>这样，完整的代码变成：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>ctexart<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>tocloft<span class="special">}</span>
+<span class="command">\makeatletter</span>
+<span class="command">\newcommand</span><span class="command">\specialsectioning</span><span class="special">{</span><span class="command">\par</span>
+  <span class="command">\setcounter</span><span class="special">{</span>section<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\setcounter</span><span class="special">{</span>subsection<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\renewcommand</span><span class="command">\thesection</span><span class="special">{</span><span class="command">\relax</span><span class="special">}</span><span class="comment">%</span>
+  <span class="command">\def</span><span class="command">\@</span>seccntformat<span class="special">#</span><span class="special">#</span>1<span class="special">{</span><span class="command">\@</span>nameuse<span class="special">{</span>the<span class="special">#</span><span class="special">#</span>1<span class="special">}</span><span class="special">}</span><span class="comment">%</span>
+  <span class="command">\addtocontents</span><span class="special">{</span>toc<span class="special">}</span><span class="special">{</span><span class="command">\def</span><span class="command">\cftsecnumwidth</span><span class="special">{</span>0pt<span class="special">}</span><span class="special">}</span><span class="special">}</span>
+<span class="command">\makeatother</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\tableofcontents</span>
+<span class="command">\section</span><span class="special">{</span>正常编号的章节标题<span class="special">}</span>
+<span class="command">\specialsectioning</span>
+<span class="command">\section</span><span class="special">{</span>不编号的章节标题<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>问题解决了，不过思路二这样做未免麻烦。在这个思路下，会不会有更简单的方法呢？答案是肯定的。</p>
+<p>在 LaTeX 标准文档类中，secnumdepth 这个计数器是用来控制章节编号深度的。在 article 中，这个计数器的值默认是 3，对应的章节命令是 \subsubsection。也就是说，默认情况下，article 将会对 \subsubsection 及其之上的所有章节标题进行编号，也就是 \part, \section, \subsection, \subsubsection。</p>
+<p>LaTeX 标准文档类中，最大的标题是 \part。它在 book 和 report 类中的层级是「-1」，在 article 类中的层级是「0」。因此，我们只需要将计数器设置为 -2，之后章节命令都不会编号了，从而解决问题。</p>
+<p>我们来看一下代码。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>ctexart<span class="special">}</span>
+<span class="command">\makeatletter</span>
+<span class="command">\newcommand</span><span class="command">\specialsectioning</span><span class="special">{</span><span class="command">\setcounter</span><span class="special">{</span>secnumdepth<span class="special">}</span><span class="special">{</span>-2<span class="special">}</span><span class="special">}</span>
+<span class="command">\makeatother</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\tableofcontents</span>
+<span class="command">\section</span><span class="special">{</span>正常编号的章节标题<span class="special">}</span>
+<span class="command">\specialsectioning</span>
+<span class="command">\section</span><span class="special">{</span>不编号的章节标题<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>怎么样？是不是简单多了？</p>
+
+    
+  </div>
+  <footer>
+    
+      <div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1406015473860">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+      </div>
+      <!--
+      <div class="tags">
+        <span id="container_page_counter">
+        您是本文第 <span id="value_page_counter"></span> 位读者
+        </span>
+      </div>
+      -->
+      
+  
+  <div class="categories">
+    <a href="/categories/LaTeX/">LaTeX</a>
+  </div>
+
+      
+  
+  <div class="tags">
+    <a href="/tags/Section/">Section</a>, <a href="/tags/Sectioning/">Sectioning</a>, <a href="/tags/Numbering/">Numbering</a>, <a href="/tags/Table of Contents/">Table of Contents</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<!-- wumii Button BEGIN -->
+<div style="margin:0px auto; padding-left:23px; text-align:center;">
+	
+	
+
+	<script type="text/javascript" id="wumiiRelatedItems"></script>
+	<script type="text/javascript">
+		var wumiiPermaLink  = "http://liam0205.me/2015/04/10/how-to-list-unnumbered-section-in-the-table-of-contents/"; //请用代码生成文章永久的链接
+		var wumiiTitle      = "在 LaTeX 中实现不编号的章节列入目录"; //请用代码生成文章标题
+		var wumiiTags       = "Section, Sectioning, Numbering, Table of Contents"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
+		var wumiiCategories = ["LaTeX"]; //请用代码生成文章分类，分类名放在 JSONArray 中，如: ["分类1", "分类2"]
+		var wumiiSitePrefix = "http://liam0205.me/";
+		var wumiiParams     = "&num=5&mode=3&pf=JAVASCRIPT";
+	</script>
+	<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+	<!--
+	<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+	    <img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
+	</a>
+	-->
+</div>
+<!-- wumii Button END -->
+
+<!-- UJian Button BEGIN -->
+<!-- 	<div class="ujian-hook" style="padding-left: 17px;"></div>
+	<script type="text/javascript">var ujian_config = {num:6,picSize:83,textHeight:45};</script>
+	<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1893018"></script>-->
+<!-- UJian Button END -->
+
+<!-- baidu tuijian BEGIN -->
+<!-- <div id="hm_t_22763"></div> -->
+<!-- baidu tuijian BEGIN -->
+<!--	<div style="padding-left: 17px;"> -->
+<!--		<script src="http://wm.lrswl.com/page/s.php?s=103186&w=640&h=60"></script> -->
+<!--	</div> -->
+
+
+
+
+<section id="comment">
+  <script>var duoshuoQuery = {short_name:"cnliam"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <script type="text/javascript">
+    function toggleDuoshuoComments(container, id, url){
+      if(jQuery(container).has("div").length>0){
+        jQuery(container).empty();
+        return;
+      }
+      var el = document.createElement('div');
+      el.setAttribute('data-thread-key', id);//必选参数
+      el.setAttribute('data-url', url);//必选参数
+      DUOSHUO.EmbedThread(el);
+      jQuery(container).append(el);
+    }
+  </script>
+  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '在 LaTeX 中实现不编号的章节列入目录', 'http://liam0205.me/2015/04/10/how-to-list-unnumbered-section-in-the-table-of-contents/');">查看评论</a></h1>
+  <!-- <div class="ds-thread" data-title="在 LaTeX 中实现不编号的章节列入目录"></div> -->
+  <div id="comment-box" ></div>
+</section>
+
+
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/IT/">IT</a><small>11</small></li>
+  
+    <li><a href="/categories/LaTeX/">LaTeX</a><small>44</small></li>
+  
+    <li><a href="/categories/Life/">Life</a><small>3</small></li>
+  
+    <li><a href="/categories/Literature and Social Sciences/">Literature and Social Sciences</a><small>10</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+  <!--
+  <a href="/tags/AMS/" style="font-size: 10.00px;">AMS</a><a href="/tags/AW/" style="font-size: 15.00px;">AW</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Bitmap/" style="font-size: 10.00px;">Bitmap</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blindness/" style="font-size: 10.00px;">Blindness</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Book review/" style="font-size: 10.00px;">Book review</a><a href="/tags/Bookmarks/" style="font-size: 10.00px;">Bookmarks</a><a href="/tags/CCT/" style="font-size: 10.00px;">CCT</a><a href="/tags/CJK/" style="font-size: 15.00px;">CJK</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 10.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 10.00px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 15.00px;">Christianity</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Compile/" style="font-size: 10.00px;">Compile</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/EPS/" style="font-size: 10.00px;">EPS</a><a href="/tags/Encoding/" style="font-size: 10.00px;">Encoding</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Environment/" style="font-size: 10.00px;">Environment</a><a href="/tags/Equation number/" style="font-size: 10.00px;">Equation number</a><a href="/tags/Error Codes/" style="font-size: 10.00px;">Error Codes</a><a href="/tags/Europe/" style="font-size: 20.00px;">Europe</a><a href="/tags/Exam/" style="font-size: 10.00px;">Exam</a><a href="/tags/Float/" style="font-size: 10.00px;">Float</a>
+  -->
+  <a href="/tags/AW/" style="font-size: 13.33px;">AW</a><a href="/tags/CJK/" style="font-size: 13.33px;">CJK</a><a href="/tags/Christianity/" style="font-size: 13.33px;">Christianity</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/English/" style="font-size: 13.33px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Europe/" style="font-size: 16.67px;">Europe</a><a href="/tags/GRE/" style="font-size: 16.67px;">GRE</a><a href="/tags/Grammar/" style="font-size: 13.33px;">Grammar</a><a href="/tags/Greece/" style="font-size: 13.33px;">Greece</a><a href="/tags/Highlight/" style="font-size: 13.33px;">Highlight</a><a href="/tags/History/" style="font-size: 16.67px;">History</a><a href="/tags/Images/" style="font-size: 13.33px;">Images</a><a href="/tags/Kindle/" style="font-size: 16.67px;">Kindle</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Listings/" style="font-size: 13.33px;">Listings</a><a href="/tags/Macro/" style="font-size: 13.33px;">Macro</a><a href="/tags/Number/" style="font-size: 10.00px;">Number</a><a href="/tags/Overbrace/" style="font-size: 10.00px;">Overbrace</a><a href="/tags/PDF/" style="font-size: 13.33px;">PDF</a><a href="/tags/Phantom/" style="font-size: 10.00px;">Phantom</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Rlap/" style="font-size: 10.00px;">Rlap</a><a href="/tags/Romantic/" style="font-size: 13.33px;">Romantic</a><a href="/tags/Rule/" style="font-size: 10.00px;">Rule</a><a href="/tags/SDU/" style="font-size: 10.00px;">SDU</a><a href="/tags/Section/" style="font-size: 13.33px;">Section</a><a href="/tags/Subnumber/" style="font-size: 10.00px;">Subnumber</a><a href="/tags/Template/" style="font-size: 16.67px;">Template</a><a href="/tags/Translation/" style="font-size: 13.33px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 13.33px;">Tutorial</a><a href="/tags/Underbrace/" style="font-size: 10.00px;">Underbrace</a><a href="/tags/pTeX/" style="font-size: 16.67px;">pTeX</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget recent-posts">
+  <h3 class="title">最近文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2015/04/10/how-to-list-unnumbered-section-in-the-table-of-contents/">在 LaTeX 中实现不编号的章节列入目录</a>
+      </li>
+    
+      <li>
+        <a href="/2015/03/23/push-articles-to-kindle-from-wechat/">将微信上的文章推送到 Kindle 上</a>
+      </li>
+    
+      <li>
+        <a href="/2015/03/19/why-i-love-to-share/">为什么我乐于分享？</a>
+      </li>
+    
+      <li>
+        <a href="/2015/02/01/smile-to-leave/">微笑着离开</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/23/literate-programming-in-latex/">在 LaTeX 中进行文学编程</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/22/history-of-europ-03/">欧洲史·三：浪漫主义与古希腊哲学</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2013 -- 2015 <a href="/">Liam Huang</a>
+  
+</div>
+<div class="contents-copyright">
+  若无特殊说明，本站所有文章均为原创文章，并遵循 <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.zh_TW" target="_blank">CC BY-SA 3.0 协议</a> 发布
+</div>
+<!--
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   |
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a> and <a href="http://liam0205.me/" target="_blank">Liam Huang</a>
+</div>
+-->
+<div class="theme-copyright">
+<span id="container_site_counter">
+  您是本站自 2015 年 4 月 10 日以来第 <span id="value_site_counter"></span> 位访问者
+</span>
+</div>
+<div class="clearfix"></div>
+<!-- 不蒜计数器 -->
+<script src="//dn-lbstatics.qbox.me/lbservice/busuanzi/1.0/busuanzi.mini.js"/>
+</script>
+</footer>
+  <script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'cnliam' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+</body>
+</html>

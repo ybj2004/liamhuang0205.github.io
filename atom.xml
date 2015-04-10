@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-04-10T09:06:00.858Z</updated>
+  <updated>2015-04-10T10:39:21.074Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,186 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[在 LaTeX 中实现不编号的章节列入目录]]></title>
+    <link href="http://liam0205.me/2015/04/10/how-to-list-unnumbered-section-in-the-table-of-contents/"/>
+    <id>http://liam0205.me/2015/04/10/how-to-list-unnumbered-section-in-the-table-of-contents/</id>
+    <published>2015-04-10T09:54:32.000Z</published>
+    <updated>2015-04-10T10:37:12.000Z</updated>
+    <content type="html"><![CDATA[<p>LaTeX 标准文档类提供了 <code>\section</code> 和 <code>\section*</code> 等两组命令，用于排版章节标题。其中不带星号的版本有章节编号，会列入目录，同时修改章节标记。带星号的版本只有章节标题格式而不编号，不列入目录，也不会修改章节标记。</p>
+<p>有时，我们会希望将不编号的章节标题列入目录。这种情况使用 <code>\section</code> 或 <code>\section*</code> 都不大合适。本文将对这些问题做出分析，并给出解决方案。</p>
+<a id="more"></a>
+
+<p>LaTeX 标准文档类的 <code>\section</code> 命令做四件事情：</p>
+<ol>
+<li>编号自增 1</li>
+<li>输出章节标题</li>
+<li>处理目录（和 PDF 书签）</li>
+<li>做页眉的章节标记</li>
+</ol>
+<p>相应地，<code>\section*</code> 命令只做上述第二件事情，其余三件都不做。</p>
+<p>因此，我们的思路很简单，有两个方向。第一，使用 <code>\section*</code>，手工做目录的处理；第二，使用 <code>\section</code>，但是抑制编号。</p>
+<h2 id=" 思路一 ">思路一</h2>
+<p>LaTeX 处理目录需要编译两次。在第一次编译的过程中，<code>\section</code> 命令将目录信息写入 <code>.aux</code> 文件。随后，在第二次编译的过程中，LaTeX 读取 <code>.aux</code> 文件中的相应信息，形成目录。因此，我们只需要模仿 <code>\section</code> 写入 <code>.aux</code> 文件的过程就可以了。</p>
+<p>LaTeX 提供了 <code>\addcontentsline{&lt; 辅助文件后缀 &gt;}{&lt; 章节等级 &gt;}{名字}</code> 命令来做这样的工作。我们来看一个例子。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>ctexart<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\tableofcontents</span>
+<span class="command">\section*</span><span class="special">{</span>不编号的章节标题<span class="special">}</span>
+<span class="command">\addcontentsline</span><span class="special">{</span>toc<span class="special">}</span><span class="special">{</span>section<span class="special">}</span><span class="special">{</span>不编号的章节标题<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<h2 id=" 思路二 ">思路二</h2>
+<p>LaTeX 标准文档类中的 <code>\appendix</code> 命令，会使得后续的章节标题从 0 开始编号，同时将编号格式从阿拉伯数字修改为大写英文字母。<code>\appendix</code> 命令虽然不符合我们的需求，但是产生的效果却和我们需要的效果类似：修改了章节标题编号。我们可以对这个命令做适当的修改，达成我们的目的。</p>
+<p>我们来看一下 <code>article.cls</code> 里的 <code>\appendix</code> 是如何定义的。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="command">\newcommand</span><span class="command">\appendix</span><span class="special">{</span><span class="command">\par</span>
+  <span class="command">\setcounter</span><span class="special">{</span>section<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\setcounter</span><span class="special">{</span>subsection<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\gdef</span><span class="command">\thesection</span><span class="special">{</span><span class="command">\@</span>Alph<span class="command">\c</span>@section<span class="special">}</span><span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>接下来，我们仿造它，定义一个新的命令 <code>\specialsectioning</code>。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">[</span>hyperref<span class="special">]</span><span class="special">{</span>ctexart<span class="special">}</span>
+<span class="command">\newcommand</span><span class="command">\specialsectioning</span><span class="special">{</span><span class="command">\par</span>
+  <span class="command">\setcounter</span><span class="special">{</span>section<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\setcounter</span><span class="special">{</span>subsection<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\renewcommand</span><span class="command">\thesection</span><span class="special">{</span><span class="command">\relax</span><span class="special">}</span><span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\tableofcontents</span>
+<span class="command">\section</span><span class="special">{</span>正常编号的章节标题<span class="special">}</span>
+<span class="command">\specialsectioning</span>
+<span class="command">\section</span><span class="special">{</span>不编号的章节标题<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>编译之后我们会发现，在 <code>\specialsectioning</code> 之后的 <code>\section</code> 虽然不带星花，但已然不编号了，并且出现在了目录当中。</p>
+<p>不过，正常标题的编号和标题正文之间是有一定的空距的。我们现在虽然将编号取消了，但是这个空距依然存在。虽然它不明显，但是毕竟是个问题。作为一个精益求精的完美主义者，我们要解决它。</p>
+<p>正文中编号的格式由 LaTeX 内部宏 <code>\@seccntformat</code> 控制，默认是在编号后面加一个 <code>\quad</code>，我们把它去掉。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="command">\def</span><span class="command">\@</span>seccntformat<span class="special">#</span><span class="special">#</span>1<span class="special">{</span><span class="command">\@</span>nameuse<span class="special">{</span>the<span class="special">#</span><span class="special">#</span>1<span class="special">}</span><span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>此外，目录中的编号和章节标题之间也有距离，我们通过 <code>tocloft</code> 宏包来将这个距离设置为 <code>0pt</code>。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="command">\addtocontents</span><span class="special">{</span>toc<span class="special">}</span><span class="special">{</span><span class="command">\def</span><span class="command">\cftsecnumwidth</span><span class="special">{</span>0pt<span class="special">}</span><span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>这样，完整的代码变成：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>ctexart<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>tocloft<span class="special">}</span>
+<span class="command">\makeatletter</span>
+<span class="command">\newcommand</span><span class="command">\specialsectioning</span><span class="special">{</span><span class="command">\par</span>
+  <span class="command">\setcounter</span><span class="special">{</span>section<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\setcounter</span><span class="special">{</span>subsection<span class="special">}</span><span class="special">{</span>0<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\renewcommand</span><span class="command">\thesection</span><span class="special">{</span><span class="command">\relax</span><span class="special">}</span><span class="comment">%</span>
+  <span class="command">\def</span><span class="command">\@</span>seccntformat<span class="special">#</span><span class="special">#</span>1<span class="special">{</span><span class="command">\@</span>nameuse<span class="special">{</span>the<span class="special">#</span><span class="special">#</span>1<span class="special">}</span><span class="special">}</span><span class="comment">%</span>
+  <span class="command">\addtocontents</span><span class="special">{</span>toc<span class="special">}</span><span class="special">{</span><span class="command">\def</span><span class="command">\cftsecnumwidth</span><span class="special">{</span>0pt<span class="special">}</span><span class="special">}</span><span class="special">}</span>
+<span class="command">\makeatother</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\tableofcontents</span>
+<span class="command">\section</span><span class="special">{</span>正常编号的章节标题<span class="special">}</span>
+<span class="command">\specialsectioning</span>
+<span class="command">\section</span><span class="special">{</span>不编号的章节标题<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>问题解决了，不过思路二这样做未免麻烦。在这个思路下，会不会有更简单的方法呢？答案是肯定的。</p>
+<p>在 LaTeX 标准文档类中，secnumdepth 这个计数器是用来控制章节编号深度的。在 article 中，这个计数器的值默认是 3，对应的章节命令是 \subsubsection。也就是说，默认情况下，article 将会对 \subsubsection 及其之上的所有章节标题进行编号，也就是 \part, \section, \subsection, \subsubsection。</p>
+<p>LaTeX 标准文档类中，最大的标题是 \part。它在 book 和 report 类中的层级是「-1」，在 article 类中的层级是「0」。因此，我们只需要将计数器设置为 -2，之后章节命令都不会编号了，从而解决问题。</p>
+<p>我们来看一下代码。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>ctexart<span class="special">}</span>
+<span class="command">\makeatletter</span>
+<span class="command">\newcommand</span><span class="command">\specialsectioning</span><span class="special">{</span><span class="command">\setcounter</span><span class="special">{</span>secnumdepth<span class="special">}</span><span class="special">{</span>-2<span class="special">}</span><span class="special">}</span>
+<span class="command">\makeatother</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\tableofcontents</span>
+<span class="command">\section</span><span class="special">{</span>正常编号的章节标题<span class="special">}</span>
+<span class="command">\specialsectioning</span>
+<span class="command">\section</span><span class="special">{</span>不编号的章节标题<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>怎么样？是不是简单多了？</p>
+]]></content>
+    <summary type="html"><![CDATA[<p>LaTeX 标准文档类提供了 <code>\section</code> 和 <code>\section*</code> 等两组命令，用于排版章节标题。其中不带星号的版本有章节编号，会列入目录，同时修改章节标记。带星号的版本只有章节标题格式而不编号，不列入目录，也不会修改章节标记。</p>
+<p>有时，我们会希望将不编号的章节标题列入目录。这种情况使用 <code>\section</code> 或 <code>\section*</code> 都不大合适。本文将对这些问题做出分析，并给出解决方案。</p>
+]]></summary>
+    
+      <category term="Section" scheme="http://liam0205.me/tags/Section/"/>
+    
+      <category term="Sectioning" scheme="http://liam0205.me/tags/Sectioning/"/>
+    
+      <category term="Numbering" scheme="http://liam0205.me/tags/Numbering/"/>
+    
+      <category term="Table of Contents" scheme="http://liam0205.me/tags/Table%20of%20Contents/"/>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[将微信上的文章推送到 Kindle 上]]></title>
@@ -3226,79 +3406,6 @@ Mac OS <span class="special">&amp;</span> MacTeX <span class="special">&amp;</sp
       <category term="Humanity" scheme="http://liam0205.me/tags/Humanity/"/>
     
       <category term="Literature and Social Sciences" scheme="http://liam0205.me/categories/Literature%20and%20Social%20Sciences/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[禁止 Kindle Paperwhite2 在连接 WiFi 的情况下静默升级]]></title>
-    <link href="http://liam0205.me/2014/08/17/kindle-paperwhite2-stop-slient-updating/"/>
-    <id>http://liam0205.me/2014/08/17/kindle-paperwhite2-stop-slient-updating/</id>
-    <published>2014-08-17T02:40:38.000Z</published>
-    <updated>2014-08-30T10:11:22.000Z</updated>
-    <content type="html"><![CDATA[<p>又是关于 Kindle 的文章呢，不过心情和上一篇可谓截然相反。嘛，生活还要继续，不想了。</p>
-<p>Kindle 的原生系统实在是欠调教，想要用得顺手不得不自己安装插件。若是如此也就罢了，恼人的是，Amazon 会在 Kindle 链接 WiFi 的情况下为 Kindle 推送更新，而这些不经过用户同意静默安装的升级，会使得不少插件失效。这样一来，每次升级就得重新安装优化不少插件，着实浪费时间，于是禁止静默升级变得十分有必要。</p>
-<a id="more"></a>
-
-<h2 id="BackDoorLock_ 介绍 ">BackDoorLock 介绍</h2>
-<p><a href="http://www.mobileread.com/forums/showthread.php?t=205666" target="_blank">BackDoorLock</a> 是 <a href="http://www.mobileread.com/" target="_blank">mobileread 论坛</a> 上的 dsmid 前辈制作的插件，其作用只有一个：禁止 Amazon 在不经用户同意的情况下静默升级 Kindle 的固件。</p>
-<p>BackDoorLock 并不会阻止 Kindle 从 Amazon 上取得升级所需的安装文件，它会在 Kindle 尝试安装升级的时候打断这个过程。这样设计是有意义的，因为如果阻止 Kindle 下载升级文件，则 Kindle 在联网的情况下会不断尝试下载，从而造成耗电量剧增，并最终影响电池寿命。</p>
-<h2 id="BackDoorLock_ 的安装 ">BackDoorLock 的安装</h2>
-<p>首先保证你的 Kindle PW2 已经越狱（参考<a href="http://liam0205.me/2014/05/20/koreader-on-kindle-paperwhite/">这篇文章</a>中关于越狱的部分）。dsmid 提供了两种方法安装 BackDoorLock。其一是下载 <code>.bin</code> 文件，放在 Kindle 根目录，使用「更新您的 Kindle」的方式安装。其二是先安装 KUAL (Kindle Unified Application Launcher) 安装，然后以查件的方式运行。这里推荐使用第二种方法。</p>
-<h3 id=" 安装 _MKK">安装 MKK</h3>
-<p>KUAL 需要 MKK (Mobileread Kindlet Kit) 的支持，所以先安装 MKK。</p>
-<ul>
-<li>到<a href="http://www.mobileread.com/forums/showthread.php?t=233932" target="_blank">这里</a>下载 MKK 的安装包。</li>
-<li>使用 USB 数据线将 Kindle 与计算机连接。</li>
-<li>ZIP 归档中有名为 <code>Update_mkk-20140214-k5-ALL_install.bin</code> 的文件，将其解压到 Kindle 根目录。</li>
-<li>断开 Kindle 与计算机的 USB 连接。</li>
-<li>依次进行如下操作<ul>
-<li>主页按钮（[Home]）</li>
-<li>菜单按钮（[Menu]）</li>
-<li>设置选项（Settings）</li>
-<li>菜单按钮（[Menu]）</li>
-<li>更新您的 Kindle（Update Your Kindle）</li>
-</ul>
-</li>
-</ul>
-<h3 id=" 安装 _KUAL">安装 KUAL</h3>
-<ul>
-<li>到<a href="http://www.mobileread.com/forums/showthread.php?t=203326" target="_blank">这里</a>下载 KUAL 的安装包。</li>
-<li>使用 USB 数据线将 Kindle 与计算机连接。</li>
-<li>ZIP 归档中有名为 <code>KUAL-KDK-2.0.azw2</code> 的文件，将其解压到 Kindle 的 <code>documents</code> 目录。</li>
-</ul>
-<h3 id=" 安装 _BackDoorLock">安装 BackDoorLock</h3>
-<ul>
-<li>到<a href="http://www.mobileread.com/forums/showthread.php?t=205666" target="_blank">这里</a>下载 MKK 的安装包。</li>
-<li>使用 USB 数据线将 Kindle 与计算机连接。</li>
-<li>ZIP 归档中有名为 <code>backdoorlock</code> 的目录，将其完整地解压到 Kindle 的 <code>extensions</code> 目录（若不存在则新建）。</li>
-</ul>
-<h3 id=" 启用 _BackDoorLock">启用 BackDoorLock</h3>
-<p>将 Kindle 从电脑中退出后，在 Kindle 首页能看到如下图所示的图标，标有「Kindle Launcher」的就是 KUAL 启动图标了。</p>
-<p><img src="/attachment/images/Kindle/Home_KUAL.png" alt=" 安装完成后的主界面 "></p>
-<p>点击 KUAL 图标，进入 KUAL 界面。</p>
-<p><img src="/attachment/images/Kindle/KUAL_BackDoorLock.png" alt="KUAL 界面 "></p>
-<p>点击 BackDoorLock，打开 BackDoorLock。</p>
-<p><img src="/attachment/images/Kindle/BackDoorLock.png" alt="BackDoorLock 界面 "></p>
-<p>这里</p>
-<ul>
-<li><code>Lock the back door</code> 是禁用静默升级，</li>
-<li><code>Unlock the back door</code> 是启用静默升级，</li>
-<li><code>Lock state</code> 是查看 BackDoorLock 的工作状态，</li>
-<li><code>Delete update file(s)</code> 是删除升级文件，以腾出空间，</li>
-<li><code>Move update file(s)</code> 则是移动升级文件。</li>
-</ul>
-]]></content>
-    <summary type="html"><![CDATA[<p>又是关于 Kindle 的文章呢，不过心情和上一篇可谓截然相反。嘛，生活还要继续，不想了。</p>
-<p>Kindle 的原生系统实在是欠调教，想要用得顺手不得不自己安装插件。若是如此也就罢了，恼人的是，Amazon 会在 Kindle 链接 WiFi 的情况下为 Kindle 推送更新，而这些不经过用户同意静默安装的升级，会使得不少插件失效。这样一来，每次升级就得重新安装优化不少插件，着实浪费时间，于是禁止静默升级变得十分有必要。</p>
-]]></summary>
-    
-      <category term="Kindle" scheme="http://liam0205.me/tags/Kindle/"/>
-    
-      <category term="BackDoorLock" scheme="http://liam0205.me/tags/BackDoorLock/"/>
-    
-      <category term="KUAL" scheme="http://liam0205.me/tags/KUAL/"/>
-    
-      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
     
   </entry>
   
