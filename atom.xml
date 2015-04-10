@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-04-10T10:39:21.074Z</updated>
+  <updated>2015-04-10T10:41:37.339Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[在 LaTeX 中实现不编号的章节列入目录]]></title>
+    <title><![CDATA[在 LaTeX 中将不编号的章节列入目录]]></title>
     <link href="http://liam0205.me/2015/04/10/how-to-list-unnumbered-section-in-the-table-of-contents/"/>
     <id>http://liam0205.me/2015/04/10/how-to-list-unnumbered-section-in-the-table-of-contents/</id>
     <published>2015-04-10T09:54:32.000Z</published>
-    <updated>2015-04-10T10:37:12.000Z</updated>
+    <updated>2015-04-10T10:41:32.000Z</updated>
     <content type="html"><![CDATA[<p>LaTeX 标准文档类提供了 <code>\section</code> 和 <code>\section*</code> 等两组命令，用于排版章节标题。其中不带星号的版本有章节编号，会列入目录，同时修改章节标记。带星号的版本只有章节标题格式而不编号，不列入目录，也不会修改章节标记。</p>
 <p>有时，我们会希望将不编号的章节标题列入目录。这种情况使用 <code>\section</code> 或 <code>\section*</code> 都不大合适。本文将对这些问题做出分析，并给出解决方案。</p>
 <a id="more"></a>

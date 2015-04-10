@@ -1,4 +1,4 @@
-title: 在 LaTeX 中实现不编号的章节列入目录
+title: 在 LaTeX 中将不编号的章节列入目录
 date: 2015-04-10 17:54:32
 categories: LaTeX
 tags: [Section, Sectioning, Numbering, Table of Contents]
