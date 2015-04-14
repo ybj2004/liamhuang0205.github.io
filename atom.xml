@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-04-10T10:41:37.339Z</updated>
+  <updated>2015-04-14T11:55:14.281Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,137 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[在 MacTeX 中使用中文模板]]></title>
+    <link href="http://liam0205.me/2015/04/14/using-chinese-templates-in-mactex/"/>
+    <id>http://liam0205.me/2015/04/14/using-chinese-templates-in-mactex/</id>
+    <published>2015-04-14T09:52:30.000Z</published>
+    <updated>2015-04-14T11:54:37.000Z</updated>
+    <content type="html"><![CDATA[<p>中国人使用 LaTeX 的一大问题就是为文档添加中文支持。国内很多学校、期刊都有自己的模板，更多的是一些个人配置的勉强成型的小模板。Mac 用户安装 MacTeX 之后，可能会很头疼如何将这些模板移植到自己的电脑上。这篇文章对此做一个方法上的讨论。</p>
+<a id="more"></a>
+
+<p>在 LaTeX 中使用中文，<strong>不严谨地说</strong>，主要需要解决编码和字体调用的问题。</p>
+<p>国内 LaTeX 圈子流行过 GBK 编码和 UTF-8 编码。前者是国标，是过去的主流，但是问题多多。现在推荐使用后者。</p>
+<p>字体调用方面，原来的 <code>CCT</code>（新版）、<code>CJK</code> 还有现在的 <code>xeCJK</code>、<code>LuaTeX-ja</code> 和李阿玲的 pTeX-ng 在 TeX Live（MacTeX）底下都能正常工作。只不过，Mac 默认的字体和 Windows 默认的字体有一些不同，在这方面需要做一些调整。</p>
+<p>国内期刊的模板大多数是 <code>CCT</code> 和 <code>CJK</code> 方式，其他一些模板可能比较先进，使用 <code>xeCJK</code> 方式。<code>LuaTeX-ja</code> 国内用的少，使用方法和 <code>xeCJK</code> 比较类似；pTeX-ng 尚在开发中。所以这里只介绍使用 <code>CCT</code>、<code>CJK</code> 或 <code>xeCJK</code> 三种中文支持方式在 TeX Live 里如何进行调整。</p>
+<h2 id="xeCJK"><code>xeCJK</code></h2>
+<p><code>xeCJK</code> 通过 <code>\setCJKmainfont</code> 等命令（<code>luatexja-fontspec</code> 则是 <code>\setmainjfont</code>）来调用操作系统内的字体，并设置为文档字体。在 Windows 底下编写的中文模板，惯常使用 Windows 自带的中易系列字体，比如</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="command">\setCJKmainfont</span><span class="special">[</span>Boldfont = SimHei, ItalicFont = KaiTi<span class="special">]</span><span class="special">{</span>SimSun<span class="special">}</span>
+<span class="command">\setCJKsansfont</span><span class="special">{</span>SimHei<span class="special">}</span>
+<span class="command">\setCJKmonofont</span><span class="special">{</span>FangSong<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>这种情况下，可以打开模板文件（<code>.tex</code>、<code>.sty</code> 或 <code>.cls</code>），找到字体设置部分，将其内容改为 Mac 的字体设置即可。比如可以参考配置：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="command">\setCJKmainfont</span><span class="special">[</span>BoldFont=STZhongsong, ItalicFont=STKaiti<span class="special">]</span><span class="special">{</span>STSong<span class="special">}</span>
+<span class="command">\setCJKsansfont</span><span class="special">[</span>BoldFont=STHeiti<span class="special">]</span><span class="special">{</span>STXihei<span class="special">}</span>
+<span class="command">\setCJKmonofont</span><span class="special">{</span>STFangsong<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>具体的含义可参考：<a href="http://liam0205.me/2014/11/02/latex-mactex-chinese-support/">为 MacTeX 配置中文支持</a></p>
+<p>使用 <code>xeCJK</code> 的模板，应该都保存为 UTF-8 编码，所以不需要进行编码调整。<br>（部分模板使用 GBK 编码，在文档头会有 <code>\XeTeXinputencoding &#39;CP936&#39;</code> 的 XeTeX 原语。此时最好将文件另存为 UTF-8 编码，并删除这些原语。）</p>
+<h2 id="CJK"><code>CJK</code></h2>
+<p>在不适用 <code>zhmetrics</code> 技术的时候，<code>CJK</code> 需要 Type 1 字体。将中易字体拆分成许多 sub-fonts 并转换为 Type 1 字体是个费时费力的工作。CTeX 套装打包了已经配置好的 CJK 字体，它的 song、hei、kai、fs、li 和 you 等六套字体，流传甚广。国内使用 <code>CJK</code> 的模板，大都使用了这几套字体。</p>
+<p>不过，<code>CJK</code> 宏包本身并不含有这些字体，所以在使用 TeX Live 的时候，直接编译这些模板会报错。</p>
+<p>我们看一段最简单的使用 <code>CJK</code> 宏包做中文支持的例子。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>CJKutf8<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>CJK*<span class="special">}</span><span class="special">{</span>UTF8<span class="special">}</span><span class="special">{</span>song<span class="special">}</span>
+中文。
+<span class="command">\clearpage</span>
+<span class="command">\end</span><span class="special">{</span>CJK*<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>对于 Windows 系统的 TeX Live 用户而言，最简单的办法是使用 <code>zhmetrics</code> 技术。为此我们只需要在导言区添加一行命令即可，代码变为：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>CJKutf8<span class="special">}</span>
+<span class="command">\AtBeginDvi</span><span class="special">{</span><span class="command">\input</span><span class="special">{</span>zhwinfonts<span class="special">}</span><span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>CJK*<span class="special">}</span><span class="special">{</span>UTF8<span class="special">}</span><span class="special">{</span>song<span class="special">}</span>
+中文。
+<span class="command">\clearpage</span>
+<span class="command">\end</span><span class="special">{</span>CJK*<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>此时，使用 pdfLaTeX 或 LaTeX - DVIPDFMx 编译文档，即可得到正确的结果。</p>
+<p>对于 Mac/Linux 系统的 TeX Live（MacTeX）用户而言，简单地加载 <code>zhwinfonts.tex</code> 是不会奏效的。<code>zhwinfonts.tex</code> 是为 Windows 系统配置的文件，在 Mac/Linux 系统中缺少这些字体。我自己买了方正系列字体在 Mac 上使用，所以写了一个 <code>zhfzfonts.tex</code> 来调用这些字体。</p>
+<p>需要做的事情：</p>
+<ol>
+<li>安装下列字体（涉及到版权，这里就不提供了）<ul>
+<li>方正书宋 GBK：FZSSK.TTF</li>
+<li>方正楷体 GBK：FZKTK.TTF</li>
+<li>方正黑体 GBK：FZHTK.TTF</li>
+<li>方正仿宋 GBK：FZFSK.TTF</li>
+<li>华文隶体：STLITI.ttf（Mac 自带）</li>
+<li>华文琥珀：STHUPO.TTF（Mac 自带）</li>
+</ul>
+</li>
+<li>下载 <a href="http://liam0205.me/attachment/LaTeX-useful-tools/zhfzfonts.tex"><code>zhfzfonts.tex</code></a></li>
+<li>将 <code>zhfzfonts.tex</code> 保存在 <code>TEXMFLOCAL/tex/generic/zhmetrics/</code> 目录下</li>
+<li>使用 texhash 刷新文件名数据库（可能需要 root 权限）</li>
+<li>调整代码</li>
+</ol>
+<p>这里 TEXMFLOCAL 指的是 TeX Live 供用户使用的 TDS 根目录，在 MacTeX 里是 <code>/usr/local/texlive/texmf-local</code>。</p>
+<p><code>CJK</code> 支持 GBK，也支持 UTF-8。请注意将文档编码保存为与 <code>CJK</code> 环境相同的编码格式。</p>
+<h2 id="CCT"><code>CCT</code></h2>
+<p>以系统工程理论与实践为代表的一些国内期刊，使用 <code>CCT</code> 模板。前年为此写过一篇博客，专门讨论此类模板。参见：<a href="http://liam0205.me/2013/10/15/LaTeX-CCT-template/">国内期刊 CCT 模板编译经验</a></p>
+<p><code>CCT</code> 只支持 GBK 编码。</p>
+<h2 id="ctex_ 宏包 / 文档类 "><code>ctex</code> 宏包 / 文档类</h2>
+<p><code>ctex</code> 宏包 / 文档类在使用 XeLaTeX 编译的时候，使用 <code>xeCJK</code> 作为中文支持方式；在使用 LaTeX/pdfLaTeX 的时候使用 <code>CJK</code> 作为中文支持方式。因此，使用 <code>ctex</code> 宏包 / 文档类的模板，在 TeX Live 系统下的配置方式需要根据所选的编译方式做调整。</p>
+<p>使用 XeLaTeX 的时候，需要给 <code>ctex</code> 加上 <code>nofonts</code> 选项（将来的 2.0 版本则是 fontset = none），然后再用 <code>\setCJKmainfont</code> 配置字体。</p>
+<p>使用 LaTeX/pdfLaTeX 的时候，则可以使用 <code>zhfzfonts.tex</code> 来映射字体。</p>
+<p>使用 <code>ctex</code> 宏包 / 文档类的时候，需要根据所选的编译方式和宏包 / 文档类选项来确定源文件的编码格式。</p>
+<ul>
+<li>使用 XeLaTeX 的时候，不论选项为何，源文件都需要保存为 UTF-8 编码。</li>
+<li>使用 LaTeX/pdfLaTeX 的时候，则需要根据宏包 / 文档类选项来确定源文件的编码格式。</li>
+</ul>
+]]></content>
+    <summary type="html"><![CDATA[<p>中国人使用 LaTeX 的一大问题就是为文档添加中文支持。国内很多学校、期刊都有自己的模板，更多的是一些个人配置的勉强成型的小模板。Mac 用户安装 MacTeX 之后，可能会很头疼如何将这些模板移植到自己的电脑上。这篇文章对此做一个方法上的讨论。</p>
+]]></summary>
+    
+      <category term="Template" scheme="http://liam0205.me/tags/Template/"/>
+    
+      <category term="Chinese" scheme="http://liam0205.me/tags/Chinese/"/>
+    
+      <category term="MacTeX" scheme="http://liam0205.me/tags/MacTeX/"/>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[在 LaTeX 中将不编号的章节列入目录]]></title>
@@ -3366,46 +3497,6 @@ Mac OS <span class="special">&amp;</span> MacTeX <span class="special">&amp;</sp
       <category term="Windows Batch" scheme="http://liam0205.me/tags/Windows%20Batch/"/>
     
       <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[《失明症漫记》读后感]]></title>
-    <link href="http://liam0205.me/2014/08/20/book-review-blindness/"/>
-    <id>http://liam0205.me/2014/08/20/book-review-blindness/</id>
-    <published>2014-08-20T10:13:38.000Z</published>
-    <updated>2014-08-30T10:11:22.000Z</updated>
-    <content type="html"><![CDATA[<p>《失明症漫记》（又名《盲流感》）是诺贝尔文学奖获得者，葡萄牙作家<a href="http://zh.wikipedia.org/zh/%E8%8B%A5%E6%B3%BD%C2%B7%E8%90%A8%E6%8B%89%E9%A9%AC%E6%88%88" target="_blank">萨拉马戈</a>的作品，中文翻译版本由范维信先生译著。</p>
-<a id="more"></a>
-
-<p>整本书都在尝试营造一种压抑的气氛，哪怕是最后看起来是大团圆的结局也是如此，而压抑的气氛中四处弥漫着隐喻。</p>
-<p>小说篇幅中等，中译本能有两百多页。但是，作者以一种奇怪的方式来行文——书中出现的所有角色，包括动物，都没有明确的名称。我认为这样的手法是有意义的。其一，「偷车贼」、「戴墨镜的女人」这些称呼过于随意，读者可以在生活中简单地遇到，这种简单的指代予读者以代入感。其二，不赋姓名的未知感和不安全感，与书中所提及的「白色失明症」特征一致，相辅相成。其三，在探讨人性的时候，以不明确地指代，泛指某一类人，如<a href="http://www.wangmurong.org.cn/about/" target="_blank">王穆荣</a>所说，这就像「面向对象编程中的类名，在这里不需要实例化」。</p>
-<blockquote>
-<p>剧透，慎。</p>
-</blockquote>
-<p>小说以指代的方式来行文，必然的一个结果就是其剧情不会复杂。事实上，其剧情和典型的「灾难大片」类似：未知的疾病突然出现，政府紧张民众恐慌将病患隔离，疫情不受控制地爆发同时隔离区内沦丧的人类尊严和道德约束勾出人性中恶的一面，最终全国沦陷一群人重获新生。</p>
-<p>然而，这不是一部大团圆的作品，而是一部残酷的作品。</p>
-<ul>
-<li>第一个失明者感受到人情温暖，被人送回家中；陪护者因为对方失明无惧暴露而大胆盗车。</li>
-<li>政府隔离失明者的根本动机不是治愈疾病，而是为了「避免麻烦」；隔离区内定期响起的冠冕堂皇的「训令」无疑是对此的讽刺。</li>
-<li>隔离区内的人们因为失明而无所顾忌，人性恶的一面完全爆发出来；贪婪、淫欲、麻木、虚伪和自私充斥着整个隔离区。</li>
-<li>逃出隔离区，等待盲人们的却不是美好的世界，整个国家变得不再熟悉：基础设施瘫痪、卫生条件极差；所有人已无有人形，以兽的方式苟活于世。</li>
-</ul>
-<p>如果仅止于此，那么这部小说不配称为世界级的小说。</p>
-<p>小说的最后，也是点睛之笔在于，当所有人的失明症逐渐消失能够看清世界的时候，作为失明症期间唯一一个看得见的人，医生的妻子抬头看见蓝天白云，恍惚以为失明症终于找上了自己。这是想说明医生的妻子害怕失明吗？我想不是的。如果她会害怕失明，那她就不会在隔离区内不断给大家以勇气；如果她害怕失明，那她就不会在隔离区内奋起杀掉荒淫的统治者；如果她害怕失明，她就不会在满目疮痍的城市里四处奔波，为伙伴们寻找食物。然而她终究是害怕的。她害怕在隔离区里大家失去生的勇气；她害怕隔离区里的统治者将所有人变得麻木而不再为人；她害怕伙伴们死去留下她一个人孤苦伶仃。</p>
-<p>那么她究竟害怕什么？我认为，作为唯一一个看遍整个事件体现出的人性所有的恶的她，害怕经过恶的洗礼的城市无法在闪烁人性的光辉！</p>
-<p>这绝不是一个大团圆的结局，只有神经衰弱者，才需要大团圆。</p>
-]]></content>
-    <summary type="html"><![CDATA[<p>《失明症漫记》（又名《盲流感》）是诺贝尔文学奖获得者，葡萄牙作家<a href="http://zh.wikipedia.org/zh/%E8%8B%A5%E6%B3%BD%C2%B7%E8%90%A8%E6%8B%89%E9%A9%AC%E6%88%88" target="_blank">萨拉马戈</a>的作品，中文翻译版本由范维信先生译著。</p>
-]]></summary>
-    
-      <category term="Book review" scheme="http://liam0205.me/tags/Book%20review/"/>
-    
-      <category term="Blindness" scheme="http://liam0205.me/tags/Blindness/"/>
-    
-      <category term="Humanity" scheme="http://liam0205.me/tags/Humanity/"/>
-    
-      <category term="Literature and Social Sciences" scheme="http://liam0205.me/categories/Literature%20and%20Social%20Sciences/"/>
     
   </entry>
   
