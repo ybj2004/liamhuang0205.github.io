@@ -106,19 +106,18 @@
   <header>
     
       <div class="icon"></div>
-      <time datetime="2013-11-19T16:00:00.000Z"><a href="/2013/11/20/LaTeX-How-to-find-out-where-a-macro-is-defined/">2013 年 11 月 20 日</a></time>
+      <time datetime="2013-10-03T16:00:00.000Z"><a href="/2013/10/04/GRE-Issue/">2013 年 10 月 4 日</a></time>
     
     
   
-    <h1 class="title"><a href="/2013/11/20/LaTeX-How-to-find-out-where-a-macro-is-defined/">【LaTeX Tips】如何确定某个宏定义的位置</a></h1>
+    <h1 class="title"><a href="/2013/10/04/GRE-Issue/">【透过例子谈 Issue 思路】Issue 21：法律的弹性</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <p>我们在排错的时候，经常希望知道出错的宏是在哪里定义的，然后通过比对定义和现有情况判断错误原因。</p>
-<p>LeoLiu 在 <a href="http://tex.stackexchange.com/a/8523/38350" target="_blank">TeX.SX</a> 给出了一个利用 <code>filehook</code> 宏包实现的方法，效果拔群！当然，方法有些讨巧。</p>
+      <p>这篇 Issue 的思路归纳是和 Layla 一起讨论的结果，我希望这篇帖子的意义，不仅在于解决了一道 Issue 题目，而且在于提出了一种思考 Issue 的方式（并且它应当会被验证是正确的）。[^1]</p>
 
     
   </div>
@@ -126,7 +125,7 @@
     
       
         <div class="alignleft">
-          <a href="/2013/11/20/LaTeX-How-to-find-out-where-a-macro-is-defined/#more" class="more-link">全文</a>
+          <a href="/2013/10/04/GRE-Issue/#more" class="more-link">全文</a>
         </div>
       
       
@@ -144,21 +143,19 @@
   <header>
     
       <div class="icon"></div>
-      <time datetime="2013-11-17T16:00:00.000Z"><a href="/2013/11/18/pyhardway/">2013 年 11 月 18 日</a></time>
+      <time datetime="2013-09-25T16:00:00.000Z"><a href="/2013/09/26/LaTeX-highlight-text/">2013 年 09 月 26 日</a></time>
     
     
   
-    <h1 class="title"><a href="/2013/11/18/pyhardway/">笨办法学 Python 中译版</a></h1>
+    <h1 class="title"><a href="/2013/09/26/LaTeX-highlight-text/">【LaTeX Tips】How to highlight text.</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <p>这是一本优秀的 Python 入门教材，作者为 Zed A. Shaw, 译者为 Wang<br>Dingwei。原文发布在 <a href="http://learnpythonthehardway.org/" target="_blank">http://learnpythonthehardway.org/</a>，译文发布在 <a href="https:
-//learn-python-the-hard-way-zh_cn-translation.readthedocs.org/en/1.
-0/index.html">https:<br>//learn-python-the-hard-way-zh_cn-translation.readthedocs.org/en/1.<br>0/index.html</a>. 因未能找到译本的 PDF 版，我使用 LaTeX 排版了这本书。</p>
-<p>本书 PDF 版未经校对，翻译和排版漏洞在所难免，欢迎留言以便修正。</p>
+      <p>If anyone wanna highlight text in LaTeX file using the package <code>soul</code>, they may counter some problems, such as lineberak, since package <code>soul</code> is very fragile. 在使用宏包 <code>soul</code> 进行高亮操作的时候，可能因其代码的脆弱性，导致许多问题，例如无法正确换行。</p>
+<p>Using more robust <code>ulem</code> package to define a new <code>\hl</code> command is a good way.<a href="[http://tex.stackexchange.com/questions/48501/soul-broken-highlighting-with-xcolor-when-using-selectcolormodel/48549#48549](http://tex.stackexchange.com/questions/48501/soul-broken-highlighting-with-xcolor-when-using-selectcolormodel/48549#48549)">^1</a> 使用更加健壮的 <code>ulem</code> 宏包去定义一个新的 <code>\hl</code> 命令是个不错的选择。</p>
 
     
   </div>
@@ -166,7 +163,7 @@
     
       
         <div class="alignleft">
-          <a href="/2013/11/18/pyhardway/#more" class="more-link">全文</a>
+          <a href="/2013/09/26/LaTeX-highlight-text/#more" class="more-link">全文</a>
         </div>
       
       
@@ -184,22 +181,152 @@
   <header>
     
       <div class="icon"></div>
-      <time datetime="2013-11-10T16:00:00.000Z"><a href="/2013/11/11/Sublime-elegant/">2013 年 11 月 11 日</a></time>
+      <time datetime="2013-09-09T16:00:00.000Z"><a href="/2013/09/10/LaTeX-RomanNumber/">2013 年 09 月 10 日</a></time>
     
     
   
-    <h1 class="title"><a href="/2013/11/11/Sublime-elegant/">极致优雅——Sublime Text 简介/入门/技巧</a></h1>
+    <h1 class="title"><a href="/2013/09/10/LaTeX-RomanNumber/">【LaTeX Tips】输出罗马数字</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <blockquote>
-<p>Sublime Text 是一个顶尖的代码、标记语言、随笔编辑器。你会爱上它华丽的界面、超凡的功能和令人惊叹的表现。<br>—-<a href="http://www.sublimetext.com/" target="_blank">http://www.sublimetext.com/</a></p>
-</blockquote>
-<h2 id=" 简介与初步 ">简介与初步</h2>
-<p>在折腾过无数 IDE 和被无数编辑器折磨过之后，我毅然投入了 Sublime Text (ST for Sort) 的怀抱。如剑客渴望名剑一样，ST 就是我渴望的<a href="http://zh.wikipedia.org/zh/%E7%8E%8B%E8%80%85%E4%B9%8B%E5%8A%8D" target="_blank">誓约胜利之剑</a>，尽管它的售价高达 70 USD<a href=" 实际上作者很贴心地提供了永久试用的功能，仅仅会以一个很低的频率提示购买。购买网址：[http://www.sublimetext.com/buy](http://www.sublimetext.com/buy)">^1</a>.</p>
+      <figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="comment">% 罗马数字演示</span>
+<span class="command">\documentclass</span><span class="special">{</span>ctexart<span class="special">}</span>
+<span class="command">\newcommand*</span><span class="special">{</span><span class="command">\rmn</span><span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">{</span><span class="command">\romannumeral</span><span class="special">#</span>1<span class="special">}</span>
+<span class="command">\newcommand*</span><span class="special">{</span><span class="command">\RMN</span><span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">{</span><span class="command">\uppercase</span><span class="command">\expandafter</span><span class="special">{</span><span class="command">\romannumeral</span><span class="special">#</span>1<span class="special">}</span><span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\RMN</span><span class="special">{</span>2013<span class="special">}</span>年<span class="command">\RMN</span><span class="special">{</span>9<span class="special">}</span>月<span class="command">\rmn</span><span class="special">{</span>10<span class="special">}</span>日
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>如此即可。</p>
+<p>效果见<a href="http://pan.baidu.com/share/link?shareid=4006105280&amp;uk=1728178661" target="_blank">http://pan.baidu.com/share/link?shareid=4006105280&amp;uk=1728178661</a>.</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2013-08-25T16:00:00.000Z"><a href="/2013/08/26/LaTeX-Footnote-In-Section-Title/">2013 年 08 月 26 日</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2013/08/26/LaTeX-Footnote-In-Section-Title/">【LaTeX Tips】在 Chapter/Section 等标题中插入脚注</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\tableofcontents</span>
+<span class="command">\section</span><span class="special">[</span>Section Title<span class="special">]</span><span class="special">{</span>Section Title<span class="command">\footnote</span><span class="special">{</span>This is footnote.<span class="special">}</span><span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>如此即可。</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2013-08-24T16:00:00.000Z"><a href="/2013/08/25/LaTeX-RuleTillEnd/">2013 年 08 月 25 日</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2013/08/25/LaTeX-RuleTillEnd/">【LaTeX Tips】画一条自动延伸到行尾的线</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>LaTeX 向来是不擅长处理动态问题的，而我们的需求显然需要定义一个动态的长度。为了解决这个矛盾，我们可以退而求其次，选择用很短的一小节 rule 拼接在一起填充满整一行，而不是定义一个动态的长度。</p>
+<p>示例代码在<a href="/attachment/RuleTillEnd/RuleTillEnd.tex">这里</a>.</p>
+<p>理解思路之后，读者还可以定义出许多其他的「动态」，愿诸君都能勤思考。</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2013-08-24T16:00:00.000Z"><a href="/2013/08/25/LaTeX-xcumcmart/">2013 年 08 月 25 日</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2013/08/25/LaTeX-xcumcmart/">【LaTeX Tips】全国大学生数学竞赛论文模板</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>本模板根据「2013 高教社杯全国大学生数学建模竞赛论文格式规范」中的相关规定制作。供参加<br>全国大学生数学建模竞赛的同学们使用。Ch’en Meng 制作该模板的目的在于推进竞赛论文格式规范化，<br>推广 LaTeX。</p>
 
     
   </div>
@@ -207,7 +334,7 @@
     
       
         <div class="alignleft">
-          <a href="/2013/11/11/Sublime-elegant/#more" class="more-link">全文</a>
+          <a href="/2013/08/25/LaTeX-xcumcmart/#more" class="more-link">全文</a>
         </div>
       
       
@@ -225,20 +352,42 @@
   <header>
     
       <div class="icon"></div>
-      <time datetime="2013-11-04T16:00:00.000Z"><a href="/2013/11/05/LaTeX-include-path/">2013 年 11 月 5 日</a></time>
+      <time datetime="2013-08-22T16:00:00.000Z"><a href="/2013/08/23/LaTeX-Formula-Number/">2013 年 08 月 23 日</a></time>
     
     
   
-    <h1 class="title"><a href="/2013/11/05/LaTeX-include-path/">【LaTeX Tips】指定 include 的路径</a></h1>
+    <h1 class="title"><a href="/2013/08/23/LaTeX-Formula-Number/">【LaTeX Tips】LaTeX 中公式编号括号样式及章节关联的方法</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <h2 id=" 问题的描述 ">问题的描述</h2>
-<p>在排版很长的文章时，为了便于组织结构，我们通常会将文章的正文部分分章节保存在其它的 <code>.tex</code> 文件中，最后在主控文档中使用 <code>\input</code> 或者 <code>\include</code> 命令来加载这些文档（参见<a href="http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include" target="_blank"><code>\input</code> 和 <code>\include</code> 的区别</a>）。</p>
-<p>如果我们将这些章节源文件保存在指定目录下，比如 <code>./body/</code>, 那么实际使用时，我们必须在每一次调用 <code>\input</code> 或者 <code>\include</code> 时都输入这一目录。这无疑是麻烦的。我们希望找到一种解决方法，可以免去输入路径。</p>
+      <h2 id=" 章节关联 ">章节关联</h2>
+<p>使用 amsmath 宏包的时候，我们可以利用 amsmath 宏包提供的 <code>\numberwithin{&lt;sub-counter&gt;}{&lt;counter&gt;}</code> 命令来实现公式与章节关联。效果形如 1.1</p>
+<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>amsmath<span class="special">}</span>
+<span class="command">\numberwithin</span><span class="special">{</span>equation<span class="special">}</span><span class="special">{</span>section<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\section</span><span class="special">{</span>Test<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>equation<span class="special">}</span>
+E = mc^2
+<span class="command">\end</span><span class="special">{</span>equation<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>当我们不使用 amsmath 宏包的时候，或者需要别的样式的时候，就必须修改 \theequation 的输出样式了。如下代码可以生成形如 1-1 的效果</p>
 
     
   </div>
@@ -246,45 +395,7 @@
     
       
         <div class="alignleft">
-          <a href="/2013/11/05/LaTeX-include-path/#more" class="more-link">全文</a>
-        </div>
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2013-11-03T16:00:00.000Z"><a href="/2013/11/04/LaTeX-listings-copy/">2013 年 11 月 4 日</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2013/11/04/LaTeX-listings-copy/">【LaTeX Tips】复制代码时避免复制行号的正确方法</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <h2 id=" 问题的描述 ">问题的描述</h2>
-<p>用 listings 包排版源代码时通常为了便于说明，会显示代码的行号，但是，我们在文档复制的时候却发现，复制代码的时候，同时会把行号也复制出来了，如下：</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2013/11/04/LaTeX-listings-copy/#more" class="more-link">全文</a>
+          <a href="/2013/08/23/LaTeX-Formula-Number/#more" class="more-link">全文</a>
         </div>
       
       
@@ -378,6 +489,10 @@
     
       <li>
         <a href="/2015/01/23/literate-programming-in-latex/">在 LaTeX 中进行文学编程</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/22/history-of-europ-03/">欧洲史·三：浪漫主义与古希腊哲学</a>
       </li>
     
   </ul>
