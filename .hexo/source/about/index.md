@@ -45,8 +45,8 @@ date: 2014-05-08 17:06:30
 
 [blog]: /
 [collect]: http://collect.liam0205.me
-[CTeX-kit]: https://code.google.com/p/ctex-kit/
-[fandol-font]: https://code.google.com/p/fandol-font/
+[CTeX-kit]: https://github.com/ctex-org/ctex-kit
+[fandol-font]: https://github.com/clerkma/fandol-fonts
 [pTeX-ng]: https://github.com/clerkma/ptex-ng
 [xprintlen]: http://www.ctan.org/pkg/xprintlen
 [sduthesis]: http://www.ctan.org/pkg/sduthesis

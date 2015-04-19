@@ -12,6 +12,7 @@ date: 2014-07-16 11:04:03
 
 * [DarkBull](http://darkbull.net/)
 * [王子亭的博客](http://jysperm.me/)
+* [刘虓震（女）的博客](http://www.liuxiaozhen.com)
 
 ## Software
 
