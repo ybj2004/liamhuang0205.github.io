@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-04-19T11:53:12.411Z</updated>
+  <updated>2015-04-22T02:14:36.312Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,91 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[避免 \chapter 命令分页]]></title>
+    <link href="http://liam0205.me/2015/04/22/cancle-clearpage-in-chapter/"/>
+    <id>http://liam0205.me/2015/04/22/cancle-clearpage-in-chapter/</id>
+    <published>2015-04-22T01:39:26.000Z</published>
+    <updated>2015-04-22T02:14:27.000Z</updated>
+    <content type="html"><![CDATA[<p>LaTeX 的 <code>book</code> 类中，<code>\chapter</code> 命令用来标记章节。在生成的 PDF 文稿中，<code>\chapter</code> 总是另起一页；在打开（默认）<code>openright</code> 选项的时候，可能还会空白一页。在实际使用过程中，很多人希望 <code>\chapter</code> 不要换页，紧接着当前页的内容排版。</p>
+<p>传统工具没有提供此功能，因此用户需要自行修改 <code>\chapter</code> 的定义。</p>
+<a id="more"></a>
+
+<h2 id=" 找到 _\chapter_ 的定义 ">找到 <code>\chapter</code> 的定义</h2>
+<p>LaTeX 标准文档类的定义写在 <code>classes.pdf</code> 这个文档中，你可以在命令行下使用 <code>texdoc classes</code> 来打开这份文档。</p>
+<p>你可以在文档的 7.2.6 节中找到 <code>\chapter</code> 的定义。和我们的问题相关的，就是 <code>\chapter</code> 定义的第一行。</p>
+<p><img src="/images/LaTeX/def-of-chapter.png" alt="`\chapter` 的定义 "></p>
+<p>得益于 <a href="http://liam0205.me/2015/01/23/literate-programming-in-latex/">文学编程</a>，我们看到文档中明确地写着「章节总是应该从新的一页开始，因此我们需要调用 <code>\clearpage</code>」。</p>
+<p>显然，为了达到目的，我么只需要令 <code>\chapter</code> 定义的第一行失效就好了。</p>
+<h2 id=" 打补丁 ">打补丁</h2>
+<p><code>xpatch</code> 宏包可以用来打补丁。它的 <code>\xpatchcmd</code> 命令接受五个参数：<code>\xpatchcmd{命令}{搜索}{替换}{成功}{失败}</code></p>
+<ul>
+<li><code>命令</code>：待处理的命令</li>
+<li><code>搜索</code>：需要被替换的部分</li>
+<li><code>替换</code>：将被替换的内容</li>
+<li><code>成功</code>：替换成功执行的内容</li>
+<li><code>失败</code>：替换失败执行的内容</li>
+</ul>
+<p>这里我们需要将 <code>\if@openright\cleardoublepage\else\clearpage\fi</code> 替换掉。用于替换的内容则是：<code>\par\relax</code>。因此我们有代码：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="command">\usepackage</span><span class="special">{</span>xpatch<span class="special">}</span>
+<span class="command">\makeatletter</span>
+<span class="command">\xpatchcmd</span><span class="special">{</span><span class="command">\chapter</span><span class="special">}</span>
+  <span class="special">{</span><span class="command">\if</span>@openright<span class="command">\cleardoublepage</span><span class="command">\else</span><span class="command">\clearpage</span><span class="command">\fi</span><span class="special">}</span><span class="special">{</span><span class="command">\par</span><span class="command">\relax</span><span class="special">}</span>
+  <span class="special">{</span><span class="special">}</span><span class="special">{</span><span class="special">}</span>
+<span class="command">\makeatother</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>注意，符号 <code>@</code> 是一个保留符号。它在用户编写 <code>.tex</code> 文档的时候和开发者编写宏包 / 文档类的时候具有不同含义。我们用 <code>\makeatletter</code> 将 <code>@</code> 的含义切换到开发者模式；在进行修改之后，用 <code>\makeatother</code> 将 <code>@</code> 的含义切换到用户模式。</p>
+<p>这样，<code>\chapter</code> 定义中的换行部分，就被替换成了分段。</p>
+<p>完整的示例代码：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>book<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>xpatch<span class="special">}</span>
+<span class="command">\makeatletter</span>
+<span class="command">\xpatchcmd</span><span class="special">{</span><span class="command">\chapter</span><span class="special">}</span>
+  <span class="special">{</span><span class="command">\if</span>@openright<span class="command">\cleardoublepage</span><span class="command">\else</span><span class="command">\clearpage</span><span class="command">\fi</span><span class="special">}</span><span class="special">{</span><span class="command">\par</span><span class="command">\relax</span><span class="special">}</span>
+  <span class="special">{</span><span class="special">}</span><span class="special">{</span><span class="special">}</span>
+<span class="command">\makeatother</span>
+<span class="command">\usepackage</span><span class="special">{</span>blindtext<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\blindtext</span>
+<span class="command">\chapter</span><span class="special">{</span>test<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+]]></content>
+    <summary type="html"><![CDATA[<p>LaTeX 的 <code>book</code> 类中，<code>\chapter</code> 命令用来标记章节。在生成的 PDF 文稿中，<code>\chapter</code> 总是另起一页；在打开（默认）<code>openright</code> 选项的时候，可能还会空白一页。在实际使用过程中，很多人希望 <code>\chapter</code> 不要换页，紧接着当前页的内容排版。</p>
+<p>传统工具没有提供此功能，因此用户需要自行修改 <code>\chapter</code> 的定义。</p>
+]]></summary>
+    
+      <category term="Chapter" scheme="http://liam0205.me/tags/Chapter/"/>
+    
+      <category term="Pagebreak" scheme="http://liam0205.me/tags/Pagebreak/"/>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[在 MacTeX 中使用中文模板]]></title>
@@ -3462,39 +3547,6 @@ Mac OS <span class="special">&amp;</span> MacTeX <span class="special">&amp;</sp
       <category term="ctex" scheme="http://liam0205.me/tags/ctex/"/>
     
       <category term="TeXworks" scheme="http://liam0205.me/tags/TeXworks/"/>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[在 Windows 下批量将位图转为 EPS 格式的图档]]></title>
-    <link href="http://liam0205.me/2014/08/21/bitmap-convert-to-eps-batch/"/>
-    <id>http://liam0205.me/2014/08/21/bitmap-convert-to-eps-batch/</id>
-    <published>2014-08-21T02:38:38.000Z</published>
-    <updated>2014-12-21T07:31:30.000Z</updated>
-    <content type="html"><![CDATA[<p>虽然「LaTeX 只能识别 EPS 格式的图档」是多年的误传，但是仍有许多杂志和期刊只接受 EPS 格式的图档。所以，尽管在日常使用中，我们很少会用到 EPS 格式，但是有时候不得不用。</p>
-<p>今天帮朋友排版论文的时候，就又遇到了这样无节操的期刊。没办法，转呗。结果一看傻眼了，一共五六十个图片，手工得弄到猴年马月……于是动了动脑，写了个批处理搞定。</p>
-<a id="more"></a>
-
-<p>在现在的 TeX 发行版中，一般都带有一个 <code>bmeps</code> 的小程序，它能将 <code>png</code>, <code>jpg</code> 和 <code>bmp</code> 等格式的位图转换成 EPS 格式的图档。我们用它来处理图片是最好不过了，以 <code>png</code> 格式为例，批处理命令如下</p>
-<pre><code><span class="keyword">for</span> /f <span class="string">%%i in ('dir /b *.png') do (
-    @echo %</span>%i
-    bmeps -c <span class="string">%%i %</span>%~ni.eps
-    <span class="variable">@echo</span> <span class="constant">Finished</span>
-    )
-</code></pre><p>这里用到了 <code>for</code> 循环，在当前目录下遍历所有后缀为 <code>png</code> 的文件，然后对当前文件依次执行 <code>bmeps</code> 命令。</p>
-<p>我写了一个完整的批处理文件，可以在<a href="/attachment/LaTeX-useful-tools/epscolor.bat">这里</a>下载，置于位图所在的目录，双击运行即可。</p>
-]]></content>
-    <summary type="html"><![CDATA[<p>虽然「LaTeX 只能识别 EPS 格式的图档」是多年的误传，但是仍有许多杂志和期刊只接受 EPS 格式的图档。所以，尽管在日常使用中，我们很少会用到 EPS 格式，但是有时候不得不用。</p>
-<p>今天帮朋友排版论文的时候，就又遇到了这样无节操的期刊。没办法，转呗。结果一看傻眼了，一共五六十个图片，手工得弄到猴年马月……于是动了动脑，写了个批处理搞定。</p>
-]]></summary>
-    
-      <category term="Bitmap" scheme="http://liam0205.me/tags/Bitmap/"/>
-    
-      <category term="EPS" scheme="http://liam0205.me/tags/EPS/"/>
-    
-      <category term="Windows Batch" scheme="http://liam0205.me/tags/Windows%20Batch/"/>
     
       <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
     
