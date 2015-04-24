@@ -2,12 +2,8 @@ layout: post
 date: 2013/10/04
 title: 【透过例子谈 Issue 思路】Issue 21：法律的弹性
 description: 这篇 Issue 的思路归纳是和 Layla 一起讨论的结果，我希望这篇帖子的意义，不仅在于解决了一道 Issue 题目，而且在于提出了一种思考 Issue 的方式（并且它应当会被验证是正确的）。
-category: Literature and Social Sciences
-tags: [GRE, AW, Issue]
-image:
-  feature: so-simple-sample-image-1.jpg
-  credit: Michael Rose
-  creditlink: http://mademistakes.com
+category: GRE
+tags: [AW, Issue]
 share: true
 comments: true
 ---

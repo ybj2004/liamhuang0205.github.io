@@ -2,12 +2,8 @@ layout: post
 date: 2013/10/30
 title: 一道三空题的解释
 description: But they pay little attention to the opposite and more treacherous failing：false certainty, refusing to confess their mistakes and implicitly claiming (i), thereby embarrassing the nation and undermining the Constitution, which established various mechanisms of self-correction on the premise that even the wisest men are sometimes wrong and need, precisely when they find it most (ii), the benefit of (iii) process.
-category: Literature and Social Sciences
-tags: [GRE, Text Completion]
-image:
-  feature: so-simple-sample-image-3.jpg
-  credit: Michael Rose
-  creditlink: http://mademistakes.com
+category: GRE
+tags: [Text Completion]
 share: true
 comments: true
 ---
