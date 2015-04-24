@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-04-22T10:47:59.048Z</updated>
+  <updated>2015-04-24T00:38:09.525Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/"/>
     <id>http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/</id>
     <published>2015-04-22T09:46:31.000Z</published>
-    <updated>2015-04-22T10:45:47.000Z</updated>
+    <updated>2015-04-23T15:15:08.000Z</updated>
     <content type="html"><![CDATA[<p>PIL (Python Image Library) 是 Python 平台处理图片的事实标准，兼具强大的功能和简洁的 API。这篇文章将从 PIL 的安装开始，介绍 PIL 的基本情况和基本用法。</p>
 <a id="more"></a>
 
@@ -140,6 +140,83 @@ avatar         = Image.open(sourceFileName)
 <p>这里我们用 <code>im.size</code> 获取原图档的尺寸，然后以 <code>thumbnail()</code> 制作缩略图，大小则是原先图档的四分之一。同样，如果图档无法打开，则在终端上打印无法执行的提示。</p>
 <h3 id=" 剪裁图档 ">剪裁图档</h3>
 <p>以前也写过 <a href="http://liam0205.me/2014/01/27/Py-Incise-Images/">一篇博客</a>，讲述如何用 PIL 批量剪裁图档，供参考。</p>
+<h3 id=" 变形与粘贴 ">变形与粘贴</h3>
+<p><code>transpose()</code> 方法可以将图片左右颠倒、上下颠倒、旋转 90°、旋转 180° 或旋转 270°。<code>paste()</code> 方法则可以将一个 <code>Image</code> 示例粘贴到另一个 <code>Image</code> 示例上。</p>
+<p>我们尝试将一张图片的左半部分截取下来，左右颠倒之后旋转 180°；将图片的右半边不作更改粘贴到左半部分；最后将修改过的左半部分粘贴到右半部分。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre></td><td class="code"><pre><span class="keyword">import</span> Image
+
+imageFName = <span class="string">'source.png'</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">iamge_transpose</span><span class="params">(image)</span>:</span>
+    <span class="string">'''
+        Input: a Image instance
+        Output: a transposed Image instance
+        Function:
+            * switches the left and the right part of a Image instance
+            * for the left part of the original instance, flips left and right\
+                and then make it upside down.
+    '''</span>
+    xsize, ysize = image.size
+    xsizeLeft    = xsize // <span class="number">2</span> <span class="comment"># while xsizeRight = xsize - xsizeLeft</span>
+
+    boxLeft      = (<span class="number">0</span>, <span class="number">0</span>, xsizeLeft, ysize)
+    boxRight     = (xsizeLeft, <span class="number">0</span>, xsize, ysize)
+    boxLeftNew   = (<span class="number">0</span>, <span class="number">0</span>, xsize - xsizeLeft, ysize)
+    boxRightNew  = (xsize - xsizeLeft, <span class="number">0</span>, xsize, ysize)
+
+    partLeft     = image.crop(boxLeft).transpose(Image.FLIP_LEFT_RIGHT).\
+        transpose(Image.ROTATE_180)
+    partRight    = image.crop(boxRight)
+
+    image.paste(partRight, boxLeftNew)
+    image.paste(partLeft, boxRightNew)
+    <span class="keyword">return</span> image
+
+avatar = Image.open(imageFName)
+avatar = iamge_transpose(avatar)
+avatar.show()
+</pre></td></tr></table></figure>
+
+
+
+<p><code>image_transpose()</code> 函数定义之前的部分很简单，而函数本身也由文档叙述得比较清楚。</p>
+<p>这里我们以 <code>xsize</code> 和 <code>ysize</code> 接收图片的宽和高，然后以 <code>xsizeLeft</code> 计算得到左半边图片的大小。需要注意的是，我们构建了四个元组，并命名为盒子。这个盒子用直角坐标的值在 <code>image</code> 的画布上框定了一个区域。注意，<code>Image</code> 模块以图片的左上角为直角坐标原点，向右为 <code>x</code> 轴正方向，向下为 <code>y</code> 轴正方向。元组中的前两个数，代表区域左上角的坐标值；后两个数代表区域右下角的坐标值。</p>
+<p>接下来的代码相当易懂。我们先用 <code>crop()</code> 方法将原图 <code>boxLeft</code> 的区域（也就是原图的左半边）切下来，然后用 <code>transpose()</code> 方法先后进行左右颠倒和旋转 180° 的工作，并最周公将它保存在 <code>partLeft</code> 这个实例中。而 <code>partRight</code> 的操作更为简单。</p>
+<p>函数的最后，我们用 <code>paste()</code> 方法，将前两步得到的 <code>partLeft</code> 和 <code>partRight</code> 分别粘贴到指定的区域；并最终返回 <code>image</code> 示例。</p>
+<p>代码片段的最后，我们用 <code>show()</code> 方法展示图片。</p>
+<p><img src="/attachment/images/Python/pil-tutorial/transpose_paste.png" alt=" 变形和旋转 "></p>
 ]]></content>
     <summary type="html"><![CDATA[<p>PIL (Python Image Library) 是 Python 平台处理图片的事实标准，兼具强大的功能和简洁的 API。这篇文章将从 PIL 的安装开始，介绍 PIL 的基本情况和基本用法。</p>
 ]]></summary>

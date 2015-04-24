@@ -114,7 +114,58 @@ for infile in sys.argv[1:]:
 
 以前也写过 [一篇博客][incise-img]，讲述如何用 PIL 批量剪裁图档，供参考。
 
+### 变形与粘贴
 
+`transpose()` 方法可以将图片左右颠倒、上下颠倒、旋转 90°、旋转 180° 或旋转 270°。`paste()` 方法则可以将一个 `Image` 示例粘贴到另一个 `Image` 示例上。
+
+我们尝试将一张图片的左半部分截取下来，左右颠倒之后旋转 180°；将图片的右半边不作更改粘贴到左半部分；最后将修改过的左半部分粘贴到右半部分。
+
+{% code lang:python %}
+import Image
+
+imageFName = 'source.png'
+
+def iamge_transpose(image):
+    '''
+        Input: a Image instance
+        Output: a transposed Image instance
+        Function:
+            * switches the left and the right part of a Image instance
+            * for the left part of the original instance, flips left and right\
+                and then make it upside down.
+    '''
+    xsize, ysize = image.size
+    xsizeLeft    = xsize // 2 # while xsizeRight = xsize - xsizeLeft
+
+    boxLeft      = (0, 0, xsizeLeft, ysize)
+    boxRight     = (xsizeLeft, 0, xsize, ysize)
+    boxLeftNew   = (0, 0, xsize - xsizeLeft, ysize)
+    boxRightNew  = (xsize - xsizeLeft, 0, xsize, ysize)
+
+    partLeft     = image.crop(boxLeft).transpose(Image.FLIP_LEFT_RIGHT).\
+        transpose(Image.ROTATE_180)
+    partRight    = image.crop(boxRight)
+
+    image.paste(partRight, boxLeftNew)
+    image.paste(partLeft, boxRightNew)
+    return image
+
+avatar = Image.open(imageFName)
+avatar = iamge_transpose(avatar)
+avatar.show()
+{% endcode %}
+
+`image_transpose()` 函数定义之前的部分很简单，而函数本身也由文档叙述得比较清楚。
+
+这里我们以 `xsize` 和 `ysize` 接收图片的宽和高，然后以 `xsizeLeft` 计算得到左半边图片的大小。需要注意的是，我们构建了四个元组，并命名为盒子。这个盒子用直角坐标的值在 `image` 的画布上框定了一个区域。注意，`Image` 模块以图片的左上角为直角坐标原点，向右为 `x` 轴正方向，向下为 `y` 轴正方向。元组中的前两个数，代表区域左上角的坐标值；后两个数代表区域右下角的坐标值。
+
+接下来的代码相当易懂。我们先用 `crop()` 方法将原图 `boxLeft` 的区域（也就是原图的左半边）切下来，然后用 `transpose()` 方法先后进行左右颠倒和旋转 180° 的工作，并最周公将它保存在 `partLeft` 这个实例中。而 `partRight` 的操作更为简单。
+
+函数的最后，我们用 `paste()` 方法，将前两步得到的 `partLeft` 和 `partRight` 分别粘贴到指定的区域；并最终返回 `image` 示例。
+
+代码片段的最后，我们用 `show()` 方法展示图片。
+
+![变形和旋转 ]({{site.url}}/attachment/images/Python/pil-tutorial/transpose_paste.png)
 
 
 
