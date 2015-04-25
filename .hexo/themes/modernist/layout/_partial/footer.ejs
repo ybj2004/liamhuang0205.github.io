@@ -1,6 +1,10 @@
 <div class="copyright">
   <% if (config.author){ %>
   &copy; 2013 -- <%= new Date().getFullYear() %> <a href="<%- config.root %>"><%= config.author %></a>
+  <!-- 不蒜计数器 -->
+  <span id="busuanzi_container_site_pv">
+    | 您是本站第 <span id="busuanzi_value_site_pv" font style="color:white"></span> 位访问者
+  </span>
   <% } else { %>
   &copy; <%= new Date().getFullYear() %> <a href="<%- config.root %>"><%= config.title %></a>
   <% } %>
@@ -15,12 +19,6 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a> and <a href="http://liam0205.me/" target="_blank">Liam Huang</a>
 </div>
 -->
-<div class="theme-copyright">
-<!-- 不蒜计数器 -->
-<span id="busuanzi_container_site_pv">
-  您是本站第 <span id="busuanzi_value_site_pv"></span> 位访问者
-</span>
-</div>
 <div class="clearfix"></div>
 <script src="//dn-lbstatics.qbox.me/lbservice/busuanzi/2.0/busuanzi.mini.js"/>
 </script>
