@@ -394,7 +394,9 @@ avatar.show()
 
 
 <section id="comment">
-  <script>var duoshuoQuery = {short_name:"cnliam"};</script>
+  <script>
+    var duoshuoQuery = {short_name:"cnliam"};
+  </script>
   <script src="http://static.duoshuo.com/embed.js"></script>
   <script type="text/javascript">
     function toggleDuoshuoComments(container, id, url){
@@ -403,15 +405,20 @@ avatar.show()
         return;
       }
       var el = document.createElement('div');
+      el.setAttribute('class', "ds-thread");//实验参数
       el.setAttribute('data-thread-key', id);//必选参数
       el.setAttribute('data-url', url);//必选参数
+      el.setAttribute('data-title', id);//可选参数
       DUOSHUO.EmbedThread(el);
       jQuery(container).append(el);
     }
   </script>
-  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', 'PIL 简明教程 - 基本用法', 'http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/');">查看评论</a></h1>
-  <!-- <div class="ds-thread" data-title="PIL 简明教程 - 基本用法"></div> -->
-  <div id="comment-box" ></div>
+  <h1 class="title">
+    <a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', 'PIL 简明教程 - 基本用法', 'http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/');">查看评论</a>
+  </h1>
+  <div id="comment-box">
+    <!-- <div class="ds-thread" data-title="PIL 简明教程 - 基本用法"></div> -->
+  </div>
 </section>
 
 

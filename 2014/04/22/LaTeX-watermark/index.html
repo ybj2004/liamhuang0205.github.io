@@ -248,7 +248,9 @@
 
 
 <section id="comment">
-  <script>var duoshuoQuery = {short_name:"cnliam"};</script>
+  <script>
+    var duoshuoQuery = {short_name:"cnliam"};
+  </script>
   <script src="http://static.duoshuo.com/embed.js"></script>
   <script type="text/javascript">
     function toggleDuoshuoComments(container, id, url){
@@ -257,15 +259,20 @@
         return;
       }
       var el = document.createElement('div');
+      el.setAttribute('class', "ds-thread");//实验参数
       el.setAttribute('data-thread-key', id);//必选参数
       el.setAttribute('data-url', url);//必选参数
+      el.setAttribute('data-title', id);//可选参数
       DUOSHUO.EmbedThread(el);
       jQuery(container).append(el);
     }
   </script>
-  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '【LaTeX Tips】利用 TikZ 在 LaTeX 文档中制作水印效果', 'http://liam0205.me/2014/04/22/LaTeX-watermark/');">查看评论</a></h1>
-  <!-- <div class="ds-thread" data-title="【LaTeX Tips】利用 TikZ 在 LaTeX 文档中制作水印效果"></div> -->
-  <div id="comment-box" ></div>
+  <h1 class="title">
+    <a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '【LaTeX Tips】利用 TikZ 在 LaTeX 文档中制作水印效果', 'http://liam0205.me/2014/04/22/LaTeX-watermark/');">查看评论</a>
+  </h1>
+  <div id="comment-box">
+    <!-- <div class="ds-thread" data-title="【LaTeX Tips】利用 TikZ 在 LaTeX 文档中制作水印效果"></div> -->
+  </div>
 </section>
 
 

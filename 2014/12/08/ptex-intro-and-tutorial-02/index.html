@@ -278,7 +278,9 @@ a4 d2 a4 e9 a4 ac a4 ca
 
 
 <section id="comment">
-  <script>var duoshuoQuery = {short_name:"cnliam"};</script>
+  <script>
+    var duoshuoQuery = {short_name:"cnliam"};
+  </script>
   <script src="http://static.duoshuo.com/embed.js"></script>
   <script type="text/javascript">
     function toggleDuoshuoComments(container, id, url){
@@ -287,15 +289,20 @@ a4 d2 a4 e9 a4 ac a4 ca
         return;
       }
       var el = document.createElement('div');
+      el.setAttribute('class', "ds-thread");//实验参数
       el.setAttribute('data-thread-key', id);//必选参数
       el.setAttribute('data-url', url);//必选参数
+      el.setAttribute('data-title', id);//可选参数
       DUOSHUO.EmbedThread(el);
       jQuery(container).append(el);
     }
   </script>
-  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '日文 LaTeX 系统介绍 - 字符与编码', 'http://liam0205.me/2014/12/08/ptex-intro-and-tutorial-02/');">查看评论</a></h1>
-  <!-- <div class="ds-thread" data-title="日文 LaTeX 系统介绍 - 字符与编码"></div> -->
-  <div id="comment-box" ></div>
+  <h1 class="title">
+    <a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '日文 LaTeX 系统介绍 - 字符与编码', 'http://liam0205.me/2014/12/08/ptex-intro-and-tutorial-02/');">查看评论</a>
+  </h1>
+  <div id="comment-box">
+    <!-- <div class="ds-thread" data-title="日文 LaTeX 系统介绍 - 字符与编码"></div> -->
+  </div>
 </section>
 
 

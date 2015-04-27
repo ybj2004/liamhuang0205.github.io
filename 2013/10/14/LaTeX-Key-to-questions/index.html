@@ -335,7 +335,9 @@ Your answer is <span class="command">\answer</span><span class="special">{</span
 
 
 <section id="comment">
-  <script>var duoshuoQuery = {short_name:"cnliam"};</script>
+  <script>
+    var duoshuoQuery = {short_name:"cnliam"};
+  </script>
   <script src="http://static.duoshuo.com/embed.js"></script>
   <script type="text/javascript">
     function toggleDuoshuoComments(container, id, url){
@@ -344,15 +346,20 @@ Your answer is <span class="command">\answer</span><span class="special">{</span
         return;
       }
       var el = document.createElement('div');
+      el.setAttribute('class', "ds-thread");//实验参数
       el.setAttribute('data-thread-key', id);//必选参数
       el.setAttribute('data-url', url);//必选参数
+      el.setAttribute('data-title', id);//可选参数
       DUOSHUO.EmbedThread(el);
       jQuery(container).append(el);
     }
   </script>
-  <h1 class="title"><a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '【LaTeX Tips】使用 LaTeX 排版试卷挖空的问题', 'http://liam0205.me/2013/10/14/LaTeX-Key-to-questions/');">查看评论</a></h1>
-  <!-- <div class="ds-thread" data-title="【LaTeX Tips】使用 LaTeX 排版试卷挖空的问题"></div> -->
-  <div id="comment-box" ></div>
+  <h1 class="title">
+    <a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '【LaTeX Tips】使用 LaTeX 排版试卷挖空的问题', 'http://liam0205.me/2013/10/14/LaTeX-Key-to-questions/');">查看评论</a>
+  </h1>
+  <div id="comment-box">
+    <!-- <div class="ds-thread" data-title="【LaTeX Tips】使用 LaTeX 排版试卷挖空的问题"></div> -->
+  </div>
 </section>
 
 
