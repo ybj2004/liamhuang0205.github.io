@@ -27,3 +27,5 @@ Apple 为 OS X 设计的词典非常好用，在不进行任何配置的情况�
 
 下载链接: <http://pan.baidu.com/s/1gdIgK0b>
 提取密码: nsp0
+
+文章已转载至知乎：<http://www.zhihu.com/question/27098318/answer/46110189>
