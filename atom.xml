@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-04-28T23:50:07.762Z</updated>
+  <updated>2015-04-29T01:17:20.850Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,51 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[在 Git 中 Checkout 历史版本]]></title>
+    <link href="http://liam0205.me/2015/04/29/git-checkout-history-version/"/>
+    <id>http://liam0205.me/2015/04/29/git-checkout-history-version/</id>
+    <published>2015-04-29T00:44:56.000Z</published>
+    <updated>2015-04-29T01:15:55.000Z</updated>
+    <content type="html"><![CDATA[<p>昨天写代码的时候，误删了一个文件。今天发现的时候，commit 已经 push 到版本库了。本想用 <code>git reset</code> 回退版本，找回文件后重新提交。但是想起 Git 是一个版本控制系统哎，直接从版本库里 checkout 出某个文件的历史版本不就好了？</p>
+<p>想法挺好，但是很久没用这个功能，自己已经不记得具体的命令了。于是查了下手册，把和 checkout 历史版本有关的几个命令都记录一下。</p>
+<a id="more"></a>
+
+<h3 id=" 从某个历史版本创建新的分支 ">从某个历史版本创建新的分支</h3>
+<p>在 Git 中从当前分支创建并检出新分支的命令是</p>
+<pre><code>git checkout <span class="attribute">-b</span> name<span class="attribute">-of</span><span class="attribute">-new</span><span class="attribute">-branch</span>
+</code></pre><p>这个命令实际上是</p>
+<pre><code>git checkout <span class="attribute">-b</span> name<span class="attribute">-of</span><span class="attribute">-new</span><span class="attribute">-branch</span> current<span class="attribute">-branch</span>
+</code></pre><p>的简写形式。也就是说，当我们不指定 checkout 起点时，Git 默认从当前活动分支开始创建新的分支。</p>
+<p>Git 的每个提交都有一个 SHA1 散列值（Hash 值）作为 ID。我们可以在 <code>checkout</code> 命令中使用这些 ID 作为起点。比如：</p>
+<pre><code>git checkout <span class="attribute">-b</span> name<span class="attribute">-of</span><span class="attribute">-new</span><span class="attribute">-branch</span> <span class="number">169</span>d2dc
+</code></pre><p>这样，Git 的活动分支会切换到 <code>name-of-new-branch</code> 这个分支上，而它的内容与 <code>169d2dc</code> 这个分支一致。</p>
+<p>注意：SHA1 的散列值有 40 个字母，相当长。所以 Git 允许我们在不引起歧义的情况下，使用散列值的前几位作为缩写。</p>
+<p>提示：你也可以用 <code>git branch name-of-new-branch 169d2dc</code> 来创建一个历史分支，而不切换到该分支。</p>
+<h3 id=" 将某个历史版本 _checkout_ 到工作区 ">将某个历史版本 checkout 到工作区</h3>
+<p>首先说明，这样做会产生一个分离的 HEAD 指针，所以个人不推荐这么做。</p>
+<p>如果我们工作在 <code>master</code> 分支上，希望 checkout 到 <code>dev</code> 分支上，我们会这么做：</p>
+<pre><code>git checkout dev
+</code></pre><p>这里 <code>dev</code> 实际上是一个指针的别名，其本质也是一个 SHA1 散列值。所以，我们很自然地可以用</p>
+<pre><code>git checkout <span class="subst">&lt;</span>sha1<span class="attribute">-of</span><span class="attribute">-a</span><span class="attribute">-commit</span><span class="subst">&gt;</span>
+</code></pre><p>将某个历史版本 checkout 到工作区。</p>
+<h3 id=" 将某个文件的历史版本 _checkout_ 到工作区 ">将某个文件的历史版本 checkout 到工作区</h3>
+<p>大多数时候，我们可能只需要对某一个文件做细小的修补，因此只 checkout 该文件就行了，并不需要操作整个 commit 或分支。</p>
+<p>上一节我们介绍了如何将某个历史版本完整地 checkout 到工作区。实际上，我们只需要在上一节的命令之后加上需要 checkout 的文件即可。</p>
+<pre><code>git checkout &lt;sha1-<span class="operator">of</span>-<span class="operator">a</span>-commit&gt; &lt;/path/<span class="built_in">to</span>/your/<span class="built_in">file</span>&gt;
+</code></pre><p>当然，有时候你需要将某个文件的历史版本 checkout 出来，并以一个新的名字保存。这时候可以这么做：</p>
+<pre><code>git checkout &lt;sha1-of-a-commit&gt;<span class="symbol">:&lt;/path/to/your/file&gt;</span> &lt;<span class="regexp">/new/name</span><span class="regexp">/of/the</span><span class="regexp">/file&gt;</span>
+</code></pre>]]></content>
+    <summary type="html"><![CDATA[<p>昨天写代码的时候，误删了一个文件。今天发现的时候，commit 已经 push 到版本库了。本想用 <code>git reset</code> 回退版本，找回文件后重新提交。但是想起 Git 是一个版本控制系统哎，直接从版本库里 checkout 出某个文件的历史版本不就好了？</p>
+<p>想法挺好，但是很久没用这个功能，自己已经不记得具体的命令了。于是查了下手册，把和 checkout 历史版本有关的几个命令都记录一下。</p>
+]]></summary>
+    
+      <category term="Git" scheme="http://liam0205.me/tags/Git/"/>
+    
+      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Apple 词典·再要你命 3000 | 美国传统大辞典 | Merriam Webster Collegiate Dict]]></title>
@@ -2739,36 +2784,6 @@ GBK<span class="special">~</span>编码，<span class="command">\LaTeX</span><sp
       <category term="OS X" scheme="http://liam0205.me/tags/OS%20X/"/>
     
       <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[后会无期于后会有期的平凡之路]]></title>
-    <link href="http://liam0205.me/2014/09/28/review-of-the-continent/"/>
-    <id>http://liam0205.me/2014/09/28/review-of-the-continent/</id>
-    <published>2014-09-28T14:04:12.000Z</published>
-    <updated>2014-09-28T14:21:50.000Z</updated>
-    <content type="html"><![CDATA[<p>我始终是认为，真正体会到的美好，不是一瞬间的事情，而是伴随美好到底的经历。于是我是很不喜欢「后会无期」这个词的，这种只能将美好放在记忆中的状态让我很不舒服。因为我总觉得记忆这种东西是带着一点悲凉和悲哀的色彩的。不论多么美好和美丽的事物，保存在记忆中都会随着时间慢慢被抹去。</p>
-<p>我是第一次接触这种类型的电影，接触韩寒的作品是第二次（第一次是中学时代看过他写的《长安乱》）。记得和《长安乱》同时期还有一部很火热的小说，是郭敬明的《幻城》。两部小说我都是从同学处借来阅读的，先是看了《幻城》，然后才是《长安乱》。我很少看小说，当时感觉幻城这种类型的小说还蛮有意思的，但是直觉还是更喜欢长安乱。虽然我一直觉得没看懂长安乱写得是什么，而且到现在其实已经忘记了其中的内容。</p>
-<a id="more"></a>
-
-<p>和《长安乱》一样，后会无期这部电影也是有些「表意不明」的作品。于是每个人看到的东西都不一样吧。我曾经痴迷于另一部表意不明的作品，庵野秀明先生的 EVA。EVA 这部作品其实给人一种神神秘秘的感觉，从作品的设定到表达的世界观，都蛮奇怪的。有两年我十分痴迷，为此去学习了日语，去翻阅日文资料。然后在国内第一次完整整理了它的设定和世界观的文档，也写了很多自己的感想。不过后来再看这些文字，觉得有些矫情。于是慢慢也就不再写了，转而躲在屏幕背后，看这一批一批的人如何去体会 EVA。慢慢就会发现，其实所有人都在作品中寻找自己的身影，寻找适合自己的那个影子覆盖之处的光亮（希望）。</p>
-<p>归因于最近的经历，我大概是以一种比较「麻木」的状态去看这电影的。当然这种麻木不是「不仁」，而是一种「嗯，这样也挺好的」这种接受一切的态度。这可能正好切合了韩寒想要表达的情感也未可知。</p>
-<p>对这部电影，我自己的感受，其实就是那句西班牙语「Que Sera Sera」，也觉得这就是韩寒自己想传达出的意思。这句西语，应该是「Whatever will be」的意思。看起来有点消极，但是其实取决于个人选择的行为方式。电影中意外出现的那只小狗代表着电影世界里的真善美。这种「意外」代表着「无处不在」的可能性，正如世界的美好一样。电影的最后小狗「无意识」地选择了江河，反过来映衬了江河的选择：用自己的方式相信这个世界，相信这个世界的真善美。我觉得这就是所谓「平凡之路」，这不是读万卷书或者行万里路之后「悟」出来的路，而是内心向善，简单而平凡坚信的一条路。</p>
-<p>简单地相信一些美好的东西，坚定地走着自己平凡的路。对比马浩汉希望振兴家乡旅游业的强烈愿望不同，这种平凡而坚定的信念，反而带给了江河一个不错的结局。而在这「出乎预料」的结局里，江河表现得还是一如既往地平凡：「导游」在宣传江河的作品的时候，画面中的江河不正是在平静地走着他的平凡之路吗……</p>
-<p>这种接受世界、感受世界、行走在这个世界的行为方式，就是韩寒想传达的行为方式：不甘于平庸，回归于平凡，不脱离现实而又不服于现实。</p>
-]]></content>
-    <summary type="html"><![CDATA[<p>我始终是认为，真正体会到的美好，不是一瞬间的事情，而是伴随美好到底的经历。于是我是很不喜欢「后会无期」这个词的，这种只能将美好放在记忆中的状态让我很不舒服。因为我总觉得记忆这种东西是带着一点悲凉和悲哀的色彩的。不论多么美好和美丽的事物，保存在记忆中都会随着时间慢慢被抹去。</p>
-<p>我是第一次接触这种类型的电影，接触韩寒的作品是第二次（第一次是中学时代看过他写的《长安乱》）。记得和《长安乱》同时期还有一部很火热的小说，是郭敬明的《幻城》。两部小说我都是从同学处借来阅读的，先是看了《幻城》，然后才是《长安乱》。我很少看小说，当时感觉幻城这种类型的小说还蛮有意思的，但是直觉还是更喜欢长安乱。虽然我一直觉得没看懂长安乱写得是什么，而且到现在其实已经忘记了其中的内容。</p>
-]]></summary>
-    
-      <category term="Movie" scheme="http://liam0205.me/tags/Movie/"/>
-    
-      <category term="Han Han" scheme="http://liam0205.me/tags/Han%20Han/"/>
-    
-      <category term="The Continent" scheme="http://liam0205.me/tags/The%20Continent/"/>
-    
-      <category term="Literature and Social Sciences" scheme="http://liam0205.me/categories/Literature%20and%20Social%20Sciences/"/>
     
   </entry>
   
