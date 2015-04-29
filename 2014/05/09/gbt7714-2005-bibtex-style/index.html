@@ -259,6 +259,35 @@
 
 
 
+<section id="comment">
+  <script>
+    var duoshuoQuery = {short_name:"cnliam"};
+  </script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <script type="text/javascript">
+    function toggleDuoshuoComments(container, id, url){
+      if(jQuery(container).has("div").length>0){
+        jQuery(container).empty();
+        return;
+      }
+      var el = document.createElement('div');
+      el.setAttribute('class', "ds-thread");//实验参数
+      el.setAttribute('data-thread-key', id);//必选参数
+      el.setAttribute('data-url', url);//必选参数
+      el.setAttribute('data-title', id);//可选参数
+      DUOSHUO.EmbedThread(el);
+      jQuery(container).append(el);
+    }
+  </script>
+  <h1 class="title">
+    <a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '【LaTeX Tips】符合 GBT7714-2005 标准的 BibTeX Style', 'http://liam0205.me/2014/05/09/gbt7714-2005-bibtex-style/');">查看评论</a>
+  </h1>
+  <div id="comment-box">
+    <!-- <div class="ds-thread" data-title="【LaTeX Tips】符合 GBT7714-2005 标准的 BibTeX Style"></div> -->
+  </div>
+</section>
+
+
 </div>
   </div>
   <div class="widget-wrapper">

@@ -320,6 +320,35 @@
 
 
 
+<section id="comment">
+  <script>
+    var duoshuoQuery = {short_name:"cnliam"};
+  </script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <script type="text/javascript">
+    function toggleDuoshuoComments(container, id, url){
+      if(jQuery(container).has("div").length>0){
+        jQuery(container).empty();
+        return;
+      }
+      var el = document.createElement('div');
+      el.setAttribute('class', "ds-thread");//实验参数
+      el.setAttribute('data-thread-key', id);//必选参数
+      el.setAttribute('data-url', url);//必选参数
+      el.setAttribute('data-title', id);//可选参数
+      DUOSHUO.EmbedThread(el);
+      jQuery(container).append(el);
+    }
+  </script>
+  <h1 class="title">
+    <a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '英语语法之一：基本句型、动词分类、补语', 'http://liam0205.me/2014/06/21/basic-sentence-and-the-complement/');">查看评论</a>
+  </h1>
+  <div id="comment-box">
+    <!-- <div class="ds-thread" data-title="英语语法之一：基本句型、动词分类、补语"></div> -->
+  </div>
+</section>
+
+
 </div>
   </div>
   <div class="widget-wrapper">

@@ -355,6 +355,35 @@
 
 
 
+<section id="comment">
+  <script>
+    var duoshuoQuery = {short_name:"cnliam"};
+  </script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <script type="text/javascript">
+    function toggleDuoshuoComments(container, id, url){
+      if(jQuery(container).has("div").length>0){
+        jQuery(container).empty();
+        return;
+      }
+      var el = document.createElement('div');
+      el.setAttribute('class', "ds-thread");//实验参数
+      el.setAttribute('data-thread-key', id);//必选参数
+      el.setAttribute('data-url', url);//必选参数
+      el.setAttribute('data-title', id);//可选参数
+      DUOSHUO.EmbedThread(el);
+      jQuery(container).append(el);
+    }
+  </script>
+  <h1 class="title">
+    <a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '在 LaTeX 中将不编号的章节列入目录', 'http://liam0205.me/2015/04/10/how-to-list-unnumbered-section-in-the-table-of-contents/');">查看评论</a>
+  </h1>
+  <div id="comment-box">
+    <!-- <div class="ds-thread" data-title="在 LaTeX 中将不编号的章节列入目录"></div> -->
+  </div>
+</section>
+
+
 </div>
   </div>
   <div class="widget-wrapper">
