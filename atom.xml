@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-04-29T01:17:20.850Z</updated>
+  <updated>2015-04-29T04:14:44.513Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -15,11 +15,22 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[math test]]></title>
+    <link href="http://liam0205.me/2015/04/29/math-test/"/>
+    <id>http://liam0205.me/2015/04/29/math-test/</id>
+    <published>2015-04-29T01:56:33.000Z</published>
+    <updated>2015-04-29T01:56:33.000Z</updated>
+    <content type="html"><![CDATA[]]></content>
+    
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[在 Git 中 Checkout 历史版本]]></title>
     <link href="http://liam0205.me/2015/04/29/git-checkout-history-version/"/>
     <id>http://liam0205.me/2015/04/29/git-checkout-history-version/</id>
     <published>2015-04-29T00:44:56.000Z</published>
-    <updated>2015-04-29T01:15:55.000Z</updated>
+    <updated>2015-04-29T01:59:31.000Z</updated>
     <content type="html"><![CDATA[<p>昨天写代码的时候，误删了一个文件。今天发现的时候，commit 已经 push 到版本库了。本想用 <code>git reset</code> 回退版本，找回文件后重新提交。但是想起 Git 是一个版本控制系统哎，直接从版本库里 checkout 出某个文件的历史版本不就好了？</p>
 <p>想法挺好，但是很久没用这个功能，自己已经不记得具体的命令了。于是查了下手册，把和 checkout 历史版本有关的几个命令都记录一下。</p>
 <a id="more"></a>
@@ -2631,157 +2642,6 @@ GBK<span class="special">~</span>编码，<span class="command">\LaTeX</span><sp
       <category term="CJK" scheme="http://liam0205.me/tags/CJK/"/>
     
       <category term="Error Codes" scheme="http://liam0205.me/tags/Error%20Codes/"/>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[为 MacTeX 配置中文支持]]></title>
-    <link href="http://liam0205.me/2014/11/02/latex-mactex-chinese-support/"/>
-    <id>http://liam0205.me/2014/11/02/latex-mactex-chinese-support/</id>
-    <published>2014-11-02T10:07:28.000Z</published>
-    <updated>2015-01-26T07:41:12.000Z</updated>
-    <content type="html"><![CDATA[<p>最近有人问到如何在 MacTeX 里配置中文支持，这里一并回答。</p>
-<p>目前来说，结合 <code>xeCJK</code> 宏包使用 XeLaTeX 编译，应该是最方便的方式了。</p>
-<p>XeLaTeX 要求 <code>.tex</code> 文档保存为 UTF-8 编码。所以要做的事情只有两件：</p>
-<ul>
-<li>配置一个 UTF-8 的编辑环境；</li>
-<li>用 <code>xeCJK</code> 的语法选择合适的字体。</li>
-</ul>
-<a id="more"></a>
-
-<h2 id=" 配置 _UTF-8_ 的编辑环境 ">配置 UTF-8 的编辑环境</h2>
-<p>MacTeX 自带了名为 TeXshop 的编辑器，这里以它为例配置 UTF-8 的编辑环境。其他编辑器也有类似配置。</p>
-<p>打开 TeXshop，按下 <code>cmd + ,</code> 打开偏好设置。在「源代码」标签下找到编码设置，调整为 UTF-8。然后单击「好」保存即可。</p>
-<p><img src="/attachment/images/MacTeX_xeCJK/01.png" alt=" 调整 TeXshop 的编码 "></p>
-<h2 id=" 查找字体信息 ">查找字体信息</h2>
-<p>XeTeX 在 Mac OS X 下的行为和 Windows/Linux 下不大一样。Mac 底下，XeTeX 并不使用 <code>fontconfig</code> 库来搜索字体，所以我们没法在终端里通过 <code>fc-list</code> 命令来查看可用的字体列表。不过 Mac 里提供了名为「字体册」的程序，来列出系统中所有可用的字体信息。</p>
-<p>其实这样的设计挺讨厌的，TeX Live 自带了许多开源字体，因此没有办法很好地使用。必须用字体名而不是字族名来调用这些字体，实在是不太方便。当然，如果有需要，我们可以把 TeX 里自带的这些开源字体用硬链接的方式，添加到 Mac 的字体目录下。</p>
-<p>打开字体册程序，找到需要的字体信息：</p>
-<p><img src="/attachment/images/MacTeX_xeCJK/02.png" alt=" 在字体册中查找字体信息 "></p>
-<p>这里的 PostScript 名称就是我们需要的信息，我们记下华文宋体的名字：「STSong」。你还可以按需找到其他字体的名字，比如华文中宋、华文楷体、华文黑体等字体的名字。</p>
-<h2 id=" 用 _xeCJK_ 的语法配置字体 ">用 xeCJK 的语法配置字体</h2>
-<p>使用下列代码，配置中文字体。</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="command">\usepackage</span><span class="special">{</span>xeCJK<span class="special">}</span>
-<span class="command">\setCJKmainfont</span><span class="special">[</span>BoldFont=STZhongsong, ItalicFont=STKaiti<span class="special">]</span><span class="special">{</span>STSong<span class="special">}</span>
-<span class="command">\setCJKsansfont</span><span class="special">[</span>BoldFont=STHeiti<span class="special">]</span><span class="special">{</span>STXihei<span class="special">}</span>
-<span class="command">\setCJKmonofont</span><span class="special">{</span>STFangsong<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>这里，</p>
-<ul>
-<li>文档中文主字体是华文宋体，对应的 bfseries 字体是华文中宋，对应的 itshape 字体是华文楷体；</li>
-<li>文档的「无衬线」中文字体是华文新黑，对应的 bfseries 是华文黑体；</li>
-<li>文档的「等宽」中文字体是华文仿宋。</li>
-</ul>
-<p>完整代码的编译效果截图如下：</p>
-<p><img src="/attachment/images/MacTeX_xeCJK/03.png" alt=" 编译效果 "></p>
-<h2 id=" 额外的工作 ">额外的工作</h2>
-<p>尽管这一节的操作有些复杂，而且对于中文支持来说是可选的，但是依旧推荐按步骤操作。</p>
-<p><code>xeCJK</code> 之解决了中文支持问题，以及一些关于标点的处理，并没有提供和中文版式相关的解决方案。<code>ctex</code> 宏包和文档类封装了 xeCJK，同时提供了中文版式的相关支持。不过 <code>ctex</code> 的默认配置是为 Windows 平台配置的，Mac 用户需要对默认配置做一些修改。具体如下。</p>
-<p>打开终端，键入命令：</p>
-<figure class="highlight shell"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="built_in">cd</span> /usr/local/texlive/texmf-local/tex/latex/
-<span class="built_in">sudo</span> mkdir ./ctex/
-<span class="built_in">sudo</span> mkdir ./ctex/cfg/
-<span class="built_in">cd</span> ./ctex/cfg/
-<span class="built_in">sudo</span> vim ctexopts.cfg
-</pre></td></tr></table></figure>
-
-
-
-<p>复制以下内容：</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="command">\ExecuteOptions</span><span class="special">{</span>UTF8<span class="special">}</span>
-<span class="command">\ExecuteOptions</span><span class="special">{</span>nofonts<span class="special">}</span>
-
-<span class="command">\endinput</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>切换回到终端窗口，按 <code>i</code> 进入编辑模式，按 <code>cmd + v</code> 粘贴，按 <code>esc</code> 退出编辑模式，输入 <code>:x</code> 保存退出（半角冒号紧接着 x）。<br>在终端窗口继续操作，键入命令：</p>
-<figure class="highlight shell"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> vim ctex.cfg
-</pre></td></tr></table></figure>
-
-
-
-<p>复制以下内容：</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="code"><pre><span class="command">\RequirePackage</span><span class="special">{</span>ifxetex<span class="special">}</span>
-<span class="command">\ifxetex</span>
-  <span class="command">\setCJKmainfont</span><span class="special">[</span>BoldFont=STZhongsong, ItalicFont=STKaiti<span class="special">]</span><span class="special">{</span>STSong<span class="special">}</span>
-  <span class="command">\setCJKsansfont</span><span class="special">[</span>BoldFont=STHeiti<span class="special">]</span><span class="special">{</span>STXihei<span class="special">}</span>
-  <span class="command">\setCJKmonofont</span><span class="special">{</span>STFangsong<span class="special">}</span>
-
-  <span class="command">\newCJKfontfamily</span><span class="special">[</span>stsong<span class="special">]</span><span class="command">\songti</span><span class="special">[</span>BoldFont=STZhongsong, ItalicFont=STKaiti<span class="special">]</span><span class="special">{</span>STSong<span class="special">}</span>
-  <span class="command">\newCJKfontfamily</span><span class="special">[</span>sthei<span class="special">]</span><span class="command">\heiti</span><span class="special">[</span>BoldFont=STHeiti<span class="special">]</span><span class="special">{</span>STXihei<span class="special">}</span>
-  <span class="command">\newCJKfontfamily</span><span class="special">[</span>stkai<span class="special">]</span><span class="command">\kaishu</span><span class="special">{</span>STKaiti<span class="special">}</span>
-  <span class="command">\newCJKfontfamily</span><span class="special">[</span>stfang<span class="special">]</span><span class="command">\fangsong</span><span class="special">{</span>STFangsong<span class="special">}</span>
-  <span class="command">\newCJKfontfamily</span><span class="special">[</span>stli<span class="special">]</span><span class="command">\lishu</span><span class="special">{</span>STLiti<span class="special">}</span>
-<span class="command">\fi</span>
-<span class="command">\endinput</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>切换回到终端窗口，按 <code>i</code> 进入编辑模式，按 <code>cmd + v</code> 粘贴，按 <code>esc</code> 退出编辑模式，输入 <code>:x</code> 保存退出（半角冒号紧接着 x）。<br>在终端窗口继续操作，键入命令：</p>
-<figure class="highlight shell"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> texhash
-</pre></td></tr></table></figure>
-
-
-
-<p>这里，</p>
-<ul>
-<li><code>ctexopts.cfg</code> 会在 <code>ctex</code> 宏包 / 文档类的选项定义之后被载入，我们启用了 <code>nofonts</code> 和 <code>UTF8</code> 这两个选项；</li>
-<li><code>ctex.cfg</code> 则会在 <code>ctex</code> 宏包 / 文档类的结尾被载入，我们配置了字体；</li>
-<li><code>texhash</code> 会刷新 TeX 的文件名数据库。</li>
-</ul>
-<p>至此，<code>ctex</code> 宏包 / 文档类在 Mac 里就可以正常工作了。测试截图如下：</p>
-<p><img src="/attachment/images/MacTeX_xeCJK/04.png" alt=" 编译效果 "></p>
-]]></content>
-    <summary type="html"><![CDATA[<p>最近有人问到如何在 MacTeX 里配置中文支持，这里一并回答。</p>
-<p>目前来说，结合 <code>xeCJK</code> 宏包使用 XeLaTeX 编译，应该是最方便的方式了。</p>
-<p>XeLaTeX 要求 <code>.tex</code> 文档保存为 UTF-8 编码。所以要做的事情只有两件：</p>
-<ul>
-<li>配置一个 UTF-8 的编辑环境；</li>
-<li>用 <code>xeCJK</code> 的语法选择合适的字体。</li>
-</ul>
-]]></summary>
-    
-      <category term="CJK" scheme="http://liam0205.me/tags/CJK/"/>
-    
-      <category term="MacTeX" scheme="http://liam0205.me/tags/MacTeX/"/>
-    
-      <category term="OS X" scheme="http://liam0205.me/tags/OS%20X/"/>
     
       <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
     
