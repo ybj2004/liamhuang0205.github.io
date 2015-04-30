@@ -19,8 +19,16 @@
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!-- 被墙 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->
-  <script src="//lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+  <!-- 尝试从 bdimg 获取 JQuery -->
+  <script src="http://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
+  <!-- 如果获取失败，则载入本站的 JQuery -->
+  <script type="text/javascript">
+  //<![CDATA[
+  if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/js/jquery-2.0.3.min.js' type='text/javascript'%3E%3C/script%3E"));
+  }
+  // ]]>
+  </script>
   <script type="text/javascript" src="http://tajs.qq.com/stats?sId=45037302" charset="UTF-8"></script>
 
   
