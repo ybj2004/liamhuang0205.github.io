@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-04-30T10:05:06.269Z</updated>
+  <updated>2015-05-01T02:33:33.919Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,89 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[在 hexo new 之后立即打开新建的 Markdown 文稿]]></title>
+    <link href="http://liam0205.me/2015/05/01/open-editor-after-hexo-new-immediately/"/>
+    <id>http://liam0205.me/2015/05/01/open-editor-after-hexo-new-immediately/</id>
+    <published>2015-05-01T01:43:35.000Z</published>
+    <updated>2015-05-01T02:32:25.000Z</updated>
+    <content type="html"><![CDATA[<p>自己的博客是用 Hexo 搭建的。Hexo 是其时尚为大学生的台湾人 <a href="https://github.com/tommy351" target="_blank">Tommy</a> 开发的轻量级静态博客生成器，具有简洁、快速、扩展性好等特点。</p>
+<p>在 Hexo 中新建一篇博文非常简单，只需要在命令行中执行</p>
+<pre><code>hexo <span class="keyword">new</span> <span class="string">"the title of your blog"</span>
+</code></pre><p>即可。Hexo 会在后台自动帮你创建名为 <code>yyyy-mm-dd-the-title-of-your-blog.md</code> 的文件，供你撰写博文。不过，也有不方便的地方。通常你需要依次打开 <code>hexo-home/source/_post</code> 目录，然后在成堆的 Markdown 文件中找到刚才创建的文档。</p>
+<a id="more"></a>
+
+<hr>
+<p>简单搜索之后，我发现在 Hexo 的 GitHub 项目里，有人提出了类似的需求：</p>
+<p><a href="https://github.com/hexojs/hexo/issues/1007" target="_blank">https://github.com/hexojs/hexo/issues/1007</a></p>
+<p>Tommy 指出，可以在 Hexo 目录下的 <code>scripts</code> 目录（若没有，则新建一个）中创建一个 JavaScript 脚本，监听 <code>hexo new</code> 这个动作。并在检测到 <code>hexo new</code> 之后，执行编辑器打开的命令。</p>
+<p>Tommy 给出的代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="keyword">var</span> spawn = <span class="built_in">require</span>(<span class="string">'child_process'</span>).spawn;
+
+<span class="comment">// Hexo 2.x</span>
+hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span><span class="params">(path)</span>{</span>
+  spawn(<span class="string">'vi'</span>, [path]);
+});
+
+<span class="comment">// Hexo 3</span>
+hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span><span class="params">(data)</span>{</span>
+  spawn(<span class="string">'vi'</span>, [data.path]);
+});
+</pre></td></tr></table></figure>
+
+
+
+<p>我使用的 Hexo 是 2.5.4 版本，然而，测试过 Tommy 给出的代码之后并没有顺利地打开编辑器。不过精髓已经理解，需要的就只是细节的改变了。</p>
+<p>简单翻阅了一下 JavaScript 的语法规则，我尝试了下列 JavaScript 代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="keyword">var</span> exec = <span class="built_in">require</span>(<span class="string">'child_process'</span>).exec;
+
+<span class="comment">// Hexo 2.x</span>
+hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span><span class="params">(path)</span>{</span>
+    exec(<span class="string">'open -a "/Applications/Sublime Text.app" '</span> + path);
+});
+</pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>注意，我这里执行的系统命令，是 OS X 下的 <code>open</code>。换到 Windows 中，可能需要改为 <code>start</code>。</p>
+</blockquote>
+<hr>
+<p>在命令行中敲下</p>
+<pre><code>hexo <span class="keyword">new</span> <span class="string">"open editor after hexo new immediately"</span>
+</code></pre><p>之后，Sublime Text 顺利打开了相应的 Markdown 文稿。接下来的事情，就是愉快地写作啦！</p>
+]]></content>
+    <summary type="html"><![CDATA[<p>自己的博客是用 Hexo 搭建的。Hexo 是其时尚为大学生的台湾人 <a href="https://github.com/tommy351" target="_blank">Tommy</a> 开发的轻量级静态博客生成器，具有简洁、快速、扩展性好等特点。</p>
+<p>在 Hexo 中新建一篇博文非常简单，只需要在命令行中执行</p>
+<pre><code>hexo <span class="keyword">new</span> <span class="string">"the title of your blog"</span>
+</code></pre><p>即可。Hexo 会在后台自动帮你创建名为 <code>yyyy-mm-dd-the-title-of-your-blog.md</code> 的文件，供你撰写博文。不过，也有不方便的地方。通常你需要依次打开 <code>hexo-home/source/_post</code> 目录，然后在成堆的 Markdown 文件中找到刚才创建的文档。</p>
+]]></summary>
+    
+      <category term="Hexo" scheme="http://liam0205.me/tags/Hexo/"/>
+    
+      <category term="Markdown" scheme="http://liam0205.me/tags/Markdown/"/>
+    
+      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[使用合适的字体回退机制（Fallback）改善网页在 Windows 平台的字体显示效果]]></title>
@@ -2426,272 +2509,6 @@ This is the conclusion that we need.
       <category term="Macros" scheme="http://liam0205.me/tags/Macros/"/>
     
       <category term="AMS" scheme="http://liam0205.me/tags/AMS/"/>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[在 LaTeX 中使用含有中文的 PDF 书签避免乱码的正确姿势]]></title>
-    <link href="http://liam0205.me/2014/11/22/latex-pdf-cjk-bookmarks/"/>
-    <id>http://liam0205.me/2014/11/22/latex-pdf-cjk-bookmarks/</id>
-    <published>2014-11-22T08:57:54.000Z</published>
-    <updated>2014-12-03T15:33:41.000Z</updated>
-    <content type="html"><![CDATA[<p>LaTeX 的 <code>hyperref</code> 宏包能够在 PDF 文件里生成 PDF 书签，然而「书签乱码」是困扰很多 LaTeX 使用者的麻烦问题。</p>
-<p>早年李树钧和张林波老师共同开发了名为 <a href="http://www.hooklee.com/tex/gbk2uni.zip" target="_blank">gbk2uni</a> 的小工具，用以将 <code>filename.out</code> 中的 GBK 编码的字符转换成八进制数据；刘海洋和李清在 <a href="https://code.google.com/p/ctex-kit/" target="_blank"><code>ctex</code></a> 宏包 / 文档类对此做了处理，使得 <code>ctex</code> 宏包 / 文档类能够正确处理大部分的情况；后来李清编写了 <a href="http://www.ctan.org/pkg/xcjk2uni" target="_blank"><code>xCJK2uni</code></a> 宏包，使得在 pdfLaTeX 编译方式下用 <code>CJK</code> 的 GBK 编码模式也能正确输出 PDF 书签，而不必借用额外的工具。</p>
-<p>这里对全部正确的方式做一个总结。</p>
-<a id="more"></a>
-
-<h2 id=" 推荐的方式 ">推荐的方式</h2>
-<p>最好的办法是将中文支持和版式处理都交给 <code>ctex</code> 宏包 / 文档类，只需要开启 <code>hyperref</code> 选项即可。</p>
-<p>适用情况</p>
-<ul>
-<li>UTF-8 + XeLaTeX（目前<strong>最最最最最最最最</strong>推荐的方式，看到它请星星眼）</li>
-<li>UTF-8 + pdfLaTeX</li>
-<li>UTF-8 + LaTeX - DVIPDFMx</li>
-</ul>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">[</span>hyperref, UTF8<span class="special">]</span><span class="special">{</span>ctexart<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\section</span><span class="special">{</span>中文书签不会乱码<span class="special">}</span>
-UTF-8 编码，Xe<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span>/pdf<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span>/<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span> - DVIPDFMx 编译。
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">[</span>hyperref, UTF8<span class="special">]</span><span class="special">{</span>ctex<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\section</span><span class="special">{</span>中文书签不会乱码<span class="special">}</span>
-UTF-8 编码，Xe<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span>/pdf<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span>/<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span> - DVIPDFMx 编译。
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>适用情况（除非必要，不要使用 GBK 编码）</p>
-<ul>
-<li>GBK + LaTeX - DVIPDFMx</li>
-<li>GBK + pdfLaTeX （ctex 宏包 2.x 版本支持，当前的 1.x 版本暂不支持）</li>
-</ul>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">[</span>hyperref, GBK<span class="special">]</span><span class="special">{</span>ctexart<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\section</span><span class="special">{</span>中文书签不会乱码<span class="special">}</span>
-GBK 编码，pdf<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span>/<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span> - DVIPDFMx 编译。
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">[</span>hyperref, GBK<span class="special">]</span><span class="special">{</span>ctex<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\section</span><span class="special">{</span>中文书签不会乱码<span class="special">}</span>
-GBK 编码，pdf<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span>/<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span> - DVIPDFMx 编译。
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<h2 id=" 折腾星人的方式 ">折腾星人的方式</h2>
-<p>如果不想使用 <code>ctex</code> 宏包 / 文档类，也可以选择自己写代码进行中文支持。这时候需要做额外的代码配置，保证 PDF 书签不会乱码。</p>
-<p>适用情况</p>
-<ul>
-<li>UTF-8 + XeLaTeX</li>
-</ul>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>xeCJK<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>hyperref<span class="special">}</span>
-<span class="command">\setCJKmainfont</span><span class="special">{</span>SimSun<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\section</span><span class="special">{</span>中文书签不会乱码<span class="special">}</span>
-UTF-8 编码，Xe<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span> 编译。
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>适用情况</p>
-<ul>
-<li>UTF-8 + pdfLaTeX</li>
-</ul>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>CJKutf8<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>hyperref<span class="special">}</span>
-<span class="command">\hypersetup</span><span class="special">{</span>unicode<span class="special">}</span>
-<span class="command">\AtBeginShipoutFirst</span><span class="special">{</span><span class="command">\input</span><span class="special">{</span>zhwinfonts.tex<span class="special">}</span><span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>CJK*<span class="special">}</span><span class="special">{</span>UTF8<span class="special">}</span><span class="special">{</span>song<span class="special">}</span>
-<span class="command">\section</span><span class="special">{</span>中文书签不会乱码<span class="special">}</span>
-UTF-8<span class="special">~</span>编码，pdf<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span><span class="special">~</span>编译。
-<span class="command">\clearpage</span>
-<span class="command">\end</span><span class="special">{</span>CJK*<span class="special">}</span>
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>适用情况</p>
-<ul>
-<li>UTF-8 + LaTeX - DVIPDFMx</li>
-</ul>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>CJKutf8<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">[</span>dvipdfmx<span class="special">]</span><span class="special">{</span>hyperref<span class="special">}</span>
-<span class="command">\hypersetup</span><span class="special">{</span>unicode<span class="special">}</span>
-<span class="command">\AtBeginShipoutFirst</span><span class="special">{</span><span class="command">\input</span><span class="special">{</span>zhwinfonts.tex<span class="special">}</span><span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>CJK*<span class="special">}</span><span class="special">{</span>UTF8<span class="special">}</span><span class="special">{</span>song<span class="special">}</span>
-<span class="command">\section</span><span class="special">{</span>中文书签不会乱码<span class="special">}</span>
-UTF-8<span class="special">~</span>编码，<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span> - DVIPDFMx<span class="special">~</span>编译。
-<span class="command">\clearpage</span>
-<span class="command">\end</span><span class="special">{</span>CJK*<span class="special">}</span>
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>适用情况</p>
-<ul>
-<li>GBK + pdfLaTeX （谁特么还在用 GBK 啊！摔！）</li>
-</ul>
-<p>请大家将感谢信发送至 <a href="http://www.zhihu.com/people/qinglee" target="_blank">李清</a> 的邮箱~</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>CJK<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>xCJK2uni<span class="special">}</span> <span class="comment">% 请大家将感谢信发送至 李清 的邮箱~ : )</span>
-<span class="command">\usepackage</span><span class="special">{</span>hyperref<span class="special">}</span>
-<span class="command">\AtBeginShipoutFirst</span><span class="special">{</span><span class="command">\input</span><span class="special">{</span>zhwinfonts.tex<span class="special">}</span><span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>CJK*<span class="special">}</span><span class="special">{</span>GBK<span class="special">}</span><span class="special">{</span>song<span class="special">}</span>
-<span class="command">\section</span><span class="special">{</span>中文书签不会乱码<span class="special">}</span>
-GBK<span class="special">~</span>编码，pdf<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span><span class="special">~</span>编译。
-<span class="command">\clearpage</span>
-<span class="command">\end</span><span class="special">{</span>CJK*<span class="special">}</span>
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>适用情况</p>
-<ul>
-<li>GBK + LaTeX - DVIPDFMx（谁特么还在用 GBK 啊！摔！）</li>
-</ul>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>CJK<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">[</span>dvipdfmx<span class="special">]</span><span class="special">{</span>hyperref<span class="special">}</span>
-<span class="command">\hypersetup</span><span class="special">{</span>CJKbookmarks<span class="special">}</span>
-<span class="command">\AtBeginShipoutFirst</span><span class="special">{</span><span class="command">\input</span><span class="special">{</span>zhwinfonts.tex<span class="special">}</span><span class="special">}</span>
-<span class="command">\AtBeginShipoutFirst</span><span class="special">{</span><span class="command">\special</span><span class="special">{</span>pdf:tounicode GBK-EUC-UCS2<span class="special">}</span><span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>CJK*<span class="special">}</span><span class="special">{</span>GBK<span class="special">}</span><span class="special">{</span>song<span class="special">}</span>
-<span class="command">\section</span><span class="special">{</span>中文书签不会乱码<span class="special">}</span>
-GBK<span class="special">~</span>编码，<span class="command">\LaTeX</span><span class="special">{</span><span class="special">}</span> - DVIPDFMx<span class="special">~</span>编译。
-<span class="command">\clearpage</span>
-<span class="command">\end</span><span class="special">{</span>CJK*<span class="special">}</span>
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-
-
-
-]]></content>
-    <summary type="html"><![CDATA[<p>LaTeX 的 <code>hyperref</code> 宏包能够在 PDF 文件里生成 PDF 书签，然而「书签乱码」是困扰很多 LaTeX 使用者的麻烦问题。</p>
-<p>早年李树钧和张林波老师共同开发了名为 <a href="http://www.hooklee.com/tex/gbk2uni.zip" target="_blank">gbk2uni</a> 的小工具，用以将 <code>filename.out</code> 中的 GBK 编码的字符转换成八进制数据；刘海洋和李清在 <a href="https://code.google.com/p/ctex-kit/" target="_blank"><code>ctex</code></a> 宏包 / 文档类对此做了处理，使得 <code>ctex</code> 宏包 / 文档类能够正确处理大部分的情况；后来李清编写了 <a href="http://www.ctan.org/pkg/xcjk2uni" target="_blank"><code>xCJK2uni</code></a> 宏包，使得在 pdfLaTeX 编译方式下用 <code>CJK</code> 的 GBK 编码模式也能正确输出 PDF 书签，而不必借用额外的工具。</p>
-<p>这里对全部正确的方式做一个总结。</p>
-]]></summary>
-    
-      <category term="PDF" scheme="http://liam0205.me/tags/PDF/"/>
-    
-      <category term="Bookmarks" scheme="http://liam0205.me/tags/Bookmarks/"/>
-    
-      <category term="CJK" scheme="http://liam0205.me/tags/CJK/"/>
-    
-      <category term="Error Codes" scheme="http://liam0205.me/tags/Error%20Codes/"/>
     
       <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
     

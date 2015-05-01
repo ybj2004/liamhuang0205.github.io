@@ -1,4 +1,6 @@
 var exec = require('child_process').exec;
-hexo.on('new', function(target){
-	exec('open -a "/Applications/Sublime Text.app" ' + target);
-	});
+
+// Hexo 2.x
+hexo.on('new', function(path){
+    exec('open -a "/Applications/Sublime Text.app" ' + path);
+});
