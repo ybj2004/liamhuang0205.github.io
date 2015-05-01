@@ -53,7 +53,7 @@ tags: [Hexo, Fonts, Fallback]
 
 之后，我们在命令行运行
 
-    hexo clean && hexo g -d
+    hexo clean && hexo d -g
 
 就能将修复好的 CSS 文件推送到仓库了。
 

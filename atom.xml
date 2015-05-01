@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-05-01T02:37:17.964Z</updated>
+  <updated>2015-05-01T13:34:06.778Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -102,7 +102,7 @@ hexo.on(<span class="string">'new'</span>, <span class="function"><span class="k
     <link href="http://liam0205.me/2015/04/30/using-font-fallback-to-enhance-the-appreance-on-windows/"/>
     <id>http://liam0205.me/2015/04/30/using-font-fallback-to-enhance-the-appreance-on-windows/</id>
     <published>2015-04-30T09:18:40.000Z</published>
-    <updated>2015-04-30T10:01:24.000Z</updated>
+    <updated>2015-05-01T13:33:55.000Z</updated>
     <content type="html"><![CDATA[<p>昨天在群里提起 Windows 平台下坑爹的中易宋体之屏显效果，今日忽而想起自己的博客在 Windows 平台下显示的也是宋体。当然，这不是我的错。原本的字体机制，博客会按照顺序选择一款无衬线字体，直到无可选择时采用系统默认的无衬线字体。但是坑死人不偿命的云都死系统，把 SimSun （中易宋体）这个带有衬线（好吧，严格来说中文没有这个概念，我们跟着西文勉强这么称呼它）的字体也放进了系统 sans serif 字族里面去。其结果就是，不能丑陋更多。</p>
 <p>作为一个强迫症患者，我们来看看如何修复这个问题。</p>
 <a id="more"></a>
@@ -140,7 +140,7 @@ hexo.on(<span class="string">'new'</span>, <span class="function"><span class="k
 <p><code>modernist</code> 的作者很有心，将一些可能需要个性化配置的变量专门储存在名为 <code>variable.styl</code> 的文件里。这个文件位于 <code>./theme/modernist/source/css/_base/variable.styl</code>，我们打开它，然后将 <code>font-default</code> 和 <code>font-title</code> 的值改为：</p>
 <pre><code><span class="string">"Helvetica Neue"</span>, <span class="string">"Helvetica"</span>, <span class="string">"Hiragino Sans GB"</span>, <span class="string">"Source Han Sans CN"</span>, <span class="string">"STXihei"</span>, <span class="string">"Microsoft YaHei"</span>, <span class="string">"WenQuanYi Micro Hei"</span>, <span class="string">"SimHei"</span>, <span class="string">"Arial"</span>, sans<span class="attribute">-serif</span>
 </code></pre><p>之后，我们在命令行运行</p>
-<pre><code>hexo clean &amp;&amp; hexo g <span class="operator">-d</span>
+<pre><code>hexo clean <span class="subst">&amp;&amp;</span> hexo d <span class="attribute">-g</span>
 </code></pre><p>就能将修复好的 CSS 文件推送到仓库了。</p>
 <p>之后在 Windows 中打开，就会依照上述字体顺序去检索字体。对于新版的 Windows 系统，一般会以微软雅黑打开；对于旧版的 Windows 字体，一般会以中易黑体打开。</p>
 ]]></content>
