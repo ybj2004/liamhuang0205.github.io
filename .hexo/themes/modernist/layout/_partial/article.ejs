@@ -23,11 +23,6 @@
           <a href="<%- config.root %><%- item.path %>#more" class="more-link"><%= theme.excerpt_link %></a>
         </div>
       <% } %>
-      <% if (item.comment && config.disqus_shortname){ %>
-      <div class="alignright">
-        <a href="<%- item.permalink %>#disqus_thread" class="comment-link">Comments</a>
-      </div>
-      <% } %>
     <% } else { %>
       <div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1406015473860">
         <a href="#" class="bds_more" data-cmd="more"></a>
