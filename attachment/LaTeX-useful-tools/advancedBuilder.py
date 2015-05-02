@@ -60,7 +60,7 @@ class AdvancedBuilder(PdfBuilder):
     def commands(self):
         # print greeting
         self.display("\n\n")
-        self.display("This is the Advanced Bulder.")
+        self.display("This is the Advanced Builder.")
         self.display("\n")
         # copy vars
         engine = self.engine
