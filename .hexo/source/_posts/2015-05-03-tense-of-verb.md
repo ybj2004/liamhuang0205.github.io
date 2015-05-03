@@ -1,7 +1,7 @@
 title: 英语语法之三：动词时态
 date: 2015-05-03 18:06:39
 categories: Literature and Social Sciences
-tags: [English, Grammer, Verb, Tense]
+tags: [English, Grammar, Verb, Tense]
 ---
 
 这个系列的 [上一篇文章](http://liam0205.me/2014/06/22/noun-phrase-and-articles/) 已经快一年了。我真是懒啊……
