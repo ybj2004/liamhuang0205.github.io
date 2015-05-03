@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-05-02T14:42:17.955Z</updated>
+  <updated>2015-05-03T11:25:02.004Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,179 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[英语语法之三：动词时态]]></title>
+    <link href="http://liam0205.me/2015/05/03/tense-of-verb/"/>
+    <id>http://liam0205.me/2015/05/03/tense-of-verb/</id>
+    <published>2015-05-03T10:06:39.000Z</published>
+    <updated>2015-05-03T11:24:21.000Z</updated>
+    <content type="html"><![CDATA[<p>这个系列的 <a href="http://liam0205.me/2014/06/22/noun-phrase-and-articles/">上一篇文章</a> 已经快一年了。我真是懒啊……</p>
+<p>中文的谓语动词不在时间、状态、语态上作区分。在中文中，这些功能由其它副词提供。在英文中，动词的形态需要根据时间、状态、语态发生改变。对于中国人来说，这样的变化确实有些不自然；选错时态也是中国人讲英文时经常犯的错误。</p>
+<p>在这里，语态和说话人的态度相关，比较容易感受。同时，语态反应在动词形态上的变化也相对简单，只需要加上合适的 <code>be</code> 动词，配上动词的过去分词即可。时态和动作发生的时间相关，也相对直观。因此，如果我们能对状态做一些简化，从状态出发去讨论时态，则问题会简单得多。</p>
+<a id="more"></a>
+
+<h2 id=" 状态的简化 ">状态的简化</h2>
+<p>在现代英语中，状态分为</p>
+<ul>
+<li>一般状态（如：一般现在式）</li>
+<li>进行状态（如：一般进行式）</li>
+<li>完成状态（如：现在完成式）</li>
+</ul>
+<p>其中，进行状态的语法特征是 <code>be + 动词的现在分词（V-ing）</code>。如果我们「暂时忘掉」进行状态这个概念，把上述结构看做是 <code>be</code> 动词加上补语（表语）的结构，那这个结构和传统语法中的「一般状态」就没什么区别了。只不过，进行状态的动词是个 <code>be</code> 动词而已。也就是说，我们完全可以把进行状态看做是一种特殊的一般状态，它的谓语动词是个空的 <code>be</code> 动词。</p>
+<p>因此，我们可以将一般状态和进行状态合并在一起，称之为「简单式」。为了统一称呼，我们把完成状态叫做「完成式」。</p>
+<p>注意，这里的简化并不受语态影响。相对主动语态，被动语态不过是 <code>be + 动词的过去分词（V-ed）</code>而已。我们依然可以把被动语态当做 <code>be</code> 动词加上补语（表语）的结构。这样，语态完全不影响上述简化过程。</p>
+<h2 id=" 简单式 ">简单式</h2>
+<p>简单式有几个重要的特征：</p>
+<ul>
+<li><strong>简单式的动作，其发生的具体时间是一个特定的时间段</strong></li>
+<li><strong>动作发生的时间段可大可小，可以延伸至无穷远的过去或无穷远的将来，也可以缩小至一个具体的时间点</strong></li>
+<li><strong>如果动作发生的时间段</strong><ul>
+<li>包括「现在」这个时间点，那么用现在时态</li>
+<li>不包括「现在」这个时间点，且位于现在之前，那么用过去时态</li>
+<li>不包括「现在」这个时间点，且位于现在之后，那么用将来时态</li>
+</ul>
+</li>
+</ul>
+<p>第一个特征，给了我们明确的信息来确定我们是否应该使用简单式（而不是完成式）。第二和第三个特征，则为我们选择时态提供了依据。</p>
+<h3 id=" 过去时态 ">过去时态</h3>
+<blockquote>
+<p>The U.S.A <em>established</em> diplomatic relations with the P.R.C <em>in 1979</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>1979 年</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之前，所以应该用过去时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「持续」或者「正在发生」的含义，所以不需要额外的 <code>be</code> 动词</li>
+</ul>
+<p>因此，动词 <code>establish</code> 应该用 <code>established</code>。这是传统语法的「一般过去式」。</p>
+<blockquote>
+<p>The movable print <em>was</em> introduced to England <em>in 1485</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>1979 年</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之前，所以应该用过去时态</li>
+<li>这里涉及到被动的语态，但不涉及到「持续」或者「正在发生」的含义，所以需要用 <code>be + V-ed</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的过去形态 <code>was</code>，以及 <code>introduced</code> 这个过去分词。这是传统语法的「一般过去式被动语态」。</p>
+<blockquote>
+<p>I <em>was</em> visiting clients <em>the whole day yesterday</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>昨天一整天</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之前，所以应该用过去时态</li>
+<li>这里不涉及到被动的语态，但涉及到「持续」的含义，所以需要用 <code>be + V-ing</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的过去形态 <code>was</code>，以及 <code>visiting</code> 这个现在分词。这是传统语法的「过去进行式」。</p>
+<blockquote>
+<p>I <em>was</em> watching TV, <em>when I heard the door bell</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>听到门铃响的瞬间</em>，这是一个特定的时间段，退化为一个时间点，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之前，所以应该用过去时态</li>
+<li>这里不涉及到被动的语态，但涉及到「正在发生」的含义，所以需要用 <code>be + V-ing</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的过去形态 <code>was</code>，以及 <code>watching</code> 这个现在分词。这是传统语法的「过去进行式」。</p>
+<blockquote>
+<p>The witness <em>was</em> being questioned in court <em>when he had a heart attack</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>心脏病发作的瞬间</em>，这是一个特定的时间段，退化为一个时间点，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之前，所以应该用过去时态</li>
+<li>这里涉及到被动的语态，所以需要用 <code>be + V-ed</code>；同时，这里也涉及到「正在发生」的含义，所以需要用 <code>be + V-ing</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的过去形态 <code>was</code>，同时还需要 <code>being</code> 作为 <code>V-ing</code> 部分，然后还需要 <code>question</code> 的过去分词 <code>questioned</code>。这是传统语法的「过去进行式被动语态」。</p>
+<h3 id=" 现在时态 ">现在时态</h3>
+<blockquote>
+<p>Obama <em>is</em> the U.S. President.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>几年前奥巴马上任之时到几年后奥巴马卸任之时</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段包括现在这个时间点，所以应该用现在时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「持续」或者「正在发生」的含义，所以不需要额外的 <code>be</code> 动词</li>
+</ul>
+<p>因此，我们需要用 <code>is</code>。这是传统语法的「一般现在式」。</p>
+<blockquote>
+<p>Kyrie <em>steals</em> the ball and <em>passes</em> it to LeBron.</p>
+</blockquote>
+<ul>
+<li>这是体育解说员在播报克利夫兰骑士队的比赛，动作发生的时间段是 <em>现在</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段包括现在这个时间点，所以应该用现在时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「持续」或者「正在发生」的含义，所以不需要额外的 <code>be</code> 动词</li>
+</ul>
+<p>因此，我们分别需要用 <code>steal</code> 和 <code>pass</code> 单数第三人称形式 <code>steals</code> 和 <code>pass</code>。这是传统语法的「一般现在式」。</p>
+<blockquote>
+<p>All mothers <em>love</em> their children.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>无穷远的过去到无穷远的将来</em>，也就是所谓的真理，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段包括现在这个时间点，所以应该用现在时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「持续」或者「正在发生」的含义，所以不需要额外的 <code>be</code> 动词</li>
+</ul>
+<p>因此，我们需要用 <code>love</code> 的原型。这是传统语法的「一般现在式」。</p>
+<p>这就是为什么，传统语法说「真理要用一般现在式」。其实理解了我们的原理，就不需要被这些「特例」了。</p>
+<blockquote>
+<p>Walmart <em>is</em> selling big cokes at a discount <em>this mouth</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>这个月</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段包括现在这个时间点，所以应该用现在时态</li>
+<li>这里不涉及到被动的语态，但涉及到「持续」的含义，所以需要用 <code>be + V-ing</code> 形式</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的单三形式 <code>is</code>，跟着 <code>sell</code> 的现在分词 <code>selling</code>。这是传统语法的「现在进行式」。</p>
+<blockquote>
+<p>According to the NASA survey, the ozone layer <em>is</em> being depleted.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>从臭氧层开始被消耗的时候到将来臭氧层不在被消耗的时候</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段包括现在这个时间点，所以应该用现在时态</li>
+<li>这里涉及到被动的语态，所以需要用 <code>be + V-ed</code>；同时，这里也涉及到「正在发生」的含义，所以需要用 <code>be + V-ing</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的单三形态 <code>is</code>，同时还需要 <code>being</code> 作为 <code>V-ing</code> 部分，然后还需要 <code>deplete</code> 的过去分词 <code>depleted</code>。这是传统语法的「现在进行式被动语态」。</p>
+<h3 id=" 未来时态 ">未来时态</h3>
+<blockquote>
+<p>There <em>will be</em> a major election <em>in April</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>下一个四月份</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之后，所以应该用将来时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「正在发生」的含义，所以不需要额外的 <code>be</code></li>
+</ul>
+<p>因此，我们需要用 <code>will</code> 来表示将来时态，同时用 <code>be</code> 的原型，在这里表示「存在」的含义。这是传统语法的「一般将来式」。</p>
+<blockquote>
+<p>Don’t call me at <em>six tomorrow</em>. I <em>will</em> still <em>be</em> sleeping <em>then</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>明早六点</em>，这是一个特定的时间段，退化为一个时间点，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之后，所以应该用将来时态</li>
+<li>这里不涉及到被动的语态，但不涉及到「正在发生」的含义，所以需要用 <code>be + V-ing</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>will</code> 来表示将来时态，用 <code>be</code> 动词的原型，同时接上 <code>sleep</code> 的现在分词 <code>sleeping</code>。这是传统语法的「将来进行式」。</p>
+<blockquote>
+<p>The building <em>will be</em> razed <em>next month</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>下个月</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之后，所以应该用将来时态</li>
+<li>这里涉及到被动的语态，所以需要用 <code>be + V-ed</code> 的形态；但不涉及到「正在发生」的含义</li>
+</ul>
+<p>因此，我们需要用 <code>will</code> 来表示将来时态，用 <code>be</code> 动词的原型，同时接上 <code>raze</code> 的过去分词 <code>razed</code>。这是传统语法的「一般将来式被动语态」。</p>
+]]></content>
+    <summary type="html"><![CDATA[<p>这个系列的 <a href="http://liam0205.me/2014/06/22/noun-phrase-and-articles/">上一篇文章</a> 已经快一年了。我真是懒啊……</p>
+<p>中文的谓语动词不在时间、状态、语态上作区分。在中文中，这些功能由其它副词提供。在英文中，动词的形态需要根据时间、状态、语态发生改变。对于中国人来说，这样的变化确实有些不自然；选错时态也是中国人讲英文时经常犯的错误。</p>
+<p>在这里，语态和说话人的态度相关，比较容易感受。同时，语态反应在动词形态上的变化也相对简单，只需要加上合适的 <code>be</code> 动词，配上动词的过去分词即可。时态和动作发生的时间相关，也相对直观。因此，如果我们能对状态做一些简化，从状态出发去讨论时态，则问题会简单得多。</p>
+]]></summary>
+    
+      <category term="English" scheme="http://liam0205.me/tags/English/"/>
+    
+      <category term="Grammer" scheme="http://liam0205.me/tags/Grammer/"/>
+    
+      <category term="Verb" scheme="http://liam0205.me/tags/Verb/"/>
+    
+      <category term="Tense" scheme="http://liam0205.me/tags/Tense/"/>
+    
+      <category term="Literature and Social Sciences" scheme="http://liam0205.me/categories/Literature%20and%20Social%20Sciences/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[在 hexo new 之后立即打开新建的 Markdown 文稿]]></title>
@@ -2336,179 +2509,6 @@ a4 d2 a4 e9 a4 ac a4 ca
 ]]></summary>
     
       <category term="pTeX" scheme="http://liam0205.me/tags/pTeX/"/>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[在 LaTeX 里定义一个类似 proof 的环境]]></title>
-    <link href="http://liam0205.me/2014/12/03/how-to-define-a-proof-like-environment/"/>
-    <id>http://liam0205.me/2014/12/03/how-to-define-a-proof-like-environment/</id>
-    <published>2014-12-03T06:12:57.000Z</published>
-    <updated>2014-12-03T06:44:12.000Z</updated>
-    <content type="html"><![CDATA[<p>美国数学协会（AMS）是 TeX 发展中的一支重要的力量。AMS 定义的 <code>proof</code> 环境非常好用，能在证明结束的末尾，自动添加一个「证毕」的符号。</p>
-<p>有时我们需要类似的环境，比如<a href="http://bbs.ctex.org/forum.php?mod=viewthread&amp;tid=79516" target="_blank">这里</a>的题主希望用两个环境区分「证明」和「解答」，并且都需要自动添加结束符号。这时我们可以仿照 <code>amsthm</code> 宏包的做法，自己定义一套环境。</p>
-<a id="more"></a>
-
-<p><code>proof</code> 环境的原始定义是这样的：</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="code"><pre><span class="command">\newenvironment</span><span class="special">{</span>proof<span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">[</span><span class="command">\proofname</span><span class="special">]</span><span class="special">{</span><span class="command">\par</span>
-  <span class="command">\pushQED</span><span class="special">{</span><span class="command">\qed</span><span class="special">}</span><span class="comment">%</span>
-  <span class="command">\normalfont</span> <span class="command">\topsep</span>6<span class="command">\p</span>@<span class="command">\@</span>plus6<span class="command">\p</span>@<span class="command">\relax</span>
-  <span class="command">\trivlist</span>
-  <span class="command">\item</span><span class="special">[</span><span class="command">\hskip</span><span class="command">\labelsep</span>
-        <span class="command">\itshape</span>
-    <span class="special">#</span>1<span class="command">\@</span>addpunct<span class="special">{</span>.<span class="special">}</span><span class="special">]</span><span class="command">\ignorespaces</span>
-<span class="special">}</span><span class="special">{</span><span class="command">\popQED</span><span class="command">\endtrivlist</span><span class="command">\@</span>endpefalse<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>这里 <code>\pushQED{\qed}</code> 把 <code>\qed</code> 压入了 QED 这个堆栈，然后在环境结束的地方，通过 <code>\popQED</code> 把压入堆栈的最后一个元素弹出来。这样的设计是非常合理的。比如，如果在证明的过程中，需要分别证明两个小的情形，这样就能按照次序依次给出证明的结束符号。此外，证明开始的标题通过 <code>\proofname</code> 来控制。</p>
-<p>通过这些分析，我们知道定义一个新的环境，我们需要从两个方面入手。其一是 <code>\proofname</code> 的位置需要改变，其二是压入堆栈的内容需要更改。</p>
-<p>下面的代码我们定义了一个名为 <code>\fooname</code> 的宏，来替代 <code>\proofname</code>。</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="command">\providecommand</span><span class="special">{</span><span class="command">\fooname</span><span class="special">}</span><span class="special">{</span>Foo<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>下面的代码我们定义了名为 <code>\bxz</code> 的宏，来替换原本压入堆栈的 <code>\qed</code>。其中 <code>\bxz</code> 具体的符号内容用 <code>\bxzsymbol</code> 这个宏来控制。</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="code"><pre><span class="command">\DeclareRobustCommand</span><span class="special">{</span><span class="command">\bxz</span><span class="special">}</span><span class="special">{</span><span class="command">\ifmmode</span> <span class="command">\mathbxz</span>
-  <span class="command">\else</span>
-    <span class="command">\leavevmode</span><span class="command">\unskip</span><span class="command">\penalty</span>9999 <span class="command">\hbox</span><span class="special">{</span><span class="special">}</span><span class="command">\nobreak</span><span class="command">\hfill</span>
-    <span class="command">\quad</span><span class="command">\hbox</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="comment">%</span>
-  <span class="command">\fi</span>
-<span class="special">}</span>
-<span class="command">\newcommand</span><span class="special">{</span><span class="command">\mathbxz</span><span class="special">}</span><span class="special">{</span><span class="command">\quad</span><span class="command">\hbox</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="special">}</span>
-<span class="command">\providecommand</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="special">{</span><span class="command">\fbox</span><span class="special">{</span><span class="command">\footnotesize</span> B.X.Z<span class="special">}</span><span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>最后，重新定义一个名为 <code>foo</code> 的环境。</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="code"><pre><span class="command">\newenvironment</span><span class="special">{</span>foo<span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">[</span><span class="command">\fooname</span><span class="special">]</span><span class="special">{</span><span class="command">\par</span>
-  <span class="command">\pushQED</span><span class="special">{</span><span class="command">\bxz</span><span class="special">}</span><span class="comment">%</span>
-  <span class="command">\normalfont</span> <span class="command">\topsep</span>6<span class="command">\p</span>@<span class="command">\@</span>plus6<span class="command">\p</span>@<span class="command">\relax</span>
-  <span class="command">\trivlist</span>
-  <span class="command">\item</span><span class="special">[</span><span class="command">\hskip</span><span class="command">\labelsep</span>
-        <span class="command">\itshape</span>
-    <span class="special">#</span>1<span class="command">\@</span>addpunct<span class="special">{</span>.<span class="special">}</span><span class="special">]</span><span class="command">\ignorespaces</span>
-<span class="special">}</span><span class="special">{</span><span class="command">\popQED</span><span class="command">\endtrivlist</span><span class="command">\@</span>endpefalse<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>完整的测试代码如下：</p>
-<figure class="highlight tex"><figcaption><span>demo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\usepackage</span><span class="special">{</span>amsthm<span class="special">}</span>
-<span class="command">\makeatletter</span>
-<span class="command">\DeclareRobustCommand</span><span class="special">{</span><span class="command">\bxz</span><span class="special">}</span><span class="special">{</span><span class="command">\ifmmode</span> <span class="command">\mathbxz</span>
-  <span class="command">\else</span>
-    <span class="command">\leavevmode</span><span class="command">\unskip</span><span class="command">\penalty</span>9999 <span class="command">\hbox</span><span class="special">{</span><span class="special">}</span><span class="command">\nobreak</span><span class="command">\hfill</span>
-    <span class="command">\quad</span><span class="command">\hbox</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="comment">%</span>
-  <span class="command">\fi</span>
-<span class="special">}</span>
-<span class="command">\newcommand</span><span class="special">{</span><span class="command">\mathbxz</span><span class="special">}</span><span class="special">{</span><span class="command">\quad</span><span class="command">\hbox</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="special">}</span>
-<span class="command">\newenvironment</span><span class="special">{</span>foo<span class="special">}</span><span class="special">[</span>1<span class="special">]</span><span class="special">[</span><span class="command">\fooname</span><span class="special">]</span><span class="special">{</span><span class="command">\par</span>
-  <span class="command">\pushQED</span><span class="special">{</span><span class="command">\bxz</span><span class="special">}</span><span class="comment">%</span>
-  <span class="command">\normalfont</span> <span class="command">\topsep</span>6<span class="command">\p</span>@<span class="command">\@</span>plus6<span class="command">\p</span>@<span class="command">\relax</span>
-  <span class="command">\trivlist</span>
-  <span class="command">\item</span><span class="special">[</span><span class="command">\hskip</span><span class="command">\labelsep</span>
-        <span class="command">\itshape</span>
-    <span class="special">#</span>1<span class="command">\@</span>addpunct<span class="special">{</span>.<span class="special">}</span><span class="special">]</span><span class="command">\ignorespaces</span>
-<span class="special">}</span><span class="special">{</span><span class="command">\popQED</span><span class="command">\endtrivlist</span><span class="command">\@</span>endpefalse<span class="special">}</span>
-<span class="command">\providecommand</span><span class="special">{</span><span class="command">\bxzsymbol</span><span class="special">}</span><span class="special">{</span><span class="command">\fbox</span><span class="special">{</span><span class="command">\footnotesize</span> B.X.Z<span class="special">}</span><span class="special">}</span>
-<span class="command">\providecommand</span><span class="special">{</span><span class="command">\fooname</span><span class="special">}</span><span class="special">{</span>Foo<span class="special">}</span>
-<span class="command">\makeatother</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>proof<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>foo<span class="special">}</span>
-  The foo goes here.
-<span class="command">\end</span><span class="special">{</span>foo<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>foo<span class="special">}</span>
-  <span class="command">\[</span>
-    E = mc^<span class="special">{</span>2<span class="special">}</span>.<span class="command">\qedhere</span>
-  <span class="command">\]</span>
-<span class="command">\end</span><span class="special">{</span>foo<span class="special">}</span>
-This is the conclusion that we need.
-<span class="command">\end</span><span class="special">{</span>proof<span class="special">}</span>
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p><img src="/images/LaTeX/redefine-proof.png" alt=" 测试代码截图 "></p>
-]]></content>
-    <summary type="html"><![CDATA[<p>美国数学协会（AMS）是 TeX 发展中的一支重要的力量。AMS 定义的 <code>proof</code> 环境非常好用，能在证明结束的末尾，自动添加一个「证毕」的符号。</p>
-<p>有时我们需要类似的环境，比如<a href="http://bbs.ctex.org/forum.php?mod=viewthread&amp;tid=79516" target="_blank">这里</a>的题主希望用两个环境区分「证明」和「解答」，并且都需要自动添加结束符号。这时我们可以仿照 <code>amsthm</code> 宏包的做法，自己定义一套环境。</p>
-]]></summary>
-    
-      <category term="Proof" scheme="http://liam0205.me/tags/Proof/"/>
-    
-      <category term="Environment" scheme="http://liam0205.me/tags/Environment/"/>
-    
-      <category term="Macros" scheme="http://liam0205.me/tags/Macros/"/>
-    
-      <category term="AMS" scheme="http://liam0205.me/tags/AMS/"/>
     
       <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
     

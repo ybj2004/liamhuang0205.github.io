@@ -1,0 +1,529 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>英语语法之三：动词时态 | 始终</title>
+  <meta name="author" content="Liam Huang">
+  
+  <meta name="description" content="Liam&#39;s Blog | Liam Huang&#39;s Blog | Liam | Huang | Python | LaTeX | C++ | Java | GRE | TOEFL">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:title" content="英语语法之三：动词时态"/>
+  <meta property="og:site_name" content="始终"/>
+
+  <link rel="alternate" href="/atom.xml" title="始终" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!-- 尝试从 bdimg 获取 JQuery -->
+  <script src="http://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
+  <!-- 如果获取失败，则载入本站的 JQuery -->
+  <script type="text/javascript">
+  //<![CDATA[
+  if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/js/jquery-2.0.3.min.js' type='text/javascript'%3E%3C/script%3E"));
+  }
+  // ]]>
+  </script>
+  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=45037302" charset="UTF-8"></script>
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44836433-1', 'liam0205.me');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <header id="header"><div class="title">
+  <h1><a href="/">始终</a></h1>
+  <a href="/">不忘初心</a>
+</div>
+<!--
+<div>
+<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+ <input style="width:60px;background-color:transparent;text-align:center; border-width:0px;border-top-style: none; border-right-style: none; border-left-style: none; border-bottom-style: none; "  type="search" name="q" id="search" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="20" placeholder="s" />
+ <input type="hidden" name="q" value="site:liam0205.me">
+</form>
+</div>
+-->
+<nav class="nav">
+  <ul>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">链接</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li><a href="http://collect.liam0205.me">文摘</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2015-05-03T10:06:39.000Z"><a href="/2015/05/03/tense-of-verb/">2015 年 05 月 3 日</a></time>
+    
+    
+  
+    <h1 class="title">英语语法之三：动词时态</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>这个系列的 <a href="http://liam0205.me/2014/06/22/noun-phrase-and-articles/">上一篇文章</a> 已经快一年了。我真是懒啊……</p>
+<p>中文的谓语动词不在时间、状态、语态上作区分。在中文中，这些功能由其它副词提供。在英文中，动词的形态需要根据时间、状态、语态发生改变。对于中国人来说，这样的变化确实有些不自然；选错时态也是中国人讲英文时经常犯的错误。</p>
+<p>在这里，语态和说话人的态度相关，比较容易感受。同时，语态反应在动词形态上的变化也相对简单，只需要加上合适的 <code>be</code> 动词，配上动词的过去分词即可。时态和动作发生的时间相关，也相对直观。因此，如果我们能对状态做一些简化，从状态出发去讨论时态，则问题会简单得多。</p>
+<a id="more"></a>
+
+<h2 id=" 状态的简化 ">状态的简化</h2>
+<p>在现代英语中，状态分为</p>
+<ul>
+<li>一般状态（如：一般现在式）</li>
+<li>进行状态（如：一般进行式）</li>
+<li>完成状态（如：现在完成式）</li>
+</ul>
+<p>其中，进行状态的语法特征是 <code>be + 动词的现在分词（V-ing）</code>。如果我们「暂时忘掉」进行状态这个概念，把上述结构看做是 <code>be</code> 动词加上补语（表语）的结构，那这个结构和传统语法中的「一般状态」就没什么区别了。只不过，进行状态的动词是个 <code>be</code> 动词而已。也就是说，我们完全可以把进行状态看做是一种特殊的一般状态，它的谓语动词是个空的 <code>be</code> 动词。</p>
+<p>因此，我们可以将一般状态和进行状态合并在一起，称之为「简单式」。为了统一称呼，我们把完成状态叫做「完成式」。</p>
+<p>注意，这里的简化并不受语态影响。相对主动语态，被动语态不过是 <code>be + 动词的过去分词（V-ed）</code>而已。我们依然可以把被动语态当做 <code>be</code> 动词加上补语（表语）的结构。这样，语态完全不影响上述简化过程。</p>
+<h2 id=" 简单式 ">简单式</h2>
+<p>简单式有几个重要的特征：</p>
+<ul>
+<li><strong>简单式的动作，其发生的具体时间是一个特定的时间段</strong></li>
+<li><strong>动作发生的时间段可大可小，可以延伸至无穷远的过去或无穷远的将来，也可以缩小至一个具体的时间点</strong></li>
+<li><strong>如果动作发生的时间段</strong><ul>
+<li>包括「现在」这个时间点，那么用现在时态</li>
+<li>不包括「现在」这个时间点，且位于现在之前，那么用过去时态</li>
+<li>不包括「现在」这个时间点，且位于现在之后，那么用将来时态</li>
+</ul>
+</li>
+</ul>
+<p>第一个特征，给了我们明确的信息来确定我们是否应该使用简单式（而不是完成式）。第二和第三个特征，则为我们选择时态提供了依据。</p>
+<h3 id=" 过去时态 ">过去时态</h3>
+<blockquote>
+<p>The U.S.A <em>established</em> diplomatic relations with the P.R.C <em>in 1979</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>1979 年</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之前，所以应该用过去时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「持续」或者「正在发生」的含义，所以不需要额外的 <code>be</code> 动词</li>
+</ul>
+<p>因此，动词 <code>establish</code> 应该用 <code>established</code>。这是传统语法的「一般过去式」。</p>
+<blockquote>
+<p>The movable print <em>was</em> introduced to England <em>in 1485</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>1979 年</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之前，所以应该用过去时态</li>
+<li>这里涉及到被动的语态，但不涉及到「持续」或者「正在发生」的含义，所以需要用 <code>be + V-ed</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的过去形态 <code>was</code>，以及 <code>introduced</code> 这个过去分词。这是传统语法的「一般过去式被动语态」。</p>
+<blockquote>
+<p>I <em>was</em> visiting clients <em>the whole day yesterday</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>昨天一整天</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之前，所以应该用过去时态</li>
+<li>这里不涉及到被动的语态，但涉及到「持续」的含义，所以需要用 <code>be + V-ing</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的过去形态 <code>was</code>，以及 <code>visiting</code> 这个现在分词。这是传统语法的「过去进行式」。</p>
+<blockquote>
+<p>I <em>was</em> watching TV, <em>when I heard the door bell</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>听到门铃响的瞬间</em>，这是一个特定的时间段，退化为一个时间点，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之前，所以应该用过去时态</li>
+<li>这里不涉及到被动的语态，但涉及到「正在发生」的含义，所以需要用 <code>be + V-ing</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的过去形态 <code>was</code>，以及 <code>watching</code> 这个现在分词。这是传统语法的「过去进行式」。</p>
+<blockquote>
+<p>The witness <em>was</em> being questioned in court <em>when he had a heart attack</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>心脏病发作的瞬间</em>，这是一个特定的时间段，退化为一个时间点，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之前，所以应该用过去时态</li>
+<li>这里涉及到被动的语态，所以需要用 <code>be + V-ed</code>；同时，这里也涉及到「正在发生」的含义，所以需要用 <code>be + V-ing</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的过去形态 <code>was</code>，同时还需要 <code>being</code> 作为 <code>V-ing</code> 部分，然后还需要 <code>question</code> 的过去分词 <code>questioned</code>。这是传统语法的「过去进行式被动语态」。</p>
+<h3 id=" 现在时态 ">现在时态</h3>
+<blockquote>
+<p>Obama <em>is</em> the U.S. President.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>几年前奥巴马上任之时到几年后奥巴马卸任之时</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段包括现在这个时间点，所以应该用现在时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「持续」或者「正在发生」的含义，所以不需要额外的 <code>be</code> 动词</li>
+</ul>
+<p>因此，我们需要用 <code>is</code>。这是传统语法的「一般现在式」。</p>
+<blockquote>
+<p>Kyrie <em>steals</em> the ball and <em>passes</em> it to LeBron.</p>
+</blockquote>
+<ul>
+<li>这是体育解说员在播报克利夫兰骑士队的比赛，动作发生的时间段是 <em>现在</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段包括现在这个时间点，所以应该用现在时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「持续」或者「正在发生」的含义，所以不需要额外的 <code>be</code> 动词</li>
+</ul>
+<p>因此，我们分别需要用 <code>steal</code> 和 <code>pass</code> 单数第三人称形式 <code>steals</code> 和 <code>pass</code>。这是传统语法的「一般现在式」。</p>
+<blockquote>
+<p>All mothers <em>love</em> their children.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>无穷远的过去到无穷远的将来</em>，也就是所谓的真理，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段包括现在这个时间点，所以应该用现在时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「持续」或者「正在发生」的含义，所以不需要额外的 <code>be</code> 动词</li>
+</ul>
+<p>因此，我们需要用 <code>love</code> 的原型。这是传统语法的「一般现在式」。</p>
+<p>这就是为什么，传统语法说「真理要用一般现在式」。其实理解了我们的原理，就不需要被这些「特例」了。</p>
+<blockquote>
+<p>Walmart <em>is</em> selling big cokes at a discount <em>this mouth</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>这个月</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段包括现在这个时间点，所以应该用现在时态</li>
+<li>这里不涉及到被动的语态，但涉及到「持续」的含义，所以需要用 <code>be + V-ing</code> 形式</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的单三形式 <code>is</code>，跟着 <code>sell</code> 的现在分词 <code>selling</code>。这是传统语法的「现在进行式」。</p>
+<blockquote>
+<p>According to the NASA survey, the ozone layer <em>is</em> being depleted.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>从臭氧层开始被消耗的时候到将来臭氧层不在被消耗的时候</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段包括现在这个时间点，所以应该用现在时态</li>
+<li>这里涉及到被动的语态，所以需要用 <code>be + V-ed</code>；同时，这里也涉及到「正在发生」的含义，所以需要用 <code>be + V-ing</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>be</code> 动词的单三形态 <code>is</code>，同时还需要 <code>being</code> 作为 <code>V-ing</code> 部分，然后还需要 <code>deplete</code> 的过去分词 <code>depleted</code>。这是传统语法的「现在进行式被动语态」。</p>
+<h3 id=" 未来时态 ">未来时态</h3>
+<blockquote>
+<p>There <em>will be</em> a major election <em>in April</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>下一个四月份</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之后，所以应该用将来时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「正在发生」的含义，所以不需要额外的 <code>be</code></li>
+</ul>
+<p>因此，我们需要用 <code>will</code> 来表示将来时态，同时用 <code>be</code> 的原型，在这里表示「存在」的含义。这是传统语法的「一般将来式」。</p>
+<blockquote>
+<p>Don’t call me at <em>six tomorrow</em>. I <em>will</em> still <em>be</em> sleeping <em>then</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>明早六点</em>，这是一个特定的时间段，退化为一个时间点，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之后，所以应该用将来时态</li>
+<li>这里不涉及到被动的语态，但不涉及到「正在发生」的含义，所以需要用 <code>be + V-ing</code> 的形态</li>
+</ul>
+<p>因此，我们需要用 <code>will</code> 来表示将来时态，用 <code>be</code> 动词的原型，同时接上 <code>sleep</code> 的现在分词 <code>sleeping</code>。这是传统语法的「将来进行式」。</p>
+<blockquote>
+<p>The building <em>will be</em> razed <em>next month</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间段是 <em>下个月</em>，这是一个特定的时间段，所以应该用简单式</li>
+<li>这个时间段不包括现在这个时间点，且位于现在之后，所以应该用将来时态</li>
+<li>这里涉及到被动的语态，所以需要用 <code>be + V-ed</code> 的形态；但不涉及到「正在发生」的含义</li>
+</ul>
+<p>因此，我们需要用 <code>will</code> 来表示将来时态，用 <code>be</code> 动词的原型，同时接上 <code>raze</code> 的过去分词 <code>razed</code>。这是传统语法的「一般将来式被动语态」。</p>
+
+    
+  </div>
+  <footer>
+    
+      <div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1406015473860">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+      </div>
+      <!--
+      <div class="tags">
+        <span id="container_page_counter">
+        您是本文第 <span id="value_page_counter"></span> 位读者
+        </span>
+      </div>
+      -->
+      
+  
+  <div class="categories">
+    <a href="/categories/Literature and Social Sciences/">Literature and Social Sciences</a>
+  </div>
+
+      
+  
+  <div class="tags">
+    <a href="/tags/English/">English</a>, <a href="/tags/Grammer/">Grammer</a>, <a href="/tags/Verb/">Verb</a>, <a href="/tags/Tense/">Tense</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<!-- wumii Button BEGIN -->
+<div style="margin:0px auto; padding-left:23px; text-align:center;">
+	
+	
+
+	<script type="text/javascript" id="wumiiRelatedItems"></script>
+	<script type="text/javascript">
+		var wumiiPermaLink  = "http://liam0205.me/2015/05/03/tense-of-verb/"; //请用代码生成文章永久的链接
+		var wumiiTitle      = "英语语法之三：动词时态"; //请用代码生成文章标题
+		var wumiiTags       = "English, Grammer, Verb, Tense"; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
+		var wumiiCategories = ["Literature and Social Sciences"]; //请用代码生成文章分类，分类名放在 JSONArray 中，如: ["分类1", "分类2"]
+		var wumiiSitePrefix = "http://liam0205.me/";
+		var wumiiParams     = "&num=5&mode=3&pf=JAVASCRIPT";
+	</script>
+	<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+	<!--
+	<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+	    <img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
+	</a>
+	-->
+</div>
+<!-- wumii Button END -->
+
+<!-- UJian Button BEGIN -->
+<!-- 	<div class="ujian-hook" style="padding-left: 17px;"></div>
+	<script type="text/javascript">var ujian_config = {num:6,picSize:83,textHeight:45};</script>
+	<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1893018"></script>-->
+<!-- UJian Button END -->
+
+<!-- baidu tuijian BEGIN -->
+<!-- <div id="hm_t_22763"></div> -->
+<!-- baidu tuijian BEGIN -->
+<!--	<div style="padding-left: 17px;"> -->
+<!--		<script src="http://wm.lrswl.com/page/s.php?s=103186&w=640&h=60"></script> -->
+<!--	</div> -->
+
+
+
+
+<section id="comment">
+  <script>
+    var duoshuoQuery = {short_name:"cnliam"};
+  </script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <script type="text/javascript">
+    function toggleDuoshuoComments(container, id, url){
+      if(jQuery(container).has("div").length>0){
+        jQuery(container).empty();
+        return;
+      }
+      var el = document.createElement('div');
+      el.setAttribute('class', "ds-thread");//实验参数
+      el.setAttribute('data-thread-key', id);//必选参数
+      el.setAttribute('data-url', url);//必选参数
+      el.setAttribute('data-title', id);//可选参数
+      DUOSHUO.EmbedThread(el);
+      jQuery(container).append(el);
+    }
+  </script>
+  <h1 class="title">
+    <a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '英语语法之三：动词时态', 'http://liam0205.me/2015/05/03/tense-of-verb/');">查看评论</a>
+  </h1>
+  <div id="comment-box">
+    <!-- <div class="ds-thread" data-title="英语语法之三：动词时态"></div> -->
+  </div>
+</section>
+
+
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/GRE/">GRE</a><small>4</small></li>
+  
+    <li><a href="/categories/IT/">IT</a><small>15</small></li>
+  
+    <li><a href="/categories/LaTeX/">LaTeX</a><small>46</small></li>
+  
+    <li><a href="/categories/Life/">Life</a><small>3</small></li>
+  
+    <li><a href="/categories/Literature and Social Sciences/">Literature and Social Sciences</a><small>8</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+  <!--
+  <a href="/tags/3000/" style="font-size: 10.00px;">3000</a><a href="/tags/AHD/" style="font-size: 10.00px;">AHD</a><a href="/tags/AMS/" style="font-size: 10.00px;">AMS</a><a href="/tags/AW/" style="font-size: 15.00px;">AW</a><a href="/tags/Apple Dictionaries/" style="font-size: 10.00px;">Apple Dictionaries</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Bitmap/" style="font-size: 10.00px;">Bitmap</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blindness/" style="font-size: 10.00px;">Blindness</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Book review/" style="font-size: 10.00px;">Book review</a><a href="/tags/Bookmarks/" style="font-size: 10.00px;">Bookmarks</a><a href="/tags/CCT/" style="font-size: 10.00px;">CCT</a><a href="/tags/CJK/" style="font-size: 15.00px;">CJK</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 15.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 15.00px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 15.00px;">Christianity</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Compile/" style="font-size: 10.00px;">Compile</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/EPS/" style="font-size: 10.00px;">EPS</a><a href="/tags/Encoding/" style="font-size: 10.00px;">Encoding</a><a href="/tags/English/" style="font-size: 20.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Environment/" style="font-size: 10.00px;">Environment</a><a href="/tags/Equation number/" style="font-size: 10.00px;">Equation number</a><a href="/tags/Error Codes/" style="font-size: 10.00px;">Error Codes</a>
+  -->
+  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/CJK/" style="font-size: 12.50px;">CJK</a><a href="/tags/Chapter/" style="font-size: 12.50px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 12.50px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 12.50px;">Christianity</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Europe/" style="font-size: 15.00px;">Europe</a><a href="/tags/Git/" style="font-size: 12.50px;">Git</a><a href="/tags/Grammar/" style="font-size: 12.50px;">Grammar</a><a href="/tags/Greece/" style="font-size: 12.50px;">Greece</a><a href="/tags/Hexo/" style="font-size: 12.50px;">Hexo</a><a href="/tags/Highlight/" style="font-size: 12.50px;">Highlight</a><a href="/tags/History/" style="font-size: 15.00px;">History</a><a href="/tags/Images/" style="font-size: 12.50px;">Images</a><a href="/tags/Kindle/" style="font-size: 15.00px;">Kindle</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Listings/" style="font-size: 12.50px;">Listings</a><a href="/tags/MacTeX/" style="font-size: 12.50px;">MacTeX</a><a href="/tags/Macro/" style="font-size: 12.50px;">Macro</a><a href="/tags/Number/" style="font-size: 10.00px;">Number</a><a href="/tags/PDF/" style="font-size: 12.50px;">PDF</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Roman/" style="font-size: 10.00px;">Roman</a><a href="/tags/Romantic/" style="font-size: 12.50px;">Romantic</a><a href="/tags/Rule/" style="font-size: 10.00px;">Rule</a><a href="/tags/SDU/" style="font-size: 10.00px;">SDU</a><a href="/tags/Section/" style="font-size: 12.50px;">Section</a><a href="/tags/THM-RESTATE/" style="font-size: 10.00px;">THM-RESTATE</a><a href="/tags/Tecall/" style="font-size: 10.00px;">Tecall</a><a href="/tags/Template/" style="font-size: 17.50px;">Template</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 12.50px;">Tutorial</a><a href="/tags/pTeX/" style="font-size: 15.00px;">pTeX</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget recent-posts">
+  <h3 class="title">最近文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2015/05/03/tense-of-verb/">英语语法之三：动词时态</a>
+      </li>
+    
+      <li>
+        <a href="/2015/05/01/open-editor-after-hexo-new-immediately/">在 hexo new 之后立即打开新建的 Markdown 文稿</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/30/using-font-fallback-to-enhance-the-appreance-on-windows/">使用合适的字体回退机制（Fallback）改善网页在 Windows 平台的字体显示效果</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/29/git-checkout-history-version/">在 Git 中 Checkout 历史版本</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/24/apple-dictionaries-download/">Apple 词典·再要你命 3000 | 美国传统大辞典 | Merriam Webster Collegiate Dict</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/22/pil-tutorial-basic-usage/">PIL 简明教程 - 基本用法</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/22/cancle-clearpage-in-chapter/">避免 \chapter 命令分页</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2013 -- 2015 <a href="/">Liam Huang</a>
+  <!-- 不蒜计数器 -->
+  <span id="busuanzi_container_site_pv">
+    | 您是本站第 <span id="busuanzi_value_site_pv" font style="color:white"></span> 位访问者
+  </span>
+  
+</div>
+<div class="contents-copyright">
+  若无特殊说明，本站所有文章均为原创文章，并遵循 <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.zh_TW" target="_blank">CC BY-SA 3.0 协议</a> 发布
+</div>
+<!--
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   |
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a> and <a href="http://liam0205.me/" target="_blank">Liam Huang</a>
+</div>
+-->
+<div class="clearfix"></div>
+<script src="//dn-lbstatics.qbox.me/lbservice/busuanzi/2.0/busuanzi.mini.js"/>
+</script>
+</footer>
+  <script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","tqq","renren","fbook","twi","weixin","douban","copy"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'cnliam' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+</body>
+</html>
