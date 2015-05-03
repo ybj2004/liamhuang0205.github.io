@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-05-03T11:25:02.004Z</updated>
+  <updated>2015-05-03T12:07:30.855Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://liam0205.me/2015/05/03/tense-of-verb/"/>
     <id>http://liam0205.me/2015/05/03/tense-of-verb/</id>
     <published>2015-05-03T10:06:39.000Z</published>
-    <updated>2015-05-03T11:24:21.000Z</updated>
+    <updated>2015-05-03T12:07:21.000Z</updated>
     <content type="html"><![CDATA[<p>这个系列的 <a href="http://liam0205.me/2014/06/22/noun-phrase-and-articles/">上一篇文章</a> 已经快一年了。我真是懒啊……</p>
 <p>中文的谓语动词不在时间、状态、语态上作区分。在中文中，这些功能由其它副词提供。在英文中，动词的形态需要根据时间、状态、语态发生改变。对于中国人来说，这样的变化确实有些不自然；选错时态也是中国人讲英文时经常犯的错误。</p>
 <p>在这里，语态和说话人的态度相关，比较容易感受。同时，语态反应在动词形态上的变化也相对简单，只需要加上合适的 <code>be</code> 动词，配上动词的过去分词即可。时态和动作发生的时间相关，也相对直观。因此，如果我们能对状态做一些简化，从状态出发去讨论时态，则问题会简单得多。</p>
@@ -57,7 +57,7 @@
 <li>这个时间段不包括现在这个时间点，且位于现在之前，所以应该用过去时态</li>
 <li>这里不涉及到被动的语态，也不涉及到「持续」或者「正在发生」的含义，所以不需要额外的 <code>be</code> 动词</li>
 </ul>
-<p>因此，动词 <code>establish</code> 应该用 <code>established</code>。这是传统语法的「一般过去式」。</p>
+<p>因此，动词 <code>establish</code> 应该用过去式 <code>established</code>。这是传统语法的「一般过去式」。</p>
 <blockquote>
 <p>The movable print <em>was</em> introduced to England <em>in 1485</em>.</p>
 </blockquote>
@@ -169,6 +169,104 @@
 <li>这里涉及到被动的语态，所以需要用 <code>be + V-ed</code> 的形态；但不涉及到「正在发生」的含义</li>
 </ul>
 <p>因此，我们需要用 <code>will</code> 来表示将来时态，用 <code>be</code> 动词的原型，同时接上 <code>raze</code> 的过去分词 <code>razed</code>。这是传统语法的「一般将来式被动语态」。</p>
+<h2 id=" 完成式 ">完成式</h2>
+<p>完成式也有几个重要的特征：</p>
+<ul>
+<li><strong>完成式的动作，其发生的时间有一个明确的截止时间点，表示「在这之前」或者「至此为止」</strong></li>
+<li><strong>如果这个时间点</strong><ul>
+<li>是「现在」这个时间点，那么用现在时态</li>
+<li>是「过去」的某个时间点，那么用过去时态</li>
+<li>是「现在」的某个时间点，那么用将来时态</li>
+</ul>
+</li>
+</ul>
+<p>第一个特征，给了我们明确的信息来确定我们是否应该使用完成式（而不是简单式）。第二个特征，则为我们选择时态提供了依据。</p>
+<h3 id=" 现在时态 -1">现在时态</h3>
+<blockquote>
+<p>I’m sure that I <em>have seen</em> this face somewhere.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间不是一个特定的时间段，但有明确的截止时间点，所以应该用完成式</li>
+<li>截止时间点是「现在」，所以应该用现在时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「持续」或者「正在发生」的含义，所以不需要额外的 <code>be</code> 动词</li>
+</ul>
+<p>因此，我们需要用 <code>have</code> 来表示完成时态，接上 <code>see</code> 的过去分词 <code>seen</code>。这是传统语法的「现在完成式」。</p>
+<blockquote>
+<p>We <em>have been</em> working overtime <em>for a week</em> to fill your order.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间不是一个特定的时间段，但有明确的截止时间点（<em>至今已有一周</em>），所以应该用完成式</li>
+<li>截止时间点是「现在」，所以应该用现在时态</li>
+<li>这里不涉及到被动的语态，但涉及到「持续」的含义，所以需要用 <code>be + V-ing</code> 的形式</li>
+</ul>
+<p>因此，我们需要用 <code>have</code> 来表示完成时态，接上 <code>be</code> 的过去分词 <code>been</code>，再加上 <code>work</code> 的现在分词 <code>working</code>。这是传统语法的「现在完成进行式」。</p>
+<blockquote>
+<p>The house <em>has been</em> redecorated twice since they moved in.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间不是一个特定的时间段，但有明确的截止时间点（<em>从他们搬入<strong>到现在为止</strong></em>），所以应该用完成式</li>
+<li>截止时间点是「现在」，所以应该用现在时态</li>
+<li>这里涉及到被动的语态，所以需要用 <code>be + V-ed</code> 的形式；但不涉及到「持续」的含义</li>
+</ul>
+<p>因此，我们需要用 <code>have</code> 的单三形式 <code>has</code> 来表示完成时态，接上 <code>be</code> 的过去分词 <code>been</code>，在加上 <code>redecorate</code> 的过去分词 <code>redecorated</code>。这是传统语法的「现在完成式被动语态」。</p>
+<h3 id=" 过去时态 -1">过去时态</h3>
+<p>一般来说，没有特别说明之时，说「在这之前」就是「在现在这个时间点之前」，所以需要用现在完成式。如果要用过去完成式，则需要有一个明确的过去时间截止点。</p>
+<blockquote>
+<p>Many soldiers <em>had died</em> from pneumonia <em>before the discovery of Penicilin</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间不是一个特定的时间段，但有明确的截止时间点（<em>青霉素被发现之前</em>），所以应该用完成式</li>
+<li>截止时间点是「过去」，所以应该用过去时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「持续」或「正在发生」的含义，所以不需要用额外的 <code>be</code> 动词</li>
+</ul>
+<p>因此，我们需要用 <code>have</code> 的过去式 <code>had</code> 表示过去完成式，接上 <code>die</code> 的过去分词 <code>died</code> 表示实际的动作。这是传统语法的「过去完成式」。</p>
+<blockquote>
+<p>I <em>had been</em> smoking three packs of cigarettes a day <em>before I decided to quit</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间不是一个特定的时间段，但有明确的截止时间点（<em>我决定戒烟之前</em>），所以应该用完成式</li>
+<li>截止时间点是「过去」，所以应该用过去时态</li>
+<li>这里不涉及到被动的语态，但涉及到「持续」的含义，所以需要用 <code>be + V-ing</code> 的形式</li>
+</ul>
+<p>因此，我们需要用 <code>have</code> 的过去式 <code>had</code> 表示过去完成式，接上 <code>be</code> 的过去分词 <code>been</code> 表示进行状态，最后加上 <code>smoke</code> 的现在分词 <code>smoking</code> 来表示实际的动作。这是传统语法的「过去完成进行式」。</p>
+<blockquote>
+<p>In the World War II, Japan <em>had not been</em> defeated yet <em>by the time Germany surrendered unconditionally</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间不是一个特定的时间段，但有明确的截止时间点（<em>德国无条件投降之前</em>），所以应该用完成式</li>
+<li>截止时间点是「过去」，所以应该用过去时态</li>
+<li>这里涉及到被动的语态，所以需要用 <code>be + V-ed</code> 的形式；但不涉及到「持续」或「正在发生」的含义</li>
+</ul>
+<p>因此，我们需要用 <code>have</code> 的过去式 <code>had</code> 表示过去完成式，接上 <code>be</code> 的过去分词 <code>been</code> 表示被动，最后加上 <code>defeat</code> 的现在分词 <code>defeated</code> 来表示实际的动作。这是传统语法的「过去完成式被动语态」。</p>
+<h3 id=" 将来时态 ">将来时态</h3>
+<p>和完成式的过去时态一样，将来时态中的完成式需要一个位于将来的时间截止点。</p>
+<blockquote>
+<p>Next April, I <em>will have worked</em> here for 2 years.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间不是一个特定的时间段，但有明确的截止时间点（<em>到下个四月为止</em>），所以应该用完成式</li>
+<li>截止时间点是「将来」，所以应该用将来时态</li>
+<li>这里不涉及到被动的语态，也不涉及到「持续」或「正在发生」的含义，所以不需要用额外的 <code>be</code> 动词</li>
+</ul>
+<p>因此，我们需要用 <code>will have</code> 表示将来完成式，接上 <code>work</code> 的过去分词 <code>worked</code> 表示实际的动作。这是传统语法的「将来完成式」。</p>
+<blockquote>
+<p>Come back at 17:00. Your car <em>will have been</em> fixed <em>by then</em>.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间不是一个特定的时间段，但有明确的截止时间点（<em>下午五点之前</em>），所以应该用完成式</li>
+<li>截止时间点是「将来」，所以应该用将来时态</li>
+<li>这里涉及到被动的语态，所以需要用 <code>be + V-ed</code> 的形式；但不涉及到「持续」或「正在发生」的含义</li>
+</ul>
+<p>因此，我们需要用 <code>will have</code> 表示将来完成式，接上 <code>be</code> 的过去分词 <code>been</code> 表示被动，再加上 <code>fix</code> 的过去分词 <code>fixed</code> 表示实际的动作。这是传统语法的「将来完成式被动语态」。</p>
+<blockquote>
+<p><em>In another two more minutes</em>, she <em>will have been</em> talking on the phone for three hours.</p>
+</blockquote>
+<ul>
+<li>动作发生的时间不是一个特定的时间段，但有明确的截止时间点（<em>到两分钟之后</em>），所以应该用完成式</li>
+<li>截止时间点是「将来」，所以应该用将来时态</li>
+<li>这里不涉及到被动的语态，但不涉及到「持续」的含义，所以需要用 <code>be + V-ing</code> 的形式</li>
+</ul>
+<p>因此，我们需要用 <code>will have</code> 表示将来完成式，接上 <code>be</code> 的过去分词 <code>been</code> 表示进行，再加上 <code>talk</code> 的现在分词 <code>talking</code> 表示实际的动作。这是传统语法的「将来完成进行式」。</p>
 ]]></content>
     <summary type="html"><![CDATA[<p>这个系列的 <a href="http://liam0205.me/2014/06/22/noun-phrase-and-articles/">上一篇文章</a> 已经快一年了。我真是懒啊……</p>
 <p>中文的谓语动词不在时间、状态、语态上作区分。在中文中，这些功能由其它副词提供。在英文中，动词的形态需要根据时间、状态、语态发生改变。对于中国人来说，这样的变化确实有些不自然；选错时态也是中国人讲英文时经常犯的错误。</p>
