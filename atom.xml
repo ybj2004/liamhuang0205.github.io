@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-05-03T12:27:55.553Z</updated>
+  <updated>2015-05-04T04:07:47.677Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://liam0205.me/2015/05/03/tense-of-verb/"/>
     <id>http://liam0205.me/2015/05/03/tense-of-verb/</id>
     <published>2015-05-03T10:06:39.000Z</published>
-    <updated>2015-05-03T12:27:42.000Z</updated>
+    <updated>2015-05-04T04:07:34.000Z</updated>
     <content type="html"><![CDATA[<p>这个系列的 <a href="http://liam0205.me/2014/06/22/noun-phrase-and-articles/">上一篇文章</a> 已经快一年了。我真是懒啊……</p>
 <p>中文的谓语动词不在时间、状态、语态上作区分。在中文中，这些功能由其它副词提供。在英文中，动词的形态需要根据时间、状态、语态发生改变。对于中国人来说，这样的变化确实有些不自然；选错时态也是中国人讲英文时经常犯的错误。</p>
 <p>在这里，语态和说话人的态度相关，比较容易感受。同时，语态反应在动词形态上的变化也相对简单，只需要加上合适的 <code>be</code> 动词，配上动词的过去分词即可。时态和动作发生的时间相关，也相对直观。因此，如果我们能对状态做一些简化，从状态出发去讨论时态，则问题会简单得多。</p>
@@ -176,7 +176,7 @@
 <li><strong>如果这个时间点</strong><ul>
 <li>是「现在」这个时间点，那么用现在时态</li>
 <li>是「过去」的某个时间点，那么用过去时态</li>
-<li>是「现在」的某个时间点，那么用将来时态</li>
+<li>是「将来」的某个时间点，那么用将来时态</li>
 </ul>
 </li>
 </ul>
