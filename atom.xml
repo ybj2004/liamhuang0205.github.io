@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-05-04T04:07:47.677Z</updated>
+  <updated>2015-05-05T13:27:15.954Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,222 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[PIL 简明教程 - 在现有的图片上涂涂改改]]></title>
+    <link href="http://liam0205.me/2015/05/05/pil-tutorial-imagedraw-and-imagefont/"/>
+    <id>http://liam0205.me/2015/05/05/pil-tutorial-imagedraw-and-imagefont/</id>
+    <published>2015-05-04T16:15:06.000Z</published>
+    <updated>2015-05-05T13:25:42.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/">上一篇文章</a> 介绍了 PIL 的基本情况，以及 <code>Image</code> 模块的基本用法。这篇文章，我们讨论一下 <code>ImageDraw</code> 和 <code>ImageFont</code> 两个模块的基本用法，说说如何用 PIL 在现有的图片上涂涂改改。</p>
+<a id="more"></a>
+
+<h2 id="ImageDraw_ 模块 "><code>ImageDraw</code> 模块</h2>
+<p><code>ImageDraw</code> 模块提供了 <code>Draw</code> 类，它能在 <code>Image</code> 实例上进行简单的 2D 绘图。当然复杂的绘图动作是由简单的动作合成而得的，理论上这些动作 <code>ImageDraw</code> 模块也能做，只是相对复杂。如果你想在 <code>Image</code> 实例上做复杂的绘图动作，最好是自行对 <code>ImageDraw</code> 模块提供的各种方法做一些封装。</p>
+<h3 id=" 创建一个 _Draw_ 类的实例 ">创建一个 <code>Draw</code> 类的实例</h3>
+<p>要在 <code>Image</code> 实例上绘制新的图样，首先要做的就是创建一个 <code>Draw</code> 类的实例。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="keyword">import</span> Image, ImageDraw
+sourceFileName = <span class="string">"source.png"</span>
+avatar         = Image.open(sourceFileName)
+drawAvatar     = ImageDraw.Draw(avatar)
+</pre></td></tr></table></figure>
+
+
+
+<p>代码前三行我们已经见过，唯一的差别在于 <code>import</code> 之后除了我们已经见过的 <code>Image</code> 模块，还有今次我们要使用的 <code>ImageDraw</code> 模块。</p>
+<h3 id=" 从画两条平行线开始 ">从画两条平行线开始</h3>
+<p><code>Draw</code> 类提供了 <code>line(xy, options)</code> 方法绘制直线。</p>
+<p>其中 <code>xy</code> 表示坐标列表，其形式可以是</p>
+<ul>
+<li><code>[(x1, y1), (x2, y2), ...]</code> - 包含若干个元组的列表</li>
+<li><code>[x1, y1, x2, y2, ...]</code> - 按照顺序包含坐标信息的列表</li>
+<li><code>[x1, y1, (x2, y2), ...]</code> - 以上两种情况的混合</li>
+<li><code>((x1, y1), (x2, y2), ...)</code> - 包含若干个元组的元组</li>
+<li><code>(x1, y1, x2, y2, ...)</code> - 按照顺序包含坐标信息的元组</li>
+<li><code>(x1, y1, (x2, y2), ...)</code> - 以上两种情况的混合</li>
+</ul>
+<p><code>options</code> 中可用的选项有</p>
+<ul>
+<li><code>fill = (R, G, B)</code> - 用于指定线条的颜色，其中 <code>R</code>、<code>G</code>、<code>B</code> 都是 0 — 255 的整数</li>
+<li><code>width = integer</code> - 用于指定线条的宽度，单位是像素</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="keyword">import</span> Image, ImageDraw
+sourceFileName = <span class="string">"source.png"</span>
+avatar         = Image.open(sourceFileName)
+drawAvatar     = ImageDraw.Draw(avatar)
+
+xSize, ySize = avatar.size
+
+drawAvatar.line([<span class="number">0</span>, <span class="number">0.33</span> * ySize, xSize, <span class="number">0.33</span> * ySize],\
+    fill = (<span class="number">255</span>, <span class="number">100</span>, <span class="number">0</span>), width = <span class="number">3</span>)
+drawAvatar.line([<span class="number">0</span>, <span class="number">0.67</span> * ySize, xSize, <span class="number">0.67</span> * ySize],\
+    fill = (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), width = <span class="number">3</span>)
+<span class="keyword">del</span> drawAvatar
+
+avatar.show()
+</pre></td></tr></table></figure>
+
+
+
+<p>这里我们在图片的两个三等分位置分别画了一条宽度为 3 像素的平行线。一条颜色为 (255, 100, 0)，另一条则是 (255, 0, 0)。</p>
+<p>值得注意的是代码的第 14 行，我们直接用 <code>avatar.show()</code> 来展现绘图的结果。可见<strong><code>Draw</code> 类的实例将直接在 <code>Image</code> 实例上进行操作</strong>。</p>
+<p><img src="/attachment/images/Python/pil-tutorial/draw-line.png" alt="line 方法效果示例 "></p>
+<h3 id=" 画一段弧 ">画一段弧</h3>
+<p><code>Draw</code> 类也提供了 <code>arc(xy, start, end, options)</code> 方法来绘制弧。</p>
+<p>这里的 <code>xy</code> 是一个长度为 4 的列表，用来表示一个 bounding box（参考上一篇文章）。<code>start</code> 和 <code>end</code> 则是弧的起止角度，单位是 °。其中水平向右的方向为 0°，竖直向下的方向为 90°，水平向左的方向为 180°，竖直向上的方向为 270°。</p>
+<p><code>options</code> 中可用的选项有</p>
+<ul>
+<li><code>fill = (R, G, B)</code> - 用于指定线条的颜色，其中 <code>R</code>、<code>G</code>、<code>B</code> 都是 0 — 255 的整数</li>
+</ul>
+<p><code>arc</code> 方法将在内切于 bounding box 的椭圆中，按照给定的起止角度切下一段弧，并绘制于 <code>Image</code> 示例之上。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="keyword">import</span> Image, ImageDraw
+sourceFileName = <span class="string">"source.png"</span>
+avatar         = Image.open(sourceFileName)
+drawAvatar     = ImageDraw.Draw(avatar)
+
+xSize, ySize = avatar.size
+
+drawAvatar.arc([<span class="number">0</span>, <span class="number">0</span>, xSize, ySize], <span class="number">0</span>, <span class="number">90</span>,\
+    fill = (<span class="number">255</span>, <span class="number">100</span>, <span class="number">255</span>))
+<span class="keyword">del</span> drawAvatar
+
+avatar.show()
+</pre></td></tr></table></figure>
+
+
+
+<p><img src="/attachment/images/Python/pil-tutorial/draw-arc.png" alt="arc 方法效果示例 "></p>
+<h3 id=" 在图片上写字 ">在图片上写字</h3>
+<p><code>Draw</code> 类提供了 <code>text(position, string, options)</code> 方法，该方法可以在 <code>Image</code> 实例上写字。</p>
+<p>需要说明的是，<code>position</code> 指定的是文本左上角的顶点，而不是文本中心。这里可用的 <code>options</code> 有</p>
+<ul>
+<li><code>font = ImageFont instance</code> - 指定字体，接受一个 <code>ImageFont</code> 的实例</li>
+<li><code>fill = (R, G, B)</code> - 用于指定线条的颜色，其中 <code>R</code>、<code>G</code>、<code>B</code> 都是 0 — 255 的整数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="keyword">import</span> Image, ImageDraw
+sourceFileName = <span class="string">"source.png"</span>
+avatar         = Image.open(sourceFileName)
+drawAvatar     = ImageDraw.Draw(avatar)
+
+xSize, ySize = avatar.size
+
+drawAvatar.text([<span class="number">0.9</span> * xSize, <span class="number">0.1</span> * ySize - drawAvatar.textsize(<span class="string">"3"</span>)[<span class="number">1</span>]],\
+    <span class="string">"3"</span>, fill = (<span class="number">128</span>, <span class="number">0</span>, <span class="number">128</span>))
+<span class="keyword">del</span> drawAvatar
+
+avatar.show()
+</pre></td></tr></table></figure>
+
+
+
+<p><img src="/attachment/images/Python/pil-tutorial/draw-text.png" alt="text 方法效果示例 "></p>
+<p>由于没有用 <code>font</code> 选项指定字体，这里使用了 <code>ImageDraw</code> 的默认字体。不难发现，相对图片，字体太小了。为了调整字体，我们需要借助 <code>ImageFont</code> 模块。</p>
+<h2 id="ImageFont_ 模块 "><code>ImageFont</code> 模块</h2>
+<p><code>ImageFont</code> 模块很简单，它定义了一个同名的类。<code>ImageFont</code> 类的实例可以传给 <code>ImageDraw</code> 中 <code>text</code> 方法的 <code>font</code> 的参数，起到字体选择的作用。</p>
+<p><code>ImageFont</code> 模块中的 <code>load</code> 函数可以加载一个 Image 格式的字体，并返回 <code>ImageFont</code> 实例；其中的 <code>truetype(fontfile, fontsize)</code> 函数则可以加载 TrueType 或 OpenType 格式的字体，并返回 <code>ImageFont</code> 参数。不过 <code>truetype</code> 函数需要额外安装 <code>_imagingft</code> 模块。</p>
+<p>在 Mac 下的安装配置为：</p>
+<pre><code><span class="built_in">sudo</span> chown -R <span class="variable">$USER</span>:admin /usr/local
+brew install libtiff libjpeg libpng webp little-cms2 freetype
+<span class="built_in">sudo</span> pip uninstall pil
+<span class="built_in">sudo</span> pip install Pillow
+</code></pre><p>这里我们用 <code>Pillow</code> 库替换了 <code>PIL</code> 库。这两个库本质是一样的，但是 <code>Pillow</code> 库提供了更多的功能和更简单的配置。</p>
+<p>配置好之后，我们可以对上一节末尾的代码稍作修改：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw, ImageFont
+
+sourceFileName = <span class="string">"source.png"</span>
+avatar         = Image.open(sourceFileName)
+drawAvatar     = ImageDraw.Draw(avatar)
+
+xSize, ySize = avatar.size
+fontSize     = min(xSize, ySize) // <span class="number">11</span>
+
+myFont       = ImageFont.truetype(<span class="string">"/Library/Fonts/OsakaMono.ttf"</span>, fontSize)
+
+drawAvatar.text([<span class="number">0.9</span> * xSize, <span class="number">0.1</span> * ySize - fontSize],\
+    <span class="string">"3"</span>, fill = (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), font = myFont)
+<span class="keyword">del</span> drawAvatar
+
+avatar.show()
+</pre></td></tr></table></figure>
+
+
+
+<p>这里我们引入了 <code>ImageFont</code> 模块，并且创建了 <code>myFont</code> 实例。创建实例的时候，传入的字体尺寸由图片大小决定。最后在图片上写字的位置也与字体大小有关。</p>
+<p>这样以来，我们就在图片的右上角写了一个红色的数字，就好像微信未读消息提示的那种效果。</p>
+<p><img src="/attachment/images/Python/pil-tutorial/draw-text-font.png" alt=" 引入 font 选项的 text 方法效果示例 "></p>
+]]></content>
+    <summary type="html"><![CDATA[<p><a href="http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/">上一篇文章</a> 介绍了 PIL 的基本情况，以及 <code>Image</code> 模块的基本用法。这篇文章，我们讨论一下 <code>ImageDraw</code> 和 <code>ImageFont</code> 两个模块的基本用法，说说如何用 PIL 在现有的图片上涂涂改改。</p>
+]]></summary>
+    
+      <category term="Python" scheme="http://liam0205.me/tags/Python/"/>
+    
+      <category term="PIL" scheme="http://liam0205.me/tags/PIL/"/>
+    
+      <category term="ImageDraw" scheme="http://liam0205.me/tags/ImageDraw/"/>
+    
+      <category term="ImageFont" scheme="http://liam0205.me/tags/ImageFont/"/>
+    
+      <category term="IT" scheme="http://liam0205.me/categories/IT/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[英语语法之三：动词时态]]></title>
@@ -2535,78 +2751,6 @@ a4 d2 a4 e9 a4 ac a4 ca
       <category term="pTeX" scheme="http://liam0205.me/tags/pTeX/"/>
     
       <category term="Encoding" scheme="http://liam0205.me/tags/Encoding/"/>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[日文 LaTeX 系统介绍 - 简介]]></title>
-    <link href="http://liam0205.me/2014/12/07/ptex-intro-and-tutorial-01/"/>
-    <id>http://liam0205.me/2014/12/07/ptex-intro-and-tutorial-01/</id>
-    <published>2014-12-07T12:29:35.000Z</published>
-    <updated>2014-12-07T14:29:59.000Z</updated>
-    <content type="html"><![CDATA[<blockquote>
-<p>本文为译文，原文载于<a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-1-introduction/" target="_blank">这里</a>。尽请关注本系列的文章。</p>
-</blockquote>
-<p>对于日本人来说，在 LaTeX 里面写日文很简单。但是由于文档的缺乏，外国人（相对日本）想要这样做就不容易了。更何况日语里面会混合罗马字母、假名、汉字。</p>
-<p>这里我想总结一下我自己写日文 LaTeX 文档的经验。这些经验一方面来自我自己的实践，另一方面来自我的日本朋友的各种帮助。系列文章的第一部分简介了日文排版的一些情况，特别是关于 TeX 的介绍。在这里，我会对用于排版日文的 TeX 引擎和宏包做一个简单的比较。</p>
-<a id="more"></a>
-
-<h2 id=" 日文书写系统 ">日文书写系统</h2>
-<p>日文中至少有四种书写系统：</p>
-<ul>
-<li>罗马字母</li>
-<li>平假名：平假名共有 45 个，一般来说用于连接汉字。</li>
-<li>片假名：片假名和平假名一一对应，一般用来音译外文。</li>
-<li>日文汉字：来自中文的表意文字，书面语里有很多汉字。</li>
-</ul>
-<p>通常来说，日文文章里这四种书写系统会混杂在一起。下面的截图来自日文<a href="http://ja.wikipedia.org/wiki/ メインページ " target="_blank">维基百科</a>的「<a href="http://ja.wikipedia.org/wiki/ 日本 " target="_blank">日本</a>」词条。</p>
-<p><img src="/images/pTeX-intro/Japanese-Text-Example.png" alt=" 截图：日文维基百科的「日本」词条 "></p>
-<p>日文书写系统的的规则繁复。Haruhiko Okumura (奥村 晴彦) 先生对此有过一个不错的<a href="http://ajt.ktug.org/2008/0201okumura.pdf" target="_blank">介绍</a>；如果你想了解详细的规则，可以看<a href="http://www.w3.org/TR/jlreq/" target="_blank">这里</a>。TeX 本身并没有支持这些规则，于是 1987 年 NTT 的 Yasuki Saito (斉藤 康己) 先生编写了 NTT jTeX 这个引擎；1990 年，<a href="http://asciimw.jp/" target="_blank">ASCII 公司</a> 的 Shunji Ohno (大野 俊治) 先生和 Ryoichi Kurasawa (倉沢 良一) 先生修改了 NTT jTeX，增加了出版业所必须的竖排功能，命名为 pTeX (publishing TeX)。对此，Okumura 先生的文章里有详细的叙述。</p>
-<h2 id=" 日文排版 ">日文排版</h2>
-<p>日本自己开发了 pTeX，但这些年也有其他的一些 TeX 引擎可以用来排版日文。据我所知，有以下一些。</p>
-<ul>
-<li>e(p)(la)tex: 从原始的 pTeX 而来，增加了 e-TeX 的补丁以适应现代 LaTeX 的需要</li>
-<li>up(la)tex: 同样从原始的 pTeX 发展而来，增加了 e-TeX 的补丁并增加了 UTF-8 编码支持</li>
-<li>xe(la)tex: 另一个系统，同样支持 UTF-8 编码以及其他一些先进的技术</li>
-<li>pdf(la)tex with CJK package: 支持中日韩文字，但已过时</li>
-<li>pdf(la)tex with bxcjkjatype package: 一个易用的新宏包，有一些功能上的限制</li>
-<li>lua(la)tex with luatex-ja package: 最新的日文支持方式，提供了不少优秀的特性</li>
-</ul>
-<h2 id=" 需求 ">需求</h2>
-<p>在 LaTeX 里书写日文有以下需求。</p>
-<ul>
-<li>e-TeX 原语：e-TeX 是原始 TeX 的扩展，后逐渐成为主流，现在它的原语成为 LaTeX 强制要求的一部分</li>
-<li>日文排版禁则：如前所述</li>
-<li>竖排：许多非技术文本都会用到竖排</li>
-<li>UTF-8 支持：pTeX 使用的编码不大好，有不少问题，现代计算机大都使用 UTF-8 编码</li>
-<li>能够使用商业字体：在文章里能够自由切换字体</li>
-<li>插图支持</li>
-</ul>
-<p>在这里，pTeX 不支持 e-TeX、UTF-8 编码，插图功能孱弱；e-pTeX 完善了 e-TeX 支持，但仍不支持 UTF-8 编码且插图功能依旧孱弱；upTeX 又克服了 UTF-8 编码支持的问题；XeTeX 对竖排的支持能力有限；pdfTeX + CJK 对日文禁则处理不好，也不支持竖排；pdfTeX + bxcjkjatype 对日文禁则处理不好，不支持竖排，也无法比较好地处理商业字体；LuaTeX + LuaTeX-ja 对竖排的支持不甚良好。</p>
-<h2 id="（至今为止的）结论 ">（至今为止的）结论</h2>
-<p>最近我都在使用 LuaTeX-ja，以下是<strong>我</strong>对此的一些总结。</p>
-<ul>
-<li>(u)ptex: 如果你想要竖排功能，这是唯一的选择；此外，由于 pTeX 系源自日本，它对日文排版禁则的支持最好</li>
-<li>xe(la)tex: 目前功能相对完善的宏包是 <code>xeCJK</code>，但其实只是对中文支持良好；日本有同好对此做了扩展，效果一般</li>
-<li>pdf(la)tex + CJK: 过时了，不推荐</li>
-<li>pdf(la)tex + bxcjkjatype: 很好用，但是有一个很重要缺点：所有非 ASCII 字符都被当做汉字对待</li>
-<li>luatexja: 最打动我的宏包，强烈推荐。</li>
-</ul>
-<p>下一篇文章里我会介绍一下各种方式底下的最简日文示例。</p>
-<p>谢谢！</p>
-<h2 id=" 译者续 ">译者续</h2>
-<p>马起园 (Clerk Ma) 的 pTeX-ng 是下一代的 pTeX。pTeX-ng 从 Y&amp;Y TeX 发展而来，是纯 C 编写的 TeX 引擎。它带有 e-TeX, pTeX 的补丁，并原生支持 Unicode 编码，对字体支持良好，并且能够直接输出 PDF 文档。pTeX-ng 的前景十分喜人。</p>
-]]></content>
-    <summary type="html"><![CDATA[<blockquote>
-<p>本文为译文，原文载于<a href="http://www.preining.info/blog/2014/12/writing-japanese-in-latex-part-1-introduction/" target="_blank">这里</a>。尽请关注本系列的文章。</p>
-</blockquote>
-<p>对于日本人来说，在 LaTeX 里面写日文很简单。但是由于文档的缺乏，外国人（相对日本）想要这样做就不容易了。更何况日语里面会混合罗马字母、假名、汉字。</p>
-<p>这里我想总结一下我自己写日文 LaTeX 文档的经验。这些经验一方面来自我自己的实践，另一方面来自我的日本朋友的各种帮助。系列文章的第一部分简介了日文排版的一些情况，特别是关于 TeX 的介绍。在这里，我会对用于排版日文的 TeX 引擎和宏包做一个简单的比较。</p>
-]]></summary>
-    
-      <category term="pTeX" scheme="http://liam0205.me/tags/pTeX/"/>
     
       <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
     
