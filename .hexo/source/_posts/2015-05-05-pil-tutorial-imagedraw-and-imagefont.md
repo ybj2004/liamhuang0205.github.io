@@ -166,5 +166,10 @@ avatar.show()
 
 ![引入 font 选项的 text 方法效果示例 ]({{site.url}}/attachment/images/Python/pil-tutorial/draw-text-font.png)
 
+## 小结
+
+`ImageDraw` 模块还有许多其他的功能，比如绘制椭圆、多边形、矩形等。限于篇幅，这里就不一一介绍了。感兴趣的读者可以参看官方文档：
+
+<http://effbot.org/imagingbook/imagedraw.htm#methods>
 
 [pil-basic-usage]: http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/

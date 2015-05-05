@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-05-05T13:27:15.954Z</updated>
+  <updated>2015-05-05T13:33:06.801Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://liam0205.me/2015/05/05/pil-tutorial-imagedraw-and-imagefont/"/>
     <id>http://liam0205.me/2015/05/05/pil-tutorial-imagedraw-and-imagefont/</id>
     <published>2015-05-04T16:15:06.000Z</published>
-    <updated>2015-05-05T13:25:42.000Z</updated>
+    <updated>2015-05-05T13:32:55.000Z</updated>
     <content type="html"><![CDATA[<p><a href="http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/">上一篇文章</a> 介绍了 PIL 的基本情况，以及 <code>Image</code> 模块的基本用法。这篇文章，我们讨论一下 <code>ImageDraw</code> 和 <code>ImageFont</code> 两个模块的基本用法，说说如何用 PIL 在现有的图片上涂涂改改。</p>
 <a id="more"></a>
 
@@ -214,6 +214,9 @@ avatar.show()
 <p>这里我们引入了 <code>ImageFont</code> 模块，并且创建了 <code>myFont</code> 实例。创建实例的时候，传入的字体尺寸由图片大小决定。最后在图片上写字的位置也与字体大小有关。</p>
 <p>这样以来，我们就在图片的右上角写了一个红色的数字，就好像微信未读消息提示的那种效果。</p>
 <p><img src="/attachment/images/Python/pil-tutorial/draw-text-font.png" alt=" 引入 font 选项的 text 方法效果示例 "></p>
+<h2 id=" 小结 ">小结</h2>
+<p><code>ImageDraw</code> 模块还有许多其他的功能，比如绘制椭圆、多边形、矩形等。限于篇幅，这里就不一一介绍了。感兴趣的读者可以参看官方文档：</p>
+<p><a href="http://effbot.org/imagingbook/imagedraw.htm#methods" target="_blank">http://effbot.org/imagingbook/imagedraw.htm#methods</a></p>
 ]]></content>
     <summary type="html"><![CDATA[<p><a href="http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/">上一篇文章</a> 介绍了 PIL 的基本情况，以及 <code>Image</code> 模块的基本用法。这篇文章，我们讨论一下 <code>ImageDraw</code> 和 <code>ImageFont</code> 两个模块的基本用法，说说如何用 PIL 在现有的图片上涂涂改改。</p>
 ]]></summary>
