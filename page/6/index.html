@@ -116,6 +116,46 @@
   <header>
     
       <div class="icon"></div>
+      <time datetime="2014-05-23T03:24:46.000Z"><a href="/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/">2014 年 05 月 23 日</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/">使用 Virtual Audio Cable 解决 CamStudio 在部分 ThinkPad 机型上无法内录的问题</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>最近因为一些缘故，需要在 Win7 上实现录屏和声音内录功能：前者记录计算机屏幕的内容变化，后者记录通过计算机扬声器或耳机线路发出的声音（Speaker 的声音）。在朋友圈中问了一圈，结合自己搜索之后，决定使用开源的 <a href="http://camstudio.org/" target="_blank">CamStudio</a> 来录屏。</p>
+<p>CamStudio 十分优秀，视频上支持多种区域方式（全屏、区域、固定大小、窗口），声音上支持计算机内录和从麦克风输入录制，甚至可选鼠标和键盘操作的录制。但在实际操作中 CamStudio 的内录功能无法正常进行，提示 <code>WaveoutGetSelectControl() failed</code> 的错误，并且官方似乎也没有定位问题所在，导致在多个版本中都存在这个错误（见<a href="http://camstudio.org/forum/discussion/33/waveoutgetselectcontrol-failed/p1" target="_blank">官方论坛的讨论</a>）。</p>
+<p>Woedge 在上述<a href="http://camstudio.org/forum/discussion/33/waveoutgetselectcontrol-failed/p1" target="_blank">讨论</a>中给出了一个解决方案，帮助一些用户解决了问题。这个方案的关键步骤，是打开 Windows 系统录音设备中的禁用设备——立体声混响（Stereo Mix）功能，然后使用立体声混响将系统内部声音和麦克风声音混在一起，交付给 CamStudio 进行录制。</p>
+<p>这个方案无疑帮很多用户解决了问题，但在许多 ThinkPad 机型上却不行。原因是部分 ThinkPad 安装的声卡并不支持 Stereo Mix 功能，故而上述关键步骤无法执行。</p>
+<p>经过一番研究之后，决定使用 Virtual Audio Cable 来解决问题。</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+        <div class="alignleft">
+          <a href="/2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/#more" class="more-link">全文</a>
+        </div>
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <time datetime="2014-05-20T03:53:38.000Z"><a href="/2014/05/20/koreader-on-kindle-paperwhite/">2014 年 05 月 20 日</a></time>
     
     
@@ -346,43 +386,6 @@
 
 
 
-  <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2014-03-31T16:00:00.000Z"><a href="/2014/04/01/LaTeX-Pro-Git-zh/">2014 年 04 月 1 日</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2014/04/01/LaTeX-Pro-Git-zh/">【LaTeX】Pro Git 中文版</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>Pro Git 是 Git Hub 员工 Scott Chacon 撰写的关于 Git 版本控制系统的书籍，其源码开源，托管在 <a href="https://github.com/progit/progit" target="_blank">Git Hub</a> 上。</p>
-<p>我将当前（2014-4-2）的仓库克隆到本地，并将其中的 markdown 文件转换成了 LaTeX 文件，编译得到 PDF 档案。</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2014/04/01/LaTeX-Pro-Git-zh/#more" class="more-link">全文</a>
-        </div>
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-
-
-
-
 
 <nav id="pagination">
   
@@ -408,7 +411,7 @@
   
     <li><a href="/categories/GRE/">GRE</a><small>4</small></li>
   
-    <li><a href="/categories/IT/">IT</a><small>16</small></li>
+    <li><a href="/categories/IT/">IT</a><small>17</small></li>
   
     <li><a href="/categories/LaTeX/">LaTeX</a><small>47</small></li>
   
@@ -430,7 +433,7 @@
   <!--
   <a href="/tags/3000/" style="font-size: 10.00px;">3000</a><a href="/tags/AHD/" style="font-size: 10.00px;">AHD</a><a href="/tags/AMS/" style="font-size: 10.00px;">AMS</a><a href="/tags/AW/" style="font-size: 15.00px;">AW</a><a href="/tags/Apple Dictionaries/" style="font-size: 10.00px;">Apple Dictionaries</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Bitmap/" style="font-size: 10.00px;">Bitmap</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blindness/" style="font-size: 10.00px;">Blindness</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Book review/" style="font-size: 10.00px;">Book review</a><a href="/tags/Bookmarks/" style="font-size: 10.00px;">Bookmarks</a><a href="/tags/CCT/" style="font-size: 10.00px;">CCT</a><a href="/tags/CJK/" style="font-size: 15.00px;">CJK</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 15.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 15.00px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 15.00px;">Christianity</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Compile/" style="font-size: 10.00px;">Compile</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/EPS/" style="font-size: 10.00px;">EPS</a><a href="/tags/Encoding/" style="font-size: 10.00px;">Encoding</a><a href="/tags/English/" style="font-size: 20.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Environment/" style="font-size: 10.00px;">Environment</a><a href="/tags/Equation/" style="font-size: 10.00px;">Equation</a><a href="/tags/Equation number/" style="font-size: 10.00px;">Equation number</a>
   -->
-  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/CJK/" style="font-size: 12.50px;">CJK</a><a href="/tags/Chapter/" style="font-size: 12.50px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 12.50px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 12.50px;">Christianity</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Europe/" style="font-size: 15.00px;">Europe</a><a href="/tags/Git/" style="font-size: 12.50px;">Git</a><a href="/tags/Grammar/" style="font-size: 15.00px;">Grammar</a><a href="/tags/Greece/" style="font-size: 12.50px;">Greece</a><a href="/tags/Hexo/" style="font-size: 12.50px;">Hexo</a><a href="/tags/Highlight/" style="font-size: 12.50px;">Highlight</a><a href="/tags/History/" style="font-size: 15.00px;">History</a><a href="/tags/Images/" style="font-size: 12.50px;">Images</a><a href="/tags/Kindle/" style="font-size: 15.00px;">Kindle</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Listings/" style="font-size: 12.50px;">Listings</a><a href="/tags/MacTeX/" style="font-size: 12.50px;">MacTeX</a><a href="/tags/Macro/" style="font-size: 12.50px;">Macro</a><a href="/tags/Number/" style="font-size: 10.00px;">Number</a><a href="/tags/Overbrace/" style="font-size: 10.00px;">Overbrace</a><a href="/tags/PDF/" style="font-size: 12.50px;">PDF</a><a href="/tags/PIL/" style="font-size: 12.50px;">PIL</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Romantic/" style="font-size: 12.50px;">Romantic</a><a href="/tags/Rule/" style="font-size: 10.00px;">Rule</a><a href="/tags/SDU/" style="font-size: 10.00px;">SDU</a><a href="/tags/Section/" style="font-size: 12.50px;">Section</a><a href="/tags/Template/" style="font-size: 17.50px;">Template</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 12.50px;">Tutorial</a><a href="/tags/Underbrace/" style="font-size: 10.00px;">Underbrace</a><a href="/tags/pTeX/" style="font-size: 15.00px;">pTeX</a>
+  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/CJK/" style="font-size: 12.50px;">CJK</a><a href="/tags/Chapter/" style="font-size: 12.50px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 12.50px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 12.50px;">Christianity</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Europe/" style="font-size: 15.00px;">Europe</a><a href="/tags/Git/" style="font-size: 12.50px;">Git</a><a href="/tags/Grammar/" style="font-size: 15.00px;">Grammar</a><a href="/tags/Greece/" style="font-size: 12.50px;">Greece</a><a href="/tags/Hexo/" style="font-size: 12.50px;">Hexo</a><a href="/tags/Highlight/" style="font-size: 12.50px;">Highlight</a><a href="/tags/History/" style="font-size: 15.00px;">History</a><a href="/tags/Images/" style="font-size: 12.50px;">Images</a><a href="/tags/Kindle/" style="font-size: 15.00px;">Kindle</a><a href="/tags/Listings/" style="font-size: 12.50px;">Listings</a><a href="/tags/MacTeX/" style="font-size: 12.50px;">MacTeX</a><a href="/tags/Macro/" style="font-size: 12.50px;">Macro</a><a href="/tags/PDF/" style="font-size: 12.50px;">PDF</a><a href="/tags/PIL/" style="font-size: 12.50px;">PIL</a><a href="/tags/Pro Git/" style="font-size: 10.00px;">Pro Git</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Romantic/" style="font-size: 12.50px;">Romantic</a><a href="/tags/Section/" style="font-size: 12.50px;">Section</a><a href="/tags/Setspace/" style="font-size: 10.00px;">Setspace</a><a href="/tags/Tecall/" style="font-size: 10.00px;">Tecall</a><a href="/tags/Template/" style="font-size: 17.50px;">Template</a><a href="/tags/Theorem/" style="font-size: 10.00px;">Theorem</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 12.50px;">Tutorial</a><a href="/tags/XCUMCMART/" style="font-size: 10.00px;">XCUMCMART</a><a href="/tags/pTeX/" style="font-size: 15.00px;">pTeX</a>
   </div>
 </div>
 
@@ -442,6 +445,10 @@
 <div class="widget recent-posts">
   <h3 class="title">最近文章</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2015/05/07/generator-of-invitation-code-in-python/">用 Python 生成随机的邀请码</a>
+      </li>
     
       <li>
         <a href="/2015/05/07/make-every-equations-in-your-document-upright/">让所有的公式都使用正文直立字体</a>
@@ -465,10 +472,6 @@
     
       <li>
         <a href="/2015/04/29/git-checkout-history-version/">在 Git 中 Checkout 历史版本</a>
-      </li>
-    
-      <li>
-        <a href="/2015/04/24/apple-dictionaries-download/">Apple 词典·再要你命 3000 | 美国传统大辞典 | Merriam Webster Collegiate Dict</a>
       </li>
     
   </ul>
