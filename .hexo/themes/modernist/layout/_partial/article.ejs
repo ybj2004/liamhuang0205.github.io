@@ -14,6 +14,7 @@
       <%- item.excerpt %>
     <% } else { %>
       <%- item.content %>
+      <%- partial('post/donate') %>
     <% } %>
   </div>
   <footer<% if (index) { %> class="end-sep"<% } %>>
