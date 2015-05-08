@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://liam0205.me/links/index.html</loc>
+    <lastmod>2014-07-16T03:04:03.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://liam0205.me/2015/05/07/generator-of-invitation-code-in-python/</loc>
     <lastmod>2015-05-07T13:34:23.000Z</lastmod>
   </url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://liam0205.me/2015/05/03/tense-of-verb/</loc>
     <lastmod>2015-05-03T10:06:39.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://liam0205.me/links/index.html</loc>
-    <lastmod>2014-07-16T03:04:03.000Z</lastmod>
   </url>
   
   <url>

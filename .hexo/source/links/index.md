@@ -2,18 +2,19 @@ title: 链接
 date: 2014-07-16 11:04:03
 ---
 
-## Friends
-* [Sophia](http://sophiahuang.me), my wife.
-* [DDSWHU](http://ddswhu.tk/) is a Graduate Student in the Economics School of Fudan University, co-woker in Elegant LaTeX program.
-* [xwyam](http://blog.xwyam.info/) is one of my senior in SDU.
-* [王穆荣](http://www.wangmurong.org.cn/) is a PhD student, majored in machine vision.
-* [唐秋平](http://qtang.gitcafe.com)
+## 朋友们
+* [Sophia](http://sophiahuang.me) 这是我妻子。
+* [DDSWHU](http://ddswhu.com/) 就读于复旦大学经济学院，现在是一名硕士研究生，与我共同创立了 ElegantLaTeX 项目。
+* [xwyam](http://blog.xwyam.info/) 山东大学数学学院的学长。
+* [王穆荣](http://www.wangmurong.org.cn/) 是一名博士研究生，研究机器视觉。
 
-## Weblogs
+## 我关注的博客和网站
 
 * [DarkBull](http://darkbull.net/)
 * [王子亭的博客](http://jysperm.me/)
 * [刘虓震（女）的博客](http://www.liuxiaozhen.com)
+* [现代魔法学院](http://www.nowamagic.net/academy/) 是 [gonnsai](http://t.qq.com/gonnsai) 创立的程序员、工程师交流平台，里面有很多好东西。
+* [W3C 学院](http://www.w3cschool.cc/)
 
 ## Software
 

@@ -9,7 +9,7 @@ menu:
 
 excerpt_link: 全文 #摘要链接文字
 archive_yearly: true #按年存档
-archive_date_format: YYYY [年] MM [月] D [日]
+archive_date_format: YYYY [年] MM [月] DD [日]
 
 widgets: #配置页脚显示哪些小挂件
   - category
