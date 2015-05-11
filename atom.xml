@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-05-08T17:17:51.436Z</updated>
+  <updated>2015-05-11T15:17:55.029Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,105 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[hyperref 宏包 psdextra 选项的 bug 及其 quick fix]]></title>
+    <link href="http://liam0205.me/2015/05/11/bug-of-the-hyperref-package-with-mu-in-section-heading/"/>
+    <id>http://liam0205.me/2015/05/11/bug-of-the-hyperref-package-with-mu-in-section-heading/</id>
+    <published>2015-05-11T15:04:10.000Z</published>
+    <updated>2015-05-11T15:17:41.000Z</updated>
+    <content type="html"><![CDATA[<p>今天有人问到下列代码报错：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="comment">%\listfiles</span>
+<span class="command">\usepackage</span><span class="special">[</span>unicode,psdextra<span class="special">]</span><span class="special">{</span>hyperref<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>unicode-math<span class="special">}</span>
+<span class="command">\setmathfont</span><span class="special">{</span>Asana Math<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\section</span><span class="special">{</span><span class="formula">$<span class="command">\mu</span>$</span><span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>提示：</p>
+<pre><code>Improper alphabetic <span class="built_in">constant</span>
+</code></pre><p>看了一下，是 <code>hyperref</code> 宏包的 bug。</p>
+<a id="more"></a>
+
+<p>实际上，在处理 PDF 书签的时候，很多数学命令要被定义成相应的文本模式，比如 \geq 要被定义为 \textgeq。这个工作在 NFSS 里完成。</p>
+<p>但是，数学符号那么多，总有 NFSS 定义不全的时候。于是 hyperref 提供了 psdextra 选项。该选项会载入 psdextra.def 这个文件，提供更多的定义。</p>
+<p>不过 \mu 在 NFSS 里和 psdextra.def 里都处理错了。psdextra 里是处理了 \mugreek，而实际上应该是 \mu。于是就出问题了。</p>
+<p>解决方法也很简单，自己处理一下就好了。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="comment">%\listfiles</span>
+<span class="command">\usepackage</span><span class="special">[</span>unicode, psdextra<span class="special">]</span><span class="special">{</span>hyperref<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>unicode-math<span class="special">}</span>
+<span class="command">\setmathfont</span><span class="special">{</span>Asana-Math.otf<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>etoolbox<span class="special">}</span>
+<span class="command">\appto</span><span class="special">{</span><span class="command">\psdmapshortnames</span><span class="special">}</span><span class="special">{</span><span class="command">\let</span><span class="command">\mu</span><span class="command">\textmugreek</span><span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\section</span><span class="special">{</span><span class="formula">$<span class="command">\mu</span>$</span><span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>这里 <code>\appto</code> 命令接受两个参数，<code>\appto{&lt; 需要修补的命令 &gt;}{&lt; 填在命令最后的内容 &gt;}</code>。这里我们将 <code>\let\mu\textmugreek</code> 添加在命令 <code>\psdmapshortnames</code> 的最后，这样在处理 PDF 书签的时候，<code>\mu</code> 就能被正确处理了。</p>
+<p>该 bug 已提交给 <code>hyperref</code> 宏包的作者。</p>
+]]></content>
+    <summary type="html"><![CDATA[<p>今天有人问到下列代码报错：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
+<span class="comment">%\listfiles</span>
+<span class="command">\usepackage</span><span class="special">[</span>unicode,psdextra<span class="special">]</span><span class="special">{</span>hyperref<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>unicode-math<span class="special">}</span>
+<span class="command">\setmathfont</span><span class="special">{</span>Asana Math<span class="special">}</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\section</span><span class="special">{</span><span class="formula">$<span class="command">\mu</span>$</span><span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>提示：</p>
+<pre><code>Improper alphabetic <span class="built_in">constant</span>
+</code></pre><p>看了一下，是 <code>hyperref</code> 宏包的 bug。</p>
+]]></summary>
+    
+      <category term="Bug" scheme="http://liam0205.me/tags/Bug/"/>
+    
+      <category term="Hyperref" scheme="http://liam0205.me/tags/Hyperref/"/>
+    
+      <category term="Psdextra" scheme="http://liam0205.me/tags/Psdextra/"/>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[用 Python 生成随机的邀请码]]></title>
@@ -2213,212 +2312,6 @@ avatar.show()
       <category term="Christianity" scheme="http://liam0205.me/tags/Christianity/"/>
     
       <category term="Literature and Social Sciences" scheme="http://liam0205.me/categories/Literature%20and%20Social%20Sciences/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[订制 Sublime Text 下 LaTeXTools 插件的编译脚本]]></title>
-    <link href="http://liam0205.me/2014/12/14/advanced-builder-latextools/"/>
-    <id>http://liam0205.me/2014/12/14/advanced-builder-latextools/</id>
-    <published>2014-12-14T10:15:34.000Z</published>
-    <updated>2014-12-14T12:25:13.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="https://github.com/SublimeText/LaTeXTools" target="_blank">LaTeXTools</a> 是 <a href="http://www.sublimetext.com" target="_blank">Sublime Text</a> 上的一个插件，用以增强在 Sublime Text 上编辑和编译 LaTeX 文档的体验。但是其自带的编译脚本比较难用，缺点如下：</p>
-<ul>
-<li>调用 LaTeXmk 或者 TeXify，多次编译，速度缓慢，难以切换。</li>
-<li>无法在编译时方便地添加命令行参数，导致依赖 <code>\write18</code> 命令的宏包（比如 <code>minted</code>）无法使用。</li>
-</ul>
-<p>为了解决这个问题，我自己写了一个编译脚本，命名为 <code>advancedBuilder.py</code>。</p>
-<a id="more"></a>
-
-<h2 id=" 安装方法 ">安装方法</h2>
-<ul>
-<li>在<a href="/attachment/LaTeX-useful-tools/advancedBuilder.py">这里</a>下载编译脚本；</li>
-<li>打开 Sublime Text 目录；</li>
-<li>将脚本拷贝至 <code>./Packages/LaTeXTools/builders/</code>；</li>
-<li>编辑 <code>./Packages/User/LaTeXTools.sublime-settings</code>，将 <code>&quot;builder&quot;</code> 值从原来的 <code>traditional</code> 改为 <code>advanced</code>，即：<code>&quot;builder&quot;: &quot;advanced&quot;</code>；</li>
-<li>重启 Sublime Text。</li>
-</ul>
-<h2 id=" 使用方法 ">使用方法</h2>
-<p>基本的使用方法和原本的 <code>traditionalBuilder.py</code> 相同，即使用快捷键 <code>Ctrl + B</code> 编译（Mac OS X 是 <code>CMD + B</code>）。但在文档开头的注释中，增加了更多的用法。</p>
-<h3 id=" 改变编译流程 ">改变编译流程</h3>
-<p>可以在主文档开头的注释中，使用下列语法改变编译流程。</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="comment">%!TEX builder = BUILDER</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>其中 <code>BUILDER</code> 的可选值有：</p>
-<ul>
-<li><code>SIMPLE</code></li>
-<li><code>LATEXMK</code></li>
-<li><code>TEXIFY</code></li>
-</ul>
-<p>大小写不论，默认是 <code>SIMPLE</code>，即只编译一遍。</p>
-<h3 id=" 选择编译引擎 ">选择编译引擎</h3>
-<blockquote>
-<p>此功能继承自默认编译脚本，有增强。</p>
-</blockquote>
-<p>可以在主文档开头的注释中，使用下列语法改变编译引擎。</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="comment">%!TEX program = PROGRAM</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>其中 <code>PROGRAM</code> 的可选值有：</p>
-<ul>
-<li><code>pdflatex</code></li>
-<li><code>xelatex</code></li>
-<li><code>lualatex</code></li>
-<li><code>platex-ng</code></li>
-<li><code>pdftex</code></li>
-<li><code>xetex</code></li>
-<li><code>luatex</code></li>
-<li><code>ptex-ng</code></li>
-</ul>
-<p>大小写敏感，默认值是 <code>pdflatex</code>。</p>
-<h3 id=" 选择编译参数 ">选择编译参数</h3>
-<p>可以在主文档开头的注释中，使用下列语法添加编译参数。</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="comment">%!TEX option = OPTION</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>其中 <code>OPTION</code> 的可选值为对 <code>PROGRAM</code> 合法的任意参数。大小写敏感，默认为空。</p>
-<p>另外，强制启动 <code>-interaction=nonstopmode</code> 和 <code>-synctex=1</code> 两个参数，不允许更改。</p>
-<h3 id=" 指定主文档 ">指定主文档</h3>
-<blockquote>
-<p>此功能完整继承自默认编译脚本。</p>
-</blockquote>
-<p>可以在子文档的开头注释中，使用下列语法指定主文档。</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="comment">%!TEX root = ROOT</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>其中 <code>ROOT</code> 为主文档相对当前子文档的路径。指定主文档之后，可以在子文档中直接使用快捷键编译主文档，而不用将 Sublime Text 标签页切换到主文档再进行编译。</p>
-<h2 id=" 示例 ">示例</h2>
-<figure class="highlight tex"><figcaption><span>foo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-Hello world!
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>对应的命令行为：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>pdflatex <span class="attribute">-interaction</span><span class="subst">=</span>nonstopmode <span class="attribute">-synctex</span><span class="subst">=</span><span class="number">1</span>  foo<span class="built_in">.</span>tex
-</pre></td></tr></table></figure>
-
-
-
-<hr>
-<figure class="highlight tex"><figcaption><span>foo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="comment">%!TEX builder = latexmk</span>
-<span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-Hello world!
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>对应的命令行为：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>latexmk <span class="attribute">-cd</span> <span class="attribute">-e</span> <span class="variable">$pdflatex</span> <span class="subst">=</span> <span class="string">'pdflatex -interaction=nonstopmode -synctex=1  %S %O'</span> <span class="attribute">-f</span> <span class="attribute">-pdf</span> foo<span class="built_in">.</span>tex
-</pre></td></tr></table></figure>
-
-
-
-<hr>
-<figure class="highlight tex"><figcaption><span>foo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="comment">%!TEX builder = latexmk</span>
-<span class="comment">%!TEX program = xelatex</span>
-<span class="comment">%!TEX option = -shell-escape</span>
-<span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-Hello world!
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-<p>对应的命令行为：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>latexmk <span class="attribute">-cd</span> <span class="attribute">-e</span> <span class="variable">$pdflatex</span> <span class="subst">=</span> <span class="string">'xelatex -interaction=nonstopmode -synctex=1 -shell-escape %S %O'</span> <span class="attribute">-f</span> <span class="attribute">-pdf</span>
-</pre></td></tr></table></figure>
-
-
-
-<hr>
-<figure class="highlight tex"><figcaption><span>foo </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="comment">%!TEX builder = latexmk</span>
-<span class="comment">%!TEX program = xelatex</span>
-<span class="comment">%!TEX option = -shell-escape</span>
-<span class="command">\documentclass</span><span class="special">{</span>article<span class="special">}</span>
-<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
-<span class="command">\input</span><span class="special">{</span>bar.tex<span class="special">}</span>
-<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
-</pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight tex"><figcaption><span>bar </span></figcaption><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre><span class="comment">%!TEX root = foo.tex</span>
-Hello world!
-</pre></td></tr></table></figure>
-
-
-
-<p>在 <code>bar.tex</code> 的窗口编译，命令行为：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>latexmk <span class="attribute">-cd</span> <span class="attribute">-e</span> <span class="variable">$pdflatex</span> <span class="subst">=</span> <span class="string">'xelatex -interaction=nonstopmode -synctex=1 -shell-escape %S %O'</span> <span class="attribute">-f</span> <span class="attribute">-pdf</span>
-</pre></td></tr></table></figure>
-
-
-]]></content>
-    <summary type="html"><![CDATA[<p><a href="https://github.com/SublimeText/LaTeXTools" target="_blank">LaTeXTools</a> 是 <a href="http://www.sublimetext.com" target="_blank">Sublime Text</a> 上的一个插件，用以增强在 Sublime Text 上编辑和编译 LaTeX 文档的体验。但是其自带的编译脚本比较难用，缺点如下：</p>
-<ul>
-<li>调用 LaTeXmk 或者 TeXify，多次编译，速度缓慢，难以切换。</li>
-<li>无法在编译时方便地添加命令行参数，导致依赖 <code>\write18</code> 命令的宏包（比如 <code>minted</code>）无法使用。</li>
-</ul>
-<p>为了解决这个问题，我自己写了一个编译脚本，命名为 <code>advancedBuilder.py</code>。</p>
-]]></summary>
-    
-      <category term="LaTeXTools" scheme="http://liam0205.me/tags/LaTeXTools/"/>
-    
-      <category term="Python" scheme="http://liam0205.me/tags/Python/"/>
-    
-      <category term="Compile" scheme="http://liam0205.me/tags/Compile/"/>
-    
-      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
     
   </entry>
   
