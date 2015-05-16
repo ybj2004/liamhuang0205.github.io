@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-05-11T15:32:45.967Z</updated>
+  <updated>2015-05-16T15:11:53.042Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,47 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[CTeX 2.0 发布 · 新功能简介]]></title>
+    <link href="http://liam0205.me/2015/05/16/ctex-20-released/"/>
+    <id>http://liam0205.me/2015/05/16/ctex-20-released/</id>
+    <published>2015-05-16T15:04:52.000Z</published>
+    <updated>2015-05-16T15:10:21.000Z</updated>
+    <content type="html"><![CDATA[<p>CTeX 2.0 的代码主要是 李清 用 LaTeX 3 的语法书写的。之后 刘海洋 对代码做了一些调整，并构建了第一个版本的套件手册。再之后，在测试版本发布之后，我重构了套件手册，成为你们现在看到的这个样子。</p>
+<p>现在，新版套件已经上传，CTAN 地址是：<a href="http://www.ctan.org/pkg/ctex" target="_blank">http://www.ctan.org/pkg/ctex</a></p>
+<a id="more"></a>
+
+<p>首先说一下关于 CTeX 这个名字。<br>CTeX 的 C 是 China 或者 Chinese 的意思，在纯文本环境下，应该写作 CTeX。<br>CTeX 套件是由 CTeX 社区 发起并维护的 LaTeX 宏包和文档类集合。社区另有发布名为 CTeX 套装 的 TeX 发行版。<br>ctex 是本套件中 <code>ctex.sty</code> 的名字。这一小写的名字过去被用来代指整个 CTeX 套件，不过现在则专指 <code>ctex.sty</code> 这一宏包。不过，在一些特殊的情况下，由于历史原因，为了与 CTeX 套装做区分，也会用 ctex 来代指整个 CTeX 套件。</p>
+<p>本次更新的是 CTeX 套件，版本号从 1.02d 升级到 2.0 （当前修复了一些问题，版本号是 2.0.2）。CTeX 套装的最新版本是 2.9.2.164，已有若干年未更新，将来可能也不会再更新，也不推荐使用。</p>
+<p>CTeX 2.0 里比较重大的改变有四个：</p>
+<ul>
+<li>对底层引擎的支持，放弃了 CCT，新增了 LuaLaTeX（基于 <code>LuaTeX-ja</code>）；</li>
+<li>增强了字库选择，新增了华文、Fandol、方正等字库，并提供了基于操作系统自动选择字库的功能；</li>
+<li>增强了 <code>ctex.sty</code> 的功能，用键值列表的方式提供选项支持，并提供全新的 \ctexset 接口；</li>
+<li>关于字号的部分，在 <code>ctexsize.sty</code> 中单独列出，可独立于 CTeX 宏包或文档类使用。</li>
+</ul>
+<p>除此之外，特别有意义的一点是，新版套件可以做到「只提供中文支持，不改变版式风格」。只需要这样：</p>
+<pre><code><span class="attribute">\usepackage[scheme </span>=<span class="string"> plain]{ctex}</span>
+</code></pre><p>特别适用于在英文文档中需要添加少许汉字的情况。</p>
+<p>除此之外，用户可能会比较关心新版套件对旧版宏包的兼容性问题。CTeX 2.0 对使用时间较长的稳定版本 1.02c 和 1.02d 做了尽可能的兼容。基于这两个旧版本的宏包书写的文档，在新版本下可以不作任何修改地编译，并且效果几乎一致，但有一些过时选项需要注意。这些选项在新版套件中基于兼容性考虑被保留，但在将来可能被移除。完整的兼容性可参看套件手册 12.2 节，这里列出部分比较重要的：</p>
+<ul>
+<li><code>cs4size</code> 和 <code>c5size</code>：旧版宏包用于选择文档全局字号的选项，已过时，相当于新版套件 <code>zihao = -4</code> 和 <code>zihao = 5</code> 的功能。</li>
+<li><code>cap</code> 和 <code>nocap</code>：旧版宏包用于选择排版风格的选项，已过时，相当于新版套件 <code>scheme = chinese</code> 和 <code>scheme = plain</code> 的功能。</li>
+<li><code>fancyhdr</code>, <code>hyperref</code> 和 <code>fntef</code>：旧版宏包的兼容性选项，均已过时。新版套件默认打开兼容性，不过需要用户手工载入相关宏包（<code>fancyhdr</code> 和 <code>hyperref</code>）。出于兼容性考虑，选项保留，功能是载入相关宏包。</li>
+<li><code>ctexcap.sty</code>：过时宏包，相当于 <code>\usepackage[heading = true]{ctex}</code>，不推荐使用。</li>
+</ul>
+<p>具体的内容，烦请参看新版套件手册。关于 <code>\ctexset</code>，有不少「很犀利」的用法哦~</p>
+]]></content>
+    <summary type="html"><![CDATA[<p>CTeX 2.0 的代码主要是 李清 用 LaTeX 3 的语法书写的。之后 刘海洋 对代码做了一些调整，并构建了第一个版本的套件手册。再之后，在测试版本发布之后，我重构了套件手册，成为你们现在看到的这个样子。</p>
+<p>现在，新版套件已经上传，CTAN 地址是：<a href="http://www.ctan.org/pkg/ctex" target="_blank">http://www.ctan.org/pkg/ctex</a></p>
+]]></summary>
+    
+      <category term="CTeX" scheme="http://liam0205.me/tags/CTeX/"/>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[hyperref 宏包 psdextra 选项的 bug 及其 quick fix]]></title>
@@ -2237,79 +2278,6 @@ avatar.show()
       <category term="Science" scheme="http://liam0205.me/tags/Science/"/>
     
       <category term="Romantic" scheme="http://liam0205.me/tags/Romantic/"/>
-    
-      <category term="Literature and Social Sciences" scheme="http://liam0205.me/categories/Literature%20and%20Social%20Sciences/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[欧洲史·一：欧洲文明开端的三股力量]]></title>
-    <link href="http://liam0205.me/2014/12/30/history-of-europe-01/"/>
-    <id>http://liam0205.me/2014/12/30/history-of-europe-01/</id>
-    <published>2014-12-30T15:26:43.000Z</published>
-    <updated>2014-12-30T15:29:09.000Z</updated>
-    <content type="html"><![CDATA[<p>欧洲文明的发端，有三股力量：</p>
-<ol>
-<li>古希腊和古罗马的科学文化；</li>
-<li>作为犹太民族宗教的分支的基督教；</li>
-<li>征服了罗马帝国的日耳曼战士文化。</li>
-</ol>
-<a id="more"></a>
-
-<h2 id=" 希腊和罗马 ">希腊和罗马</h2>
-<p>一句话概括的话，希腊人在科学文化上极其聪明；而罗马人则相对更加骁勇善战，治国、治军、工程建筑比希腊人更优秀。</p>
-<p>希腊人的聪明不需多说：哲学、艺术、文学、数学、科学、医学、政治，这些学科的源头都可以追溯到希腊。现代数学中，随处可见的「希腊字母」，实际上也是对此的一种「纪念」。</p>
-<p>罗马人的骁勇也不需多说：古罗马的版图疆域横跨亚欧非，环绕整个地中海。</p>
-<p>这样一来的结果就是，罗马人统治了欧洲，但是罗马人却以懂的希腊的语言和文化为荣。</p>
-<h2 id=" 基督教的力量 ">基督教的力量</h2>
-<p>基督教是犹太教的一个分支。</p>
-<p>在犹太人的眼里，「上帝」是唯一的神，而自己的族群（犹太人）则是上帝的选民。此外，犹太人相信遵守上帝的条律，也就是上帝借由「摩西」的口说出来的「摩西十诫」，就能得到上帝的优待。摩西十诫的要求实际上是一种道德的约束，这些约束在犹太人的发展中逐渐成为律法。</p>
-<p>犹太教的一些特点和古希腊和古罗马人的信仰是有很多不同的。首先，犹太教只承认耶和华为唯一的真神；其次，犹太教中，道德和律法是密不可分的，古希腊和古罗马却非是如此（希腊神话里的神各种乱伦什么的）。</p>
-<p>耶稣是一个犹太人。在耶稣传道的时候，巴勒斯坦已经被罗马帝国纳入版图。耶稣在传道过程中，修改、发扬了犹太教的教义；特别是，耶稣把犹太人严苛的道德训诫转化成了「宇宙大爱」。</p>
-<blockquote>
-<p>大家都说：「你应当爱你的亲人，应当恨你的仇人」。<br>我却要说：「你们应当爱你的仇人」。——《马太福音书》</p>
-</blockquote>
-<p>由于耶稣作为讲道人传播的教义与犹太教的教义有相悖的地方，所以犹太教的领导人和罗马帝国练手杀死了耶稣——将他钉在十字架上。</p>
-<p>耶稣的死留下了一个分歧，即：只有先变成犹太人，才可以信奉基督教；还是承认耶稣关于「爱」的教会凌驾与一切之上，人人都可以信奉基督教？如果前一个派系获得胜利，那么如今的基督教将只是犹太教的一个小小分支；而显然，后一个派系获得了胜利。</p>
-<h2 id=" 日耳曼民族 ">日耳曼民族</h2>
-<p>日耳曼民族最开始居于罗马帝国的北方。日耳曼人骁勇善战，甚至可以说是「为了打仗而生」：日耳曼人认为「可以用流血去换得的东西，用流汗这样的方式去换得，是没骨气的表现，是下等人才会做的事情」。</p>
-<p>从公元 400 年之后开始，日耳曼人开始入侵罗马帝国；而到了公元 476 年前后，这样的蛮族取代了整个罗马帝国。</p>
-<h2 id=" 三者的联结 ">三者的联结</h2>
-<p>对于犹太人，罗马人只是把他们当做是一群稀奇古怪的人，所以对信奉犹太教的人，作为统治者的罗马人并不怎么关心。但是在罗马人眼里，信奉基督教的人是一群反动分子——因为他们认为上帝是唯一的神，而不愿意对君主行礼——欲要除之而后快。</p>
-<p>就这样，罗马人对基督教打压了三百多年。</p>
-<p>不过，在公元 313 年，<strong>君士坦丁大帝</strong>公开表示支持基督教会。于是基督教成为了罗马帝国正式而唯一的宗教，基督教的发展走上正轨。于是，<strong>罗马帝国变成了基督教的天下</strong>。</p>
-<p>这时候的基督教，在「地下工作」的三四百年间，发展出了自己的法度并设有法庭和监狱；教会也同时掌管婚姻、继承和税收。基督教会俨然是「第二个政府」。在罗马帝国灭亡之后，基督教会保留了下来。教皇和君主平起平坐，管理文武百官。二者结合，<strong>基督教会变成了罗马人的教会</strong>。</p>
-<p>与此同时，基督教会在罗马帝国的灭亡过程中，保留了相当的古希腊和古罗马的科学文化技术。教会的人，利用这些先进的科技文化，对自己的教义进行解读，以维护自己的权利。诚然，基督教曲解了相当的科学成就，但是客观上，<strong>基督教将古希腊和古罗马的文明保存了下来</strong>。</p>
-<p>日耳曼蛮族在侵略罗马帝国的过程中逐渐发现一个棘手的问题：他们目不识丁，不懂得如何统治自己的国家。日耳曼民族的首领在打仗的过程中，化身为国王，将征服的土地分给手下的士兵；这些士兵化身为贵族，条件是在过往需要用兵的时候要出兵。</p>
-<p>基督教的教主对国王表示自己并不需要土地，避免了与国王和贵族的冲突；同时表示愿意帮助管理国家，赢得了国王的支持。同时，主教们对士兵说，「如果你认可基督教的上帝，那么就能变得更勇武」。最终，<strong>日耳曼蛮族支持基督教</strong>。</p>
-<h2 id=" 小结 ">小结</h2>
-<p>从古希腊和古罗马开始，到罗马帝国覆灭，这段时间称为<strong>古典时期</strong>；从这三者的联结开始，到 14 世纪三者联结的崩毁，称为<strong>中世纪</strong>；中世纪之后则称为<strong>近代</strong>。</p>
-<h2 id=" 番外 ">番外</h2>
-<p>教会虽然最终称为了日耳曼蛮族的搭档，但是基督教并不是一个好战的宗教。虽然在先后和罗马、日耳曼民族的合作中变得渐渐支持「正义的战争」，但是却依旧不能接受日耳曼民族的好战的价值观。</p>
-<p>不过日耳曼蛮族毕竟目不识丁，妥妥地被继承了希腊罗马科技文化的教会坑了。</p>
-<p>教会鼓励他们对战斗的热爱，却改造他们的思想，让他们只参与「正义的战斗」。而何为正义，则全凭教会说了算。比如教会鼓励十字军东征，去夺回陷入伊斯兰教手中的东方的圣地。</p>
-<p>同时，教会也要求骑士尊重出身贵族的女士，保护她们、敬重他们。</p>
-<p>在骑士绝迹之后，这些被教会改造的中世纪遗风转化成为了所谓的「绅士风度」。</p>
-]]></content>
-    <summary type="html"><![CDATA[<p>欧洲文明的发端，有三股力量：</p>
-<ol>
-<li>古希腊和古罗马的科学文化；</li>
-<li>作为犹太民族宗教的分支的基督教；</li>
-<li>征服了罗马帝国的日耳曼战士文化。</li>
-</ol>
-]]></summary>
-    
-      <category term="History" scheme="http://liam0205.me/tags/History/"/>
-    
-      <category term="Europe" scheme="http://liam0205.me/tags/Europe/"/>
-    
-      <category term="Greece" scheme="http://liam0205.me/tags/Greece/"/>
-    
-      <category term="Rome" scheme="http://liam0205.me/tags/Rome/"/>
-    
-      <category term="Germanic" scheme="http://liam0205.me/tags/Germanic/"/>
-    
-      <category term="Christianity" scheme="http://liam0205.me/tags/Christianity/"/>
     
       <category term="Literature and Social Sciences" scheme="http://liam0205.me/categories/Literature%20and%20Social%20Sciences/"/>
     
