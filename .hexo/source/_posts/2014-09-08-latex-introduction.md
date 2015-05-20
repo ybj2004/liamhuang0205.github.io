@@ -125,7 +125,7 @@ TeXworks 默认的排版工具是 pdfLaTeX，如果你希望更改这个默认�
 
 为了和原有的日志对接，这里分别用两种方法来介绍中英文混排。当然，老方法只是为了「兼容性」存在的，推荐使用新方法。
 
-## 新方法——使用 `ctex    ` 文档类
+## 新方法——使用 `ctex` 文档类
 
 
 在 TeXworks 编辑框中输入以下内容，保存，使用 XeLaTeX 编译：
@@ -144,39 +144,9 @@ TeXworks 默认的排版工具是 pdfLaTeX，如果你希望更改这个默认�
 1. 文档类从 `article` 变为 `ctexart`；
 2. 增加了文档类选项 `UTF8`。
 
-`ctex` 宏包和文档类的默认配置是为使用简体中文 Windows 系统的用户配置的，在 Linux 或 Unix 系统（包括 OS X）下使用会遇到一点困难。对此，项目组官方给出了一个 wiki 来解释说明。参见：
+新版 `ctex` 宏包和文档类的默认能够自动检测用户的操作系统，并为之配置合适的字库。对于 Windows 用户、Mac OS X 用户和 Linux 用户，都无需做任何配置，就能使用 `ctex` 宏包和文档类来排版中文。[2015-05-20 更新]
 
-<https://code.google.com/p/ctex-kit/wiki/UnixFonts>
-
-对于安装了 MacTeX 的 OS X 系统的用户，应该做如下额外的配置：
-
-打开路径 `/usr/local/texlive/2014/texmf-dist/tex/latex/ctex/cfg` 编辑文件 `ctex.cfg` 为以下内容：
-
-    \setCJKmainfont[BoldFont=STHeiti,ItalicFont=STKaiti]{STSong}
-    \setCJKsansfont[BoldFont=STHeiti]{STXihei}
-    \setCJKmonofont{STFangsong}
-    \setCJKfamilyfont{stsong}{STSong}
-    \setCJKfamilyfont{sthei}{STHeiti}
-    \setCJKfamilyfont{stkai}{STKaiti}
-    \setCJKfamilyfont{stfs}{STFangsong}
-    \newcommand{\songti}{\CJKfamily{stsong}} % 宋体
-    \newcommand{\heiti}{\CJKfamily{sthei}}   % 黑体
-    \newcommand{\kaishu}{\CJKfamily{stkai}}  % 楷书
-    \newcommand{\fangsong}{\CJKfamily{stfs}} % 仿宋
-    \endinput
-
-在同一个目录下，新建文件 `ctexopts.cfg`，编辑为以下内容：
-
-    \ExecuteOptions{nofonts}
-    \ExecuteOptions{fntef}
-
-    \endinput
-
-对于 Linux 的用户，`ctexopts.cfg` 的修改方式完全一致，`ctex.cfg` 则略有不同。由于 Linux 发行版众多，使用的字体也不一致，这里没有办法给出一套完整的方案。你可以参考本文后的「查看当前操作系统中的字体」一节，将合适的字体填入即可。
-
-## 老方法——直接调用 xeCJk 宏包
-
-
+## 老方法——直接调用 xeCJK 宏包
 
 在 TeXworks 编辑框中输入以下内容，保存，使用 XeLaTeX 编译：
 
@@ -202,6 +172,11 @@ TeXworks 默认的排版工具是 pdfLaTeX，如果你希望更改这个默认�
 
 ## 查看当前操作系统中的字体
 
+### Mac OS X 用户
+
+请参照 [这篇博客](http://liam0205.me/2014/11/02/latex-mactex-chinese-support/) 中的方法，使用系统自带的字体册程序来查看系统字体。
+
+### 非 Mac OS X 用户
 
 按照如下步骤打开系统命令行（*nix系统请打开终端）：
 
@@ -269,8 +244,6 @@ TeXworks 默认的排版工具是 pdfLaTeX，如果你希望更改这个默认�
     \setCJKmainfont[BoldFont=\fontnamehei,ItalicFont=\fontnamekai]{\fontnamesong}
     \setCJKmonofont{\fontnameyahei}
     \setCJKsansfont[BoldFont=\fontnamehei]{\fontnameyahei}
-    \XeTeXlinebreaklocale "zh"          %使用中文的换行风格
-    \XeTeXlinebreakskip = 0pt plus 1pt  %调整换行逻辑的弹性大小
     %
     % 设置标题、作者、日期
     % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -335,8 +308,6 @@ TeXworks 默认的排版工具是 pdfLaTeX，如果你希望更改这个默认�
     \setCJKmainfont[BoldFont=\fontnamehei,ItalicFont=\fontnamekai]{\fontnamesong}
     \setCJKmonofont{\fontnameyahei}
     \setCJKsansfont[BoldFont=\fontnamehei]{\fontnameyahei}
-    \XeTeXlinebreaklocale "zh"          %使用中文的换行风格
-    \XeTeXlinebreakskip = 0pt plus 1pt  %调整换行逻辑的弹性大小
     %
     % 设置标题、作者、日期
     % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -411,8 +382,6 @@ TeXworks 默认的排版工具是 pdfLaTeX，如果你希望更改这个默认�
     \setCJKmainfont[BoldFont=\fontnamehei,ItalicFont=\fontnamekai]{\fontnamesong}
     \setCJKmonofont{\fontnameyahei}
     \setCJKsansfont[BoldFont=\fontnamehei]{\fontnameyahei}
-    \XeTeXlinebreaklocale "zh"          %使用中文的换行风格
-    \XeTeXlinebreakskip = 0pt plus 1pt  %调整换行逻辑的弹性大小
     %
     % 设置标题、作者、日期
     % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
