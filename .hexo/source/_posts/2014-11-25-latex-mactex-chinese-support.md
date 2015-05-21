@@ -55,69 +55,27 @@ XeTeX 在 Mac OS X 下的行为和 Windows/Linux 下不大一样。Mac 底下，
 
 ![编译效果]({{site.url}}/attachment/images/MacTeX_xeCJK/03.png)
 
-## 额外的工作
+## 使用 `ctex` 宏包和文档类
 
-尽管这一节的操作有些复杂，而且对于中文支持来说是可选的，但是依旧推荐按步骤操作。
-
-`xeCJK` 之解决了中文支持问题，以及一些关于标点的处理，并没有提供和中文版式相关的解决方案。`ctex` 宏包和文档类封装了 xeCJK，同时提供了中文版式的相关支持。不过 `ctex` 的默认配置是为 Windows 平台配置的，Mac 用户需要对默认配置做一些修改。具体如下。
-
-打开终端，键入命令：
-
-{% code demo lang:shell %}
-cd /usr/local/texlive/texmf-local/tex/latex/
-sudo mkdir ./ctex/
-sudo mkdir ./ctex/cfg/
-cd ./ctex/cfg/
-sudo vim ctexopts.cfg
-{% endcode %}
-
-复制以下内容：
+`xeCJK` 之解决了中文支持问题，以及一些关于标点的处理，并没有提供和中文版式相关的解决方案。`ctex` 宏包和文档类封装了 xeCJK，同时提供了中文版式的相关支持。新版的 `ctex` 宏包和文档类能够自动检测用户使用的操作系统，自动选择合适的字体配置，十分方便。
 
 {% code demo lang:tex %}
-\ExecuteOptions{UTF8}
-\ExecuteOptions{nofonts}
-
-\endinput
+\documentclass[UTF8]{ctexart}
+\begin{document}
+中文
+\end{document}
 {% endcode %}
 
-切换回到终端窗口，按 `i` 进入编辑模式，按 `cmd + v` 粘贴，按 `esc` 退出编辑模式，输入 `:x` 保存退出（半角冒号紧接着 x）。
-在终端窗口继续操作，键入命令：
+测试截图如下：
 
-{% code demo lang:shell %}
-sudo vim ctex.cfg
-{% endcode %}
+![编译效果 ]({{site.url}}/attachment/images/MacTeX_xeCJK/04.png)
 
-复制以下内容：
+如果希望 `ctex` 只提供中文支持的功能不对版式做任何修改，也可以这样使用：
 
 {% code demo lang:tex %}
-\RequirePackage{ifxetex}
-\ifxetex
-  \setCJKmainfont[BoldFont=STZhongsong, ItalicFont=STKaiti]{STSong}
-  \setCJKsansfont[BoldFont=STHeiti]{STXihei}
-  \setCJKmonofont{STFangsong}
-
-  \newCJKfontfamily[stsong]\songti[BoldFont=STZhongsong, ItalicFont=STKaiti]{STSong}
-  \newCJKfontfamily[sthei]\heiti[BoldFont=STHeiti]{STXihei}
-  \newCJKfontfamily[stkai]\kaishu{STKaiti}
-  \newCJKfontfamily[stfang]\fangsong{STFangsong}
-  \newCJKfontfamily[stli]\lishu{STLiti}
-\fi
-\endinput
+\documentclass{article}
+\usepackage[UTF8, heading = false, scheme = plain]{ctex}
+\begin{document}
+中文
+\end{document}
 {% endcode %}
-
-切换回到终端窗口，按 `i` 进入编辑模式，按 `cmd + v` 粘贴，按 `esc` 退出编辑模式，输入 `:x` 保存退出（半角冒号紧接着 x）。
-在终端窗口继续操作，键入命令：
-
-{% code demo lang:shell %}
-sudo texhash
-{% endcode %}
-
-这里，
-
-* `ctexopts.cfg` 会在 `ctex` 宏包/文档类的选项定义之后被载入，我们启用了 `nofonts` 和 `UTF8` 这两个选项；
-* `ctex.cfg` 则会在 `ctex` 宏包/文档类的结尾被载入，我们配置了字体；
-* `texhash` 会刷新 TeX 的文件名数据库。
-
-至此，`ctex` 宏包/文档类在 Mac 里就可以正常工作了。测试截图如下：
-
-![编译效果]({{site.url}}/attachment/images/MacTeX_xeCJK/04.png)
