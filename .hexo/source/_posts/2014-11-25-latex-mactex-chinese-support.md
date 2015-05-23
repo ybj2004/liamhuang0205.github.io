@@ -53,9 +53,9 @@ XeTeX 在 Mac OS X 下的行为和 Windows/Linux 下不大一样。Mac 底下，
 
 完整代码的编译效果截图如下：
 
-![编译效果]({{site.url}}/attachment/images/MacTeX_xeCJK/03.png)
+![编译效果 ]({{site.url}}/attachment/images/MacTeX_xeCJK/03.png)
 
-## 使用 `ctex` 宏包和文档类
+## 使用 `ctex` 宏包和文档类 [2015-05-21 更新]
 
 `xeCJK` 之解决了中文支持问题，以及一些关于标点的处理，并没有提供和中文版式相关的解决方案。`ctex` 宏包和文档类封装了 xeCJK，同时提供了中文版式的相关支持。新版的 `ctex` 宏包和文档类能够自动检测用户使用的操作系统，自动选择合适的字体配置，十分方便。
 
