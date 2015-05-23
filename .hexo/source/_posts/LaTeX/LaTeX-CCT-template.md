@@ -39,6 +39,7 @@ modified: 2014-12-21
 这里给出一个列表，记录使用此类模板的期刊。如果你发现你投稿的期刊也使用了这样的模板（符合上述特征），请留言告诉我；我将会及时补充到列表当中，方便后来者。
 
 * [系统工程理论与实践](http://www.sysengi.com/) - [LaTeX 模板](http://www.sysengi.com/UserFiles/File/model2013.tex)
+* [数学的实践与认知](http://ssjs.cbpt.cnki.net/WKA2/WebPublication/index.aspx?mid=ssjs) - [LaTeX 模板](http://211.151.247.86/Editor/2013/0516/ssjs/9c56b9c5-ab32-4bcc-980a-6861cebffefd.tex)
 
 ## 问题分析
 
