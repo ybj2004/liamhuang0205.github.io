@@ -15,10 +15,11 @@ date: 2014-07-16 11:04:03
 * [刘虓震（女）的博客](http://www.liuxiaozhen.com)
 * [现代魔法学院](http://www.nowamagic.net/academy/) 是 [gonnsai](http://t.qq.com/gonnsai) 创立的程序员、工程师交流平台，里面有很多好东西。
 * [W3C 学院](http://www.w3cschool.cc/)
+* [玩蛇网 Python 论坛](http://bbs.iplaypython.com/)
 
-## Software
+<!-- ## Software
 
-* Hustonline App provides many kinds of authorized software.
+* Hustonline App provides many kinds of authorized software. -->
 
 ## (La)TeX
 
@@ -29,8 +30,8 @@ date: 2014-07-16 11:04:03
 * [TeX/LaTeX - Stack Exchange](http://tex.stackexchange.com/) is a question and answer site for users of TeX, LaTeX, ConTeXt.
 * [Ti*k*Z Examples](http://www.texample.net/tikz/examples/) posts a lot of Ti*k*Z Example, enjoy it!
 
-### LaTeX Useful Tools
+<!-- ### LaTeX Useful Tools
 
 * [TeXstudio 2.6.2 for Windows]({{site.url}}/attachment/LaTeX-useful-tools/texstudio262_win32.exe): A free, platform independent, unicode LaTeX editor with inline spell checking, codefolding and syntax highlighting. A fork of Texmaker. See [here](http://texstudio.sourceforge.net/‎).
 * [JabRef 2.9.2 for Windows]({{site.url}}/attachment/LaTeX-useful-tools/JabRef-2.9.2-setup.exe): Java GUI frontend for managing BibTeX and other bibliographies. Download, revision history, screenshots and SourceForge project page. See [here](http://jabref.sourceforge.net/‎).
-* [Mendeley 1.10.1 for Windows]({{site.url}}/attachment/LaTeX-useful-tools/Mendeley-Desktop-1.10.1-win32.exe): Easily organize your papers, read & annotate your PDFs, collaborate in private or open groups, and securely access your research from everywhere. See [here](http://www.mendeley.com/‎).
+* [Mendeley 1.10.1 for Windows]({{site.url}}/attachment/LaTeX-useful-tools/Mendeley-Desktop-1.10.1-win32.exe): Easily organize your papers, read & annotate your PDFs, collaborate in private or open groups, and securely access your research from everywhere. See [here](http://www.mendeley.com/‎). -->
