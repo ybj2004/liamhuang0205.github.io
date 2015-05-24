@@ -22,7 +22,7 @@ tags: [Python, PIL, ImageDraw, ImageFont]
 要在 `Image` 实例上绘制新的图样，首先要做的就是创建一个 `Draw` 类的实例。
 
 {% code lang:python %}
-import Image, ImageDraw
+from PIL import Image, ImageDraw
 sourceFileName = "source.png"
 avatar         = Image.open(sourceFileName)
 drawAvatar     = ImageDraw.Draw(avatar)
@@ -49,7 +49,7 @@ drawAvatar     = ImageDraw.Draw(avatar)
 * `width = integer` - 用于指定线条的宽度，单位是像素
 
 {% code lang:python %}
-import Image, ImageDraw
+from PIL import Image, ImageDraw
 sourceFileName = "source.png"
 avatar         = Image.open(sourceFileName)
 drawAvatar     = ImageDraw.Draw(avatar)
@@ -84,7 +84,7 @@ avatar.show()
 `arc` 方法将在内切于 bounding box 的椭圆中，按照给定的起止角度切下一段弧，并绘制于 `Image` 示例之上。
 
 {% code lang:python %}
-import Image, ImageDraw
+from PIL import Image, ImageDraw
 sourceFileName = "source.png"
 avatar         = Image.open(sourceFileName)
 drawAvatar     = ImageDraw.Draw(avatar)
@@ -111,7 +111,7 @@ avatar.show()
 * `fill = (R, G, B)` - 用于指定线条的颜色，其中 `R`、`G`、`B` 都是 0 -- 255 的整数
 
 {% code lang:python %}
-import Image, ImageDraw
+from PIL import Image, ImageDraw
 sourceFileName = "source.png"
 avatar         = Image.open(sourceFileName)
 drawAvatar     = ImageDraw.Draw(avatar)
@@ -134,15 +134,6 @@ avatar.show()
 `ImageFont` 模块很简单，它定义了一个同名的类。`ImageFont` 类的实例可以传给 `ImageDraw` 中 `text` 方法的 `font` 的参数，起到字体选择的作用。
 
 `ImageFont` 模块中的 `load` 函数可以加载一个 Image 格式的字体，并返回 `ImageFont` 实例；其中的 `truetype(fontfile, fontsize)` 函数则可以加载 TrueType 或 OpenType 格式的字体，并返回 `ImageFont` 参数。不过 `truetype` 函数需要额外安装 `_imagingft` 模块。
-
-在 Mac 下的安装配置为：
-
-    sudo chown -R $USER:admin /usr/local
-    brew install libtiff libjpeg libpng webp little-cms2 freetype
-    sudo pip uninstall pil
-    sudo pip install Pillow
-
-这里我们用 `Pillow` 库替换了 `PIL` 库。这两个库本质是一样的，但是 `Pillow` 库提供了更多的功能和更简单的配置。
 
 配置好之后，我们可以对上一节末尾的代码稍作修改：
 

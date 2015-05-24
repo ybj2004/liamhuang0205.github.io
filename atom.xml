@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-05-24T04:59:19.013Z</updated>
+  <updated>2015-05-24T05:09:40.490Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -350,7 +350,7 @@ random_codes = <span class="keyword">lambda</span> x, y: <span class="string">''
     <link href="http://liam0205.me/2015/05/05/pil-tutorial-imagedraw-and-imagefont/"/>
     <id>http://liam0205.me/2015/05/05/pil-tutorial-imagedraw-and-imagefont/</id>
     <published>2015-05-04T16:15:06.000Z</published>
-    <updated>2015-05-24T04:58:07.000Z</updated>
+    <updated>2015-05-24T05:00:26.000Z</updated>
     <content type="html"><![CDATA[<p><a href="/2015/04/22/pil-tutorial-basic-usage/">上一篇文章</a> 介绍了 PIL 的基本情况，以及 <code>Image</code> 模块的基本用法。这篇文章，我们讨论一下 <code>ImageDraw</code> 和 <code>ImageFont</code> 两个模块的基本用法，说说如何用 PIL 在现有的图片上涂涂改改。</p>
 <p>系列文章列表：</p>
 <ol>
@@ -367,7 +367,7 @@ random_codes = <span class="keyword">lambda</span> x, y: <span class="string">''
 2
 3
 4
-</pre></td><td class="code"><pre><span class="keyword">import</span> Image, ImageDraw
+</pre></td><td class="code"><pre><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw
 sourceFileName = <span class="string">"source.png"</span>
 avatar         = Image.open(sourceFileName)
 drawAvatar     = ImageDraw.Draw(avatar)
@@ -406,7 +406,7 @@ drawAvatar     = ImageDraw.Draw(avatar)
 12
 13
 14
-</pre></td><td class="code"><pre><span class="keyword">import</span> Image, ImageDraw
+</pre></td><td class="code"><pre><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw
 sourceFileName = <span class="string">"source.png"</span>
 avatar         = Image.open(sourceFileName)
 drawAvatar     = ImageDraw.Draw(avatar)
@@ -447,7 +447,7 @@ avatar.show()
 10
 11
 12
-</pre></td><td class="code"><pre><span class="keyword">import</span> Image, ImageDraw
+</pre></td><td class="code"><pre><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw
 sourceFileName = <span class="string">"source.png"</span>
 avatar         = Image.open(sourceFileName)
 drawAvatar     = ImageDraw.Draw(avatar)
@@ -483,7 +483,7 @@ avatar.show()
 10
 11
 12
-</pre></td><td class="code"><pre><span class="keyword">import</span> Image, ImageDraw
+</pre></td><td class="code"><pre><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw
 sourceFileName = <span class="string">"source.png"</span>
 avatar         = Image.open(sourceFileName)
 drawAvatar     = ImageDraw.Draw(avatar)
@@ -504,12 +504,6 @@ avatar.show()
 <h2 id="ImageFont_ 模块 "><code>ImageFont</code> 模块</h2>
 <p><code>ImageFont</code> 模块很简单，它定义了一个同名的类。<code>ImageFont</code> 类的实例可以传给 <code>ImageDraw</code> 中 <code>text</code> 方法的 <code>font</code> 的参数，起到字体选择的作用。</p>
 <p><code>ImageFont</code> 模块中的 <code>load</code> 函数可以加载一个 Image 格式的字体，并返回 <code>ImageFont</code> 实例；其中的 <code>truetype(fontfile, fontsize)</code> 函数则可以加载 TrueType 或 OpenType 格式的字体，并返回 <code>ImageFont</code> 参数。不过 <code>truetype</code> 函数需要额外安装 <code>_imagingft</code> 模块。</p>
-<p>在 Mac 下的安装配置为：</p>
-<pre><code><span class="built_in">sudo</span> chown -R <span class="variable">$USER</span>:admin /usr/local
-brew install libtiff libjpeg libpng webp little-cms2 freetype
-<span class="built_in">sudo</span> pip uninstall pil
-<span class="built_in">sudo</span> pip install Pillow
-</code></pre><p>这里我们用 <code>Pillow</code> 库替换了 <code>PIL</code> 库。这两个库本质是一样的，但是 <code>Pillow</code> 库提供了更多的功能和更简单的配置。</p>
 <p>配置好之后，我们可以对上一节末尾的代码稍作修改：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre>1
 2
