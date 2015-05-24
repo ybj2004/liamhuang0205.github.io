@@ -127,24 +127,33 @@
   <div class="entry">
     
       <p>PIL (Python Image Library) 是 Python 平台处理图片的事实标准，兼具强大的功能和简洁的 API。这篇文章将从 PIL 的安装开始，介绍 PIL 的基本情况和基本用法。</p>
+<p>系列文章列表：</p>
+<ol>
+<li><a href="/2015/04/22/pil-tutorial-basic-usage/">基本用法</a></li>
+<li><a href="/2015/05/05/pil-tutorial-imagedraw-and-imagefont/"><code>ImageDraw</code> 和 <code>ImageFont</code> 模块</a></li>
+</ol>
 <a id="more"></a>
 
 <h2 id=" 安装 ">安装</h2>
-<p>在安装好了 Python 的基础上，安装 Python 十分简单。在 *nix 系统里，可以直接使用 Python 的包管理器来安装。例如使用 <code>easy_install</code> 安装：</p>
+<p>虽然本篇介绍的是 PIL，但实际上安装的却是 Pillow。PIL 的更新速度很慢，而且存在一些难以配置的问题，不推荐使用；而 Pillow 库则是 PIL 的一个分支，维护和开发活跃，Pillow 兼容 PIL 的绝大多数语法，推荐使用。</p>
+<p>在安装 Pillow 之前，需要安装好一些开源库。对于 Mac OS X 而言，可以用 HomeBrew 来安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> easy_install PIL
+2
+3
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> chown -R <span class="variable">$USER</span>:admin /usr/local
+brew install libtiff libjpeg libpng webp little-cms2 freetype
+<span class="built_in">sudo</span> pip install Pillow
 </pre></td></tr></table></figure>
 
 
 
-<p>在 Windows 系统里，可以直接安装 <code>.exe</code> 版本。你可以在 <a href="http://pythonware.com/products/pil/" target="_blank">PIL 的官网</a> 下载到它。</p>
-<p>安装好之后，打开 Python 解释器，输入 <code>import Image</code> 来测试是否安装成功。</p>
+<p>安装好之后，打开 Python 解释器，输入 <code>from PIL import Image</code> 来测试是否安装成功。</p>
 <h2 id=" 新建一个 _Image_ 类的实例 ">新建一个 <code>Image</code> 类的实例</h2>
 <p>PIL 的主要功能定义在 <code>Image</code> 类当中，而 <code>Image</code> 类定义在同名的 <code>Image</code> 模块当中。使用 PIL 的功能，一般都是从新建一个 <code>Image</code> 类的实例开始。新建 <code>Image</code> 类的实例有多种方法。你可以用 <code>Image</code> 模块的 <code>open()</code> 函数打开已有的图片档案，也可以处理其它的实例，或者从零开始构建一个实例。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre>1
 2
 3
-</pre></td><td class="code"><pre><span class="keyword">import</span> Image
+</pre></td><td class="code"><pre><span class="keyword">from</span> PIL <span class="keyword">import</span> Image
 sourceFileName = <span class="string">"source.png"</span>
 avatar         = Image.open(sourceFileName)
 </pre></td></tr></table></figure>
@@ -196,7 +205,7 @@ avatar         = Image.open(sourceFileName)
 10
 11
 </pre></td><td class="code"><pre><span class="keyword">import</span> os, sys
-<span class="keyword">import</span> Image
+<span class="keyword">from</span> PIL <span class="keyword">import</span> Image
 
 <span class="keyword">for</span> infile <span class="keyword">in</span> sys.argv[<span class="number">1</span>:]:
     f, e = os.path.splitext(infile)
@@ -227,7 +236,7 @@ avatar         = Image.open(sourceFileName)
 12
 13
 </pre></td><td class="code"><pre><span class="keyword">import</span> os, sys
-<span class="keyword">import</span> Image
+<span class="keyword">from</span> PIL <span class="keyword">import</span> Image
 
 <span class="keyword">for</span> infile <span class="keyword">in</span> sys.argv[<span class="number">1</span>:]:
     outfile = os.path.splitext(infile)[<span class="number">0</span>] + <span class="string">".thumbnail"</span>
@@ -281,7 +290,7 @@ avatar         = Image.open(sourceFileName)
 30
 31
 32
-</pre></td><td class="code"><pre><span class="keyword">import</span> Image
+</pre></td><td class="code"><pre><span class="keyword">from</span> PIL <span class="keyword">import</span> Image
 
 imageFName = <span class="string">'source.png'</span>
 
@@ -478,7 +487,7 @@ avatar.show()
   <!--
   <a href="/tags/3000/" style="font-size: 10.00px;">3000</a><a href="/tags/AHD/" style="font-size: 10.00px;">AHD</a><a href="/tags/AMS/" style="font-size: 10.00px;">AMS</a><a href="/tags/AW/" style="font-size: 15.00px;">AW</a><a href="/tags/Apple Dictionaries/" style="font-size: 10.00px;">Apple Dictionaries</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Bitmap/" style="font-size: 10.00px;">Bitmap</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blindness/" style="font-size: 10.00px;">Blindness</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Book review/" style="font-size: 10.00px;">Book review</a><a href="/tags/Bookmarks/" style="font-size: 10.00px;">Bookmarks</a><a href="/tags/Bug/" style="font-size: 10.00px;">Bug</a><a href="/tags/CCT/" style="font-size: 10.00px;">CCT</a><a href="/tags/CJK/" style="font-size: 15.00px;">CJK</a><a href="/tags/CTeX/" style="font-size: 10.00px;">CTeX</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 15.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 15.00px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 15.00px;">Christianity</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Compile/" style="font-size: 10.00px;">Compile</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/EPS/" style="font-size: 10.00px;">EPS</a><a href="/tags/Encoding/" style="font-size: 10.00px;">Encoding</a><a href="/tags/English/" style="font-size: 20.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Environment/" style="font-size: 10.00px;">Environment</a>
   -->
-  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/CJK/" style="font-size: 12.50px;">CJK</a><a href="/tags/Chapter/" style="font-size: 12.50px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 12.50px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 12.50px;">Christianity</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Europe/" style="font-size: 15.00px;">Europe</a><a href="/tags/Git/" style="font-size: 12.50px;">Git</a><a href="/tags/Grammar/" style="font-size: 15.00px;">Grammar</a><a href="/tags/Greece/" style="font-size: 12.50px;">Greece</a><a href="/tags/Hexo/" style="font-size: 12.50px;">Hexo</a><a href="/tags/Highlight/" style="font-size: 12.50px;">Highlight</a><a href="/tags/History/" style="font-size: 15.00px;">History</a><a href="/tags/Images/" style="font-size: 12.50px;">Images</a><a href="/tags/Kindle/" style="font-size: 15.00px;">Kindle</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Listings/" style="font-size: 12.50px;">Listings</a><a href="/tags/MacTeX/" style="font-size: 12.50px;">MacTeX</a><a href="/tags/Macro/" style="font-size: 12.50px;">Macro</a><a href="/tags/Number/" style="font-size: 10.00px;">Number</a><a href="/tags/Overbrace/" style="font-size: 10.00px;">Overbrace</a><a href="/tags/PDF/" style="font-size: 12.50px;">PDF</a><a href="/tags/PIL/" style="font-size: 12.50px;">PIL</a><a href="/tags/Pro Git/" style="font-size: 10.00px;">Pro Git</a><a href="/tags/PyHardWay/" style="font-size: 10.00px;">PyHardWay</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Roman/" style="font-size: 10.00px;">Roman</a><a href="/tags/Romantic/" style="font-size: 12.50px;">Romantic</a><a href="/tags/Rule/" style="font-size: 10.00px;">Rule</a><a href="/tags/SDU/" style="font-size: 10.00px;">SDU</a><a href="/tags/Section/" style="font-size: 12.50px;">Section</a><a href="/tags/Setspace/" style="font-size: 10.00px;">Setspace</a><a href="/tags/THM-RESTATE/" style="font-size: 10.00px;">THM-RESTATE</a><a href="/tags/Tecall/" style="font-size: 10.00px;">Tecall</a><a href="/tags/Template/" style="font-size: 17.50px;">Template</a><a href="/tags/Theorem/" style="font-size: 10.00px;">Theorem</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 12.50px;">Tutorial</a><a href="/tags/pTeX/" style="font-size: 15.00px;">pTeX</a>
+  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/CJK/" style="font-size: 12.50px;">CJK</a><a href="/tags/Chapter/" style="font-size: 12.50px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 12.50px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 12.50px;">Christianity</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Europe/" style="font-size: 15.00px;">Europe</a><a href="/tags/Git/" style="font-size: 12.50px;">Git</a><a href="/tags/Grammar/" style="font-size: 15.00px;">Grammar</a><a href="/tags/Greece/" style="font-size: 12.50px;">Greece</a><a href="/tags/Hexo/" style="font-size: 12.50px;">Hexo</a><a href="/tags/Highlight/" style="font-size: 12.50px;">Highlight</a><a href="/tags/History/" style="font-size: 15.00px;">History</a><a href="/tags/ImageFont/" style="font-size: 10.00px;">ImageFont</a><a href="/tags/Images/" style="font-size: 12.50px;">Images</a><a href="/tags/Kindle/" style="font-size: 15.00px;">Kindle</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Listings/" style="font-size: 12.50px;">Listings</a><a href="/tags/MacTeX/" style="font-size: 12.50px;">MacTeX</a><a href="/tags/Macro/" style="font-size: 12.50px;">Macro</a><a href="/tags/Number/" style="font-size: 10.00px;">Number</a><a href="/tags/Overbrace/" style="font-size: 10.00px;">Overbrace</a><a href="/tags/PDF/" style="font-size: 12.50px;">PDF</a><a href="/tags/PIL/" style="font-size: 12.50px;">PIL</a><a href="/tags/Phantom/" style="font-size: 10.00px;">Phantom</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Rlap/" style="font-size: 10.00px;">Rlap</a><a href="/tags/Roman/" style="font-size: 10.00px;">Roman</a><a href="/tags/Romantic/" style="font-size: 12.50px;">Romantic</a><a href="/tags/Rule/" style="font-size: 10.00px;">Rule</a><a href="/tags/SDU/" style="font-size: 10.00px;">SDU</a><a href="/tags/Section/" style="font-size: 12.50px;">Section</a><a href="/tags/Subnumber/" style="font-size: 10.00px;">Subnumber</a><a href="/tags/THM-RESTATE/" style="font-size: 10.00px;">THM-RESTATE</a><a href="/tags/Tecall/" style="font-size: 10.00px;">Tecall</a><a href="/tags/Template/" style="font-size: 17.50px;">Template</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 12.50px;">Tutorial</a><a href="/tags/Underbrace/" style="font-size: 10.00px;">Underbrace</a><a href="/tags/pTeX/" style="font-size: 15.00px;">pTeX</a>
   </div>
 </div>
 

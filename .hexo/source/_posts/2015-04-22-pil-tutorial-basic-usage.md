@@ -6,26 +6,33 @@ tags: [Python, PIL, Image]
 
 PIL (Python Image Library) 是 Python 平台处理图片的事实标准，兼具强大的功能和简洁的 API。这篇文章将从 PIL 的安装开始，介绍 PIL 的基本情况和基本用法。
 
+系列文章列表：
+
+1. [基本用法]({{site.url}}/2015/04/22/pil-tutorial-basic-usage/)
+2. [`ImageDraw` 和 `ImageFont` 模块]({{site.url}}/2015/05/05/pil-tutorial-imagedraw-and-imagefont/)
+
 <!--more-->
 
 ## 安装
 
-在安装好了 Python 的基础上，安装 Python 十分简单。在 *nix 系统里，可以直接使用 Python 的包管理器来安装。例如使用 `easy_install` 安装：
+虽然本篇介绍的是 PIL，但实际上安装的却是 Pillow。PIL 的更新速度很慢，而且存在一些难以配置的问题，不推荐使用；而 Pillow 库则是 PIL 的一个分支，维护和开发活跃，Pillow 兼容 PIL 的绝大多数语法，推荐使用。
+
+在安装 Pillow 之前，需要安装好一些开源库。对于 Mac OS X 而言，可以用 HomeBrew 来安装：
 
 {% code lang:bash %}
-sudo easy_install PIL
+sudo chown -R $USER:admin /usr/local
+brew install libtiff libjpeg libpng webp little-cms2 freetype
+sudo pip install Pillow
 {% endcode %}
 
-在 Windows 系统里，可以直接安装 `.exe` 版本。你可以在 [PIL 的官网][PIL-website] 下载到它。
-
-安装好之后，打开 Python 解释器，输入 `import Image` 来测试是否安装成功。
+安装好之后，打开 Python 解释器，输入 `from PIL import Image` 来测试是否安装成功。
 
 ## 新建一个 `Image` 类的实例
 
 PIL 的主要功能定义在 `Image` 类当中，而 `Image` 类定义在同名的 `Image` 模块当中。使用 PIL 的功能，一般都是从新建一个 `Image` 类的实例开始。新建 `Image` 类的实例有多种方法。你可以用 `Image` 模块的 `open()` 函数打开已有的图片档案，也可以处理其它的实例，或者从零开始构建一个实例。
 
 {% code lang:python %}
-import Image
+from PIL import Image
 sourceFileName = "source.png"
 avatar         = Image.open(sourceFileName)
 {% endcode %}
@@ -74,7 +81,7 @@ print avatar.format, avatar.size, avatar.mode
 
 {% code lang:python %}
 import os, sys
-import Image
+from PIL import Image
 
 for infile in sys.argv[1:]:
     f, e = os.path.splitext(infile)
@@ -94,7 +101,7 @@ for infile in sys.argv[1:]:
 
 {% code lang:python %}
 import os, sys
-import Image
+from PIL import Image
 
 for infile in sys.argv[1:]:
     outfile = os.path.splitext(infile)[0] + ".thumbnail"
@@ -121,7 +128,7 @@ for infile in sys.argv[1:]:
 我们尝试将一张图片的左半部分截取下来，左右颠倒之后旋转 180°；将图片的右半边不作更改粘贴到左半部分；最后将修改过的左半部分粘贴到右半部分。
 
 {% code lang:python %}
-import Image
+from PIL import Image
 
 imageFName = 'source.png'
 

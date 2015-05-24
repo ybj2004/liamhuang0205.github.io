@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-05-23T13:35:50.930Z</updated>
+  <updated>2015-05-24T04:59:19.013Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -350,8 +350,13 @@ random_codes = <span class="keyword">lambda</span> x, y: <span class="string">''
     <link href="http://liam0205.me/2015/05/05/pil-tutorial-imagedraw-and-imagefont/"/>
     <id>http://liam0205.me/2015/05/05/pil-tutorial-imagedraw-and-imagefont/</id>
     <published>2015-05-04T16:15:06.000Z</published>
-    <updated>2015-05-05T13:32:55.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/">上一篇文章</a> 介绍了 PIL 的基本情况，以及 <code>Image</code> 模块的基本用法。这篇文章，我们讨论一下 <code>ImageDraw</code> 和 <code>ImageFont</code> 两个模块的基本用法，说说如何用 PIL 在现有的图片上涂涂改改。</p>
+    <updated>2015-05-24T04:58:07.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="/2015/04/22/pil-tutorial-basic-usage/">上一篇文章</a> 介绍了 PIL 的基本情况，以及 <code>Image</code> 模块的基本用法。这篇文章，我们讨论一下 <code>ImageDraw</code> 和 <code>ImageFont</code> 两个模块的基本用法，说说如何用 PIL 在现有的图片上涂涂改改。</p>
+<p>系列文章列表：</p>
+<ol>
+<li><a href="/2015/04/22/pil-tutorial-basic-usage/">基本用法</a></li>
+<li><a href="/2015/05/05/pil-tutorial-imagedraw-and-imagefont/"><code>ImageDraw</code> 和 <code>ImageFont</code> 模块</a></li>
+</ol>
 <a id="more"></a>
 
 <h2 id="ImageDraw_ 模块 "><code>ImageDraw</code> 模块</h2>
@@ -549,7 +554,12 @@ avatar.show()
 <p><code>ImageDraw</code> 模块还有许多其他的功能，比如绘制椭圆、多边形、矩形等。限于篇幅，这里就不一一介绍了。感兴趣的读者可以参看官方文档：</p>
 <p><a href="http://effbot.org/imagingbook/imagedraw.htm#methods" target="_blank">http://effbot.org/imagingbook/imagedraw.htm#methods</a></p>
 ]]></content>
-    <summary type="html"><![CDATA[<p><a href="http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/">上一篇文章</a> 介绍了 PIL 的基本情况，以及 <code>Image</code> 模块的基本用法。这篇文章，我们讨论一下 <code>ImageDraw</code> 和 <code>ImageFont</code> 两个模块的基本用法，说说如何用 PIL 在现有的图片上涂涂改改。</p>
+    <summary type="html"><![CDATA[<p><a href="/2015/04/22/pil-tutorial-basic-usage/">上一篇文章</a> 介绍了 PIL 的基本情况，以及 <code>Image</code> 模块的基本用法。这篇文章，我们讨论一下 <code>ImageDraw</code> 和 <code>ImageFont</code> 两个模块的基本用法，说说如何用 PIL 在现有的图片上涂涂改改。</p>
+<p>系列文章列表：</p>
+<ol>
+<li><a href="/2015/04/22/pil-tutorial-basic-usage/">基本用法</a></li>
+<li><a href="/2015/05/05/pil-tutorial-imagedraw-and-imagefont/"><code>ImageDraw</code> 和 <code>ImageFont</code> 模块</a></li>
+</ol>
 ]]></summary>
     
       <category term="Python" scheme="http://liam0205.me/tags/Python/"/>
@@ -1070,26 +1080,35 @@ hexo.on(<span class="string">'new'</span>, <span class="function"><span class="k
     <link href="http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/"/>
     <id>http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/</id>
     <published>2015-04-22T09:46:31.000Z</published>
-    <updated>2015-04-23T15:15:08.000Z</updated>
+    <updated>2015-05-24T04:59:12.000Z</updated>
     <content type="html"><![CDATA[<p>PIL (Python Image Library) 是 Python 平台处理图片的事实标准，兼具强大的功能和简洁的 API。这篇文章将从 PIL 的安装开始，介绍 PIL 的基本情况和基本用法。</p>
+<p>系列文章列表：</p>
+<ol>
+<li><a href="/2015/04/22/pil-tutorial-basic-usage/">基本用法</a></li>
+<li><a href="/2015/05/05/pil-tutorial-imagedraw-and-imagefont/"><code>ImageDraw</code> 和 <code>ImageFont</code> 模块</a></li>
+</ol>
 <a id="more"></a>
 
 <h2 id=" 安装 ">安装</h2>
-<p>在安装好了 Python 的基础上，安装 Python 十分简单。在 *nix 系统里，可以直接使用 Python 的包管理器来安装。例如使用 <code>easy_install</code> 安装：</p>
+<p>虽然本篇介绍的是 PIL，但实际上安装的却是 Pillow。PIL 的更新速度很慢，而且存在一些难以配置的问题，不推荐使用；而 Pillow 库则是 PIL 的一个分支，维护和开发活跃，Pillow 兼容 PIL 的绝大多数语法，推荐使用。</p>
+<p>在安装 Pillow 之前，需要安装好一些开源库。对于 Mac OS X 而言，可以用 HomeBrew 来安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> easy_install PIL
+2
+3
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> chown -R <span class="variable">$USER</span>:admin /usr/local
+brew install libtiff libjpeg libpng webp little-cms2 freetype
+<span class="built_in">sudo</span> pip install Pillow
 </pre></td></tr></table></figure>
 
 
 
-<p>在 Windows 系统里，可以直接安装 <code>.exe</code> 版本。你可以在 <a href="http://pythonware.com/products/pil/" target="_blank">PIL 的官网</a> 下载到它。</p>
-<p>安装好之后，打开 Python 解释器，输入 <code>import Image</code> 来测试是否安装成功。</p>
+<p>安装好之后，打开 Python 解释器，输入 <code>from PIL import Image</code> 来测试是否安装成功。</p>
 <h2 id=" 新建一个 _Image_ 类的实例 ">新建一个 <code>Image</code> 类的实例</h2>
 <p>PIL 的主要功能定义在 <code>Image</code> 类当中，而 <code>Image</code> 类定义在同名的 <code>Image</code> 模块当中。使用 PIL 的功能，一般都是从新建一个 <code>Image</code> 类的实例开始。新建 <code>Image</code> 类的实例有多种方法。你可以用 <code>Image</code> 模块的 <code>open()</code> 函数打开已有的图片档案，也可以处理其它的实例，或者从零开始构建一个实例。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre>1
 2
 3
-</pre></td><td class="code"><pre><span class="keyword">import</span> Image
+</pre></td><td class="code"><pre><span class="keyword">from</span> PIL <span class="keyword">import</span> Image
 sourceFileName = <span class="string">"source.png"</span>
 avatar         = Image.open(sourceFileName)
 </pre></td></tr></table></figure>
@@ -1141,7 +1160,7 @@ avatar         = Image.open(sourceFileName)
 10
 11
 </pre></td><td class="code"><pre><span class="keyword">import</span> os, sys
-<span class="keyword">import</span> Image
+<span class="keyword">from</span> PIL <span class="keyword">import</span> Image
 
 <span class="keyword">for</span> infile <span class="keyword">in</span> sys.argv[<span class="number">1</span>:]:
     f, e = os.path.splitext(infile)
@@ -1172,7 +1191,7 @@ avatar         = Image.open(sourceFileName)
 12
 13
 </pre></td><td class="code"><pre><span class="keyword">import</span> os, sys
-<span class="keyword">import</span> Image
+<span class="keyword">from</span> PIL <span class="keyword">import</span> Image
 
 <span class="keyword">for</span> infile <span class="keyword">in</span> sys.argv[<span class="number">1</span>:]:
     outfile = os.path.splitext(infile)[<span class="number">0</span>] + <span class="string">".thumbnail"</span>
@@ -1226,7 +1245,7 @@ avatar         = Image.open(sourceFileName)
 30
 31
 32
-</pre></td><td class="code"><pre><span class="keyword">import</span> Image
+</pre></td><td class="code"><pre><span class="keyword">from</span> PIL <span class="keyword">import</span> Image
 
 imageFName = <span class="string">'source.png'</span>
 
@@ -1270,6 +1289,11 @@ avatar.show()
 <p><img src="/attachment/images/Python/pil-tutorial/transpose_paste.png" alt=" 变形和旋转 "></p>
 ]]></content>
     <summary type="html"><![CDATA[<p>PIL (Python Image Library) 是 Python 平台处理图片的事实标准，兼具强大的功能和简洁的 API。这篇文章将从 PIL 的安装开始，介绍 PIL 的基本情况和基本用法。</p>
+<p>系列文章列表：</p>
+<ol>
+<li><a href="/2015/04/22/pil-tutorial-basic-usage/">基本用法</a></li>
+<li><a href="/2015/05/05/pil-tutorial-imagedraw-and-imagefont/"><code>ImageDraw</code> 和 <code>ImageFont</code> 模块</a></li>
+</ol>
 ]]></summary>
     
       <category term="Python" scheme="http://liam0205.me/tags/Python/"/>

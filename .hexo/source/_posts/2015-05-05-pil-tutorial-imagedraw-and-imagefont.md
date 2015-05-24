@@ -6,6 +6,11 @@ tags: [Python, PIL, ImageDraw, ImageFont]
 
 [上一篇文章][pil-basic-usage] 介绍了 PIL 的基本情况，以及 `Image` 模块的基本用法。这篇文章，我们讨论一下 `ImageDraw` 和 `ImageFont` 两个模块的基本用法，说说如何用 PIL 在现有的图片上涂涂改改。
 
+系列文章列表：
+
+1. [基本用法]({{site.url}}/2015/04/22/pil-tutorial-basic-usage/)
+2. [`ImageDraw` 和 `ImageFont` 模块]({{site.url}}/2015/05/05/pil-tutorial-imagedraw-and-imagefont/)
+
 <!-- more -->
 
 ## `ImageDraw` 模块
@@ -172,4 +177,4 @@ avatar.show()
 
 <http://effbot.org/imagingbook/imagedraw.htm#methods>
 
-[pil-basic-usage]: http://liam0205.me/2015/04/22/pil-tutorial-basic-usage/
+[pil-basic-usage]: {{site.url}}/2015/04/22/pil-tutorial-basic-usage/
