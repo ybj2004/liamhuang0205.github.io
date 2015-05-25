@@ -1,6 +1,6 @@
 ﻿
 body {
-    background-image: url(http://www.zjd.gov.cn/mathmt/page1/底图.jpg);
+    background-image: url(page1/底图.jpg);
     background-attachment: fixed;
     background-repeat: repeat;
     background-position: center top;
@@ -23,8 +23,8 @@ body {
 }
 
     .logo {
-        margin-top:4%;
-        height:auto;
+        margin-top:10px;
+        height:40px;
         width:30%;
     }
 
@@ -48,7 +48,7 @@ body {
 
 .spaceT {
     position: relative;
-    margin-top :-60px;
+    margin-top :-50px;
     height: 0px;
 }
 
