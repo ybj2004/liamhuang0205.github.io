@@ -116,6 +116,54 @@
   <header>
     
       <div class="icon"></div>
+      <time datetime="2015-06-01T06:37:19.000Z"><a href="/2015/06/01/returned-exit-code-not-0/">2015 年 06 月 1 日</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2015/06/01/returned-exit-code-not-0/">驱动选项错误导致「returned exit code (1)」的错误</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>TeX 是一个相当庞大的系统，其中的程序、格式、宏包和工具繁多。新手比较容易接受直观的现象，对于 TeX 系统中繁琐抽象的概念则了解甚少。</p>
+<p>比如说，新手听闻「LaTeX」之名，于是在编译的时候看见 pdfLaTeX 或 XeLaTeX 的时候就会犹豫：「这是不是我听说的那个 LaTeX 呢」。于是，新手可能会倾向于使用 LaTeX 去编译。编译完成之后，又面临着将 DVI 文件转化为 PDF 文件的问题，这时候新手又会面临两个选择：</p>
+<ul>
+<li>使用 <code>dvips</code> 先转换为 PS 文件，再使用 <code>ps2pdf</code> 转换为 PDF 文件</li>
+<li>使用 <code>DVIPDFMx</code> 直接转换为 PDF 文件</li>
+</ul>
+<p>两种方式在新手眼中的差异直观而明显：「前一种方式多了 PS 文件这个中间步骤」。诚然，这是对的，但是却忽略了一些细节但关键的东西。这样不经意的忽略往往为后来的错误埋下了根源，比如新手经常会遇到下列一些错误：</p>
+<ul>
+<li>使用 WinEdt 时，弹出对话框提示「returned exit code (1)」</li>
+<li>编译完成后不报错，但是插入的图片显示异常</li>
+<li>编译完成后不报错，但是纸张尺寸或超链接异常</li>
+</ul>
+<p>这些错误往往是驱动选项错误导致的，准确地说，是驱动选项和实际使用的驱动不一致导致的。而所谓驱动，就是 <code>dvips</code> 和 <code>DVIPDFMx</code> 这些转换工具。</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+        <div class="alignleft">
+          <a href="/2015/06/01/returned-exit-code-not-0/#more" class="more-link">全文</a>
+        </div>
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <time datetime="2015-05-16T15:04:52.000Z"><a href="/2015/05/16/ctex-20-released/">2015 年 05 月 16 日</a></time>
     
     
@@ -371,45 +419,6 @@
 
 
 
-  <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2015-05-01T01:43:35.000Z"><a href="/2015/05/01/open-editor-after-hexo-new-immediately/">2015 年 05 月 1 日</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2015/05/01/open-editor-after-hexo-new-immediately/">在 hexo new 之后立即打开新建的 Markdown 文稿</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>自己的博客是用 Hexo 搭建的。Hexo 是其时尚为大学生的台湾人 <a href="https://github.com/tommy351" target="_blank">Tommy</a> 开发的轻量级静态博客生成器，具有简洁、快速、扩展性好等特点。</p>
-<p>在 Hexo 中新建一篇博文非常简单，只需要在命令行中执行</p>
-<pre><code>hexo <span class="keyword">new</span> <span class="string">"the title of your blog"</span>
-</code></pre><p>即可。Hexo 会在后台自动帮你创建名为 <code>yyyy-mm-dd-the-title-of-your-blog.md</code> 的文件，供你撰写博文。不过，也有不方便的地方。通常你需要依次打开 <code>hexo-home/source/_post</code> 目录，然后在成堆的 Markdown 文件中找到刚才创建的文档。</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2015/05/01/open-editor-after-hexo-new-immediately/#more" class="more-link">全文</a>
-        </div>
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-
-
-
-
 
 <nav id="pagination">
   
@@ -435,7 +444,7 @@
   
     <li><a href="/categories/IT/">IT</a><small>17</small></li>
   
-    <li><a href="/categories/LaTeX/">LaTeX</a><small>49</small></li>
+    <li><a href="/categories/LaTeX/">LaTeX</a><small>50</small></li>
   
     <li><a href="/categories/Life/">Life</a><small>3</small></li>
   
@@ -453,7 +462,7 @@
   <h3 class="title">标签云</h3>
   <div class="entry">
   <!--
-  <a href="/tags/3000/" style="font-size: 10.00px;">3000</a><a href="/tags/AHD/" style="font-size: 10.00px;">AHD</a><a href="/tags/AMS/" style="font-size: 10.00px;">AMS</a><a href="/tags/AW/" style="font-size: 15.00px;">AW</a><a href="/tags/Apple Dictionaries/" style="font-size: 10.00px;">Apple Dictionaries</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Bitmap/" style="font-size: 10.00px;">Bitmap</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blindness/" style="font-size: 10.00px;">Blindness</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Book review/" style="font-size: 10.00px;">Book review</a><a href="/tags/Bookmarks/" style="font-size: 10.00px;">Bookmarks</a><a href="/tags/Bug/" style="font-size: 10.00px;">Bug</a><a href="/tags/CCT/" style="font-size: 10.00px;">CCT</a><a href="/tags/CJK/" style="font-size: 15.00px;">CJK</a><a href="/tags/CTeX/" style="font-size: 10.00px;">CTeX</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 15.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 15.00px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 15.00px;">Christianity</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Compile/" style="font-size: 10.00px;">Compile</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/EPS/" style="font-size: 10.00px;">EPS</a><a href="/tags/Encoding/" style="font-size: 10.00px;">Encoding</a><a href="/tags/English/" style="font-size: 20.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a><a href="/tags/Environment/" style="font-size: 10.00px;">Environment</a>
+  <a href="/tags/3000/" style="font-size: 10.00px;">3000</a><a href="/tags/AHD/" style="font-size: 10.00px;">AHD</a><a href="/tags/AMS/" style="font-size: 10.00px;">AMS</a><a href="/tags/AW/" style="font-size: 15.00px;">AW</a><a href="/tags/Apple Dictionaries/" style="font-size: 10.00px;">Apple Dictionaries</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Bitmap/" style="font-size: 10.00px;">Bitmap</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blindness/" style="font-size: 10.00px;">Blindness</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Book review/" style="font-size: 10.00px;">Book review</a><a href="/tags/Bookmarks/" style="font-size: 10.00px;">Bookmarks</a><a href="/tags/Bug/" style="font-size: 10.00px;">Bug</a><a href="/tags/CCT/" style="font-size: 10.00px;">CCT</a><a href="/tags/CJK/" style="font-size: 15.00px;">CJK</a><a href="/tags/CTeX/" style="font-size: 10.00px;">CTeX</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 15.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 15.00px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 15.00px;">Christianity</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Compile/" style="font-size: 10.00px;">Compile</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Driver/" style="font-size: 10.00px;">Driver</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/EPS/" style="font-size: 10.00px;">EPS</a><a href="/tags/Encoding/" style="font-size: 10.00px;">Encoding</a><a href="/tags/English/" style="font-size: 20.00px;">English</a><a href="/tags/Environ/" style="font-size: 10.00px;">Environ</a>
   -->
   <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/CJK/" style="font-size: 12.50px;">CJK</a><a href="/tags/Chapter/" style="font-size: 12.50px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 12.50px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 12.50px;">Christianity</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Europe/" style="font-size: 15.00px;">Europe</a><a href="/tags/Git/" style="font-size: 12.50px;">Git</a><a href="/tags/Grammar/" style="font-size: 15.00px;">Grammar</a><a href="/tags/Greece/" style="font-size: 12.50px;">Greece</a><a href="/tags/Hexo/" style="font-size: 12.50px;">Hexo</a><a href="/tags/Highlight/" style="font-size: 12.50px;">Highlight</a><a href="/tags/History/" style="font-size: 15.00px;">History</a><a href="/tags/Images/" style="font-size: 12.50px;">Images</a><a href="/tags/Kindle/" style="font-size: 15.00px;">Kindle</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Listings/" style="font-size: 12.50px;">Listings</a><a href="/tags/MacTeX/" style="font-size: 12.50px;">MacTeX</a><a href="/tags/Macro/" style="font-size: 12.50px;">Macro</a><a href="/tags/Number/" style="font-size: 10.00px;">Number</a><a href="/tags/Overbrace/" style="font-size: 10.00px;">Overbrace</a><a href="/tags/PDF/" style="font-size: 12.50px;">PDF</a><a href="/tags/PIL/" style="font-size: 12.50px;">PIL</a><a href="/tags/Pro Git/" style="font-size: 10.00px;">Pro Git</a><a href="/tags/PyHardWay/" style="font-size: 10.00px;">PyHardWay</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Roman/" style="font-size: 10.00px;">Roman</a><a href="/tags/Romantic/" style="font-size: 12.50px;">Romantic</a><a href="/tags/Rule/" style="font-size: 10.00px;">Rule</a><a href="/tags/SDU/" style="font-size: 10.00px;">SDU</a><a href="/tags/Section/" style="font-size: 12.50px;">Section</a><a href="/tags/Setspace/" style="font-size: 10.00px;">Setspace</a><a href="/tags/THM-RESTATE/" style="font-size: 10.00px;">THM-RESTATE</a><a href="/tags/Tecall/" style="font-size: 10.00px;">Tecall</a><a href="/tags/Template/" style="font-size: 17.50px;">Template</a><a href="/tags/Theorem/" style="font-size: 10.00px;">Theorem</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 12.50px;">Tutorial</a><a href="/tags/pTeX/" style="font-size: 15.00px;">pTeX</a>
   </div>
@@ -467,6 +476,10 @@
 <div class="widget recent-posts">
   <h3 class="title">最近文章</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2015/06/01/returned-exit-code-not-0/">驱动选项错误导致「returned exit code (1)」的错误</a>
+      </li>
     
       <li>
         <a href="/2015/05/16/ctex-20-released/">CTeX 2.0 发布 · 新功能简介</a>
@@ -490,10 +503,6 @@
     
       <li>
         <a href="/2015/05/03/tense-of-verb/">英语语法之三：动词时态</a>
-      </li>
-    
-      <li>
-        <a href="/2015/05/01/open-editor-after-hexo-new-immediately/">在 hexo new 之后立即打开新建的 Markdown 文稿</a>
       </li>
     
   </ul>
