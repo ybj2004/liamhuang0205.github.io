@@ -1,4 +1,4 @@
-title: TeX Live 测试期间跨版本更新宏包
+title: 在 TeX Live 测试期间跨版本更新宏包
 date: 2015-06-02 11:36:32
 categories: LaTeX
 tags: [Fake, tlpretest, TeX Live, Update, Packages]
