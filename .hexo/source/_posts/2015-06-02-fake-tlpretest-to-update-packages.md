@@ -1,4 +1,4 @@
-title: 伪造 tlpretest 以在 TeX Live 测试期间更新宏包
+title: TeX Live 测试期间跨版本更新宏包
 date: 2015-06-02 11:36:32
 categories: LaTeX
 tags: [Fake, tlpretest, TeX Live, Update, Packages]
@@ -8,7 +8,7 @@ TeX Live 是由国际 TeX 用户组（TUG）维护的 TeX 发行版，一般被�
 
 不过，使用 TeX Live 也有麻烦的地方——TeX Live 每年都更新，而更新版本之后旧版本就无法再从 CTAN 上自动更新宏包。这样一来，TeX Live 用户就不得不每年都重新安装一次，相当麻烦。而且，在新版测试期间更新的宏包，旧版本的用户就无法通过 `tlmgr` 来更新了。对于中国的用户而言，TeX Live 2014 向 TeX Live 2015 的过渡期尤为难熬，因为 [CTeX 宏集的新版本][new-CTeX-collection] 发布了。
 
-这篇文章中，我将介绍如何将旧版本的 TeX Live 未造成测试版的 TeX Live，以保证在新版测试期间能够自由更新宏包。
+这篇文章中，我将介绍如何在旧版本的 TeX Live 中跨版本更新宏包。
 
 <!-- more -->
 

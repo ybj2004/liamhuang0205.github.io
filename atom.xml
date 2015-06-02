@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-06-02T03:59:31.985Z</updated>
+  <updated>2015-06-02T04:22:35.803Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -15,14 +15,14 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[伪造 tlpretest 以在 TeX Live 测试期间更新宏包]]></title>
+    <title><![CDATA[TeX Live 测试期间跨版本更新宏包]]></title>
     <link href="http://liam0205.me/2015/06/02/fake-tlpretest-to-update-packages/"/>
     <id>http://liam0205.me/2015/06/02/fake-tlpretest-to-update-packages/</id>
     <published>2015-06-02T03:36:32.000Z</published>
-    <updated>2015-06-02T03:59:17.000Z</updated>
+    <updated>2015-06-02T04:22:26.000Z</updated>
     <content type="html"><![CDATA[<p>TeX Live 是由国际 TeX 用户组（TUG）维护的 TeX 发行版，一般被认为是 TeX 发行版的「正统」，具有稳定、更新快、维护足的特点。</p>
 <p>不过，使用 TeX Live 也有麻烦的地方——TeX Live 每年都更新，而更新版本之后旧版本就无法再从 CTAN 上自动更新宏包。这样一来，TeX Live 用户就不得不每年都重新安装一次，相当麻烦。而且，在新版测试期间更新的宏包，旧版本的用户就无法通过 <code>tlmgr</code> 来更新了。对于中国的用户而言，TeX Live 2014 向 TeX Live 2015 的过渡期尤为难熬，因为 <a href="/2015/05/16/ctex-20-released/">CTeX 宏集的新版本</a> 发布了。</p>
-<p>这篇文章中，我将介绍如何将旧版本的 TeX Live 未造成测试版的 TeX Live，以保证在新版测试期间能够自由更新宏包。</p>
+<p>这篇文章中，我将介绍如何在旧版本的 TeX Live 中跨版本更新宏包。</p>
 <a id="more"></a>
 
 <h2 id=" 原理 ">原理</h2>
@@ -84,7 +84,7 @@
 ]]></content>
     <summary type="html"><![CDATA[<p>TeX Live 是由国际 TeX 用户组（TUG）维护的 TeX 发行版，一般被认为是 TeX 发行版的「正统」，具有稳定、更新快、维护足的特点。</p>
 <p>不过，使用 TeX Live 也有麻烦的地方——TeX Live 每年都更新，而更新版本之后旧版本就无法再从 CTAN 上自动更新宏包。这样一来，TeX Live 用户就不得不每年都重新安装一次，相当麻烦。而且，在新版测试期间更新的宏包，旧版本的用户就无法通过 <code>tlmgr</code> 来更新了。对于中国的用户而言，TeX Live 2014 向 TeX Live 2015 的过渡期尤为难熬，因为 <a href="/2015/05/16/ctex-20-released/">CTeX 宏集的新版本</a> 发布了。</p>
-<p>这篇文章中，我将介绍如何将旧版本的 TeX Live 未造成测试版的 TeX Live，以保证在新版测试期间能够自由更新宏包。</p>
+<p>这篇文章中，我将介绍如何在旧版本的 TeX Live 中跨版本更新宏包。</p>
 ]]></summary>
     
       <category term="Fake" scheme="http://liam0205.me/tags/Fake/"/>
