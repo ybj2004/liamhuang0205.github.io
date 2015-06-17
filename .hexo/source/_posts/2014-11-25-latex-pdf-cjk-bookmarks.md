@@ -42,7 +42,7 @@ UTF-8 编码，Xe\LaTeX{}/pdf\LaTeX{}/\LaTeX{} - DVIPDFMx 编译。
 适用情况（除非必要，不要使用 GBK 编码）
 
 * GBK + LaTeX - DVIPDFMx
-* GBK + pdfLaTeX （ctex 宏包 2.x 版本支持，当前的 1.x 版本暂不支持）
+* GBK + pdfLaTeX （CTeX 宏集 2.x 版本支持，旧版本不支持）
 
 {% code demo lang:tex %}
 \documentclass[hyperref, GBK]{ctexart}
