@@ -159,7 +159,7 @@ plot(X,C)
 plot(X,S)
 
 show()
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_1.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_1.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_1.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_1.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 默认配置的具体内容 ">默认配置的具体内容</h4>
 <p>下面的代码中，我们展现了 matplotlib 的默认配置并辅以注释说明，这部分配置包含了有关绘图样式的所有配置。代码中的配置与默认配置完全相同，你可以在交互模式中修改其中的值来观察效果。</p>
 <pre><code><span class="preprocessor"># 导入 matplotlib 的所有内容（nympy 可以用 np 这个名字来使用）</span>
@@ -197,7 +197,7 @@ yticks(np.linspace(-<span class="number">1</span>,<span class="number">1</span>,
 
 <span class="preprocessor"># 在屏幕上显示</span>
 show()
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_2.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_2.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_2.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_2.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 改变线条的颜色和粗细 ">改变线条的颜色和粗细</h4>
 <p>首先，我们以蓝色和红色分别表示余弦和正弦函数，而后将线条变粗一点。接下来，我们在水平方向拉伸一下整个图。</p>
 <pre><code><span class="keyword">...</span>
@@ -205,7 +205,7 @@ figure(figsize=(<span class="number">10</span>,<span class="number">6</span>), d
 plot(X, C, color=<span class="string">"blue"</span>, linewidth=<span class="number">2.5</span>, linestyle=<span class="string">"-"</span>)
 plot(X, S, color=<span class="string">"red"</span>,  linewidth=<span class="number">2.5</span>, linestyle=<span class="string">"-"</span>)
 <span class="keyword">...</span>
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_3.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_3.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_3.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_3.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 设置图片边界 ">设置图片边界</h4>
 <p>当前的图片边界设置得不好，所以有些地方看得不是很清楚。</p>
 <pre><code><span class="keyword">...</span>
@@ -221,14 +221,14 @@ dy = (ymax - ymin) * <span class="number">0.2</span>
 
 xlim(xmin - dx, xmax + dx)
 ylim(ymin - dy, ymax + dy)
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_4.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_4.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_4.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_4.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 设置记号 ">设置记号</h4>
 <p>我们讨论正弦和余弦函数的时候，通常希望知道函数在 $\pm\pi$ 和 $\pm\frac{\pi}{2}$ 的值。这样看来，当前的设置就不那么理想了。</p>
 <pre><code><span class="keyword">...</span>
 xticks( [-np.pi, -np.pi/<span class="number">2</span>, <span class="number">0</span>, np.pi/<span class="number">2</span>, np.pi])
 yticks([-<span class="number">1</span>, <span class="number">0</span>, +<span class="number">1</span>])
 <span class="keyword">...</span>
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_5.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_5.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_5.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_5.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 设置记号的标签 ">设置记号的标签</h4>
 <p>记号现在没问题了，不过标签却不大符合期望。我们可以把 $3.142$ 当做是 $\pi$，但毕竟不够精确。当我们设置记号的时候，我们可以同时设置记号的标签。注意这里使用了 LaTeX。</p>
 <pre><code>...
@@ -238,7 +238,7 @@ xticks([-np.pi, -np.pi/<span class="number">2</span>, <span class="number">0</sp
 yticks([-<span class="number">1</span>, <span class="number">0</span>, +<span class="number">1</span>],
        [<span class="string">r'$-1$'</span>, <span class="string">r'$0$'</span>, <span class="string">r'$+1$'</span>])
 ...
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_6.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_6.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_6.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_6.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 移动脊柱 ">移动脊柱</h4>
 <p>坐标轴线和上面的记号连在一起就形成了脊柱（Spines，一条线段上有一系列的凸起，是不是很像脊柱骨啊~），它记录了数据区域的范围。它们可以放在任意位置，不过至今为止，我们都把它放在图的四边。</p>
 <p>实际上每幅图有四条脊柱（上下左右），为了将脊柱放在图的中间，我们必须将其中的两条（上和右）设置为无色，然后调整剩下的两条到合适的位置——数据空间的 0 点。</p>
@@ -251,7 +251,7 @@ ax.spines[<span class="string">'bottom'</span>].set_position((<span class="strin
 ax.yaxis.set_ticks_position(<span class="string">'left'</span>)
 ax.spines[<span class="string">'left'</span>].set_position((<span class="string">'data'</span>,<span class="number">0</span>))
 <span class="keyword">...</span>
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_7.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_7.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_7.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_7.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 添加图例 ">添加图例</h4>
 <p>我们在图的左上角添加一个图例。为此，我们只需要在 <code>plot</code> 函数里以「键 - 值」的形式增加一个参数。</p>
 <pre><code><span class="keyword">...</span>
@@ -260,7 +260,7 @@ plot(X, S, color=<span class="string">"red"</span>,  linewidth=<span class="numb
 
 legend(loc=<span class="string">'upper left'</span>)
 <span class="keyword">...</span>
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_8.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_8.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_8.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_8.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 给一些特殊点做注释 ">给一些特殊点做注释</h4>
 <p>我们希望在 $2\pi/3$ 的位置给两条函数曲线加上一个注释。首先，我们在对应的函数图像位置上画一个点；然后，向横轴引一条垂线，以虚线标记；最后，写上标签。</p>
 <pre><code><span class="keyword">...</span>
@@ -282,7 +282,7 @@ annotate(r<span class="string">'$\cos(\frac{2\pi}{3})=-\frac{1}{2}$'</span>,
          xytext=(-<span class="number">90</span>, -<span class="number">50</span>), textcoords=<span class="string">'offset points'</span>, fontsize=<span class="number">16</span>,
          arrowprops=dict(arrowstyle=<span class="string">"-&gt;"</span>, connectionstyle=<span class="string">"arc3,rad=.2"</span>))
 <span class="keyword">...</span>
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_9.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_9.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_9.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_9.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 精益求精 ">精益求精</h4>
 <p>坐标轴上的记号标签被曲线挡住了，作为强迫症患者（雾）这是不能忍的。我们可以把它们放大，然后添加一个白色的半透明底色。这样可以保证标签和曲线同时可见。</p>
 <pre><code><span class="keyword">...</span>
@@ -290,7 +290,7 @@ annotate(r<span class="string">'$\cos(\frac{2\pi}{3})=-\frac{1}{2}$'</span>,
     label.set_fontsize(<span class="number">16</span>)
     label.set_bbox(dict(facecolor=<span class="string">'white'</span>, edgecolor=<span class="string">'None'</span>, alpha=<span class="number">0.65</span> ))
 <span class="keyword">...</span>
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_10.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_10.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_10.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_10.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h3 id=" 图像、子图、坐标轴和记号 ">图像、子图、坐标轴和记号</h3>
 <p>到目前为止，我们都用隐式的方法来绘制图像和坐标轴。快速绘图中，这是很方便的。我们也可以显式地控制图像、子图、坐标轴。Matplotlib 中的「图像」指的是用户界面看到的整个窗口内容。在图像里面有所谓「子图」。子图的位置是由坐标网格确定的，而「坐标轴」却不受此限制，可以放在图像的任意位置。我们已经隐式地使用过图像和子图：当我们调用 <code>plot</code> 函数的时候，matplotlib 调用 <code>gca()</code> 函数以及 <code>gcf()</code> 函数来获取当前的坐标轴和图像；如果无法获取图像，则会调用 <code>figure()</code> 函数来创建一个——严格地说，是用 <code>subplot(1,1,1)</code> 创建一个只有一个子图的图像。</p>
 <h4 id=" 图像 ">图像</h4>
@@ -307,14 +307,14 @@ annotate(r<span class="string">'$\cos(\frac{2\pi}{3})=-\frac{1}{2}$'</span>,
 <p>和其他对象一样，你可以使用 <code>setp</code> 或者是 <code>set_something</code> 这样的方法来设置图像的属性。</p>
 <h4 id=" 子图 ">子图</h4>
 <p>你可以用子图来将图样（plot）放在均匀的坐标网格中。用 <code>subplot</code> 函数的时候，你需要指明网格的行列数量，以及你希望将图样放在哪一个网格区域中。此外，<a href="http://matplotlib.sourceforge.net/users/gridspec.html" target="_blank"><code>gridspec</code></a> 的功能更强大，你也可以选择它来实现这个功能。</p>
-<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-horizontal.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-horizontal.png" alt=""></a></p>
-<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-vertical.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-vertical.png" alt=""></a></p>
-<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-grid.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-grid.png" alt=""></a></p>
-<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/gridspec.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/gridspec.png" alt=""></a></p>
+<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-horizontal.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-horizontal.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
+<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-vertical.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-vertical.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
+<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-grid.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-grid.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
+<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/gridspec.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/gridspec.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 坐标轴 ">坐标轴</h4>
 <p>坐标轴和子图功能类似，不过它可以放在图像的任意位置。因此，如果你希望在一副图中绘制一个小图，就可以用这个功能。</p>
-<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/axes.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/axes.png" alt=""></a></p>
-<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/axes-2.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/axes-2.png" alt=""></a></p>
+<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/axes.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/axes.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
+<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/axes-2.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/axes-2.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 记号 ">记号</h4>
 <p>良好的记号是图像的重要组成部分。Matplotlib 里的记号系统里的各个细节都是可以由用户个性化配置的。你可以用 Tick Locators 来指定在那些位置放置记号，用 Tick Formatters 来调整记号的样式。主要和次要的记号可以以不同的方式呈现。默认情况下，每一个次要的记号都是隐藏的，也就是说，默认情况下的次要记号列表是空的——<code>NullLocator</code>。</p>
 <h5 id="Tick_Locators">Tick Locators</h5>
@@ -334,7 +334,7 @@ Y = np.<span class="built_in">sin</span>(<span class="number">2</span>*X)
 plot (X, Y+<span class="number">1</span>, color=<span class="string">'blue'</span>, alpha=<span class="number">1.00</span>)
 plot (X, Y-<span class="number">1</span>, color=<span class="string">'blue'</span>, alpha=<span class="number">1.00</span>)
 show()
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/plot_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/plot_ex.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/plot_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/plot_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 散点图 ">散点图</h4>
 <pre><code><span class="built_in">from</span> pylab import *
 
@@ -344,7 +344,7 @@ Y = np.<span class="built_in">random</span>.<span class="keyword">normal</span>(
 
 scatter(X,Y)
 show()
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/scatter_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/scatter_ex.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/scatter_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/scatter_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 条形图 ">条形图</h4>
 <pre><code>from pylab import *
 
@@ -361,7 +361,7 @@ bar(X, -Y2, facecolor=<span class="string">'#ff9999'</span>, edgecolor=<span cla
 
 ylim(-<span class="number">1.25</span>,+<span class="number">1.25</span>)
 show()
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/bar_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/bar_ex.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/bar_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/bar_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 等高线图 ">等高线图</h4>
 <pre><code><span class="keyword">from</span> pylab <span class="keyword">import</span> *
 
@@ -375,7 +375,7 @@ X,Y = np.meshgrid(x,y)
 contourf(X, Y, f(X,Y), <span class="number">8</span>, alpha=<span class="number">.75</span>, cmap=<span class="string">'jet'</span>)
 C = contour(X, Y, f(X,Y), <span class="number">8</span>, colors=<span class="string">'black'</span>, linewidth=<span class="number">.5</span>)
 show()
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/contour_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/contour_ex.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/contour_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/contour_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 灰度图（Imshow）">灰度图（Imshow）</h4>
 <pre><code><span class="keyword">from</span> pylab <span class="keyword">import</span> *
 
@@ -386,21 +386,21 @@ x = np.linspace(-<span class="number">3</span>,<span class="number">3</span>,<sp
 y = np.linspace(-<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>*n)
 X,Y = np.meshgrid(x,y)
 imshow(f(X,Y)), show()
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/imshow_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/imshow_ex.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/imshow_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/imshow_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 饼状图 ">饼状图</h4>
 <pre><code>from pylab import *
 
 n = <span class="number">20</span>
 <span class="variable">Z</span> = np.random.uniform(<span class="number">0</span>,<span class="number">1</span>,n)
 <span class="function"><span class="title">pie</span><span class="params">(<span class="variable">Z</span>)</span>, <span class="title">show</span><span class="params">()</span></span>
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/pie_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/pie_ex.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/pie_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/pie_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 量场图（Quiver_Plots）">量场图（Quiver Plots）</h4>
 <pre><code>from pylab import *
 
 n = <span class="number">8</span>
 <span class="variable">X</span>,<span class="variable">Y</span> = np.mgrid[<span class="number">0</span>:n,<span class="number">0</span>:n]
 <span class="function"><span class="title">quiver</span><span class="params">(<span class="variable">X</span>,<span class="variable">Y</span>)</span>, <span class="title">show</span><span class="params">()</span></span>
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/quiver_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/quiver_ex.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/quiver_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/quiver_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 网格 ">网格</h4>
 <pre><code>from pylab import *
 
@@ -411,7 +411,7 @@ axes<span class="preprocessor">.set</span>_xticklabels([])
 axes<span class="preprocessor">.set</span>_yticklabels([])
 
 show()
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/grid_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/grid_ex.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/grid_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/grid_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 多重网格 ">多重网格</h4>
 <pre><code>from pylab import *
 
@@ -420,7 +420,7 @@ show()
 <span class="title">subplot</span><span class="params">(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>)</span>
 
 <span class="title">show</span><span class="params">()</span></span>
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/multiplot_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/multiplot_ex.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/multiplot_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/multiplot_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 极轴图 ">极轴图</h4>
 <pre><code>from pylab import *
 
@@ -437,7 +437,7 @@ for r,bar <span class="keyword">in</span> zip(radii, bars):
     bar<span class="preprocessor">.set</span>_alpha(<span class="number">0.5</span>)
 
 show()
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/polar_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/polar_ex.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/polar_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/polar_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id="3D_ 图 ">3D 图</h4>
 <pre><code>from pylab import *
 from mpl_toolkits.mplot3d import Axes3D
@@ -453,9 +453,9 @@ X, Y = np.meshgrid(X, Y)
 ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='hot')
 
 show()
-</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/plot3d_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/plot3d_ex.png" alt=""></a></p>
+</code></pre><p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/plot3d_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/plot3d_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h4 id=" 手稿 ">手稿</h4>
-<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/text_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/text_ex.png" alt=""></a></p>
+<p><a href="http://www.loria.fr/~rougier/teaching/matplotlib/scripts/text_ex.py" target="_blank"><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/text_ex.png" alt=" 点击图片下载相应 Python 代码 "></a></p>
 <h3 id=" 结束篇 ">结束篇</h3>
 <p>Matplotlib 能有今天这样强大的功能和广泛的使用得益于大量的文档和社区开发者。这里提供一些有益的链接。</p>
 <h4 id=" 入门教程 ">入门教程</h4>
@@ -661,7 +661,7 @@ plot(*args, **kwargs)
   <!--
   <a href="/tags/3000/" style="font-size: 10.00px;">3000</a><a href="/tags/AHD/" style="font-size: 10.00px;">AHD</a><a href="/tags/AMS/" style="font-size: 10.00px;">AMS</a><a href="/tags/AW/" style="font-size: 15.00px;">AW</a><a href="/tags/Apple Dictionaries/" style="font-size: 10.00px;">Apple Dictionaries</a><a href="/tags/Argument/" style="font-size: 10.00px;">Argument</a><a href="/tags/Async Loading/" style="font-size: 10.00px;">Async Loading</a><a href="/tags/BackDoorLock/" style="font-size: 10.00px;">BackDoorLock</a><a href="/tags/Baseline/" style="font-size: 10.00px;">Baseline</a><a href="/tags/Baselineskip/" style="font-size: 10.00px;">Baselineskip</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/BibTeX/" style="font-size: 10.00px;">BibTeX</a><a href="/tags/Bitmap/" style="font-size: 10.00px;">Bitmap</a><a href="/tags/Blank/" style="font-size: 10.00px;">Blank</a><a href="/tags/Blindness/" style="font-size: 10.00px;">Blindness</a><a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Book review/" style="font-size: 10.00px;">Book review</a><a href="/tags/Bookmarks/" style="font-size: 10.00px;">Bookmarks</a><a href="/tags/Bug/" style="font-size: 10.00px;">Bug</a><a href="/tags/CCT/" style="font-size: 10.00px;">CCT</a><a href="/tags/CJK/" style="font-size: 15.00px;">CJK</a><a href="/tags/CTeX/" style="font-size: 10.00px;">CTeX</a><a href="/tags/CamStudio/" style="font-size: 10.00px;">CamStudio</a><a href="/tags/Chapter/" style="font-size: 20.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 15.00px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 15.00px;">Christianity</a><a href="/tags/Circled/" style="font-size: 10.00px;">Circled</a><a href="/tags/Cleardoublepage/" style="font-size: 10.00px;">Cleardoublepage</a><a href="/tags/Compile/" style="font-size: 10.00px;">Compile</a><a href="/tags/Contact/" style="font-size: 10.00px;">Contact</a><a href="/tags/Copy/" style="font-size: 10.00px;">Copy</a><a href="/tags/Damnification/" style="font-size: 10.00px;">Damnification</a><a href="/tags/Definition/" style="font-size: 10.00px;">Definition</a><a href="/tags/Delimiter/" style="font-size: 10.00px;">Delimiter</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Driver/" style="font-size: 10.00px;">Driver</a><a href="/tags/Duoshuo/" style="font-size: 10.00px;">Duoshuo</a><a href="/tags/EPS/" style="font-size: 10.00px;">EPS</a><a href="/tags/Encoding/" style="font-size: 10.00px;">Encoding</a><a href="/tags/English/" style="font-size: 20.00px;">English</a>
   -->
-  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/Baselinestretch/" style="font-size: 10.00px;">Baselinestretch</a><a href="/tags/CJK/" style="font-size: 12.50px;">CJK</a><a href="/tags/Chapter/" style="font-size: 15.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 12.50px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 12.50px;">Christianity</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Europe/" style="font-size: 15.00px;">Europe</a><a href="/tags/Git/" style="font-size: 12.50px;">Git</a><a href="/tags/Grammar/" style="font-size: 15.00px;">Grammar</a><a href="/tags/Greece/" style="font-size: 12.50px;">Greece</a><a href="/tags/Hexo/" style="font-size: 12.50px;">Hexo</a><a href="/tags/Highlight/" style="font-size: 12.50px;">Highlight</a><a href="/tags/History/" style="font-size: 15.00px;">History</a><a href="/tags/Images/" style="font-size: 12.50px;">Images</a><a href="/tags/Kindle/" style="font-size: 15.00px;">Kindle</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Listings/" style="font-size: 12.50px;">Listings</a><a href="/tags/MacTeX/" style="font-size: 12.50px;">MacTeX</a><a href="/tags/Macro/" style="font-size: 12.50px;">Macro</a><a href="/tags/Number/" style="font-size: 10.00px;">Number</a><a href="/tags/PDF/" style="font-size: 12.50px;">PDF</a><a href="/tags/PIL/" style="font-size: 12.50px;">PIL</a><a href="/tags/Pro Git/" style="font-size: 10.00px;">Pro Git</a><a href="/tags/PyHardWay/" style="font-size: 10.00px;">PyHardWay</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Roman/" style="font-size: 10.00px;">Roman</a><a href="/tags/Romantic/" style="font-size: 12.50px;">Romantic</a><a href="/tags/Rule/" style="font-size: 10.00px;">Rule</a><a href="/tags/SDU/" style="font-size: 10.00px;">SDU</a><a href="/tags/Section/" style="font-size: 12.50px;">Section</a><a href="/tags/Setspace/" style="font-size: 10.00px;">Setspace</a><a href="/tags/THM-RESTATE/" style="font-size: 10.00px;">THM-RESTATE</a><a href="/tags/Tecall/" style="font-size: 10.00px;">Tecall</a><a href="/tags/Template/" style="font-size: 17.50px;">Template</a><a href="/tags/Theorem/" style="font-size: 10.00px;">Theorem</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 12.50px;">Tutorial</a><a href="/tags/Update/" style="font-size: 12.50px;">Update</a><a href="/tags/pTeX/" style="font-size: 15.00px;">pTeX</a>
+  <a href="/tags/AW/" style="font-size: 12.50px;">AW</a><a href="/tags/CJK/" style="font-size: 12.50px;">CJK</a><a href="/tags/Chapter/" style="font-size: 15.00px;">Chapter</a><a href="/tags/Chinese/" style="font-size: 12.50px;">Chinese</a><a href="/tags/Christianity/" style="font-size: 12.50px;">Christianity</a><a href="/tags/English/" style="font-size: 15.00px;">English</a><a href="/tags/Europe/" style="font-size: 15.00px;">Europe</a><a href="/tags/Git/" style="font-size: 12.50px;">Git</a><a href="/tags/Grammar/" style="font-size: 15.00px;">Grammar</a><a href="/tags/Greece/" style="font-size: 12.50px;">Greece</a><a href="/tags/Hexo/" style="font-size: 12.50px;">Hexo</a><a href="/tags/Highlight/" style="font-size: 12.50px;">Highlight</a><a href="/tags/History/" style="font-size: 15.00px;">History</a><a href="/tags/Images/" style="font-size: 12.50px;">Images</a><a href="/tags/Kindle/" style="font-size: 15.00px;">Kindle</a><a href="/tags/LaTeX speech/" style="font-size: 10.00px;">LaTeX speech</a><a href="/tags/Listings/" style="font-size: 12.50px;">Listings</a><a href="/tags/MacTeX/" style="font-size: 12.50px;">MacTeX</a><a href="/tags/Macro/" style="font-size: 12.50px;">Macro</a><a href="/tags/Matplotlib/" style="font-size: 10.00px;">Matplotlib</a><a href="/tags/Number/" style="font-size: 10.00px;">Number</a><a href="/tags/Overbrace/" style="font-size: 10.00px;">Overbrace</a><a href="/tags/PDF/" style="font-size: 12.50px;">PDF</a><a href="/tags/PIL/" style="font-size: 12.50px;">PIL</a><a href="/tags/Pro Git/" style="font-size: 10.00px;">Pro Git</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Roman/" style="font-size: 10.00px;">Roman</a><a href="/tags/Romantic/" style="font-size: 12.50px;">Romantic</a><a href="/tags/Rule/" style="font-size: 10.00px;">Rule</a><a href="/tags/SDU/" style="font-size: 10.00px;">SDU</a><a href="/tags/Section/" style="font-size: 12.50px;">Section</a><a href="/tags/THM-RESTATE/" style="font-size: 10.00px;">THM-RESTATE</a><a href="/tags/Tecall/" style="font-size: 10.00px;">Tecall</a><a href="/tags/Template/" style="font-size: 17.50px;">Template</a><a href="/tags/Theorem/" style="font-size: 10.00px;">Theorem</a><a href="/tags/Translation/" style="font-size: 12.50px;">Translation</a><a href="/tags/Tutorial/" style="font-size: 12.50px;">Tutorial</a><a href="/tags/Underbrace/" style="font-size: 10.00px;">Underbrace</a><a href="/tags/Update/" style="font-size: 12.50px;">Update</a><a href="/tags/pTeX/" style="font-size: 15.00px;">pTeX</a>
   </div>
 </div>
 

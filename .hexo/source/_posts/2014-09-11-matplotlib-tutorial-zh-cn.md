@@ -53,7 +53,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
 
     show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_1.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_1.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_1.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_1.py)
 
 #### 默认配置的具体内容
 
@@ -95,7 +95,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     # 在屏幕上显示
     show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_2.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_2.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_2.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_2.py)
 
 #### 改变线条的颜色和粗细
 
@@ -107,7 +107,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     plot(X, S, color="red",  linewidth=2.5, linestyle="-")
     ...
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_3.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_3.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_3.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_3.py)
 
 #### 设置图片边界
 
@@ -129,7 +129,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     xlim(xmin - dx, xmax + dx)
     ylim(ymin - dy, ymax + dy)
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_4.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_4.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_4.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_4.py)
 
 #### 设置记号
 
@@ -140,7 +140,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     yticks([-1, 0, +1])
     ...
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_5.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_5.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_5.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_5.py)
 
 #### 设置记号的标签
 
@@ -154,7 +154,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
            [r'$-1$', r'$0$', r'$+1$'])
     ...
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_6.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_6.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_6.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_6.py)
 
 #### 移动脊柱
 
@@ -172,7 +172,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     ax.spines['left'].set_position(('data',0))
     ...
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_7.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_7.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_7.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_7.py)
 
 #### 添加图例
 
@@ -185,7 +185,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     legend(loc='upper left')
     ...
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_8.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_8.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_8.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_8.py)
 
 #### 给一些特殊点做注释
 
@@ -211,7 +211,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
              arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2"))
     ...
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_9.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_9.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_9.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_9.py)
 
 #### 精益求精
 
@@ -223,7 +223,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
         label.set_bbox(dict(facecolor='white', edgecolor='None', alpha=0.65 ))
     ...
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_10.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_10.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/exercice_10.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/exercice_10.py)
 
 ### 图像、子图、坐标轴和记号
 
@@ -249,21 +249,21 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
 
 你可以用子图来将图样（plot）放在均匀的坐标网格中。用 `subplot` 函数的时候，你需要指明网格的行列数量，以及你希望将图样放在哪一个网格区域中。此外，[`gridspec`](http://matplotlib.sourceforge.net/users/gridspec.html) 的功能更强大，你也可以选择它来实现这个功能。
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-horizontal.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-horizontal.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-horizontal.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-horizontal.py)
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-vertical.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-vertical.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-vertical.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-vertical.py)
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-grid.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-grid.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/subplot-grid.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/subplot-grid.py)
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/gridspec.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/gridspec.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/gridspec.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/gridspec.py)
 
 #### 坐标轴
 
 坐标轴和子图功能类似，不过它可以放在图像的任意位置。因此，如果你希望在一副图中绘制一个小图，就可以用这个功能。
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/axes.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/axes.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/axes.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/axes.py)
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/axes-2.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/axes-2.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/axes-2.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/axes-2.py)
 
 #### 记号
 
@@ -293,7 +293,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     plot (X, Y-1, color='blue', alpha=1.00)
     show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/plot_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/plot_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/plot_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/plot_ex.py)
 
 #### 散点图
 
@@ -306,7 +306,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     scatter(X,Y)
     show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/scatter_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/scatter_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/scatter_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/scatter_ex.py)
 
 #### 条形图
 
@@ -326,7 +326,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     ylim(-1.25,+1.25)
     show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/bar_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/bar_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/bar_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/bar_ex.py)
 
 #### 等高线图
 
@@ -344,7 +344,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     show()
 
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/contour_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/contour_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/contour_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/contour_ex.py)
 
 #### 灰度图（Imshow）
 
@@ -358,7 +358,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     X,Y = np.meshgrid(x,y)
     imshow(f(X,Y)), show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/imshow_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/imshow_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/imshow_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/imshow_ex.py)
 
 #### 饼状图
 
@@ -368,7 +368,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     Z = np.random.uniform(0,1,n)
     pie(Z), show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/pie_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/pie_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/pie_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/pie_ex.py)
 
 #### 量场图（Quiver Plots）
 
@@ -378,7 +378,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
     X,Y = np.mgrid[0:n,0:n]
     quiver(X,Y), show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/quiver_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/quiver_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/quiver_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/quiver_ex.py)
 
 #### 网格
 
@@ -392,7 +392,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
 
     show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/grid_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/grid_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/grid_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/grid_ex.py)
 
 #### 多重网格
 
@@ -404,7 +404,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
 
     show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/multiplot_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/multiplot_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/multiplot_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/multiplot_ex.py)
 
 #### 极轴图
 
@@ -424,7 +424,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
 
     show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/polar_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/polar_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/polar_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/polar_ex.py)
 
 #### 3D 图
 
@@ -443,11 +443,11 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
 
     show()
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/plot3d_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/plot3d_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/plot3d_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/plot3d_ex.py)
 
 #### 手稿
 
-[![](http://www.loria.fr/~rougier/teaching/matplotlib/figures/text_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/text_ex.py)
+[![点击图片下载相应 Python 代码](http://www.loria.fr/~rougier/teaching/matplotlib/figures/text_ex.png)](http://www.loria.fr/~rougier/teaching/matplotlib/scripts/text_ex.py)
 
 ### 结束篇
 
