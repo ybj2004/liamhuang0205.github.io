@@ -233,45 +233,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
 
 所谓「图像」就是 GUI 里以「Figure #」为标题的那些窗口。图像编号从 1 开始，与 MATLAB 的风格一致，而于 Python 从 0 开始编号的风格不同。以下参数是图像的属性：
 
-<table border="1" class="docutils">
-<colgroup>
-<col width="17%">
-<col width="28%">
-<col width="54%">
-</colgroup>
-<thead valign="bottom">
-<tr><th class="head">参数</th>
-<th class="head">默认值</th>
-<th class="head">描述</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr><td>num</td>
-<td>1</td>
-<td>图像的数量</td>
-</tr>
-<tr><td>figsize</td>
-<td>figure.figsize</td>
-<td>图像的长和宽（英寸）</td>
-</tr>
-<tr><td>dpi</td>
-<td>figure.dpi</td>
-<td>分辨率（点/英寸）</td>
-</tr>
-<tr><td>facecolor</td>
-<td>figure.facecolor</td>
-<td>绘图区域的背景颜色</td>
-</tr>
-<tr><td>edgecolor</td>
-<td>figure.edgecolor</td>
-<td>绘图区域边缘的颜色</td>
-</tr>
-<tr><td>frameon</td>
-<td>True</td>
-<td>是否绘制图像边缘</td>
-</tr>
-</tbody>
-</table>
+<table border="1"><colgroup><col width="17%"><col width="28%"><col width="54%"></colgroup><thead valign="bottom"><tr><th class="head">参数</th><th class="head">默认值</th><th class="head">描述</th></tr></thead><tbody valign="top"><tr><td>num</td><td>1</td><td>图像的数量</td></tr><tr><td>figsize</td><td>figure.figsize</td><td>图像的长和宽（英寸）</td></tr><tr><td>dpi</td><td>figure.dpi</td><td>分辨率（点/英寸）</td></tr><tr><td>facecolor</td><td>figure.facecolor</td><td>绘图区域的背景颜色</td></tr><tr><td>edgecolor</td><td>figure.edgecolor</td><td>绘图区域边缘的颜色</td></tr><tr><td>frameon</td><td>True</td><td>是否绘制图像边缘</td></tr></tbody></table>
 
 这些默认值可以在源文件中指明。不过除了图像数量这个参数，其余的参数都很少修改。
 
@@ -311,54 +273,7 @@ Matplotlib 的默认配置都允许用户自定义。你可以调整大多数的
 
 下面有为不同需求设计的一些 Locators。
 
-<table border="1" class="docutils">
-<colgroup>
-<col width="22%">
-<col width="78%">
-</colgroup>
-<thead valign="bottom">
-<tr><th class="head">类型</th>
-<th class="head">说明</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr><td><tt class="docutils literal">NullLocator</tt></td>
-<td><p class="first">No ticks.</p>
-<img alt="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-NullLocator.png" class="last" src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-NullLocator.png">
-</td>
-</tr>
-<tr><td><tt class="docutils literal">IndexLocator</tt></td>
-<td><p class="first">Place a tick on every multiple of some base number of points plotted.</p>
-<img alt="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-IndexLocator.png" class="last" src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-IndexLocator.png">
-</td>
-</tr>
-<tr><td><tt class="docutils literal">FixedLocator</tt></td>
-<td><p class="first">Tick locations are fixed.</p>
-<img alt="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-FixedLocator.png" class="last" src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-FixedLocator.png">
-</td>
-</tr>
-<tr><td><tt class="docutils literal">LinearLocator</tt></td>
-<td><p class="first">Determine the tick locations.</p>
-<img alt="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-LinearLocator.png" class="last" src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-LinearLocator.png">
-</td>
-</tr>
-<tr><td><tt class="docutils literal">MultipleLocator</tt></td>
-<td><p class="first">Set a tick on every integer that is multiple of some base.</p>
-<img alt="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-MultipleLocator.png" class="last" src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-MultipleLocator.png">
-</td>
-</tr>
-<tr><td><tt class="docutils literal">AutoLocator</tt></td>
-<td><p class="first">Select no more than n intervals at nice locations.</p>
-<img alt="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-AutoLocator.png" class="last" src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-AutoLocator.png">
-</td>
-</tr>
-<tr><td><tt class="docutils literal">LogLocator</tt></td>
-<td><p class="first">Determine the tick locations for log axes.</p>
-<img alt="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-LogLocator.png" class="last" src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-LogLocator.png">
-</td>
-</tr>
-</tbody>
-</table>
+<table border="1"><tr><th class="head">类型</th> <th class="head">说明</th></tr><tr><td><tt>NullLocator</tt></td><td><p>No ticks.</p><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-NullLocator.png"></td></tr><tr><td><tt>IndexLocator</tt></td><td><p>Place a tick on every multiple of some base number of points plotted.</p><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-IndexLocator.png"></td></tr><tr><td><tt>FixedLocator</tt></td><td><p>Tick locations are fixed.</p><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-FixedLocator.png"></td></tr><tr><td><tt>LinearLocator</tt></td><td><p>Determine the tick locations.</p><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-LinearLocator.png"></td></tr><tr><td><tt>MultipleLocator</tt></td><td><p>Set a tick on every integer that is multiple of some base.</p><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-MultipleLocator.png"></td></tr><tr><td><tt>AutoLocator</tt></td><td><p>Select no more than n intervals at nice locations.</p><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-AutoLocator.png"></td></tr><tr><td><tt>LogLocator</tt></td><td><p>Determine the tick locations for log axes.</p><img src="http://www.loria.fr/~rougier/teaching/matplotlib/figures/ticks-LogLocator.png"></td></tr></table>
 
 这些 Locators 都是 `matplotlib.ticker.Locator` 的子类，你可以据此定义自己的 Locator。以日期为 ticks 特别复杂，因此 Matplotlib 提供了 `matplotlib.dates` 来实现这一功能。
 
