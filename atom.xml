@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-07-03T05:33:14.284Z</updated>
+  <updated>2015-07-03T05:34:47.974Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://liam0205.me/2015/07/03/cleardoublepage-this-page-is-intentionally-left-blank/"/>
     <id>http://liam0205.me/2015/07/03/cleardoublepage-this-page-is-intentionally-left-blank/</id>
     <published>2015-07-03T05:16:32.000Z</published>
-    <updated>2015-07-03T05:33:08.000Z</updated>
+    <updated>2015-07-03T05:34:41.000Z</updated>
     <content type="html"><![CDATA[<p>很多书籍在设计版式的时候，会要求 <code>\chapter</code> 从奇数页码开始：上一章节在奇数页结束则留白一页，而后再从奇数页码继续排版。为了避免给读者造成「这里的内容缺失了」的印象，通常会写上「This page is intetionally left blank」的字样。</p>
 <p>本文来实现这种效果。</p>
 <a id="more"></a>
@@ -30,7 +30,7 @@
 <li>如果是偶数页码，则再一次另起一页，从下一页开始排版</li>
 </ul>
 <p>我们可以在 <code>source2e.pdf</code> 中找到这一定义：</p>
-<p><img src="/iamges/LaTeX/def-of-cleardoublepage.png" alt="LaTeX2e 内核中 \cleardoublepage 的定义 "></p>
+<p><img src="/images/LaTeX/def-of-cleardoublepage.png" alt="LaTeX2e 内核中 \cleardoublepage 的定义 "></p>
 <p>我们只需要修改这一定义即可。</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre>1
 2

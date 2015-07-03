@@ -17,7 +17,7 @@ LaTeX 的 `book` 文档类实现章首页从奇数页码开始，是借助 `\cle
 
 我们可以在 `source2e.pdf` 中找到这一定义：
 
-![LaTeX2e 内核中 \cleardoublepage 的定义]({{site.url}}/iamges/LaTeX/def-of-cleardoublepage.png)
+![LaTeX2e 内核中 \cleardoublepage 的定义]({{site.url}}/images/LaTeX/def-of-cleardoublepage.png)
 
 我们只需要修改这一定义即可。
 
