@@ -4,7 +4,7 @@
   <subtitle><![CDATA[不忘初心]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://liam0205.me/"/>
-  <updated>2015-06-27T02:43:25.641Z</updated>
+  <updated>2015-07-03T05:33:14.284Z</updated>
   <id>http://liam0205.me/</id>
   
   <author>
@@ -13,6 +13,82 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[在 LaTeX 的 book 类中实现章节间空白页「This page is intetionally left blank」的效果]]></title>
+    <link href="http://liam0205.me/2015/07/03/cleardoublepage-this-page-is-intentionally-left-blank/"/>
+    <id>http://liam0205.me/2015/07/03/cleardoublepage-this-page-is-intentionally-left-blank/</id>
+    <published>2015-07-03T05:16:32.000Z</published>
+    <updated>2015-07-03T05:33:08.000Z</updated>
+    <content type="html"><![CDATA[<p>很多书籍在设计版式的时候，会要求 <code>\chapter</code> 从奇数页码开始：上一章节在奇数页结束则留白一页，而后再从奇数页码继续排版。为了避免给读者造成「这里的内容缺失了」的印象，通常会写上「This page is intetionally left blank」的字样。</p>
+<p>本文来实现这种效果。</p>
+<a id="more"></a>
+
+<p>LaTeX 的 <code>book</code> 文档类实现章首页从奇数页码开始，是借助 <code>\cleardoublepage</code> 命令实现的。原始的 <code>\cleardoublepage</code> 命令首先会调用 <code>\clearpage</code> 结束当前页，然后会检查页码状态：</p>
+<ul>
+<li>如果是奇数页码，那么什么也不做，直接开始排版</li>
+<li>如果是偶数页码，则再一次另起一页，从下一页开始排版</li>
+</ul>
+<p>我们可以在 <code>source2e.pdf</code> 中找到这一定义：</p>
+<p><img src="/iamges/LaTeX/def-of-cleardoublepage.png" alt="LaTeX2e 内核中 \cleardoublepage 的定义 "></p>
+<p>我们只需要修改这一定义即可。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre><span class="command">\documentclass</span><span class="special">[</span>UTF8<span class="special">]</span><span class="special">{</span>ctexbook<span class="special">}</span>
+<span class="command">\usepackage</span><span class="special">{</span>tikz<span class="special">}</span>
+<span class="command">\makeatletter</span>
+<span class="command">\renewcommand</span><span class="special">{</span><span class="command">\cleardoublepage</span><span class="special">}</span><span class="special">{</span><span class="command">\relax</span>
+  <span class="command">\clearpage</span>
+  <span class="command">\if</span>@twoside <span class="command">\ifodd</span><span class="command">\c</span>@page<span class="command">\relax</span><span class="command">\else</span>
+  <span class="command">\thispagestyle</span><span class="special">{</span>empty<span class="special">}</span><span class="comment">%</span>
+  <span class="command">\tikz</span><span class="special">[</span>remember picture, overlay<span class="special">]</span> <span class="command">\node</span>  at (current page.center)
+    <span class="special">{</span><span class="command">\large</span> 广告位招租<span class="special">}</span>;<span class="command">\newpage</span><span class="command">\fi</span><span class="command">\fi</span><span class="special">}</span>
+<span class="command">\makeatother</span>
+<span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+<span class="command">\chapter</span><span class="special">{</span>测试<span class="special">}</span>
+<span class="command">\chapter</span><span class="special">{</span>测试<span class="special">}</span>
+<span class="command">\clearpage</span>
+测试
+<span class="command">\chapter</span><span class="special">{</span>测试<span class="special">}</span>
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+
+
+
+<p>在这里，我们重定义了 <code>\cleardoublepage</code> 命令：</p>
+<ul>
+<li>用 <code>\clearpage</code> 结束当前页</li>
+<li>检测文档类模式，如果是双面模式，则继续检测，反之则结束操作</li>
+<li>继续检测当前页码，当前页码是奇数，则继续排版，反之则将当前页面风格设置为 <code>empty</code> 并用 TikZ 在页面中心写下「广告位招租」几个字</li>
+</ul>
+<p>注意，需要编译两遍才能得到正确的结果。</p>
+]]></content>
+    <summary type="html"><![CDATA[<p>很多书籍在设计版式的时候，会要求 <code>\chapter</code> 从奇数页码开始：上一章节在奇数页结束则留白一页，而后再从奇数页码继续排版。为了避免给读者造成「这里的内容缺失了」的印象，通常会写上「This page is intetionally left blank」的字样。</p>
+<p>本文来实现这种效果。</p>
+]]></summary>
+    
+      <category term="Cleardoublepage" scheme="http://liam0205.me/tags/Cleardoublepage/"/>
+    
+      <category term="Chapter" scheme="http://liam0205.me/tags/Chapter/"/>
+    
+      <category term="LaTeX" scheme="http://liam0205.me/categories/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[升级 Ubuntu，解决登录时提示有软件包可以更新的问题]]></title>
@@ -2016,42 +2092,6 @@ avatar.show()
 ]]></summary>
     
       <category term="Share" scheme="http://liam0205.me/tags/Share/"/>
-    
-      <category term="Life" scheme="http://liam0205.me/categories/Life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[微笑着离开]]></title>
-    <link href="http://liam0205.me/2015/02/01/smile-to-leave/"/>
-    <id>http://liam0205.me/2015/02/01/smile-to-leave/</id>
-    <published>2015-02-01T04:07:45.000Z</published>
-    <updated>2015-02-03T04:34:26.000Z</updated>
-    <content type="html"><![CDATA[<p>于是我化作一颗树，长在你必经的路旁，在阳光下慎重地开满了花，朵朵都是我前世的期盼。<br>当你走进，请你细听，颤抖的叶是我等待的热情。<br>而当你终于无视走过，在你身后落了一地的，不是花瓣，而是我凋零的心。<br>——「一颗开花的树」·席慕蓉</p>
-<a id="more"></a>
-
-<p>这是一首席慕蓉先生的诗，我很喜欢。以前我给你读过，告诉你说，还好不是「凋零的心」。然后我将它改编，写在微博上。</p>
-<p>我化作一棵树，长在你必经的路旁，在阳光下慎重地开满了花。<br>每当有人走过，花儿就挥手致意。<br>而当你走过，花儿就开始欢呼，开始雀跃；仿佛我的灵魂飞旋在上空，在盘旋，在跳舞。</p>
-<p>然而如今，似乎终于到了凋零的时候。席慕蓉先生终究是先哲前辈，肆意地改编先生的诗，却最终落入先生的套。</p>
-<p>二零一四年八月一日，这是我们分手的日子。今天猛然想起，掰着指头一算，居然已过半年。小时候妈妈总说，玩起来时间过得特别快，所以要特别注意管理好自己的时间。今次我第一次发现，除掉开心，原来痛苦的时候，时间也可以飞逝而过的。</p>
-<p>我还记得，你刚去诺村的时候，我不在身边。我很担心，于是拜托他照顾你。我还记得，在一周年纪念的时候，他抢在第一个回复，祝我们幸福。然而如今却是你和他在一起了。</p>
-<p>所以我因此而难过吗？不，并不是。那我难过吗？是的，当然有。</p>
-<p>分手之后你告诉我，你在和他约会。我说我知道了。但是我没有说，我早就知道你挂掉电话，和他一起出去超市，然后在餐厅共进晚餐。<br>分手之后你告诉我，你并不是在我和他之间做选择。我说我知道了。但是我没有说，我早就知道你在他家过夜，彻夜不归。<br>其实从你们开始在一起之后的事情，我都知道，这是我一直都没有说。</p>
-<p>诺村很小，其中的华人圈子更小。说是在约会而不承认「在一起了」，其实没有什么意义，只是自欺欺人对吧。</p>
-<p>于是我很难过，你却质问我说「难道你不能接受，一个曾经爱过你的人，不再爱你了吗」。我说我可以。但是我没有说，我不能接受你的背叛、欺瞒以及在分手之后用这些冠冕堂皇的句子企图安慰我。</p>
-<p>所以我应该恨吗？我想我可以的。异地很难，我做好了心理准备，也做到了我能做的一切，得到的却是这样的结果。我当然可以恨，谁也不能指责我。然而我却要对自己说，我不可以恨。恨你，会把过去的美好的回忆清零，也会把将来的美好抹杀。所以我不可以恨。</p>
-<p>于是我开始撕裂自己。我开始在每个将醒未醒的脑海里自己扇自己的耳光，企图把你赶出这个梦境。我开始在心里用木板搭建起房子，将有你的记忆全数封印。我必须强迫自己，将我曾经珍惜的东西视作尘土，以此求得一点好过。</p>
-<p>然而方向错了，注定寻不到终点。人的记忆和计算机的硬盘里的数据不一样，不是说删除就能删除的。不管如何撕裂自己，终究都还是那个我；也不管如何封闭，房子总有可以透视的洞口。强迫自己忘记，却保留着可供回忆的实体，希冀终究可以不要忘记，这本身就是一个悖论。因此我要的解药不是忘记，而是真正接受之后的坦然和若无其事。</p>
-<p>于是我删掉了所有的照片，丢掉了所有的纪念。我希望不要再看见这些看到就痛苦的东西，而是在内心保留过去你带给我的美好，以及向往未来的美好。我希望不是忘记，而是坦然接受，各自祝福。就好像安怡推荐的歌中唱响的那样，离开你，却带着更完美的微笑。</p>
-]]></content>
-    <summary type="html"><![CDATA[<p>于是我化作一颗树，长在你必经的路旁，在阳光下慎重地开满了花，朵朵都是我前世的期盼。<br>当你走进，请你细听，颤抖的叶是我等待的热情。<br>而当你终于无视走过，在你身后落了一地的，不是花瓣，而是我凋零的心。<br>——「一颗开花的树」·席慕蓉</p>
-]]></summary>
-    
-      <category term="Love" scheme="http://liam0205.me/tags/Love/"/>
-    
-      <category term="Smile" scheme="http://liam0205.me/tags/Smile/"/>
-    
-      <category term="Leave" scheme="http://liam0205.me/tags/Leave/"/>
     
       <category term="Life" scheme="http://liam0205.me/categories/Life/"/>
     

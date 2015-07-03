@@ -25,7 +25,7 @@ LaTeX 的 `book` 文档类实现章首页从奇数页码开始，是借助 `\cle
 \documentclass[UTF8]{ctexbook}
 \usepackage{tikz}
 \makeatletter
-\renewcommand{\cleardoublepage}{%
+\renewcommand{\cleardoublepage}{\relax
   \clearpage
   \if@twoside \ifodd\c@page\relax\else
   \thispagestyle{empty}%
