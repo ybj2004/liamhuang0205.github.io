@@ -1,4 +1,4 @@
-date: 2015-05-02 22:41:33.950
+date: 2015-07-03 13:32:40.257
 argv: node /usr/local/bin/hexo g -d
 os: Darwin 13.4.0 darwin x64
 version:
@@ -13,589 +13,299 @@ version:
   openssl: 1.0.1i
 ---
 
-[debug] 22:41:30.890 Config file loaded
-[debug] 22:41:30.892 Version info checked successfully
-[debug] 22:41:30.911 Loading database.
-[debug] 22:41:30.941 Plugin loaded successfully: hexo-generator-feed
-[debug] 22:41:30.952 Plugin loaded successfully: hexo-generator-sitemap
-[debug] 22:41:30.959 Plugin loaded successfully: hexo-math
-[debug] 22:41:30.960 Script load successfully: open_new.js
-[debug] 22:41:31.029 Processed: LICENSE
-[debug] 22:41:31.030 Processed: README.md
-[debug] 22:41:31.030 Processed: bak.git.rar
-[debug] 22:41:31.055 Processed: source/css/_base/layout.styl
-[debug] 22:41:31.055 Processed: source/css/_base/variable.styl
-[debug] 22:41:31.055 Processed: source/css/_partial/archive.styl
-[debug] 22:41:31.055 Processed: source/css/_partial/article.styl
-[debug] 22:41:31.055 Processed: source/css/_partial/comment.styl
-[debug] 22:41:31.055 Processed: source/css/_partial/footer.styl
-[debug] 22:41:31.055 Processed: source/css/_partial/header.styl
-[debug] 22:41:31.055 Processed: source/css/_partial/index.styl
-[debug] 22:41:31.055 Processed: source/css/_partial/sidebar.styl
-[debug] 22:41:31.055 Processed: source/css/_partial/syntax.styl
-[debug] 22:41:31.064 Processed: source/fancybox/blank.gif
-[debug] 22:41:31.064 Processed: source/fancybox/fancybox_loading.gif
-[debug] 22:41:31.065 Processed: source/fancybox/fancybox_overlay.png
-[debug] 22:41:31.065 Processed: source/fancybox/fancybox_sprite.png
-[debug] 22:41:31.066 Processed: source/fancybox/jquery.fancybox.css
-[debug] 22:41:31.067 Processed: source/fancybox/jquery.fancybox.pack.js
-[debug] 22:41:31.067 Processed: source/js/MathJax.js
-[debug] 22:41:31.068 Processed: source/js/counter.js
-[debug] 22:41:31.069 Processed: source/js/gallery.js
-[debug] 22:41:31.070 Processed: source/js/jquery.imagesloaded.min.js
-[debug] 22:41:31.074 Processed: source/js/jquery.min.js
-[debug] 22:41:31.076 Processed: source/js/moment.min.js
-[debug] 22:41:31.076 Processed: source/js/scale.fix.js
-[debug] 22:41:31.077 Processed: source/css/style.styl
-[debug] 22:41:31.078 Processed: source/css/fonts/FontAwesome.otf
-[debug] 22:41:31.079 Processed: source/css/fonts/fontawesome-webfont.eot
-[debug] 22:41:31.080 Processed: source/css/fonts/fontawesome-webfont.svg
-[debug] 22:41:31.081 Processed: source/css/fonts/fontawesome-webfont.ttf
-[debug] 22:41:31.089 Processed: source/css/fonts/fontawesome-webfont.woff
-[debug] 22:41:31.090 Processed: source/css/images/checker.png
-[debug] 22:41:31.098 Processed: layout/archive.ejs
-[debug] 22:41:31.098 Processed: layout/index.ejs
-[debug] 22:41:31.098 Processed: layout/layout.ejs
-[debug] 22:41:31.098 Processed: layout/page.ejs
-[debug] 22:41:31.098 Processed: layout/post.ejs
-[debug] 22:41:31.098 Processed: layout/tag.ejs
-[debug] 22:41:31.098 Processed: layout/_widget/blogroll.ejs
-[debug] 22:41:31.098 Processed: layout/_widget/category.ejs
-[debug] 22:41:31.098 Processed: layout/_widget/recent_posts.ejs
-[debug] 22:41:31.098 Processed: layout/_widget/tag.ejs
-[debug] 22:41:31.098 Processed: layout/_widget/tagcloud.ejs
-[debug] 22:41:31.098 Processed: layout/_partial/after-footer.ejs
-[debug] 22:41:31.098 Processed: layout/_partial/after_footer.ejs
-[debug] 22:41:31.098 Processed: layout/_partial/archive-post.ejs
-[debug] 22:41:31.098 Processed: layout/_partial/archive.ejs
-[debug] 22:41:31.098 Processed: layout/_partial/archive_title.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/article.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/baidu_tongji_old.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/comment.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/footer.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/footer_old.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/google_analytics.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/guess.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/head.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/header.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/math-jax.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/pagination.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/sidebar.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/tencent_analytics.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/post/category.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/post/date.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/post/gallery.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/post/tag.ejs
-[debug] 22:41:31.099 Processed: layout/_partial/post/title.ejs
-[debug] 22:41:31.122 Processed: _drafts/2014-07-05-let-it-go.md
-[debug] 22:41:31.122 Processed: _drafts/2015-02-09-python-pil.md
-[debug] 22:41:31.122 Processed: _drafts/2015-04-25-using-bibtex-to-generate-reference.md
-[debug] 22:41:31.122 Processed: _drafts/Sublime-LaTeXTools.md
-[debug] 22:41:31.122 Processed: _drafts/Sublime-with-LaTeX.md
-[debug] 22:41:31.190 Processed: _posts/adjust_quote.py
-[debug] 22:41:31.190 Processed: _posts/migration.py
-[debug] 22:41:31.190 Processed: _posts/rename.py
-[debug] 22:41:31.346 Processed: CNAME
-[debug] 22:41:31.347 Processed: favicon.ico
-[debug] 22:41:31.347 Processed: robots.txt
-[debug] 22:41:31.350 Processed: images/avatar.jpg
-[debug] 22:41:31.350 Processed: images/avatar2.jpg
-[debug] 22:41:31.350 Processed: images/avatar3.jpg
-[debug] 22:41:31.351 Processed: images/bio-photo.jpg
-[debug] 22:41:31.351 Processed: images/highlightOutput.png
-[debug] 22:41:31.351 Processed: images/letterL.jpg
-[debug] 22:41:31.352 Processed: images/simple-search-screenshot.jpg
-[debug] 22:41:31.352 Processed: images/sublime-text-2.png
-[debug] 22:41:31.353 Processed: images/LaTeX/def-of-chapter.png
-[debug] 22:41:31.353 Processed: images/LaTeX/recall-theorem.png
-[debug] 22:41:31.353 Processed: images/LaTeX/redefine-proof.png
-[debug] 22:41:31.354 Processed: images/pTeX-intro/Japanese-Text-Example.png
-[debug] 22:41:31.354 Processed: images/pTeX-intro/hello-ptex.jpg
-[debug] 22:41:31.355 Processed: images/pTeX-intro/nihongo-latex.jpg
-[debug] 22:41:31.355 Processed: attachment/LaTeX_howtoask.pdf
-[debug] 22:41:31.355 Processed: attachment/LaTeX_howtoask_20131008.pdf
-[debug] 22:41:31.356 Processed: attachment/Fonts/Adina.zip
-[debug] 22:41:31.356 Processed: attachment/Fonts/Fandol.zip
-[debug] 22:41:31.357 Processed: attachment/Fonts/TeX_Gyre_Pagella.zip
-[debug] 22:41:31.357 Processed: attachment/Git/progit.en.pdf
-[debug] 22:41:31.358 Processed: attachment/Git/progit.ja.pdf
-[debug] 22:41:31.358 Processed: attachment/Git/progit.zh.pdf
-[debug] 22:41:31.359 Processed: attachment/RuleTillEnd/RuleTillEnd.tex
-[debug] 22:41:31.359 Processed: attachment/SourceCode/brace-rlap.tex
-[debug] 22:41:31.359 Processed: attachment/Sublime/Default.sublime-package
-[debug] 22:41:31.360 Processed: attachment/Sublime/Sublime Text Build 3047.zip
-[debug] 22:41:31.360 Processed: attachment/TsinghuaLaTeX/latex01.pdf
-[debug] 22:41:31.361 Processed: attachment/TsinghuaLaTeX/latex02.pdf
-[debug] 22:41:31.361 Processed: attachment/TsinghuaLaTeX/latex03.pdf
-[debug] 22:41:31.362 Processed: attachment/TsinghuaLaTeX/latex04.pdf
-[debug] 22:41:31.362 Processed: attachment/soft/Virtual_Audio_Cable_4_10.zip
-[debug] 22:41:31.363 Processed: attachment/xcumcmart/xcumcmart-Ver.1.00.00.zip
-[debug] 22:41:31.363 Processed: attachment/LaTeX-useful-tools/CCT_TDS.zip
-[debug] 22:41:31.364 Processed: attachment/LaTeX-useful-tools/LaTeX_Docs_2014.rar
-[debug] 22:41:31.364 Processed: attachment/LaTeX-useful-tools/LaTeX_Docs_2014.zip
-[debug] 22:41:31.365 Processed: attachment/LaTeX-useful-tools/LaTeX_Intro.pdf
-[debug] 22:41:31.365 Processed: attachment/LaTeX-useful-tools/Liam-Gougu_demo_LeoLiu_LaTeXbook.zip
-[debug] 22:41:31.366 Processed: attachment/LaTeX-useful-tools/UniKhangXi-UTF16-H
-[debug] 22:41:31.366 Processed: attachment/LaTeX-useful-tools/advancedBuilder.py
-[debug] 22:41:31.367 Processed: attachment/LaTeX-useful-tools/dpi-issue.zip
-[debug] 22:41:31.368 Processed: attachment/LaTeX-useful-tools/epscolor.bat
-[debug] 22:41:31.368 Processed: attachment/LaTeX-useful-tools/ltx_vert.zip
-[debug] 22:41:31.369 Processed: attachment/LaTeX-useful-tools/texlivefont-20070828.pdf
-[debug] 22:41:31.370 Processed: attachment/LaTeX-useful-tools/xdvipdfmx.exe.xz
-[debug] 22:41:31.371 Processed: attachment/LaTeX-useful-tools/xdvipdfmx.exe.zip
-[debug] 22:41:31.371 Processed: attachment/LaTeX-useful-tools/zhfzfonts.tex
-[debug] 22:41:31.372 Processed: attachment/LaTeX-useful-tools/ChinaTeX-Intro-2015-Sprint/Intro01.7z
-[debug] 22:41:31.373 Processed: attachment/LaTeX-useful-tools/ChinaTeX-Intro-2015-Sprint/Intro06.7z
-[debug] 22:41:31.373 Processed: attachment/LaTeX-useful-tools/dtxtut/dtxtut.dtx
-[debug] 22:41:31.374 Processed: attachment/LaTeX-useful-tools/dtxtut/dtxtut.ins
-[debug] 22:41:31.375 Processed: attachment/LaTeX-useful-tools/dtxtut/insdtxtut.dtx
-[debug] 22:41:31.375 Processed: attachment/LaTeX-useful-tools/old_style/headrule.sty
-[debug] 22:41:31.376 Processed: attachment/LaTeX-useful-tools/old_style/vatola.sty
-[debug] 22:41:31.377 Processed: attachment/Python/Python_Tutorial_zh-cn_Demo.pdf
-[debug] 22:41:31.377 Processed: attachment/Python/The_Python_Tutorial_zh-cn.pdf
-[debug] 22:41:31.378 Processed: attachment/Python/PyChallenge/lv2.txt
-[debug] 22:41:31.378 Processed: attachment/Python/PyChallenge/lv3.txt
-[debug] 22:41:31.379 Processed: attachment/Python/PyHardWay/Learn_Python_The_Hard_Way_zh-cn.pdf
-[debug] 22:41:31.380 Processed: attachment/Python/PyHardWay/PyHardWay.zip
-[debug] 22:41:31.380 Processed: attachment/images/brace-overlap.jpg
-[debug] 22:41:31.381 Processed: attachment/images/Book_Reviews/blindness.jpg
-[debug] 22:41:31.382 Processed: attachment/images/Kindle/BackDoorLock.png
-[debug] 22:41:31.382 Processed: attachment/images/Kindle/Home_KUAL.png
-[debug] 22:41:31.383 Processed: attachment/images/Kindle/KUAL_BackDoorLock.png
-[debug] 22:41:31.385 Processed: attachment/images/Kindle/amazon01.png
-[debug] 22:41:31.386 Processed: attachment/images/Kindle/amazon02.png
-[debug] 22:41:31.386 Processed: attachment/images/Kindle/kindle01.png
-[debug] 22:41:31.387 Processed: attachment/images/Kindle/wechat01.jpg
-[debug] 22:41:31.388 Processed: attachment/images/Kindle/wechat02.jpg
-[debug] 22:41:31.389 Processed: attachment/images/Kindle/wechat03.jpg
-[debug] 22:41:31.389 Processed: attachment/images/Kindle/wechat_flowchat.png
-[debug] 22:41:31.390 Processed: attachment/images/MacTeX_xeCJK/01.png
-[debug] 22:41:31.391 Processed: attachment/images/MacTeX_xeCJK/02.png
-[debug] 22:41:31.391 Processed: attachment/images/MacTeX_xeCJK/03.png
-[debug] 22:41:31.392 Processed: attachment/images/MacTeX_xeCJK/04.png
-[debug] 22:41:31.393 Processed: attachment/images/Sublime/Compile_info.png
-[debug] 22:41:31.394 Processed: attachment/images/Sublime/Installing_LaTeXTools.png
-[debug] 22:41:31.394 Processed: attachment/images/Sublime/LaTeXTools_Setup.png
-[debug] 22:41:31.397 Processed: attachment/images/Sublime/LaTeX_UI.png
-[debug] 22:41:31.397 Processed: attachment/images/Sublime/Loading_Repo.png
-[debug] 22:41:31.398 Processed: attachment/images/Sublime/Package_Install.png
-[debug] 22:41:31.399 Processed: attachment/images/Sublime/Set_Syntax_LaTeX.png
-[debug] 22:41:31.400 Processed: attachment/images/Sublime/sublime_text_package_control.png
-[debug] 22:41:31.400 Processed: attachment/images/listingsCopy/right.png
-[debug] 22:41:31.401 Processed: attachment/images/listingsCopy/wrong.png
-[debug] 22:41:31.402 Processed: attachment/images/Friends/Nanzhi_Zang_01.jpg
-[debug] 22:41:31.403 Processed: attachment/images/Friends/Irene Yang/01.jpg
-[debug] 22:41:31.404 Processed: attachment/images/Friends/Irene Yang/02.jpg
-[debug] 22:41:31.404 Processed: attachment/images/Friends/Irene Yang/03.jpg
-[debug] 22:41:31.405 Processed: attachment/images/Friends/Irene Yang/04.jpg
-[debug] 22:41:31.406 Processed: attachment/images/Friends/Irene Yang/05.jpg
-[debug] 22:41:31.407 Processed: attachment/images/Friends/Irene Yang/06.jpg
-[debug] 22:41:31.408 Processed: attachment/images/Friends/Irene Yang/07.jpg
-[debug] 22:41:31.408 Processed: attachment/images/Friends/Irene Yang/08.jpg
-[debug] 22:41:31.409 Processed: attachment/images/Friends/Irene Yang/09.jpg
-[debug] 22:41:31.410 Processed: attachment/images/Friends/Irene Yang/10.jpg
-[debug] 22:41:31.411 Processed: attachment/images/Friends/Irene Yang/11.jpg
-[debug] 22:41:31.412 Processed: attachment/images/Friends/Irene Yang/12.jpg
-[debug] 22:41:31.412 Processed: attachment/images/Friends/Irene Yang/13.jpg
-[debug] 22:41:31.413 Processed: attachment/images/Friends/Qi Meng/01.jpg
-[debug] 22:41:31.414 Processed: attachment/images/Friends/Qi Meng/02.jpg
-[debug] 22:41:31.415 Processed: attachment/images/Friends/Qi Meng/03.jpg
-[debug] 22:41:31.416 Processed: attachment/images/Friends/Xinyang He/01.jpg
-[debug] 22:41:31.417 Processed: attachment/images/Friends/Xinyang He/02.jpg
-[debug] 22:41:31.418 Processed: attachment/images/Friends/Xinyang He/03.jpg
-[debug] 22:41:31.418 Processed: attachment/images/Friends/Xinyang He/04.jpg
-[debug] 22:41:31.419 Processed: attachment/images/Friends/Xinyang He/05.jpg
-[debug] 22:41:31.420 Processed: attachment/images/Friends/Xinyang He/06.jpg
-[debug] 22:41:31.421 Processed: attachment/images/Friends/Xinyang He/07.jpg
-[debug] 22:41:31.422 Processed: attachment/images/Friends/Xinyang He/08.jpg
-[debug] 22:41:31.423 Processed: attachment/images/Python/HOCKEY.png
-[debug] 22:41:31.424 Processed: attachment/images/Python/channel.png
-[debug] 22:41:31.425 Processed: attachment/images/Python/good.png
-[debug] 22:41:31.426 Processed: attachment/images/Python/oddeven/0.png
-[debug] 22:41:31.427 Processed: attachment/images/Python/oddeven/1.png
-[debug] 22:41:31.428 Processed: attachment/images/Python/oddeven/2.png
-[debug] 22:41:31.429 Processed: attachment/images/Python/oddeven/3.png
-[debug] 22:41:31.430 Processed: attachment/images/Python/pil-tutorial/Image_attrib.png
-[debug] 22:41:31.431 Processed: attachment/images/Python/pil-tutorial/Image_show.png
-[debug] 22:41:31.433 Theme config loaded
-[debug] 22:41:31.433 Processed: _config.yml
-[debug] 22:41:31.434 Processed: attachment/images/Python/pil-tutorial/transpose_paste.png
-[debug] 22:41:31.435 Processed: languages/default.yml
-[debug] 22:41:31.435 Processed: languages/zh-CN.yml
-[debug] 22:41:31.764 Processed: 404.html
-[debug] 22:41:31.765 Processed: google3bcd21dc892a1d61.html
-[debug] 22:41:31.765 Processed: wumii-verification.htm
-[debug] 22:41:31.771 Processed: about/index.md
-[debug] 22:41:31.772 Processed: links/index.md
-[debug] 22:41:32.635 Processed: _posts/2014-05-08-float-setting.md
-[debug] 22:41:32.635 Processed: _posts/2014-05-08-latex-circled-numbers.md
-[debug] 22:41:32.635 Processed: _posts/2014-05-09-gbt7714-2005-bibtex-style.md
-[debug] 22:41:32.635 Processed: _posts/2014-05-10-hearing-impairment.md
-[debug] 22:41:32.635 Processed: _posts/2014-05-20-koreader-on-kindle-paperwhite.md
-[debug] 22:41:32.635 Processed: _posts/2014-05-23-CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable.md
-[debug] 22:41:32.635 Processed: _posts/2014-06-21-basic-sentence-and-the-complement.md
-[debug] 22:41:32.635 Processed: _posts/2014-06-22-noun-phrase-and-articles.md
-[debug] 22:41:32.635 Processed: _posts/2014-07-22-duoshuo-delay.md
-[debug] 22:41:32.635 Processed: _posts/2014-08-17-kindle-paperwhite2-stop-slient-updating.md
-[debug] 22:41:32.635 Processed: _posts/2014-08-20-book-review-blindness.md
-[debug] 22:41:32.635 Processed: _posts/2014-08-21-bitmap-convert-to-eps-batch.md
-[debug] 22:41:32.635 Processed: _posts/2014-09-08-latex-introduction.md
-[debug] 22:41:32.635 Processed: _posts/2014-09-11-matplotlib-tutorial-zh-cn.md
-[debug] 22:41:32.635 Processed: _posts/2014-09-28-review-of-the-continent.md
-[debug] 22:41:32.635 Processed: _posts/2014-11-25-latex-mactex-chinese-support.md
-[debug] 22:41:32.635 Processed: _posts/2014-11-25-latex-pdf-cjk-bookmarks.md
-[debug] 22:41:32.635 Processed: _posts/2014-12-03-how-to-define-a-proof-like-environment.md
-[debug] 22:41:32.635 Processed: _posts/2014-12-07-ptex-intro-and-tutorial-01.md
-[debug] 22:41:32.635 Processed: _posts/2014-12-08-ptex-intro-and-tutorial-02.md
-[debug] 22:41:32.635 Processed: _posts/2014-12-11-ptex-intro-and-tutorial-03.md
-[debug] 22:41:32.635 Processed: _posts/2014-12-14-advanced-builder-latextools.md
-[debug] 22:41:32.635 Processed: _posts/2014-12-30-history-of-europe-01.md
-[debug] 22:41:32.635 Processed: _posts/2015-01-06-history-of-europe-02.md
-[debug] 22:41:32.635 Processed: _posts/2015-01-22-history-of-europ-03.md
-[debug] 22:41:32.635 Processed: _posts/2015-01-23-literate-programming-in-latex.md
-[debug] 22:41:32.635 Processed: _posts/2015-02-01-smile-to-leave.md
-[debug] 22:41:32.635 Processed: _posts/2015-03-19-why-i-love-to-share.md
-[debug] 22:41:32.635 Processed: _posts/2015-03-23-push-articles-to-kindle-from-wechat.md
-[debug] 22:41:32.635 Processed: _posts/2015-04-10-how-to-list-unnumbered-section-in-the-table-of-contents.md
-[debug] 22:41:32.635 Processed: _posts/2015-04-14-using-chinese-templates-in-mactex.md
-[debug] 22:41:32.635 Processed: _posts/2015-04-22-cancle-clearpage-in-chapter.md
-[debug] 22:41:32.635 Processed: _posts/2015-04-22-pil-tutorial-basic-usage.md
-[debug] 22:41:32.635 Processed: _posts/2015-04-24-apple-dictionaries-download.md
-[debug] 22:41:32.635 Processed: _posts/2015-04-29-git-checkout-history-version.md
-[debug] 22:41:32.635 Processed: _posts/2015-04-30-using-font-fallback-to-enhance-the-appreance-on-windows.md
-[debug] 22:41:32.635 Processed: _posts/2015-05-01-open-editor-after-hexo-new-immediately.md
-[debug] 22:41:32.635 Processed: _posts/GRE/GRE-Argument.md
-[debug] 22:41:32.635 Processed: _posts/GRE/GRE-Issue.md
-[debug] 22:41:32.635 Processed: _posts/GRE/GRE-wisest-men.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-CCT-template.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-Chinese-parindent.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-Choose-picture-format.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-Emphasize-color-contents-between-two-delimiters-in-listings-but-not-the-delimiters-themselves.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-Footnote-In-Section-Title.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-Formula-Number.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-How-to-find-out-where-a-macro-is-defined.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-How-to-start-itemize-on-same-line-as-text.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-Key-to-questions.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-Linespace.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-Pro-Git-zh.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-Recalling-a-theorem.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-RomanNumber.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-RuleTillEnd.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-SDUtemplate.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-Tsinghua-TW.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-brace-overlap.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-def-subnumber.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-environ.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-highlight-text.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-include-path.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-listings-copy.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-multi-lingual.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-parallelogram.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-table.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-templates.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-watermark.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-websites.md
-[debug] 22:41:32.635 Processed: _posts/LaTeX/LaTeX-xcumcmart.md
-[debug] 22:41:32.635 Processed: _posts/Other/Sublime-elegant.md
-[debug] 22:41:32.635 Processed: _posts/Python/Py-Contacts.md
-[debug] 22:41:32.635 Processed: _posts/Python/Py-Incise-Images.md
-[debug] 22:41:32.635 Processed: _posts/Python/Py-challenge.md
-[debug] 22:41:32.635 Processed: _posts/Python/Python-tutorial-zh_cn.md
-[debug] 22:41:32.635 Processed: _posts/Python/pyhardway.md
-[info] 22:41:32.940 Files loaded in 1.978s
-[debug] 22:41:32.965 Cache saved
-[debug] 22:41:33.004 Public folder cleared: archives/index.html,archives/2013/index.html,archives/2013/04/index.html,archives/2013/05/index.html,archives/2013/08/index.html,archives/2013/09/index.html,archives/2013/10/index.html,archives/2013/11/index.html,archives/2013/12/index.html,archives/2014/index.html,archives/2014/01/index.html,archives/2014/04/index.html,archives/2014/05/index.html,archives/2014/06/index.html,archives/2014/07/index.html,archives/2014/08/index.html,archives/2014/09/index.html,archives/2014/11/index.html,archives/2014/12/index.html,archives/2015/index.html,archives/2015/01/index.html,archives/2015/02/index.html,archives/2015/03/index.html,archives/2015/04/index.html,archives/2015/05/index.html,categories/LaTeX/index.html,categories/Life/index.html,categories/IT/index.html,categories/Literature and Social Sciences/index.html,categories/GRE/index.html,index.html,page/2/index.html,page/3/index.html,page/4/index.html,page/5/index.html,page/6/index.html,page/7/index.html,page/8/index.html,page/9/index.html,page/10/index.html,page/11/index.html,404.html,google3bcd21dc892a1d61.html,wumii-verification.html,about/index.html,links/index.html,2015/05/01/open-editor-after-hexo-new-immediately/index.html,2015/04/30/using-font-fallback-to-enhance-the-appreance-on-windows/index.html,2015/04/29/git-checkout-history-version/index.html,2015/04/24/apple-dictionaries-download/index.html,2015/04/22/pil-tutorial-basic-usage/index.html,2015/04/22/cancle-clearpage-in-chapter/index.html,2015/04/14/using-chinese-templates-in-mactex/index.html,2015/04/10/how-to-list-unnumbered-section-in-the-table-of-contents/index.html,2015/03/23/push-articles-to-kindle-from-wechat/index.html,2015/03/19/why-i-love-to-share/index.html,2015/02/01/smile-to-leave/index.html,2015/01/23/literate-programming-in-latex/index.html,2015/01/22/history-of-europ-03/index.html,2015/01/06/history-of-europe-02/index.html,2014/12/30/history-of-europe-01/index.html,2014/12/14/advanced-builder-latextools/index.html,2014/12/11/ptex-intro-and-tutorial-03/index.html,2014/12/08/ptex-intro-and-tutorial-02/index.html,2014/12/07/ptex-intro-and-tutorial-01/index.html,2014/12/03/how-to-define-a-proof-like-environment/index.html,2014/11/22/latex-pdf-cjk-bookmarks/index.html,2014/11/02/latex-mactex-chinese-support/index.html,2014/09/28/review-of-the-continent/index.html,2014/09/11/matplotlib-tutorial-zh-cn/index.html,2014/09/08/latex-introduction/index.html,2014/08/21/bitmap-convert-to-eps-batch/index.html,2014/08/20/book-review-blindness/index.html,2014/08/17/kindle-paperwhite2-stop-slient-updating/index.html,2014/07/22/duoshuo-delay/index.html,2014/06/22/noun-phrase-and-articles/index.html,2014/06/21/basic-sentence-and-the-complement/index.html,2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/index.html,2014/05/20/koreader-on-kindle-paperwhite/index.html,2014/05/10/hearing-impairment/index.html,2014/05/09/gbt7714-2005-bibtex-style/index.html,2014/05/08/latex-circled-numbers/index.html,2014/05/08/float-setting/index.html,2014/04/22/LaTeX-watermark/index.html,2014/04/01/LaTeX-Pro-Git-zh/index.html,2014/01/29/Py-Contacts/index.html,2014/01/27/Py-Incise-Images/index.html,2014/01/18/Py-challenge/index.html,2013/12/07/LaTeX-Choose-picture-format/index.html,2013/12/05/LaTeX-Emphasize-color-contents-between-two-delimiters-in-listings-but-not-the-delimiters-themselves/index.html,2013/12/04/LaTeX-Recalling-a-theorem/index.html,2013/12/02/LaTeX-How-to-start-itemize-on-same-line-as-text/index.html,2013/11/20/LaTeX-How-to-find-out-where-a-macro-is-defined/index.html,2013/11/18/pyhardway/index.html,2013/11/11/Sublime-elegant/index.html,2013/11/05/LaTeX-include-path/index.html,2013/11/04/LaTeX-listings-copy/index.html,2013/11/02/Python-tutorial-zh_cn/index.html,2013/10/30/GRE-wisest-men/index.html,2013/10/18/LaTeX-brace-overlap/index.html,2013/10/18/LaTeX-websites/index.html,2013/10/18/LaTeX-Tsinghua-TW/index.html,2013/10/17/LaTeX-Linespace/index.html,2013/10/15/LaTeX-CCT-template/index.html,2013/10/14/LaTeX-Key-to-questions/index.html,2013/10/11/LaTeX-multi-lingual/index.html,2013/10/08/LaTeX-def-subnumber/index.html,2013/10/06/GRE-Argument/index.html,2013/10/04/GRE-Issue/index.html,2013/09/26/LaTeX-highlight-text/index.html,2013/09/10/LaTeX-RomanNumber/index.html,2013/08/26/LaTeX-Footnote-In-Section-Title/index.html,2013/08/25/LaTeX-RuleTillEnd/index.html,2013/08/25/LaTeX-xcumcmart/index.html,2013/08/23/LaTeX-Formula-Number/index.html,2013/08/04/LaTeX-table/index.html,2013/05/18/LaTeX-templates/index.html,2013/05/15/LaTeX-Chinese-parindent/index.html,2013/05/14/LaTeX-environ/index.html,2013/05/12/LaTeX-SDUtemplate/index.html,2013/04/13/LaTeX-parallelogram/index.html,tags/Float/index.html,tags/TikZ/index.html,tags/Circled/index.html,tags/BibTeX/index.html,tags/GBT7714-2005/index.html,tags/Hearing/index.html,tags/Damnification/index.html,tags/Kindle/index.html,tags/PDF/index.html,tags/Koreader/index.html,tags/ThinkPad/index.html,tags/CamStudio/index.html,tags/Virtual Audio Cable/index.html,tags/Vitual Sound Card/index.html,tags/WaveoutGetSelectControl/index.html,tags/English/index.html,tags/Grammar/index.html,tags/Blog/index.html,tags/Duoshuo/index.html,tags/Async Loading/index.html,tags/BackDoorLock/index.html,tags/KUAL/index.html,tags/Book review/index.html,tags/Blindness/index.html,tags/Humanity/index.html,tags/Bitmap/index.html,tags/EPS/index.html,tags/Windows Batch/index.html,tags/Introduction/index.html,tags/ctex/index.html,tags/TeXworks/index.html,tags/Python/index.html,tags/Matplotlib/index.html,tags/Tutorial/index.html,tags/Movie/index.html,tags/Han Han/index.html,tags/The Continent/index.html,tags/CJK/index.html,tags/MacTeX/index.html,tags/OS X/index.html,tags/Bookmarks/index.html,tags/Error Codes/index.html,tags/Proof/index.html,tags/Environment/index.html,tags/Macros/index.html,tags/AMS/index.html,tags/pTeX/index.html,tags/Encoding/index.html,tags/Japanese/index.html,tags/Demo/index.html,tags/LaTeXTools/index.html,tags/Compile/index.html,tags/History/index.html,tags/Europe/index.html,tags/Greece/index.html,tags/Rome/index.html,tags/Germanic/index.html,tags/Christianity/index.html,tags/God/index.html,tags/Reason/index.html,tags/Science/index.html,tags/Romantic/index.html,tags/Philosophy/index.html,tags/Literate Programming/index.html,tags/dtx/index.html,tags/Macro/index.html,tags/Love/index.html,tags/Smile/index.html,tags/Leave/index.html,tags/Share/index.html,tags/WeChat/index.html,tags/Section/index.html,tags/Sectioning/index.html,tags/Numbering/index.html,tags/Table of Contents/index.html,tags/Template/index.html,tags/Chinese/index.html,tags/Chapter/index.html,tags/Pagebreak/index.html,tags/PIL/index.html,tags/Image/index.html,tags/3000/index.html,tags/AHD/index.html,tags/Merriam Webster/index.html,tags/Apple Dictionaries/index.html,tags/Git/index.html,tags/Hexo/index.html,tags/Fonts/index.html,tags/Fallback/index.html,tags/Markdown/index.html,tags/AW/index.html,tags/Argument/index.html,tags/Issue/index.html,tags/Text Completion/index.html,tags/CCT/index.html,tags/SYSENGI/index.html,tags/Parindent/index.html,tags/Graphicx/index.html,tags/Images/index.html,tags/Format/index.html,tags/Listings/index.html,tags/Highlight/index.html,tags/Delimiter/index.html,tags/Footnote/index.html,tags/Equation number/index.html,tags/Package/index.html,tags/List/index.html,tags/Blank/index.html,tags/Exam/index.html,tags/Linespace/index.html,tags/Baseline/index.html,tags/Baselineskip/index.html,tags/Baselinestretch/index.html,tags/Setspace/index.html,tags/Pro Git/index.html,tags/Theorem/index.html,tags/Tecall/index.html,tags/THM-RESTATE/index.html,tags/Roman/index.html,tags/Number/index.html,tags/Rule/index.html,tags/SDU/index.html,tags/LaTeX speech/index.html,tags/Overbrace/index.html,tags/Underbrace/index.html,tags/Rlap/index.html,tags/Phantom/index.html,tags/Subnumber/index.html,tags/Definition/index.html,tags/Environ/index.html,tags/Newenvironment/index.html,tags/Ulem/index.html,tags/Robust/index.html,tags/Path/index.html,tags/Include/index.html,tags/Input/index.html,tags/Line number/index.html,tags/Copy/index.html,tags/Multi-lingual/index.html,tags/Parallelogram/index.html,tags/Table/index.html,tags/Watermark/index.html,tags/Tool/index.html,tags/Website/index.html,tags/XCUMCMART/index.html,tags/Sublime/index.html,tags/Tricks/index.html,tags/Tips/index.html,tags/Contact/index.html,tags/Game/index.html,tags/Translation/index.html,tags/PyHardWay/index.html,atom.xml,sitemap.xml,fancybox/blank.gif,fancybox/fancybox_loading.gif,fancybox/fancybox_overlay.png,fancybox/fancybox_sprite.png,fancybox/jquery.fancybox.css,fancybox/jquery.fancybox.pack.js,js/MathJax.js,js/counter.js,js/gallery.js,js/jquery.imagesloaded.min.js,js/jquery.min.js,js/scale.fix.js,js/moment.min.js,css/style.css,css/fonts/FontAwesome.otf,css/fonts/fontawesome-webfont.eot,css/fonts/fontawesome-webfont.svg,css/fonts/fontawesome-webfont.ttf,css/fonts/fontawesome-webfont.woff,css/images/checker.png,CNAME,favicon.ico,robots.txt,images/avatar.jpg,images/avatar2.jpg,images/avatar3.jpg,images/bio-photo.jpg,images/highlightOutput.png,images/letterL.jpg,images/simple-search-screenshot.jpg,images/sublime-text-2.png,images/LaTeX/def-of-chapter.png,images/LaTeX/recall-theorem.png,images/LaTeX/redefine-proof.png,images/pTeX-intro/Japanese-Text-Example.png,images/pTeX-intro/hello-ptex.jpg,images/pTeX-intro/nihongo-latex.jpg,attachment/LaTeX_howtoask.pdf,attachment/LaTeX_howtoask_20131008.pdf,attachment/Fonts/Adina.zip,attachment/Fonts/Fandol.zip,attachment/Fonts/TeX_Gyre_Pagella.zip,attachment/Git/progit.en.pdf,attachment/Git/progit.ja.pdf,attachment/Git/progit.zh.pdf,attachment/RuleTillEnd/RuleTillEnd.tex,attachment/SourceCode/brace-rlap.tex,attachment/Sublime/Default.sublime-package,attachment/Sublime/Sublime Text Build 3047.zip,attachment/TsinghuaLaTeX/latex01.pdf,attachment/TsinghuaLaTeX/latex02.pdf,attachment/TsinghuaLaTeX/latex03.pdf,attachment/TsinghuaLaTeX/latex04.pdf,attachment/soft/Virtual_Audio_Cable_4_10.zip,attachment/xcumcmart/xcumcmart-Ver.1.00.00.zip,attachment/LaTeX-useful-tools/CCT_TDS.zip,attachment/LaTeX-useful-tools/LaTeX_Docs_2014.rar,attachment/LaTeX-useful-tools/LaTeX_Docs_2014.zip,attachment/LaTeX-useful-tools/LaTeX_Intro.pdf,attachment/LaTeX-useful-tools/Liam-Gougu_demo_LeoLiu_LaTeXbook.zip,attachment/LaTeX-useful-tools/UniKhangXi-UTF16-H,attachment/LaTeX-useful-tools/advancedBuilder.py,attachment/LaTeX-useful-tools/dpi-issue.zip,attachment/LaTeX-useful-tools/epscolor.bat,attachment/LaTeX-useful-tools/ltx_vert.zip,attachment/LaTeX-useful-tools/texlivefont-20070828.pdf,attachment/LaTeX-useful-tools/xdvipdfmx.exe.xz,attachment/LaTeX-useful-tools/xdvipdfmx.exe.zip,attachment/LaTeX-useful-tools/zhfzfonts.tex,attachment/LaTeX-useful-tools/ChinaTeX-Intro-2015-Sprint/Intro01.7z,attachment/LaTeX-useful-tools/ChinaTeX-Intro-2015-Sprint/Intro06.7z,attachment/LaTeX-useful-tools/dtxtut/dtxtut.dtx,attachment/LaTeX-useful-tools/dtxtut/dtxtut.ins,attachment/LaTeX-useful-tools/dtxtut/insdtxtut.dtx,attachment/LaTeX-useful-tools/old_style/headrule.sty,attachment/LaTeX-useful-tools/old_style/vatola.sty,attachment/Python/Python_Tutorial_zh-cn_Demo.pdf,attachment/Python/The_Python_Tutorial_zh-cn.pdf,attachment/Python/PyChallenge/lv2.txt,attachment/Python/PyChallenge/lv3.txt,attachment/Python/PyHardWay/Learn_Python_The_Hard_Way_zh-cn.pdf,attachment/Python/PyHardWay/PyHardWay.zip,attachment/images/brace-overlap.jpg,attachment/images/Book_Reviews/blindness.jpg,attachment/images/Kindle/BackDoorLock.png,attachment/images/Kindle/Home_KUAL.png,attachment/images/Kindle/KUAL_BackDoorLock.png,attachment/images/Kindle/amazon01.png,attachment/images/Kindle/amazon02.png,attachment/images/Kindle/kindle01.png,attachment/images/Kindle/wechat01.jpg,attachment/images/Kindle/wechat02.jpg,attachment/images/Kindle/wechat03.jpg,attachment/images/Kindle/wechat_flowchat.png,attachment/images/MacTeX_xeCJK/01.png,attachment/images/MacTeX_xeCJK/02.png,attachment/images/MacTeX_xeCJK/03.png,attachment/images/MacTeX_xeCJK/04.png,attachment/images/Sublime/Compile_info.png,attachment/images/Sublime/Installing_LaTeXTools.png,attachment/images/Sublime/LaTeXTools_Setup.png,attachment/images/Sublime/LaTeX_UI.png,attachment/images/Sublime/Loading_Repo.png,attachment/images/Sublime/Package_Install.png,attachment/images/Sublime/Set_Syntax_LaTeX.png,attachment/images/Sublime/sublime_text_package_control.png,attachment/images/listingsCopy/right.png,attachment/images/listingsCopy/wrong.png,attachment/images/Friends/Nanzhi_Zang_01.jpg,attachment/images/Friends/Irene Yang/01.jpg,attachment/images/Friends/Irene Yang/02.jpg,attachment/images/Friends/Irene Yang/03.jpg,attachment/images/Friends/Irene Yang/04.jpg,attachment/images/Friends/Irene Yang/05.jpg,attachment/images/Friends/Irene Yang/06.jpg,attachment/images/Friends/Irene Yang/07.jpg,attachment/images/Friends/Irene Yang/08.jpg,attachment/images/Friends/Irene Yang/09.jpg,attachment/images/Friends/Irene Yang/10.jpg,attachment/images/Friends/Irene Yang/11.jpg,attachment/images/Friends/Irene Yang/12.jpg,attachment/images/Friends/Irene Yang/13.jpg,attachment/images/Friends/Qi Meng/01.jpg,attachment/images/Friends/Qi Meng/02.jpg,attachment/images/Friends/Qi Meng/03.jpg,attachment/images/Friends/Xinyang He/01.jpg,attachment/images/Friends/Xinyang He/02.jpg,attachment/images/Friends/Xinyang He/03.jpg,attachment/images/Friends/Xinyang He/04.jpg,attachment/images/Friends/Xinyang He/05.jpg,attachment/images/Friends/Xinyang He/06.jpg,attachment/images/Friends/Xinyang He/07.jpg,attachment/images/Friends/Xinyang He/08.jpg,attachment/images/Python/HOCKEY.png,attachment/images/Python/channel.png,attachment/images/Python/good.png,attachment/images/Python/oddeven/0.png,attachment/images/Python/oddeven/1.png,attachment/images/Python/oddeven/2.png,attachment/images/Python/oddeven/3.png,attachment/images/Python/pil-tutorial/Image_attrib.png,attachment/images/Python/pil-tutorial/Image_show.png,attachment/images/Python/pil-tutorial/transpose_paste.png,images/cc-by-nc-nd.svg,images/cc-by-nc-sa.svg,images/cc-by-nc.svg,images/cc-by-nd.svg,images/cc-by-sa.svg,images/cc-by.svg,images/cc-zero.svg,images/default_avatar.jpg,fonts/icon-default/icomoon.eot,fonts/icon-default/icomoon.svg,fonts/icon-default/icomoon.ttf,fonts/icon-default/icomoon.woff,fonts/icon-feather/icomoon.eot,fonts/icon-feather/icomoon.svg,fonts/icon-feather/icomoon.ttf,fonts/icon-feather/icomoon.woff,fonts/icon-fifty-shades/icomoon.eot,fonts/icon-fifty-shades/icomoon.svg,fonts/icon-fifty-shades/icomoon.ttf,fonts/icon-fifty-shades/icomoon.woff,fonts/icon-icomoon/icomoon.eot,fonts/icon-icomoon/icomoon.svg,fonts/icon-icomoon/icomoon.ttf,fonts/icon-icomoon/icomoon.woff,fonts/icon-linecons/icomoon.eot,fonts/icon-linecons/icomoon.svg,fonts/icon-linecons/icomoon.ttf,fonts/icon-linecons/icomoon.woff,css/main.css,vendors/jquery/index.js,vendors/velocity/bower.json,vendors/velocity/velocity.js,vendors/velocity/velocity.min.js,vendors/velocity/velocity.ui.js,vendors/velocity/velocity.ui.min.js,vendors/fancybox/CHANGELOG.html,vendors/fancybox/README.html,vendors/fancybox/sprite.psd,vendors/fancybox/demo/1_b.jpg,vendors/fancybox/demo/1_s.jpg,vendors/fancybox/demo/2_b.jpg,vendors/fancybox/demo/2_s.jpg,vendors/fancybox/demo/3_b.jpg,vendors/fancybox/demo/3_s.jpg,vendors/fancybox/demo/4_b.jpg,vendors/fancybox/demo/4_s.jpg,vendors/fancybox/demo/5_b.jpg,vendors/fancybox/demo/5_s.jpg,vendors/fancybox/demo/ajax.txt,vendors/fancybox/demo/iframe.html,vendors/fancybox/demo/index.html,vendors/fancybox/lib/jquery-1.10.1.min.js,vendors/fancybox/lib/jquery-1.9.0.min.js,vendors/fancybox/lib/jquery.mousewheel-3.0.6.pack.js,vendors/fancybox/source/blank.gif,vendors/fancybox/source/fancybox_loading.gif,vendors/fancybox/source/fancybox_loading@2x.gif,vendors/fancybox/source/fancybox_overlay.png,vendors/fancybox/source/fancybox_sprite.png,vendors/fancybox/source/fancybox_sprite@2x.png,vendors/fancybox/source/jquery.fancybox.css,vendors/fancybox/source/jquery.fancybox.js,vendors/fancybox/source/jquery.fancybox.pack.js,vendors/fancybox/source/helpers/jquery.fancybox-buttons.css,vendors/fancybox/source/helpers/fancybox_buttons.png,vendors/fancybox/source/helpers/jquery.fancybox-buttons.js,vendors/fancybox/source/helpers/jquery.fancybox-media.js,vendors/fancybox/source/helpers/jquery.fancybox-thumbs.css,vendors/fancybox/source/helpers/jquery.fancybox-thumbs.js,fonts/lato/lato-bol-webfont-g.eot,fonts/lato/lato-bol-webfont-g.ttf,fonts/lato/lato-bol-webfont-g.woff,fonts/lato/lato-bol-webfont.svg,fonts/lato/lato-bolita-webfont-g.eot,fonts/lato/lato-bolita-webfont-g.ttf,fonts/lato/lato-bolita-webfont-g.woff,fonts/lato/lato-bolita-webfont.svg,fonts/lato/lato-lig-webfont-g.eot,fonts/lato/lato-lig-webfont-g.ttf,fonts/lato/lato-lig-webfont-g.woff,fonts/lato/lato-lig-webfont.svg,fonts/lato/lato-ligita-webfont-g.eot,fonts/lato/lato-ligita-webfont-g.ttf,fonts/lato/lato-ligita-webfont-g.woff,fonts/lato/lato-ligita-webfont.svg,fonts/lato/lato-reg-webfont-g.eot,fonts/lato/lato-reg-webfont-g.ttf,fonts/lato/lato-reg-webfont-g.woff,fonts/lato/lato-reg-webfont.svg,fonts/lato/lato-regita-webfont-g.eot,fonts/lato/lato-regita-webfont-g.ttf,fonts/lato/lato-regita-webfont-g.woff,fonts/lato/lato-regita-webfont.svg
-[debug] 22:41:33.010 Render archive: archives/
-[debug] 22:41:33.011 Render archive: archives/2013/
-[debug] 22:41:33.011 Render archive: archives/2013/04/
-[debug] 22:41:33.012 Render archive: archives/2013/05/
-[debug] 22:41:33.012 Render archive: archives/2013/08/
-[debug] 22:41:33.012 Render archive: archives/2013/09/
-[debug] 22:41:33.012 Render archive: archives/2013/10/
-[debug] 22:41:33.012 Render archive: archives/2013/11/
-[debug] 22:41:33.012 Render archive: archives/2013/12/
-[debug] 22:41:33.012 Render archive: archives/2014/
-[debug] 22:41:33.012 Render archive: archives/2014/01/
-[debug] 22:41:33.013 Render archive: archives/2014/04/
-[debug] 22:41:33.013 Render archive: archives/2014/05/
-[debug] 22:41:33.013 Render archive: archives/2014/06/
-[debug] 22:41:33.013 Render archive: archives/2014/07/
-[debug] 22:41:33.013 Render archive: archives/2014/08/
-[debug] 22:41:33.013 Render archive: archives/2014/09/
-[debug] 22:41:33.013 Render archive: archives/2014/11/
-[debug] 22:41:33.013 Render archive: archives/2014/12/
-[debug] 22:41:33.013 Render archive: archives/2015/
-[debug] 22:41:33.013 Render archive: archives/2015/01/
-[debug] 22:41:33.014 Render archive: archives/2015/02/
-[debug] 22:41:33.014 Render archive: archives/2015/03/
-[debug] 22:41:33.014 Render archive: archives/2015/04/
-[debug] 22:41:33.014 Render archive: archives/2015/05/
-[debug] 22:41:33.014 Render archive: categories/LaTeX/
-[debug] 22:41:33.014 Render archive: categories/Life/
-[debug] 22:41:33.014 Render archive: categories/IT/
-[debug] 22:41:33.014 Render archive: categories/Literature and Social Sciences/
-[debug] 22:41:33.014 Render archive: categories/GRE/
-[debug] 22:41:33.014 Render index: 
-[debug] 22:41:33.014 Render index: page/2/
-[debug] 22:41:33.014 Render index: page/3/
-[debug] 22:41:33.015 Render index: page/4/
-[debug] 22:41:33.015 Render index: page/5/
-[debug] 22:41:33.015 Render index: page/6/
-[debug] 22:41:33.015 Render index: page/7/
-[debug] 22:41:33.015 Render index: page/8/
-[debug] 22:41:33.015 Render index: page/9/
-[debug] 22:41:33.015 Render index: page/10/
-[debug] 22:41:33.015 Render index: page/11/
-[debug] 22:41:33.015 Render page: wumii-verification.html
-[debug] 22:41:33.016 Render page: about/index.html
-[debug] 22:41:33.016 Render page: links/index.html
-[debug] 22:41:33.016 Render post: 2015/05/01/open-editor-after-hexo-new-immediately/
-[debug] 22:41:33.016 Render post: 2015/04/30/using-font-fallback-to-enhance-the-appreance-on-windows/
-[debug] 22:41:33.016 Render post: 2015/04/29/git-checkout-history-version/
-[debug] 22:41:33.016 Render post: 2015/04/24/apple-dictionaries-download/
-[debug] 22:41:33.016 Render post: 2015/04/22/pil-tutorial-basic-usage/
-[debug] 22:41:33.016 Render post: 2015/04/22/cancle-clearpage-in-chapter/
-[debug] 22:41:33.016 Render post: 2015/04/14/using-chinese-templates-in-mactex/
-[debug] 22:41:33.016 Render post: 2015/04/10/how-to-list-unnumbered-section-in-the-table-of-contents/
-[debug] 22:41:33.016 Render post: 2015/03/23/push-articles-to-kindle-from-wechat/
-[debug] 22:41:33.016 Render post: 2015/03/19/why-i-love-to-share/
-[debug] 22:41:33.016 Render post: 2015/02/01/smile-to-leave/
-[debug] 22:41:33.017 Render post: 2015/01/23/literate-programming-in-latex/
-[debug] 22:41:33.017 Render post: 2015/01/22/history-of-europ-03/
-[debug] 22:41:33.017 Render post: 2015/01/06/history-of-europe-02/
-[debug] 22:41:33.017 Render post: 2014/12/30/history-of-europe-01/
-[debug] 22:41:33.017 Render post: 2014/12/14/advanced-builder-latextools/
-[debug] 22:41:33.017 Render post: 2014/12/11/ptex-intro-and-tutorial-03/
-[debug] 22:41:33.017 Render post: 2014/12/08/ptex-intro-and-tutorial-02/
-[debug] 22:41:33.017 Render post: 2014/12/07/ptex-intro-and-tutorial-01/
-[debug] 22:41:33.017 Render post: 2014/12/03/how-to-define-a-proof-like-environment/
-[debug] 22:41:33.017 Render post: 2014/11/22/latex-pdf-cjk-bookmarks/
-[debug] 22:41:33.018 Render post: 2014/11/02/latex-mactex-chinese-support/
-[debug] 22:41:33.018 Render post: 2014/09/28/review-of-the-continent/
-[debug] 22:41:33.018 Render post: 2014/09/11/matplotlib-tutorial-zh-cn/
-[debug] 22:41:33.018 Render post: 2014/09/08/latex-introduction/
-[debug] 22:41:33.018 Render post: 2014/08/21/bitmap-convert-to-eps-batch/
-[debug] 22:41:33.018 Render post: 2014/08/20/book-review-blindness/
-[debug] 22:41:33.018 Render post: 2014/08/17/kindle-paperwhite2-stop-slient-updating/
-[debug] 22:41:33.018 Render post: 2014/07/22/duoshuo-delay/
-[debug] 22:41:33.018 Render post: 2014/06/22/noun-phrase-and-articles/
-[debug] 22:41:33.018 Render post: 2014/06/21/basic-sentence-and-the-complement/
-[debug] 22:41:33.018 Render post: 2014/05/23/CamStudio-WaveoutGetSelectControl-Virtual_Audio_Cable/
-[debug] 22:41:33.018 Render post: 2014/05/20/koreader-on-kindle-paperwhite/
-[debug] 22:41:33.019 Render post: 2014/05/10/hearing-impairment/
-[debug] 22:41:33.019 Render post: 2014/05/09/gbt7714-2005-bibtex-style/
-[debug] 22:41:33.019 Render post: 2014/05/08/latex-circled-numbers/
-[debug] 22:41:33.019 Render post: 2014/05/08/float-setting/
-[debug] 22:41:33.019 Render post: 2014/04/22/LaTeX-watermark/
-[debug] 22:41:33.019 Render post: 2014/04/01/LaTeX-Pro-Git-zh/
-[debug] 22:41:33.019 Render post: 2014/01/29/Py-Contacts/
-[debug] 22:41:33.019 Render post: 2014/01/27/Py-Incise-Images/
-[debug] 22:41:33.019 Render post: 2014/01/18/Py-challenge/
-[debug] 22:41:33.019 Render post: 2013/12/07/LaTeX-Choose-picture-format/
-[debug] 22:41:33.019 Render post: 2013/12/05/LaTeX-Emphasize-color-contents-between-two-delimiters-in-listings-but-not-the-delimiters-themselves/
-[debug] 22:41:33.019 Render post: 2013/12/04/LaTeX-Recalling-a-theorem/
-[debug] 22:41:33.019 Render post: 2013/12/02/LaTeX-How-to-start-itemize-on-same-line-as-text/
-[debug] 22:41:33.020 Render post: 2013/11/20/LaTeX-How-to-find-out-where-a-macro-is-defined/
-[debug] 22:41:33.020 Render post: 2013/11/18/pyhardway/
-[debug] 22:41:33.020 Render post: 2013/11/11/Sublime-elegant/
-[debug] 22:41:33.020 Render post: 2013/11/05/LaTeX-include-path/
-[debug] 22:41:33.020 Render post: 2013/11/04/LaTeX-listings-copy/
-[debug] 22:41:33.020 Render post: 2013/11/02/Python-tutorial-zh_cn/
-[debug] 22:41:33.020 Render post: 2013/10/30/GRE-wisest-men/
-[debug] 22:41:33.020 Render post: 2013/10/18/LaTeX-brace-overlap/
-[debug] 22:41:33.020 Render post: 2013/10/18/LaTeX-websites/
-[debug] 22:41:33.020 Render post: 2013/10/18/LaTeX-Tsinghua-TW/
-[debug] 22:41:33.020 Render post: 2013/10/17/LaTeX-Linespace/
-[debug] 22:41:33.020 Render post: 2013/10/15/LaTeX-CCT-template/
-[debug] 22:41:33.020 Render post: 2013/10/14/LaTeX-Key-to-questions/
-[debug] 22:41:33.021 Render post: 2013/10/11/LaTeX-multi-lingual/
-[debug] 22:41:33.021 Render post: 2013/10/08/LaTeX-def-subnumber/
-[debug] 22:41:33.021 Render post: 2013/10/06/GRE-Argument/
-[debug] 22:41:33.021 Render post: 2013/10/04/GRE-Issue/
-[debug] 22:41:33.021 Render post: 2013/09/26/LaTeX-highlight-text/
-[debug] 22:41:33.021 Render post: 2013/09/10/LaTeX-RomanNumber/
-[debug] 22:41:33.021 Render post: 2013/08/26/LaTeX-Footnote-In-Section-Title/
-[debug] 22:41:33.021 Render post: 2013/08/25/LaTeX-RuleTillEnd/
-[debug] 22:41:33.021 Render post: 2013/08/25/LaTeX-xcumcmart/
-[debug] 22:41:33.021 Render post: 2013/08/23/LaTeX-Formula-Number/
-[debug] 22:41:33.021 Render post: 2013/08/04/LaTeX-table/
-[debug] 22:41:33.021 Render post: 2013/05/18/LaTeX-templates/
-[debug] 22:41:33.021 Render post: 2013/05/15/LaTeX-Chinese-parindent/
-[debug] 22:41:33.021 Render post: 2013/05/14/LaTeX-environ/
-[debug] 22:41:33.022 Render post: 2013/05/12/LaTeX-SDUtemplate/
-[debug] 22:41:33.022 Render post: 2013/04/13/LaTeX-parallelogram/
-[debug] 22:41:33.022 Render tag: tags/Float/
-[debug] 22:41:33.022 Render tag: tags/TikZ/
-[debug] 22:41:33.022 Render tag: tags/Circled/
-[debug] 22:41:33.022 Render tag: tags/BibTeX/
-[debug] 22:41:33.022 Render tag: tags/GBT7714-2005/
-[debug] 22:41:33.023 Render tag: tags/Hearing/
-[debug] 22:41:33.023 Render tag: tags/Damnification/
-[debug] 22:41:33.023 Render tag: tags/Kindle/
-[debug] 22:41:33.023 Render tag: tags/PDF/
-[debug] 22:41:33.023 Render tag: tags/Koreader/
-[debug] 22:41:33.023 Render tag: tags/ThinkPad/
-[debug] 22:41:33.023 Render tag: tags/CamStudio/
-[debug] 22:41:33.024 Render tag: tags/Virtual Audio Cable/
-[debug] 22:41:33.024 Render tag: tags/Vitual Sound Card/
-[debug] 22:41:33.024 Render tag: tags/WaveoutGetSelectControl/
-[debug] 22:41:33.024 Render tag: tags/English/
-[debug] 22:41:33.024 Render tag: tags/Grammar/
-[debug] 22:41:33.024 Render tag: tags/Blog/
-[debug] 22:41:33.024 Render tag: tags/Duoshuo/
-[debug] 22:41:33.024 Render tag: tags/Async Loading/
-[debug] 22:41:33.024 Render tag: tags/BackDoorLock/
-[debug] 22:41:33.025 Render tag: tags/KUAL/
-[debug] 22:41:33.025 Render tag: tags/Book review/
-[debug] 22:41:33.025 Render tag: tags/Blindness/
-[debug] 22:41:33.025 Render tag: tags/Humanity/
-[debug] 22:41:33.025 Render tag: tags/Bitmap/
-[debug] 22:41:33.025 Render tag: tags/EPS/
-[debug] 22:41:33.025 Render tag: tags/Windows Batch/
-[debug] 22:41:33.025 Render tag: tags/Introduction/
-[debug] 22:41:33.025 Render tag: tags/ctex/
-[debug] 22:41:33.025 Render tag: tags/TeXworks/
-[debug] 22:41:33.025 Render tag: tags/Python/
-[debug] 22:41:33.026 Render tag: tags/Matplotlib/
-[debug] 22:41:33.026 Render tag: tags/Tutorial/
-[debug] 22:41:33.026 Render tag: tags/Movie/
-[debug] 22:41:33.026 Render tag: tags/Han Han/
-[debug] 22:41:33.026 Render tag: tags/The Continent/
-[debug] 22:41:33.026 Render tag: tags/CJK/
-[debug] 22:41:33.026 Render tag: tags/MacTeX/
-[debug] 22:41:33.026 Render tag: tags/OS X/
-[debug] 22:41:33.026 Render tag: tags/Bookmarks/
-[debug] 22:41:33.026 Render tag: tags/Error Codes/
-[debug] 22:41:33.026 Render tag: tags/Proof/
-[debug] 22:41:33.027 Render tag: tags/Environment/
-[debug] 22:41:33.027 Render tag: tags/Macros/
-[debug] 22:41:33.027 Render tag: tags/AMS/
-[debug] 22:41:33.027 Render tag: tags/pTeX/
-[debug] 22:41:33.028 Render tag: tags/Encoding/
-[debug] 22:41:33.028 Render tag: tags/Japanese/
-[debug] 22:41:33.028 Render tag: tags/Demo/
-[debug] 22:41:33.028 Render tag: tags/LaTeXTools/
-[debug] 22:41:33.028 Render tag: tags/Compile/
-[debug] 22:41:33.028 Render tag: tags/History/
-[debug] 22:41:33.028 Render tag: tags/Europe/
-[debug] 22:41:33.028 Render tag: tags/Greece/
-[debug] 22:41:33.028 Render tag: tags/Rome/
-[debug] 22:41:33.028 Render tag: tags/Germanic/
-[debug] 22:41:33.028 Render tag: tags/Christianity/
-[debug] 22:41:33.029 Render tag: tags/God/
-[debug] 22:41:33.029 Render tag: tags/Reason/
-[debug] 22:41:33.029 Render tag: tags/Science/
-[debug] 22:41:33.029 Render tag: tags/Romantic/
-[debug] 22:41:33.029 Render tag: tags/Philosophy/
-[debug] 22:41:33.029 Render tag: tags/Literate Programming/
-[debug] 22:41:33.029 Render tag: tags/dtx/
-[debug] 22:41:33.029 Render tag: tags/Macro/
-[debug] 22:41:33.029 Render tag: tags/Love/
-[debug] 22:41:33.029 Render tag: tags/Smile/
-[debug] 22:41:33.030 Render tag: tags/Leave/
-[debug] 22:41:33.030 Render tag: tags/Share/
-[debug] 22:41:33.030 Render tag: tags/WeChat/
-[debug] 22:41:33.030 Render tag: tags/Section/
-[debug] 22:41:33.030 Render tag: tags/Sectioning/
-[debug] 22:41:33.030 Render tag: tags/Numbering/
-[debug] 22:41:33.030 Render tag: tags/Table of Contents/
-[debug] 22:41:33.030 Render tag: tags/Template/
-[debug] 22:41:33.031 Render tag: tags/Chinese/
-[debug] 22:41:33.031 Render tag: tags/Chapter/
-[debug] 22:41:33.031 Render tag: tags/Pagebreak/
-[debug] 22:41:33.031 Render tag: tags/PIL/
-[debug] 22:41:33.031 Render tag: tags/Image/
-[debug] 22:41:33.031 Render tag: tags/3000/
-[debug] 22:41:33.031 Render tag: tags/AHD/
-[debug] 22:41:33.031 Render tag: tags/Merriam Webster/
-[debug] 22:41:33.031 Render tag: tags/Apple Dictionaries/
-[debug] 22:41:33.031 Render tag: tags/Git/
-[debug] 22:41:33.031 Render tag: tags/Hexo/
-[debug] 22:41:33.031 Render tag: tags/Fonts/
-[debug] 22:41:33.032 Render tag: tags/Fallback/
-[debug] 22:41:33.032 Render tag: tags/Markdown/
-[debug] 22:41:33.032 Render tag: tags/AW/
-[debug] 22:41:33.032 Render tag: tags/Argument/
-[debug] 22:41:33.032 Render tag: tags/Issue/
-[debug] 22:41:33.032 Render tag: tags/Text Completion/
-[debug] 22:41:33.032 Render tag: tags/CCT/
-[debug] 22:41:33.033 Render tag: tags/SYSENGI/
-[debug] 22:41:33.033 Render tag: tags/Parindent/
-[debug] 22:41:33.033 Render tag: tags/Graphicx/
-[debug] 22:41:33.033 Render tag: tags/Images/
-[debug] 22:41:33.033 Render tag: tags/Format/
-[debug] 22:41:33.033 Render tag: tags/Listings/
-[debug] 22:41:33.033 Render tag: tags/Highlight/
-[debug] 22:41:33.033 Render tag: tags/Delimiter/
-[debug] 22:41:33.033 Render tag: tags/Footnote/
-[debug] 22:41:33.033 Render tag: tags/Equation number/
-[debug] 22:41:33.033 Render tag: tags/Package/
-[debug] 22:41:33.033 Render tag: tags/List/
-[debug] 22:41:33.034 Render tag: tags/Blank/
-[debug] 22:41:33.034 Render tag: tags/Exam/
-[debug] 22:41:33.034 Render tag: tags/Linespace/
-[debug] 22:41:33.035 Render tag: tags/Baseline/
-[debug] 22:41:33.035 Render tag: tags/Baselineskip/
-[debug] 22:41:33.035 Render tag: tags/Baselinestretch/
-[debug] 22:41:33.035 Render tag: tags/Setspace/
-[debug] 22:41:33.035 Render tag: tags/Pro Git/
-[debug] 22:41:33.035 Render tag: tags/Theorem/
-[debug] 22:41:33.035 Render tag: tags/Tecall/
-[debug] 22:41:33.035 Render tag: tags/THM-RESTATE/
-[debug] 22:41:33.035 Render tag: tags/Roman/
-[debug] 22:41:33.035 Render tag: tags/Number/
-[debug] 22:41:33.035 Render tag: tags/Rule/
-[debug] 22:41:33.035 Render tag: tags/SDU/
-[debug] 22:41:33.035 Render tag: tags/LaTeX speech/
-[debug] 22:41:33.036 Render tag: tags/Overbrace/
-[debug] 22:41:33.036 Render tag: tags/Underbrace/
-[debug] 22:41:33.036 Render tag: tags/Rlap/
-[debug] 22:41:33.036 Render tag: tags/Phantom/
-[debug] 22:41:33.036 Render tag: tags/Subnumber/
-[debug] 22:41:33.036 Render tag: tags/Definition/
-[debug] 22:41:33.036 Render tag: tags/Environ/
-[debug] 22:41:33.036 Render tag: tags/Newenvironment/
-[debug] 22:41:33.036 Render tag: tags/Ulem/
-[debug] 22:41:33.036 Render tag: tags/Robust/
-[debug] 22:41:33.036 Render tag: tags/Path/
-[debug] 22:41:33.036 Render tag: tags/Include/
-[debug] 22:41:33.036 Render tag: tags/Input/
-[debug] 22:41:33.037 Render tag: tags/Line number/
-[debug] 22:41:33.037 Render tag: tags/Copy/
-[debug] 22:41:33.037 Render tag: tags/Multi-lingual/
-[debug] 22:41:33.037 Render tag: tags/Parallelogram/
-[debug] 22:41:33.037 Render tag: tags/Table/
-[debug] 22:41:33.037 Render tag: tags/Watermark/
-[debug] 22:41:33.037 Render tag: tags/Tool/
-[debug] 22:41:33.037 Render tag: tags/Website/
-[debug] 22:41:33.037 Render tag: tags/XCUMCMART/
-[debug] 22:41:33.037 Render tag: tags/Sublime/
-[debug] 22:41:33.037 Render tag: tags/Tricks/
-[debug] 22:41:33.037 Render tag: tags/Tips/
-[debug] 22:41:33.037 Render tag: tags/Contact/
-[debug] 22:41:33.037 Render tag: tags/Game/
-[debug] 22:41:33.038 Render tag: tags/Translation/
-[debug] 22:41:33.038 Render tag: tags/PyHardWay/
-[error] 22:41:33.863 HexoError: Render failed: css/main.css
-Error: /Users/Liam/Documents/git-dev/blog-source/.hexo/themes/next/source/css/main.styl:24
-   20| 
-   21| // Fonts
-   22| @import "_fonts/lato";
-   23| @import "_fonts/icon-font";
- > 24| @require "_fonts/icon-" + hexo-config('icon_font');
-   25| 
-   26| 
-   27| // Vendors
+[debug] 13:32:38.089 Config file loaded
+[debug] 13:32:38.092 Version info checked successfully
+[debug] 13:32:38.118 Loading database.
+[debug] 13:32:38.166 Plugin loaded successfully: hexo-generator-feed
+[debug] 13:32:38.214 Plugin loaded successfully: hexo-generator-sitemap
+[debug] 13:32:38.228 Plugin loaded successfully: hexo-math
+[debug] 13:32:38.231 Script load successfully: open_new.js
+[debug] 13:32:38.425 Processed: LICENSE
+[debug] 13:32:38.426 Processed: README.md
+[debug] 13:32:38.426 Processed: bak.git.rar
+[debug] 13:32:38.492 Processed: source/css/_base/layout.styl
+[debug] 13:32:38.492 Processed: source/css/_base/variable.styl
+[debug] 13:32:38.492 Processed: source/css/_partial/archive.styl
+[debug] 13:32:38.492 Processed: source/css/_partial/article.styl
+[debug] 13:32:38.492 Processed: source/css/_partial/comment.styl
+[debug] 13:32:38.492 Processed: source/css/_partial/footer.styl
+[debug] 13:32:38.492 Processed: source/css/_partial/header.styl
+[debug] 13:32:38.492 Processed: source/css/_partial/index.styl
+[debug] 13:32:38.493 Processed: source/css/_partial/sidebar.styl
+[debug] 13:32:38.493 Processed: source/css/_partial/syntax.styl
+[debug] 13:32:38.536 Processed: source/fancybox/blank.gif
+[debug] 13:32:38.539 Processed: source/fancybox/fancybox_loading.gif
+[debug] 13:32:38.541 Processed: source/fancybox/fancybox_overlay.png
+[debug] 13:32:38.542 Processed: source/fancybox/fancybox_sprite.png
+[debug] 13:32:38.543 Processed: source/fancybox/jquery.fancybox.css
+[debug] 13:32:38.544 Processed: source/fancybox/jquery.fancybox.pack.js
+[debug] 13:32:38.544 Processed: source/js/MathJax.js
+[debug] 13:32:38.545 Processed: source/js/counter.js
+[debug] 13:32:38.547 Processed: source/js/gallery.js
+[debug] 13:32:38.547 Processed: source/js/jquery.imagesloaded.min.js
+[debug] 13:32:38.549 Processed: source/js/jquery.min.js
+[debug] 13:32:38.550 Processed: source/js/moment.min.js
+[debug] 13:32:38.550 Processed: source/js/scale.fix.js
+[debug] 13:32:38.552 Processed: source/css/style.styl
+[debug] 13:32:38.556 Processed: source/css/fonts/FontAwesome.otf
+[debug] 13:32:38.557 Processed: source/css/fonts/fontawesome-webfont.eot
+[debug] 13:32:38.558 Processed: source/css/fonts/fontawesome-webfont.svg
+[debug] 13:32:38.559 Processed: source/css/fonts/fontawesome-webfont.ttf
+[debug] 13:32:38.560 Processed: source/css/fonts/fontawesome-webfont.woff
+[debug] 13:32:38.561 Processed: source/css/images/checker.png
+[debug] 13:32:38.564 Processed: layout/archive.ejs
+[debug] 13:32:38.564 Processed: layout/index.ejs
+[debug] 13:32:38.564 Processed: layout/layout.ejs
+[debug] 13:32:38.564 Processed: layout/page.ejs
+[debug] 13:32:38.564 Processed: layout/post.ejs
+[debug] 13:32:38.564 Processed: layout/tag.ejs
+[debug] 13:32:38.565 Processed: layout/_widget/blogroll.ejs
+[debug] 13:32:38.565 Processed: layout/_widget/category.ejs
+[debug] 13:32:38.565 Processed: layout/_widget/recent_posts.ejs
+[debug] 13:32:38.565 Processed: layout/_widget/tag.ejs
+[debug] 13:32:38.565 Processed: layout/_widget/tagcloud.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/after-footer.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/after_footer.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/archive-post.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/archive.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/archive_title.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/article.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/baidu_tongji_old.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/comment.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/footer.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/footer_old.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/google_analytics.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/guess.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/head.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/header.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/math-jax.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/pagination.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/sidebar.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/tencent_analytics.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/post/category.ejs
+[debug] 13:32:38.565 Processed: layout/_partial/post/date.ejs
+[debug] 13:32:38.566 Processed: layout/_partial/post/donate.ejs
+[debug] 13:32:38.566 Processed: layout/_partial/post/gallery.ejs
+[debug] 13:32:38.566 Processed: layout/_partial/post/tag.ejs
+[debug] 13:32:38.566 Processed: layout/_partial/post/title.ejs
+[debug] 13:32:38.607 Processed: _drafts/2014-07-05-let-it-go.md
+[debug] 13:32:38.607 Processed: _drafts/2015-04-25-using-bibtex-to-generate-reference.md
+[debug] 13:32:38.607 Processed: _drafts/Sublime-LaTeXTools.md
+[debug] 13:32:38.607 Processed: _drafts/Sublime-with-LaTeX.md
+[debug] 13:32:38.673 Processed: _posts/adjust_quote.py
+[debug] 13:32:38.673 Processed: _posts/migration.py
+[debug] 13:32:38.673 Processed: _posts/rename.py
+[debug] 13:32:38.913 Processed: CNAME
+[debug] 13:32:38.914 Processed: favicon.ico
+[debug] 13:32:38.914 Processed: robots.txt
+[debug] 13:32:38.918 Processed: images/avatar.jpg
+[debug] 13:32:38.918 Processed: images/avatar2.jpg
+[debug] 13:32:38.920 Processed: images/avatar3.jpg
+[debug] 13:32:38.921 Processed: images/bio-photo.jpg
+[debug] 13:32:38.921 Processed: images/highlightOutput.png
+[debug] 13:32:38.922 Processed: images/letterL.jpg
+[debug] 13:32:38.922 Processed: images/simple-search-screenshot.jpg
+[debug] 13:32:38.923 Processed: images/sublime-text-2.png
+[debug] 13:32:38.923 Processed: images/LaTeX/def-of-chapter.png
+[debug] 13:32:38.926 Processed: images/LaTeX/def-of-cleardoublepage.png
+[debug] 13:32:38.926 Processed: images/LaTeX/recall-theorem.png
+[debug] 13:32:38.926 Processed: images/LaTeX/redefine-proof.png
+[debug] 13:32:38.927 Processed: images/pTeX-intro/Japanese-Text-Example.png
+[debug] 13:32:38.927 Processed: images/pTeX-intro/hello-ptex.jpg
+[debug] 13:32:38.928 Processed: images/pTeX-intro/nihongo-latex.jpg
+[debug] 13:32:38.930 Processed: mathmt/StyleIndex.css
+[debug] 13:32:38.932 Processed: mathmt/Web.config
+[debug] 13:32:38.934 Processed: mathmt/style.css
+[debug] 13:32:38.936 Processed: mathmt/page1/1.png
+[debug] 13:32:38.938 Processed: mathmt/page1/1242_2208.png
+[debug] 13:32:38.940 Processed: mathmt/page1/2.png
+[debug] 13:32:38.942 Processed: mathmt/page1/3.png
+[debug] 13:32:38.944 Processed: mathmt/page1/ditu.jpg
+[debug] 13:32:38.946 Processed: mathmt/page1/jieshao.png
+[debug] 13:32:38.948 Processed: mathmt/page1/mathMT.png
+[debug] 13:32:38.950 Processed: mathmt/page1/page-1.psd
+[debug] 13:32:38.952 Processed: mathmt/page1/page-1_01.jpg
+[debug] 13:32:38.954 Processed: mathmt/page1/yang.jpg
+[debug] 13:32:38.956 Processed: mathmt/page1/yang.png
+[debug] 13:32:38.958 Processed: mathmt/page1/底图.jpg
+[debug] 13:32:38.960 Processed: mathmt/page1/空.png
+[debug] 13:32:38.962 Processed: mathmt/page2/1-1.png
+[debug] 13:32:38.964 Processed: mathmt/page2/1-2.png
+[debug] 13:32:38.968 Processed: mathmt/page2/1.png
+[debug] 13:32:38.970 Processed: mathmt/page2/2-1.png
+[debug] 13:32:38.972 Processed: mathmt/page2/2-2.png
+[debug] 13:32:38.974 Processed: mathmt/page2/2.png
+[debug] 13:32:38.976 Processed: mathmt/page2/3-1.png
+[debug] 13:32:38.978 Processed: mathmt/page2/3-2.png
+[debug] 13:32:38.980 Processed: mathmt/page2/3.png
+[debug] 13:32:38.982 Processed: mathmt/page2/page-2.psd
+[debug] 13:32:38.984 Processed: mathmt/page2/page-2_00.jpg
+[debug] 13:32:38.986 Processed: mathmt/page2/page-2_01.jpg
+[debug] 13:32:38.989 Processed: mathmt/page2/page-2_02.jpg
+[debug] 13:32:38.990 Processed: mathmt/page2/page-2_03.jpg
+[debug] 13:32:38.992 Processed: mathmt/page2/page-2_04.jpg
+[debug] 13:32:38.994 Processed: mathmt/page2/page-2_05.jpg
+[debug] 13:32:38.996 Processed: mathmt/page2/page-2_06.jpg
+[debug] 13:32:38.999 Processed: mathmt/page2/page-2_07.jpg
+[debug] 13:32:39.001 Processed: mathmt/page2/page-2底图.jpg
+[debug] 13:32:39.007 Processed: mathmt/page2/可选.png
+[debug] 13:32:39.011 Processed: mathmt/page2/奥数1.png
+[debug] 13:32:39.014 Processed: mathmt/page2/奥数1主图.png
+[debug] 13:32:39.018 Processed: mathmt/page2/奥数1详情.png
+[debug] 13:32:39.022 Processed: mathmt/page2/奥数2.png
+[debug] 13:32:39.024 Processed: mathmt/page2/奥数2主图.png
+[debug] 13:32:39.026 Processed: mathmt/page2/奥数2详情.png
+[debug] 13:32:39.028 Processed: mathmt/page2/奥数3.png
+[debug] 13:32:39.030 Processed: mathmt/page2/奥数3主图.png
+[debug] 13:32:39.032 Processed: mathmt/page2/奥数3详情.png
+[debug] 13:32:39.033 Processed: mathmt/page2/已满.png
+[debug] 13:32:39.034 Processed: attachment/LaTeX_howtoask.pdf
+[debug] 13:32:39.034 Processed: attachment/LaTeX_howtoask_20131008.pdf
+[debug] 13:32:39.035 Processed: attachment/Git/progit.en.pdf
+[debug] 13:32:39.035 Processed: attachment/Git/progit.ja.pdf
+[debug] 13:32:39.036 Processed: attachment/Git/progit.zh.pdf
+[debug] 13:32:39.036 Processed: attachment/RuleTillEnd/RuleTillEnd.tex
+[debug] 13:32:39.037 Processed: attachment/SourceCode/brace-rlap.tex
+[debug] 13:32:39.037 Processed: attachment/Sublime/Default.sublime-package
+[debug] 13:32:39.038 Processed: attachment/Sublime/Sublime Text Build 3047.zip
+[debug] 13:32:39.038 Processed: attachment/TsinghuaLaTeX/latex01.pdf
+[debug] 13:32:39.039 Processed: attachment/TsinghuaLaTeX/latex02.pdf
+[debug] 13:32:39.039 Processed: attachment/TsinghuaLaTeX/latex03.pdf
+[debug] 13:32:39.040 Processed: attachment/TsinghuaLaTeX/latex04.pdf
+[debug] 13:32:39.040 Processed: attachment/soft/Virtual_Audio_Cable_4_10.zip
+[debug] 13:32:39.041 Processed: attachment/xcumcmart/xcumcmart-Ver.1.00.00.zip
+[debug] 13:32:39.041 Processed: attachment/Fonts/Adina.zip
+[debug] 13:32:39.042 Processed: attachment/Fonts/Fandol.zip
+[debug] 13:32:39.042 Processed: attachment/Fonts/TeX_Gyre_Pagella.zip
+[debug] 13:32:39.043 Processed: attachment/LaTeX-useful-tools/CCT_TDS.zip
+[debug] 13:32:39.043 Processed: attachment/LaTeX-useful-tools/LaTeX_Docs_2014.rar
+[debug] 13:32:39.044 Processed: attachment/LaTeX-useful-tools/LaTeX_Docs_2014.zip
+[debug] 13:32:39.044 Processed: attachment/LaTeX-useful-tools/LaTeX_Intro.pdf
+[debug] 13:32:39.045 Processed: attachment/LaTeX-useful-tools/Liam-Gougu_demo_LeoLiu_LaTeXbook.zip
+[debug] 13:32:39.045 Processed: attachment/LaTeX-useful-tools/UniKhangXi-UTF16-H
+[debug] 13:32:39.046 Processed: attachment/LaTeX-useful-tools/advancedBuilder.py
+[debug] 13:32:39.047 Processed: attachment/LaTeX-useful-tools/dpi-issue.zip
+[debug] 13:32:39.047 Processed: attachment/LaTeX-useful-tools/epscolor.bat
+[debug] 13:32:39.048 Processed: attachment/LaTeX-useful-tools/ltx_vert.zip
+[debug] 13:32:39.048 Processed: attachment/LaTeX-useful-tools/texlivefont-20070828.pdf
+[debug] 13:32:39.049 Processed: attachment/LaTeX-useful-tools/xdvipdfmx.exe.xz
+[debug] 13:32:39.050 Processed: attachment/LaTeX-useful-tools/xdvipdfmx.exe.zip
+[debug] 13:32:39.050 Processed: attachment/LaTeX-useful-tools/zhfzfonts.tex
+[debug] 13:32:39.051 Processed: attachment/LaTeX-useful-tools/dtxtut/dtxtut.dtx
+[debug] 13:32:39.051 Processed: attachment/LaTeX-useful-tools/dtxtut/dtxtut.ins
+[debug] 13:32:39.052 Processed: attachment/LaTeX-useful-tools/dtxtut/insdtxtut.dtx
+[debug] 13:32:39.053 Processed: attachment/LaTeX-useful-tools/old_style/headrule.sty
+[debug] 13:32:39.053 Processed: attachment/LaTeX-useful-tools/old_style/vatola.sty
+[debug] 13:32:39.054 Processed: attachment/LaTeX-useful-tools/ChinaTeX-Intro-2015-Sprint/Intro01.7z
+[debug] 13:32:39.055 Processed: attachment/LaTeX-useful-tools/ChinaTeX-Intro-2015-Sprint/Intro06.7z
+[debug] 13:32:39.056 Processed: attachment/LaTeX-useful-tools/ChinaTeX-Intro-2015-Sprint/LaTeX-Simp-Intro-beamer.zip
+[debug] 13:32:39.057 Processed: attachment/Python/Python_Tutorial_zh-cn_Demo.pdf
+[debug] 13:32:39.058 Processed: attachment/Python/The_Python_Tutorial_zh-cn.pdf
+[debug] 13:32:39.058 Processed: attachment/Python/PyHardWay/Learn_Python_The_Hard_Way_zh-cn.pdf
+[debug] 13:32:39.059 Processed: attachment/Python/PyHardWay/PyHardWay.zip
+[debug] 13:32:39.060 Processed: attachment/Python/PyChallenge/lv2.txt
+[debug] 13:32:39.060 Processed: attachment/Python/PyChallenge/lv3.txt
+[debug] 13:32:39.062 Processed: attachment/images/Liam-Alipay.png
+[debug] 13:32:39.063 Processed: attachment/images/brace-overlap.jpg
+[debug] 13:32:39.065 Processed: attachment/images/juanzhu-1.jpg
+[debug] 13:32:39.067 Processed: attachment/images/juanzhu-2.jpg
+[debug] 13:32:39.069 Processed: attachment/images/Book_Reviews/blindness.jpg
+[debug] 13:32:39.070 Processed: attachment/images/Sublime/Compile_info.png
+[debug] 13:32:39.071 Processed: attachment/images/Sublime/Installing_LaTeXTools.png
+[debug] 13:32:39.071 Processed: attachment/images/Sublime/LaTeXTools_Setup.png
+[debug] 13:32:39.072 Processed: attachment/images/Sublime/LaTeX_UI.png
+[debug] 13:32:39.073 Processed: attachment/images/Sublime/Loading_Repo.png
+[debug] 13:32:39.074 Processed: attachment/images/Sublime/Package_Install.png
+[debug] 13:32:39.075 Processed: attachment/images/Sublime/Set_Syntax_LaTeX.png
+[debug] 13:32:39.075 Processed: attachment/images/Sublime/sublime_text_package_control.png
+[debug] 13:32:39.076 Processed: attachment/images/listingsCopy/right.png
+[debug] 13:32:39.077 Processed: attachment/images/listingsCopy/wrong.png
+[debug] 13:32:39.078 Processed: attachment/images/Kindle/BackDoorLock.png
+[debug] 13:32:39.079 Processed: attachment/images/Kindle/Home_KUAL.png
+[debug] 13:32:39.079 Processed: attachment/images/Kindle/KUAL_BackDoorLock.png
+[debug] 13:32:39.080 Processed: attachment/images/Kindle/amazon01.png
+[debug] 13:32:39.081 Processed: attachment/images/Kindle/amazon02.png
+[debug] 13:32:39.082 Processed: attachment/images/Kindle/kindle01.png
+[debug] 13:32:39.082 Processed: attachment/images/Kindle/wechat01.jpg
+[debug] 13:32:39.083 Processed: attachment/images/Kindle/wechat02.jpg
+[debug] 13:32:39.084 Processed: attachment/images/Kindle/wechat03.jpg
+[debug] 13:32:39.084 Processed: attachment/images/Kindle/wechat_flowchat.png
+[debug] 13:32:39.085 Processed: attachment/images/MacTeX_xeCJK/01.png
+[debug] 13:32:39.086 Processed: attachment/images/MacTeX_xeCJK/02.png
+[debug] 13:32:39.087 Processed: attachment/images/MacTeX_xeCJK/03.png
+[debug] 13:32:39.087 Processed: attachment/images/MacTeX_xeCJK/04.png
+[debug] 13:32:39.088 Processed: attachment/images/Friends/Nanzhi_Zang_01.jpg
+[debug] 13:32:39.089 Processed: attachment/images/Friends/Irene Yang/01.jpg
+[debug] 13:32:39.090 Processed: attachment/images/Friends/Irene Yang/02.jpg
+[debug] 13:32:39.091 Processed: attachment/images/Friends/Irene Yang/03.jpg
+[debug] 13:32:39.091 Processed: attachment/images/Friends/Irene Yang/04.jpg
+[debug] 13:32:39.092 Processed: attachment/images/Friends/Irene Yang/05.jpg
+[debug] 13:32:39.093 Processed: attachment/images/Friends/Irene Yang/06.jpg
+[debug] 13:32:39.094 Processed: attachment/images/Friends/Irene Yang/07.jpg
+[debug] 13:32:39.095 Processed: attachment/images/Friends/Irene Yang/08.jpg
+[debug] 13:32:39.096 Processed: attachment/images/Friends/Irene Yang/09.jpg
+[debug] 13:32:39.096 Processed: attachment/images/Friends/Irene Yang/10.jpg
+[debug] 13:32:39.097 Processed: attachment/images/Friends/Irene Yang/11.jpg
+[debug] 13:32:39.098 Processed: attachment/images/Friends/Irene Yang/12.jpg
+[debug] 13:32:39.099 Processed: attachment/images/Friends/Irene Yang/13.jpg
+[debug] 13:32:39.100 Processed: attachment/images/Friends/Qi Meng/01.jpg
+[debug] 13:32:39.101 Processed: attachment/images/Friends/Qi Meng/02.jpg
+[debug] 13:32:39.102 Processed: attachment/images/Friends/Qi Meng/03.jpg
+[debug] 13:32:39.103 Processed: attachment/images/Friends/Xinyang He/01.jpg
+[debug] 13:32:39.103 Processed: attachment/images/Friends/Xinyang He/02.jpg
+[debug] 13:32:39.104 Processed: attachment/images/Friends/Xinyang He/03.jpg
+[debug] 13:32:39.105 Processed: attachment/images/Friends/Xinyang He/04.jpg
+[debug] 13:32:39.106 Processed: attachment/images/Friends/Xinyang He/05.jpg
+[debug] 13:32:39.107 Processed: attachment/images/Friends/Xinyang He/06.jpg
+[debug] 13:32:39.108 Processed: attachment/images/Friends/Xinyang He/07.jpg
+[debug] 13:32:39.109 Processed: attachment/images/Friends/Xinyang He/08.jpg
+[debug] 13:32:39.110 Processed: attachment/images/Python/HOCKEY.png
+[debug] 13:32:39.111 Processed: attachment/images/Python/channel.png
+[debug] 13:32:39.112 Processed: attachment/images/Python/good.png
+[debug] 13:32:39.115 Processed: attachment/images/Python/oddeven/0.png
+[debug] 13:32:39.116 Processed: attachment/images/Python/oddeven/1.png
+[debug] 13:32:39.117 Processed: attachment/images/Python/oddeven/2.png
+[debug] 13:32:39.118 Processed: attachment/images/Python/oddeven/3.png
+[debug] 13:32:39.119 Processed: attachment/images/Python/pil-tutorial/Image_attrib.png
+[debug] 13:32:39.120 Processed: attachment/images/Python/pil-tutorial/Image_show.png
+[debug] 13:32:39.121 Processed: attachment/images/Python/pil-tutorial/draw-arc.png
+[debug] 13:32:39.123 Processed: attachment/images/Python/pil-tutorial/draw-line.png
+[debug] 13:32:39.124 Processed: attachment/images/Python/pil-tutorial/draw-text-font.png
+[debug] 13:32:39.126 Processed: attachment/images/Python/pil-tutorial/draw-text.png
+[debug] 13:32:39.127 Processed: attachment/images/Python/pil-tutorial/transpose_paste.png
+[debug] 13:32:39.134 Processed: languages/zh-CN.yml
+[debug] 13:32:39.134 Processed: languages/default.yml
+[debug] 13:32:39.135 Theme config loaded
+[debug] 13:32:39.135 Processed: _config.yml
+[debug] 13:32:39.554 Processed: 404.html
+[debug] 13:32:39.555 Processed: google3bcd21dc892a1d61.html
+[debug] 13:32:39.555 Processed: wumii-verification.htm
+[debug] 13:32:39.557 Processed: about/index.md
+[debug] 13:32:39.557 Processed: links/index.md
+[error] 13:32:40.219 HexoError: Process failed: _posts/2015-07-03-cleardoublepage-this-page-is-intentionally-left-blank.md
+Error: Unexpected tag "\clearpage
+  \if@twoside \ifodd\c@page\relax\else
+  \thispagestyle{empty}%
+  \tikz[remember picture, overlay] \node  at (current page.center)
+    {\large 广告位招租};\newpage\fi\fi}
+\makeatother
+\begin{document}
+\chapter{测试}
+\chapter{测试}
+\clearpage
+测试
+\chapter{测试}
+\end{document}
+{% endcode" on line 22 in file /Users/Liam/Documents/git-dev/blog-source/.hexo/source/_posts/2015-07-03-cleardoublepage-this-page-is-intentionally-left-blank.md.
+    at Object.exports.throwError (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/utils.js:183:9)
+    at parseTag (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/parser.js:543:13)
+    at /usr/local/lib/node_modules/hexo/node_modules/swig/lib/parser.js:638:15
+    at Object.exports.each (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/utils.js:45:11)
+    at Object.exports.parse (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/parser.js:622:9)
+    at parse (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/swig.js:349:19)
+    at precompile (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/swig.js:479:23)
+    at compile (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/swig.js:584:16)
+    at Object.render (/usr/local/lib/node_modules/hexo/node_modules/swig/lib/swig.js:513:17)
+    at /usr/local/lib/node_modules/hexo/lib/post/render.js:67:29
 
-failed to locate @require file _fonts/icon-null.styl
-
-    at Evaluator.visitImport (/usr/local/lib/node_modules/hexo/node_modules/stylus/lib/visitor/evaluator.js:877:21)
-    at Evaluator.Visitor.visit (/usr/local/lib/node_modules/hexo/node_modules/stylus/lib/visitor/index.js:28:40)
-    at Evaluator.visit (/usr/local/lib/node_modules/hexo/node_modules/stylus/lib/visitor/evaluator.js:157:18)
-    at Evaluator.visitRoot (/usr/local/lib/node_modules/hexo/node_modules/stylus/lib/visitor/evaluator.js:706:27)
-    at Evaluator.Visitor.visit (/usr/local/lib/node_modules/hexo/node_modules/stylus/lib/visitor/index.js:28:40)
-    at Evaluator.visit (/usr/local/lib/node_modules/hexo/node_modules/stylus/lib/visitor/evaluator.js:157:18)
-    at Evaluator.evaluate (/usr/local/lib/node_modules/hexo/node_modules/stylus/lib/visitor/evaluator.js:232:15)
-    at Renderer.render (/usr/local/lib/node_modules/hexo/node_modules/stylus/lib/renderer.js:80:26)
-    at module.exports (/usr/local/lib/node_modules/hexo/lib/plugins/renderer/stylus.js:32:6)
-    at /usr/local/lib/node_modules/hexo/lib/core/render.js:96:9
+[debug] 13:32:40.257 Cache saved
